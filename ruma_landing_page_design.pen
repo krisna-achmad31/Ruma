@@ -2275,16 +2275,35 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "text",
-                      "id": "FkmEj",
-                      "name": "Old",
-                      "fill": "$faint",
-                      "textGrowth": "fixed-width",
+                      "type": "frame",
+                      "id": "lltWC",
+                      "name": "Coret",
                       "width": 250,
-                      "content": "Kamu 70%, dia 30%",
-                      "fontFamily": "$font-body",
-                      "fontSize": 18,
-                      "fontWeight": "500"
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "FkmEj",
+                          "name": "Old",
+                          "fill": "$faint",
+                          "content": "Kamu 70%, dia 30%",
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 1,
+                          "id": "f02EuN",
+                          "layoutPosition": "absolute",
+                          "x": -4,
+                          "y": 11,
+                          "name": "Garis coret",
+                          "fill": "$faint",
+                          "width": 167,
+                          "height": 2
+                        }
+                      ]
                     },
                     {
                       "type": "frame",
@@ -2377,16 +2396,35 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "text",
-                      "id": "ac7mh",
-                      "name": "Old",
-                      "fill": "$faint",
-                      "textGrowth": "fixed-width",
+                      "type": "frame",
+                      "id": "heEoF",
+                      "name": "Coret",
                       "width": 250,
-                      "content": "Dompetku, dompetmu",
-                      "fontFamily": "$font-body",
-                      "fontSize": 18,
-                      "fontWeight": "500"
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ac7mh",
+                          "name": "Old",
+                          "fill": "$faint",
+                          "content": "Dompetku, dompetmu",
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 1,
+                          "id": "a3n90y",
+                          "layoutPosition": "absolute",
+                          "x": -4,
+                          "y": 11,
+                          "name": "Garis coret",
+                          "fill": "$faint",
+                          "width": 191,
+                          "height": 2
+                        }
+                      ]
                     },
                     {
                       "type": "frame",
@@ -2479,16 +2517,35 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "text",
-                      "id": "b8MWt",
-                      "name": "Old",
-                      "fill": "$faint",
-                      "textGrowth": "fixed-width",
+                      "type": "frame",
+                      "id": "kQj8g",
+                      "name": "Coret",
                       "width": 250,
-                      "content": "Siapa yang paling sering",
-                      "fontFamily": "$font-body",
-                      "fontSize": 18,
-                      "fontWeight": "500"
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "b8MWt",
+                          "name": "Old",
+                          "fill": "$faint",
+                          "content": "Siapa yang paling sering",
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 1,
+                          "id": "UMam6",
+                          "layoutPosition": "absolute",
+                          "x": -4,
+                          "y": 11,
+                          "name": "Garis coret",
+                          "fill": "$faint",
+                          "width": 205,
+                          "height": 2
+                        }
+                      ]
                     },
                     {
                       "type": "frame",
@@ -2581,16 +2638,35 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "text",
-                      "id": "MGKv9",
-                      "name": "Old",
-                      "fill": "$faint",
-                      "textGrowth": "fixed-width",
+                      "type": "frame",
+                      "id": "D7iHS",
+                      "name": "Coret",
                       "width": 250,
-                      "content": "Utang budi dicatat",
-                      "fontFamily": "$font-body",
-                      "fontSize": 18,
-                      "fontWeight": "500"
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "MGKv9",
+                          "name": "Old",
+                          "fill": "$faint",
+                          "content": "Utang budi dicatat",
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 1,
+                          "id": "kveea",
+                          "layoutPosition": "absolute",
+                          "x": -4,
+                          "y": 11,
+                          "name": "Garis coret",
+                          "fill": "$faint",
+                          "width": 159,
+                          "height": 2
+                        }
+                      ]
                     },
                     {
                       "type": "frame",
@@ -6458,6 +6534,6116 @@
             "x": 0.2,
             "y": 0.05
           }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "N3B4u",
+      "x": 0,
+      "y": 7395,
+      "name": "Store 1 Hari ini",
+      "clip": true,
+      "width": 1080,
+      "height": 1920,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#CFE8DCFF",
+              "position": 0
+            },
+            {
+              "color": "#CFE8DC00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.08
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.1,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#F6DCCBFF",
+              "position": 0
+            },
+            {
+              "color": "#F6DCCB00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.95
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.5
+          },
+          "colors": [
+            {
+              "color": "#E4DDF1FF",
+              "position": 0
+            },
+            {
+              "color": "#E4DDF100",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.2,
+            "y": 0.95
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 36,
+      "padding": [
+        150,
+        80,
+        0,
+        80
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "zFNs3",
+          "name": "Headline",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Berat sama dipikul, ringan sama dijinjing.",
+          "lineHeight": 1.02,
+          "textAlign": "center",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 92,
+          "fontWeight": "700",
+          "letterSpacing": -3.4
+        },
+        {
+          "type": "text",
+          "id": "wgmtY",
+          "name": "Sub",
+          "fill": "#5B6864",
+          "textGrowth": "fixed-width",
+          "width": 900,
+          "content": "Urusan rumah, uang, dan waktu berdua.",
+          "lineHeight": 1.4,
+          "textAlign": "center",
+          "fontFamily": "Figtree",
+          "fontSize": 40,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "Q882kp",
+          "name": "Phone wrap",
+          "width": "fill_container",
+          "padding": [
+            40,
+            0,
+            0,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "umz7p",
+              "name": "Phone",
+              "width": 760,
+              "height": 1560,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 118,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 3,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D2E",
+                  "offset": {
+                    "x": 0,
+                    "y": 50
+                  },
+                  "blur": 110
+                }
+              ],
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "iVd82",
+                  "name": "Screen",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "cornerRadius": 98,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "RPjFB",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Shot",
+                      "width": 720,
+                      "height": 2289,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "design-reference/landing/R0TaK.png",
+                        "mode": "stretch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "koTHV",
+          "layoutPosition": "absolute",
+          "x": 40,
+          "y": 1520,
+          "name": "Kartu Makasih",
+          "rotation": 4,
+          "width": 560,
+          "fill": "#FFFFFFE6",
+          "cornerRadius": 44,
+          "stroke": "#FFFFFFE6",
+          "strokeWidth": 2,
+          "effect": [
+            {
+              "type": "background_blur",
+              "radius": 40
+            },
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#15201D24",
+              "offset": {
+                "x": 0,
+                "y": 30
+              },
+              "blur": 70
+            }
+          ],
+          "gap": 24,
+          "padding": 30,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "DxbsK",
+              "name": "Icon",
+              "width": 92,
+              "height": 92,
+              "fill": "#FCE6D2",
+              "cornerRadius": 30,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "YswDX",
+                  "name": "3D",
+                  "width": 60,
+                  "height": 60,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "assets/icons3d/heart_hands.png",
+                    "mode": "fit"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mEa6J",
+              "name": "T",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "JxsHT",
+                  "name": "k",
+                  "fill": "#C9772F",
+                  "content": "Urusan",
+                  "fontFamily": "Figtree",
+                  "fontSize": 22,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "k55mi",
+                  "name": "t",
+                  "fill": "#15201D",
+                  "content": "Makasih udah bayar listrik",
+                  "fontFamily": "Figtree",
+                  "fontSize": 30,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "ARST1",
+                  "name": "d",
+                  "fill": "#5B6864",
+                  "content": "dari Dinda, barusan",
+                  "fontFamily": "Figtree",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "mBsrP",
+      "x": 1180,
+      "y": 7395,
+      "name": "Store 2 Urusan",
+      "clip": true,
+      "width": 1080,
+      "height": 1920,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#FCE6D2FF",
+              "position": 0
+            },
+            {
+              "color": "#FCE6D200",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.85,
+            "y": 0.1
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#FBEFC8FF",
+              "position": 0
+            },
+            {
+              "color": "#FBEFC800",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.7
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 36,
+      "padding": [
+        150,
+        80,
+        0,
+        80
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "CPyKU",
+          "name": "Headline",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Saling bantu, bukan saling hitung.",
+          "lineHeight": 1.02,
+          "textAlign": "center",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 92,
+          "fontWeight": "700",
+          "letterSpacing": -3.4
+        },
+        {
+          "type": "text",
+          "id": "z7Qop",
+          "name": "Sub",
+          "fill": "#5B6864",
+          "textGrowth": "fixed-width",
+          "width": 900,
+          "content": "Bagi tugas rumah, lalu kirim makasih.",
+          "lineHeight": 1.4,
+          "textAlign": "center",
+          "fontFamily": "Figtree",
+          "fontSize": 40,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "Bi5ie",
+          "name": "Phone wrap",
+          "width": "fill_container",
+          "padding": [
+            40,
+            0,
+            0,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "JqgOw",
+              "name": "Phone",
+              "width": 760,
+              "height": 1560,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 118,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 3,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D2E",
+                  "offset": {
+                    "x": 0,
+                    "y": 50
+                  },
+                  "blur": 110
+                }
+              ],
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "C2K7J",
+                  "name": "Screen",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "cornerRadius": 98,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "afbmP",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Shot",
+                      "width": 720,
+                      "height": 2212,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "design-reference/landing/Y7XN1D.png",
+                        "mode": "stretch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Zb3Yz",
+      "x": 2360,
+      "y": 7395,
+      "name": "Store 3 Uang",
+      "clip": true,
+      "width": 1080,
+      "height": 1920,
+      "fill": [
+        {
+          "type": "gradient",
+          "gradientType": "linear",
+          "enabled": true,
+          "rotation": 200,
+          "size": {
+            "height": 1
+          },
+          "colors": [
+            {
+              "color": "#1F5446",
+              "position": 0
+            },
+            {
+              "color": "#2C6B5A",
+              "position": 0.55
+            },
+            {
+              "color": "#3D8270",
+              "position": 1
+            }
+          ]
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#FFFFFF24",
+              "position": 0
+            },
+            {
+              "color": "#FFFFFF00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.15,
+            "y": 0.05
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 36,
+      "padding": [
+        150,
+        80,
+        0,
+        80
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "hXmg5",
+          "name": "Headline",
+          "fill": "#FFFFFF",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Uang rumah digabung, dibagi ke amplop.",
+          "lineHeight": 1.02,
+          "textAlign": "center",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 92,
+          "fontWeight": "700",
+          "letterSpacing": -3.4
+        },
+        {
+          "type": "text",
+          "id": "dkwex",
+          "name": "Sub",
+          "fill": "#FFFFFFC7",
+          "textGrowth": "fixed-width",
+          "width": 900,
+          "content": "Tahu berapa yang aman dipakai sampai gajian.",
+          "lineHeight": 1.4,
+          "textAlign": "center",
+          "fontFamily": "Figtree",
+          "fontSize": 40,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "yzrY2",
+          "name": "Phone wrap",
+          "width": "fill_container",
+          "padding": [
+            40,
+            0,
+            0,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "dE8JD",
+              "name": "Phone",
+              "width": 760,
+              "height": 1560,
+              "fill": "#FFFFFF33",
+              "cornerRadius": 118,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 3,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D2E",
+                  "offset": {
+                    "x": 0,
+                    "y": 50
+                  },
+                  "blur": 110
+                }
+              ],
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "K9Bkht",
+                  "name": "Screen",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "cornerRadius": 98,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "oPXSm",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Shot",
+                      "width": 720,
+                      "height": 2729,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "design-reference/landing/Q1NSNv.png",
+                        "mode": "stretch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "LrHWQ",
+      "x": 3540,
+      "y": 7395,
+      "name": "Store 4 Kita",
+      "clip": true,
+      "width": 1080,
+      "height": 1920,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.4,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#FADFE6FF",
+              "position": 0
+            },
+            {
+              "color": "#FADFE600",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.85,
+            "y": 0.12
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#E4DDF1FF",
+              "position": 0
+            },
+            {
+              "color": "#E4DDF100",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.8
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 36,
+      "padding": [
+        150,
+        80,
+        0,
+        80
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "PXPAX",
+          "name": "Headline",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Bukan cuma koordinasi. Tetap ngobrol berdua.",
+          "lineHeight": 1.02,
+          "textAlign": "center",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 92,
+          "fontWeight": "700",
+          "letterSpacing": -3.4
+        },
+        {
+          "type": "text",
+          "id": "A7xVFU",
+          "name": "Sub",
+          "fill": "#5B6864",
+          "textGrowth": "fixed-width",
+          "width": 900,
+          "content": "Check-in harian, ngobrol akhir bulan, dan jurnal.",
+          "lineHeight": 1.4,
+          "textAlign": "center",
+          "fontFamily": "Figtree",
+          "fontSize": 40,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "aCUO2",
+          "name": "Phone wrap",
+          "width": "fill_container",
+          "padding": [
+            40,
+            0,
+            0,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "uKYKH",
+              "name": "Phone",
+              "width": 760,
+              "height": 1560,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 118,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 3,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D2E",
+                  "offset": {
+                    "x": 0,
+                    "y": 50
+                  },
+                  "blur": 110
+                }
+              ],
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xHxfl",
+                  "name": "Screen",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "cornerRadius": 98,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zKnCN",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Shot",
+                      "width": 720,
+                      "height": 2967,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "design-reference/landing/LZAKW.png",
+                        "mode": "stretch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "VHO7U",
+      "x": 4720,
+      "y": 7395,
+      "name": "Store 5 Fase hidup",
+      "clip": true,
+      "width": 1080,
+      "height": 1920,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#E8E2F8FF",
+              "position": 0
+            },
+            {
+              "color": "#E8E2F800",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.1
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#FBEFC8FF",
+              "position": 0
+            },
+            {
+              "color": "#FBEFC800",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.9,
+            "y": 0.6
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 36,
+      "padding": [
+        150,
+        80,
+        0,
+        80
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "cga0N",
+          "name": "Headline",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Ikut berubah waktu hidup kalian berubah.",
+          "lineHeight": 1.02,
+          "textAlign": "center",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 92,
+          "fontWeight": "700",
+          "letterSpacing": -3.4
+        },
+        {
+          "type": "text",
+          "id": "JPu1j",
+          "name": "Sub",
+          "fill": "#5B6864",
+          "textGrowth": "fixed-width",
+          "width": 900,
+          "content": "Siap nikah, menyambut bayi, Lebaran dan THR.",
+          "lineHeight": 1.4,
+          "textAlign": "center",
+          "fontFamily": "Figtree",
+          "fontSize": 40,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "MULS5",
+          "name": "Phone wrap",
+          "width": "fill_container",
+          "padding": [
+            40,
+            0,
+            0,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "xDadD",
+              "name": "Phone",
+              "width": 760,
+              "height": 1560,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 118,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 3,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D2E",
+                  "offset": {
+                    "x": 0,
+                    "y": 50
+                  },
+                  "blur": 110
+                }
+              ],
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fshdY",
+                  "name": "Screen",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "cornerRadius": 98,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "BrHtW",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Shot",
+                      "width": 720,
+                      "height": 1558,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "design-reference/landing/gbsza.png",
+                        "mode": "stretch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "fxJtD",
+      "x": 5900,
+      "y": 7395,
+      "name": "Store 6 Tanpa skor",
+      "clip": true,
+      "width": 1080,
+      "height": 1920,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#CFE8DCFF",
+              "position": 0
+            },
+            {
+              "color": "#CFE8DC00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.15,
+            "y": 0.1
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#E4DDF1FF",
+              "position": 0
+            },
+            {
+              "color": "#E4DDF100",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.9,
+            "y": 0.75
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 52,
+      "padding": 80,
+      "justifyContent": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "kAiag",
+          "name": "Headline",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Di Ruma nggak ada papan skor.",
+          "lineHeight": 1.02,
+          "textAlign": "center",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 92,
+          "fontWeight": "700",
+          "letterSpacing": -3.4
+        },
+        {
+          "type": "text",
+          "id": "aIJGS",
+          "name": "Sub",
+          "fill": "#5B6864",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Yang ada cuma saling bantu dan terima kasih.",
+          "lineHeight": 1.4,
+          "textAlign": "center",
+          "fontFamily": "Figtree",
+          "fontSize": 40,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "CxFnj",
+          "name": "Swaps",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 26,
+          "padding": [
+            40,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "zxkxK",
+              "name": "Makasih udah bayar listrik",
+              "width": "fill_container",
+              "fill": "#FFFFFFA8",
+              "cornerRadius": 48,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D12",
+                  "offset": {
+                    "x": 0,
+                    "y": 14
+                  },
+                  "blur": 40
+                }
+              ],
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                30,
+                34
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Z4HWs",
+                  "name": "Coret",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "znr7s",
+                      "name": "Old",
+                      "fill": "#8A9793",
+                      "content": "Kamu 70%, dia 30%",
+                      "fontFamily": "Figtree",
+                      "fontSize": 30,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 1,
+                      "id": "S7QN12",
+                      "layoutPosition": "absolute",
+                      "x": -4,
+                      "y": 18,
+                      "name": "Garis coret",
+                      "fill": "#8A9793",
+                      "width": 273,
+                      "height": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "b2UN2G",
+                  "name": "New",
+                  "gap": 22,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "mBZt4",
+                      "name": "Icon",
+                      "width": 80,
+                      "height": 80,
+                      "fill": "#FCE6D2",
+                      "cornerRadius": 26,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "TY4XA",
+                          "name": "3D",
+                          "width": 52,
+                          "height": 52,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "assets/icons3d/heart_hands.png",
+                            "mode": "fit"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "I72Ela",
+                      "name": "t",
+                      "fill": "#15201D",
+                      "content": "Makasih udah bayar listrik",
+                      "fontFamily": "Figtree",
+                      "fontSize": 38,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "xcMuP",
+              "name": "Uang rumah, dibagi per amplop",
+              "width": "fill_container",
+              "fill": "#FFFFFFA8",
+              "cornerRadius": 48,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D12",
+                  "offset": {
+                    "x": 0,
+                    "y": 14
+                  },
+                  "blur": 40
+                }
+              ],
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                30,
+                34
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "D9YLQ",
+                  "name": "Coret",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "l866s0",
+                      "name": "Old",
+                      "fill": "#8A9793",
+                      "content": "Dompetku, dompetmu",
+                      "fontFamily": "Figtree",
+                      "fontSize": 30,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 1,
+                      "id": "Q7Tz3",
+                      "layoutPosition": "absolute",
+                      "x": -4,
+                      "y": 18,
+                      "name": "Garis coret",
+                      "fill": "#8A9793",
+                      "width": 313,
+                      "height": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ZyT0i",
+                  "name": "New",
+                  "gap": 22,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "L0xGrx",
+                      "name": "Icon",
+                      "width": 80,
+                      "height": 80,
+                      "fill": "#DDF0E6",
+                      "cornerRadius": 26,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "brERl",
+                          "name": "3D",
+                          "width": 52,
+                          "height": 52,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "assets/icons3d/money_bag.png",
+                            "mode": "fit"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "N4vC6",
+                      "name": "t",
+                      "fill": "#15201D",
+                      "content": "Uang rumah, dibagi per amplop",
+                      "fontFamily": "Figtree",
+                      "fontSize": 38,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "r2GYS",
+              "name": "Siapa bisa bantu hari ini",
+              "width": "fill_container",
+              "fill": "#FFFFFFA8",
+              "cornerRadius": 48,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D12",
+                  "offset": {
+                    "x": 0,
+                    "y": 14
+                  },
+                  "blur": 40
+                }
+              ],
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                30,
+                34
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "DjPU3",
+                  "name": "Coret",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EyhgB",
+                      "name": "Old",
+                      "fill": "#8A9793",
+                      "content": "Siapa paling sering",
+                      "fontFamily": "Figtree",
+                      "fontSize": 30,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 1,
+                      "id": "tPKpH",
+                      "layoutPosition": "absolute",
+                      "x": -4,
+                      "y": 18,
+                      "name": "Garis coret",
+                      "fill": "#8A9793",
+                      "width": 262,
+                      "height": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "q6VH8o",
+                  "name": "New",
+                  "gap": 22,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "q0zsRa",
+                      "name": "Icon",
+                      "width": 80,
+                      "height": 80,
+                      "fill": "#E8E2F8",
+                      "cornerRadius": 26,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "z0Huc9",
+                          "name": "3D",
+                          "width": 52,
+                          "height": 52,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "assets/icons3d/handshake.png",
+                            "mode": "fit"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "RIggv",
+                      "name": "t",
+                      "fill": "#15201D",
+                      "content": "Siapa bisa bantu hari ini",
+                      "fontFamily": "Figtree",
+                      "fontSize": 38,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "e7YMit",
+              "name": "Cerita kecil di jurnal",
+              "width": "fill_container",
+              "fill": "#FFFFFFA8",
+              "cornerRadius": 48,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D12",
+                  "offset": {
+                    "x": 0,
+                    "y": 14
+                  },
+                  "blur": 40
+                }
+              ],
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                30,
+                34
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "iNaA7",
+                  "name": "Coret",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XXHhO",
+                      "name": "Old",
+                      "fill": "#8A9793",
+                      "content": "Utang budi dicatat",
+                      "fontFamily": "Figtree",
+                      "fontSize": 30,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 1,
+                      "id": "KEloN",
+                      "layoutPosition": "absolute",
+                      "x": -4,
+                      "y": 18,
+                      "name": "Garis coret",
+                      "fill": "#8A9793",
+                      "width": 260,
+                      "height": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "L584f",
+                  "name": "New",
+                  "gap": 22,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "R78Wm",
+                      "name": "Icon",
+                      "width": 80,
+                      "height": 80,
+                      "fill": "#FADFE6",
+                      "cornerRadius": 26,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "oVPa7",
+                          "name": "3D",
+                          "width": 52,
+                          "height": 52,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "assets/icons3d/notebook.png",
+                            "mode": "fit"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "j8Fdy",
+                      "name": "t",
+                      "fill": "#15201D",
+                      "content": "Cerita kecil di jurnal",
+                      "fontFamily": "Figtree",
+                      "fontSize": 38,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hAp4F",
+          "name": "Plus wrap",
+          "width": "fill_container",
+          "padding": [
+            20,
+            0,
+            0,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "iTLb7",
+              "name": "Plus pill",
+              "fill": "#15201D",
+              "cornerRadius": 44,
+              "gap": 16,
+              "padding": [
+                22,
+                36
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "g9MzKZ",
+                  "name": "3D",
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "assets/icons3d/sparkles.png",
+                    "mode": "fit"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "Bx206",
+                  "name": "t",
+                  "fill": "#FFFFFF",
+                  "content": "Satu langganan Plus untuk berdua",
+                  "fontFamily": "Figtree",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Ehaly",
+      "x": 0,
+      "y": 9515,
+      "name": "Store Feature Graphic 1024x500",
+      "clip": true,
+      "width": 1024,
+      "height": 500,
+      "fill": [
+        {
+          "type": "gradient",
+          "gradientType": "linear",
+          "enabled": true,
+          "rotation": 200,
+          "size": {
+            "height": 1
+          },
+          "colors": [
+            {
+              "color": "#1F5446",
+              "position": 0
+            },
+            {
+              "color": "#2C6B5A",
+              "position": 0.55
+            },
+            {
+              "color": "#3D8270",
+              "position": 1
+            }
+          ]
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.9,
+            "height": 1.2
+          },
+          "colors": [
+            {
+              "color": "#FFFFFF24",
+              "position": 0
+            },
+            {
+              "color": "#FFFFFF00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0
+          }
+        }
+      ],
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "RLumU",
+          "x": 72,
+          "y": 0,
+          "name": "Copy",
+          "width": 520,
+          "height": 500,
+          "layout": "vertical",
+          "gap": 20,
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "aTVFY",
+              "name": "Brand",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NqytG",
+                  "name": "Mark",
+                  "width": 64,
+                  "height": 64,
+                  "fill": "#FFFFFF1F",
+                  "cornerRadius": 16,
+                  "stroke": "#FFFFFF40",
+                  "strokeWidth": 1.5,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "ywj8Y",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M30 44l20-17 20 17",
+                      "viewBox": [
+                        0,
+                        0,
+                        100,
+                        100
+                      ],
+                      "width": 64,
+                      "height": 64,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 4.48,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    },
+                    {
+                      "type": "text",
+                      "id": "oyLOo",
+                      "x": 0,
+                      "y": 30.080000000000002,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 64,
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "textAlign": "center",
+                      "fontFamily": "Bricolage Grotesque",
+                      "fontSize": 19.2,
+                      "fontWeight": "800",
+                      "letterSpacing": -0.768
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "GoQ8n",
+                  "name": "Ruma",
+                  "fill": "#FFFFFF",
+                  "content": "Ruma",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 34,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "aanpt",
+              "name": "Headline",
+              "fill": "#FFFFFF",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Berat sama dipikul, ringan sama dijinjing.",
+              "lineHeight": 1.04,
+              "fontFamily": "Bricolage Grotesque",
+              "fontSize": 50,
+              "fontWeight": "700",
+              "letterSpacing": -1.8
+            },
+            {
+              "type": "text",
+              "id": "VczK3",
+              "name": "Sub",
+              "fill": "#FFFFFFC7",
+              "content": "Urusan, uang, dan kita. Satu rumah.",
+              "fontFamily": "Figtree",
+              "fontSize": 22,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "h3eAAU",
+          "x": 640,
+          "y": 120,
+          "name": "Float house",
+          "rotation": -8,
+          "width": 250,
+          "height": 250,
+          "fill": "#FFFFFF2E",
+          "cornerRadius": 75,
+          "stroke": "#FFFFFF4D",
+          "strokeWidth": 1.5,
+          "effect": {
+            "type": "background_blur",
+            "radius": 20
+          },
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "mElml",
+              "name": "3D",
+              "width": 180,
+              "height": 180,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "assets/icons3d/house.png",
+                "mode": "fit"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "afGSL",
+          "x": 870,
+          "y": 40,
+          "name": "Float red_heart",
+          "rotation": 12.000000000000002,
+          "width": 120,
+          "height": 120,
+          "fill": "#FFFFFF2E",
+          "cornerRadius": 36,
+          "stroke": "#FFFFFF4D",
+          "strokeWidth": 1.5,
+          "effect": {
+            "type": "background_blur",
+            "radius": 20
+          },
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "uHMrs",
+              "name": "3D",
+              "width": 86.39999999999999,
+              "height": 86.39999999999999,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "assets/icons3d/red_heart.png",
+                "mode": "fit"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "aKWgu",
+          "x": 880,
+          "y": 300,
+          "name": "Float money_bag",
+          "rotation": -10,
+          "width": 140,
+          "height": 140,
+          "fill": "#FFFFFF2E",
+          "cornerRadius": 42,
+          "stroke": "#FFFFFF4D",
+          "strokeWidth": 1.5,
+          "effect": {
+            "type": "background_blur",
+            "radius": 20
+          },
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "M453OX",
+              "name": "3D",
+              "width": 100.8,
+              "height": 100.8,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "assets/icons3d/money_bag.png",
+                "mode": "fit"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "k82Yv",
+          "x": 600,
+          "y": 340,
+          "name": "Float clipboard",
+          "rotation": 10,
+          "width": 110,
+          "height": 110,
+          "fill": "#FFFFFF2E",
+          "cornerRadius": 33,
+          "stroke": "#FFFFFF4D",
+          "strokeWidth": 1.5,
+          "effect": {
+            "type": "background_blur",
+            "radius": 20
+          },
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "YsRjK",
+              "name": "3D",
+              "width": 79.2,
+              "height": 79.2,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "assets/icons3d/clipboard.png",
+                "mode": "fit"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "WKoBs",
+      "x": 0,
+      "y": 10135,
+      "name": "Label Instagram carousel",
+      "layout": "vertical",
+      "gap": 6,
+      "children": [
+        {
+          "type": "text",
+          "id": "ep2T8",
+          "name": "t",
+          "fill": "#15201D",
+          "content": "Instagram carousel peluncuran, 1080 x 1350",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 56,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "RFCfd",
+          "name": "d",
+          "fill": "#5B6864",
+          "content": "Geser 5 slide: hook, masalah, Urusan, Uang, ajakan. Caption ada di marketing/konten_peluncuran.md",
+          "fontFamily": "Figtree",
+          "fontSize": 26,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "e3jHkk",
+      "x": 0,
+      "y": 10295,
+      "name": "IG 1 Hook",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#CFE8DCFF",
+              "position": 0
+            },
+            {
+              "color": "#CFE8DC00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.08
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#F6DCCBFF",
+              "position": 0
+            },
+            {
+              "color": "#F6DCCB00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.95,
+            "y": 0.7
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 32,
+      "padding": [
+        80,
+        72,
+        64,
+        72
+      ],
+      "children": [
+        {
+          "type": "text",
+          "id": "Dqo8x",
+          "name": "Headline",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Di rumahmu, siapa yang selalu ingat bayar listrik?",
+          "lineHeight": 1.02,
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 96,
+          "fontWeight": "700",
+          "letterSpacing": -3
+        },
+        {
+          "type": "frame",
+          "id": "vsxbh",
+          "name": "Stage",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "PSMKM",
+              "x": 20,
+              "y": 30,
+              "name": "Kartu Token listrik tinggal 12 kWh",
+              "rotation": -3.0000000000000004,
+              "width": 600,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 44,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "gap": 24,
+              "padding": 28,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "MP7hU",
+                  "name": "Icon",
+                  "width": 88,
+                  "height": 88,
+                  "fill": "#FBEFC8",
+                  "cornerRadius": 28,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "hAhL2",
+                      "name": "3D",
+                      "width": 58,
+                      "height": 58,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "assets/icons3d/high_voltage.png",
+                        "mode": "fit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "SnpLf",
+                  "name": "T",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QyUmB",
+                      "name": "k",
+                      "fill": "#9A7414",
+                      "content": "Urusan",
+                      "fontFamily": "Figtree",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "khJY4",
+                      "name": "t",
+                      "fill": "#15201D",
+                      "content": "Token listrik tinggal 12 kWh",
+                      "fontFamily": "Figtree",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "kriHK",
+                      "name": "d",
+                      "fill": "#5B6864",
+                      "content": "Raka ingat, Dinda beli malam ini",
+                      "fontFamily": "Figtree",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hyMUE",
+              "x": 330,
+              "y": 250,
+              "name": "Kartu Makasih udah bayar listrik",
+              "rotation": 3.0000000000000004,
+              "width": 600,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 44,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "gap": 24,
+              "padding": 28,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lGd4a",
+                  "name": "Icon",
+                  "width": 88,
+                  "height": 88,
+                  "fill": "#FCE6D2",
+                  "cornerRadius": 28,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "X0vNN",
+                      "name": "3D",
+                      "width": 58,
+                      "height": 58,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "assets/icons3d/heart_hands.png",
+                        "mode": "fit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "b6O6B",
+                  "name": "T",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "X5lPwE",
+                      "name": "k",
+                      "fill": "#C9772F",
+                      "content": "Urusan",
+                      "fontFamily": "Figtree",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "QaHmt",
+                      "name": "t",
+                      "fill": "#15201D",
+                      "content": "Makasih udah bayar listrik",
+                      "fontFamily": "Figtree",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "sApcY",
+                      "name": "d",
+                      "fill": "#5B6864",
+                      "content": "dari Raka, barusan",
+                      "fontFamily": "Figtree",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Qth6d",
+          "name": "Footer",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "L4MuCJ",
+              "name": "Brand",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ej90o",
+                  "name": "Mark",
+                  "width": 56,
+                  "height": 56,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 200,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#1F5446",
+                        "position": 0
+                      },
+                      {
+                        "color": "#2C6B5A",
+                        "position": 0.55
+                      },
+                      {
+                        "color": "#3D8270",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 15.680000000000001,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "r148SJ",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M30 44l20-17 20 17",
+                      "viewBox": [
+                        0,
+                        0,
+                        100,
+                        100
+                      ],
+                      "width": 56,
+                      "height": 56,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 3.9200000000000004,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    },
+                    {
+                      "type": "text",
+                      "id": "d3Zdyj",
+                      "x": 0,
+                      "y": 26.320000000000004,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 56,
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "textAlign": "center",
+                      "fontFamily": "Bricolage Grotesque",
+                      "fontSize": 16.8,
+                      "fontWeight": "800",
+                      "letterSpacing": -0.672
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "d707Z",
+                  "name": "n",
+                  "fill": "#15201D",
+                  "content": "Ruma",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 30,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "EKByV",
+              "name": "Page",
+              "fill": "#8A9793",
+              "content": "Geser, ada 4 lagi",
+              "fontFamily": "Figtree",
+              "fontSize": 24,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "x2C482",
+      "x": 1180,
+      "y": 10295,
+      "name": "IG 2 Masalah",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#E4DDF1FF",
+              "position": 0
+            },
+            {
+              "color": "#E4DDF100",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.08
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#FADFE6FF",
+              "position": 0
+            },
+            {
+              "color": "#FADFE600",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.95,
+            "y": 0.7
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 32,
+      "padding": [
+        80,
+        72,
+        64,
+        72
+      ],
+      "children": [
+        {
+          "type": "text",
+          "id": "wwV99",
+          "name": "Headline",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Beban mikirin juga kerja. Cuma sering nggak kelihatan.",
+          "lineHeight": 1.02,
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 84,
+          "fontWeight": "700",
+          "letterSpacing": -3
+        },
+        {
+          "type": "text",
+          "id": "GwbRx",
+          "name": "Sub",
+          "fill": "#5B6864",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Daftar di kepala salah satu dari kalian biasanya begini:",
+          "lineHeight": 1.4,
+          "fontFamily": "Figtree",
+          "fontSize": 34,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "o0z4ho",
+          "name": "List",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 18,
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "i1ts2",
+              "name": "Jadwal imunisasi bulan depan",
+              "width": "fill_container",
+              "fill": "#FFFFFFA8",
+              "cornerRadius": 36,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "gap": 22,
+              "padding": [
+                22,
+                28
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "aovKI",
+                  "name": "Icon",
+                  "width": 72,
+                  "height": 72,
+                  "fill": "#FFFFFFE6",
+                  "cornerRadius": 24,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "grH5s",
+                      "name": "3D",
+                      "width": 48,
+                      "height": 48,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "assets/icons3d/baby_bottle.png",
+                        "mode": "fit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "u99KDK",
+                  "name": "t",
+                  "fill": "#15201D",
+                  "content": "Jadwal imunisasi bulan depan",
+                  "fontFamily": "Figtree",
+                  "fontSize": 34,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "RlukM",
+              "name": "Stok beras tinggal 2 kg",
+              "width": "fill_container",
+              "fill": "#FFFFFFA8",
+              "cornerRadius": 36,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "gap": 22,
+              "padding": [
+                22,
+                28
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "O1MSYA",
+                  "name": "Icon",
+                  "width": 72,
+                  "height": 72,
+                  "fill": "#FFFFFFE6",
+                  "cornerRadius": 24,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "fpQTy",
+                      "name": "3D",
+                      "width": 48,
+                      "height": 48,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "assets/icons3d/shopping_cart.png",
+                        "mode": "fit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "iDm2X",
+                  "name": "t",
+                  "fill": "#15201D",
+                  "content": "Stok beras tinggal 2 kg",
+                  "fontFamily": "Figtree",
+                  "fontSize": 34,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dmzLU",
+              "name": "Cicilan motor jatuh tempo tanggal 25",
+              "width": "fill_container",
+              "fill": "#FFFFFFA8",
+              "cornerRadius": 36,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "gap": 22,
+              "padding": [
+                22,
+                28
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "n6DzxI",
+                  "name": "Icon",
+                  "width": 72,
+                  "height": 72,
+                  "fill": "#FFFFFFE6",
+                  "cornerRadius": 24,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "FbSst",
+                      "name": "3D",
+                      "width": 48,
+                      "height": 48,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "assets/icons3d/receipt.png",
+                        "mode": "fit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "ZGzCW",
+                  "name": "t",
+                  "fill": "#15201D",
+                  "content": "Cicilan motor jatuh tempo tanggal 25",
+                  "fontFamily": "Figtree",
+                  "fontSize": 34,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "OxzNQ",
+              "name": "Ulang tahun ibu minggu ini",
+              "width": "fill_container",
+              "fill": "#FFFFFFA8",
+              "cornerRadius": 36,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "gap": 22,
+              "padding": [
+                22,
+                28
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NZcGy",
+                  "name": "Icon",
+                  "width": 72,
+                  "height": 72,
+                  "fill": "#FFFFFFE6",
+                  "cornerRadius": 24,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "WxUKU",
+                      "name": "3D",
+                      "width": 48,
+                      "height": 48,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "assets/icons3d/party_popper.png",
+                        "mode": "fit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "GsqG2",
+                  "name": "t",
+                  "fill": "#15201D",
+                  "content": "Ulang tahun ibu minggu ini",
+                  "fontFamily": "Figtree",
+                  "fontSize": 34,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XiHzv",
+          "name": "Footer",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "T77mqt",
+              "name": "Brand",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PPuZL",
+                  "name": "Mark",
+                  "width": 56,
+                  "height": 56,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 200,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#1F5446",
+                        "position": 0
+                      },
+                      {
+                        "color": "#2C6B5A",
+                        "position": 0.55
+                      },
+                      {
+                        "color": "#3D8270",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 15.680000000000001,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "NWJVA",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M30 44l20-17 20 17",
+                      "viewBox": [
+                        0,
+                        0,
+                        100,
+                        100
+                      ],
+                      "width": 56,
+                      "height": 56,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 3.9200000000000004,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    },
+                    {
+                      "type": "text",
+                      "id": "YOIiv",
+                      "x": 0,
+                      "y": 26.320000000000004,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 56,
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "textAlign": "center",
+                      "fontFamily": "Bricolage Grotesque",
+                      "fontSize": 16.8,
+                      "fontWeight": "800",
+                      "letterSpacing": -0.672
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "G9jFp",
+                  "name": "n",
+                  "fill": "#15201D",
+                  "content": "Ruma",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 30,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "o9UhW",
+              "name": "Page",
+              "fill": "#8A9793",
+              "content": "2/5",
+              "fontFamily": "Figtree",
+              "fontSize": 24,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "y9U3A4",
+      "x": 2360,
+      "y": 10295,
+      "name": "IG 3 Urusan",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#FCE6D2FF",
+              "position": 0
+            },
+            {
+              "color": "#FCE6D200",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.08
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#FBEFC8FF",
+              "position": 0
+            },
+            {
+              "color": "#FBEFC800",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.95,
+            "y": 0.7
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 32,
+      "padding": [
+        80,
+        72,
+        0,
+        72
+      ],
+      "children": [
+        {
+          "type": "text",
+          "id": "WAXHg",
+          "name": "Headline",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Di Ruma, yang ingat dan yang kerjakan sama-sama kelihatan.",
+          "lineHeight": 1.02,
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 72,
+          "fontWeight": "700",
+          "letterSpacing": -2.4
+        },
+        {
+          "type": "frame",
+          "id": "IZuZq",
+          "name": "Phone wrap",
+          "width": "fill_container",
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "hfXy0",
+              "name": "Phone",
+              "width": 560,
+              "height": 1148,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 86.8,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "padding": 14.559999999999999,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fqPGY",
+                  "name": "Screen",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "cornerRadius": 72.8,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "pcWd1",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Shot",
+                      "width": 530.88,
+                      "height": 1631,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "design-reference/landing/Y7XN1D.png",
+                        "mode": "stretch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "RFMAQ",
+      "x": 3540,
+      "y": 10295,
+      "name": "IG 4 Uang",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": [
+        {
+          "type": "gradient",
+          "gradientType": "linear",
+          "enabled": true,
+          "rotation": 200,
+          "size": {
+            "height": 1
+          },
+          "colors": [
+            {
+              "color": "#1F5446",
+              "position": 0
+            },
+            {
+              "color": "#2C6B5A",
+              "position": 0.55
+            },
+            {
+              "color": "#3D8270",
+              "position": 1
+            }
+          ]
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1,
+            "height": 0.5
+          },
+          "colors": [
+            {
+              "color": "#FFFFFFFF",
+              "position": 0
+            },
+            {
+              "color": "#FFFFFF00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 32,
+      "padding": [
+        80,
+        72,
+        0,
+        72
+      ],
+      "children": [
+        {
+          "type": "text",
+          "id": "B1O4HH",
+          "name": "Headline",
+          "fill": "#FFFFFF",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Uang rumah digabung,\ndibagi ke amplop.",
+          "lineHeight": 1.02,
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 80,
+          "fontWeight": "700",
+          "letterSpacing": -3
+        },
+        {
+          "type": "text",
+          "id": "R55R6A",
+          "name": "Sub",
+          "fill": "#FFFFFFC7",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Langsung tahu berapa yang aman dipakai hari ini.",
+          "lineHeight": 1.4,
+          "fontFamily": "Figtree",
+          "fontSize": 34,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "Z2RzL",
+          "name": "Phone wrap",
+          "width": "fill_container",
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "N1V9Bg",
+              "name": "Phone",
+              "width": 540,
+              "height": 1107,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 83.7,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "padding": 14.04,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "KqdIh",
+                  "name": "Screen",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "cornerRadius": 70.2,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "M67MO",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Shot",
+                      "width": 511.92,
+                      "height": 1940,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "design-reference/landing/Q1NSNv.png",
+                        "mode": "stretch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "OdQpO",
+      "x": 4720,
+      "y": 10295,
+      "name": "IG 5 Ajakan",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.4,
+            "height": 0.7
+          },
+          "colors": [
+            {
+              "color": "#CFE8DCFF",
+              "position": 0
+            },
+            {
+              "color": "#CFE8DC00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "y": 0.25
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.4,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#E4DDF1FF",
+              "position": 0
+            },
+            {
+              "color": "#E4DDF100",
+              "position": 1
+            }
+          ],
+          "center": {
+            "y": 1
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 40,
+      "padding": [
+        80,
+        72,
+        64,
+        72
+      ],
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "TGcbO",
+          "name": "Mark",
+          "width": 220,
+          "height": 220,
+          "fill": [
+            {
+              "type": "gradient",
+              "gradientType": "linear",
+              "enabled": true,
+              "rotation": 200,
+              "size": {
+                "height": 1
+              },
+              "colors": [
+                {
+                  "color": "#1F5446",
+                  "position": 0
+                },
+                {
+                  "color": "#2C6B5A",
+                  "position": 0.55
+                },
+                {
+                  "color": "#3D8270",
+                  "position": 1
+                }
+              ]
+            },
+            {
+              "type": "gradient",
+              "gradientType": "radial",
+              "enabled": true,
+              "rotation": 0,
+              "size": {
+                "width": 1.2,
+                "height": 0.9
+              },
+              "colors": [
+                {
+                  "color": "#FFFFFF38",
+                  "position": 0
+                },
+                {
+                  "color": "#FFFFFF00",
+                  "position": 1
+                }
+              ],
+              "center": {
+                "x": 0.2,
+                "y": 0.05
+              }
+            }
+          ],
+          "cornerRadius": 61.60000000000001,
+          "layout": "none",
+          "children": [
+            {
+              "type": "path",
+              "id": "GtaRS",
+              "x": 0,
+              "y": 0,
+              "name": "Atap",
+              "geometry": "M30 44l20-17 20 17",
+              "viewBox": [
+                0,
+                0,
+                100,
+                100
+              ],
+              "width": 220,
+              "height": 220,
+              "stroke": "#FFFFFF",
+              "strokeWidth": 15.400000000000002,
+              "strokeLinejoin": "round",
+              "strokeLinecap": "round"
+            },
+            {
+              "type": "text",
+              "id": "U5eXK",
+              "x": 0,
+              "y": 103.4,
+              "name": "ruma",
+              "fill": "#FFFFFF",
+              "textGrowth": "fixed-width",
+              "width": 220,
+              "content": "ruma",
+              "lineHeight": 1,
+              "textAlign": "center",
+              "fontFamily": "Bricolage Grotesque",
+              "fontSize": 66,
+              "fontWeight": "800",
+              "letterSpacing": -2.64
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "C4rXWK",
+          "name": "Headline",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Berat sama dipikul, ringan sama dijinjing.",
+          "lineHeight": 1.02,
+          "textAlign": "center",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 88,
+          "fontWeight": "700",
+          "letterSpacing": -3
+        },
+        {
+          "type": "text",
+          "id": "MSWfP",
+          "name": "Sub",
+          "fill": "#5B6864",
+          "textGrowth": "fixed-width",
+          "width": 820,
+          "content": "Unduh Ruma gratis, lalu ajak pasanganmu pakai kode undangan.",
+          "lineHeight": 1.4,
+          "textAlign": "center",
+          "fontFamily": "Figtree",
+          "fontSize": 34,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "Q3i57",
+          "name": "Google Play",
+          "height": 104,
+          "fill": "#15201D",
+          "cornerRadius": 52,
+          "gap": 20,
+          "padding": [
+            0,
+            48,
+            0,
+            40
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "q1npK",
+              "name": "i",
+              "width": 44,
+              "height": 44,
+              "icon": "shop",
+              "library": "Material Symbols Rounded",
+              "fill": "#FFFFFF"
+            },
+            {
+              "type": "frame",
+              "id": "HIsCX",
+              "name": "T",
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xxdR6",
+                  "name": "s",
+                  "fill": "#FFFFFFB3",
+                  "content": "Sekarang di",
+                  "fontFamily": "Figtree",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "Hzdud",
+                  "name": "b",
+                  "fill": "#FFFFFF",
+                  "content": "Google Play",
+                  "fontFamily": "Figtree",
+                  "fontSize": 34,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "xFfiv",
+          "name": "Link",
+          "fill": "#2C6B5A",
+          "content": "Link di bio",
+          "fontFamily": "Figtree",
+          "fontSize": 26,
+          "fontWeight": "600"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "JtN4Y",
+      "x": 0,
+      "y": 11885,
+      "name": "Label Vertikal X Threads",
+      "layout": "vertical",
+      "gap": 6,
+      "children": [
+        {
+          "type": "text",
+          "id": "cYzRj",
+          "name": "t",
+          "fill": "#15201D",
+          "content": "TikTok, Story, X, Threads",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 56,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "wNOBd",
+          "name": "d",
+          "fill": "#5B6864",
+          "content": "Vertikal 1080 x 1920 (teks di luar 380 px bawah dan 140 px kanan untuk UI TikTok), X 1600 x 900, Threads 1080 x 1080",
+          "fontFamily": "Figtree",
+          "fontSize": 26,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "WnGvl",
+      "x": 0,
+      "y": 12045,
+      "name": "TikTok Cover",
+      "clip": true,
+      "width": 1080,
+      "height": 1920,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#FADFE6FF",
+              "position": 0
+            },
+            {
+              "color": "#FADFE600",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.9,
+            "y": 0.1
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#CFE8DCFF",
+              "position": 0
+            },
+            {
+              "color": "#CFE8DC00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.6
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.5
+          },
+          "colors": [
+            {
+              "color": "#FBEFC8FF",
+              "position": 0
+            },
+            {
+              "color": "#FBEFC800",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.8,
+            "y": 0.95
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 48,
+      "padding": [
+        200,
+        140,
+        380,
+        80
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "vBTXf",
+          "name": "Brand",
+          "gap": 14,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "XtkzK",
+              "name": "Mark",
+              "width": 56,
+              "height": 56,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 200,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#1F5446",
+                    "position": 0
+                  },
+                  {
+                    "color": "#2C6B5A",
+                    "position": 0.55
+                  },
+                  {
+                    "color": "#3D8270",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 15.680000000000001,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "r7Yg0",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Atap",
+                  "geometry": "M30 44l20-17 20 17",
+                  "viewBox": [
+                    0,
+                    0,
+                    100,
+                    100
+                  ],
+                  "width": 56,
+                  "height": 56,
+                  "stroke": "#FFFFFF",
+                  "strokeWidth": 3.9200000000000004,
+                  "strokeLinejoin": "round",
+                  "strokeLinecap": "round"
+                },
+                {
+                  "type": "text",
+                  "id": "KYlqB",
+                  "x": 0,
+                  "y": 26.320000000000004,
+                  "name": "ruma",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": 56,
+                  "content": "ruma",
+                  "lineHeight": 1,
+                  "textAlign": "center",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 16.8,
+                  "fontWeight": "800",
+                  "letterSpacing": -0.672
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "tqH1D",
+              "name": "n",
+              "fill": "#15201D",
+              "content": "Ruma",
+              "fontFamily": "Bricolage Grotesque",
+              "fontSize": 30,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "a9NcjI",
+          "name": "Headline",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Baru serumah, terus ribut soal siapa bayar apa?",
+          "lineHeight": 1.02,
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 104,
+          "fontWeight": "700",
+          "letterSpacing": -3.6
+        },
+        {
+          "type": "text",
+          "id": "Q29GV",
+          "name": "Sub",
+          "fill": "#5B6864",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Ini cara kami berhenti saling hitung.",
+          "fontFamily": "Figtree",
+          "fontSize": 44,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "hpbDU",
+          "name": "Tiles",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "iI0df",
+              "x": 10,
+              "y": 40,
+              "name": "Float money_bag",
+              "rotation": -10,
+              "width": 250,
+              "height": 250,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 75,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "n9cG6o",
+                  "name": "3D",
+                  "width": 165,
+                  "height": 165,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "assets/icons3d/money_bag.png",
+                    "mode": "fit"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hwUNS",
+              "x": 330,
+              "y": 0,
+              "name": "Float red_heart",
+              "rotation": 10,
+              "width": 200,
+              "height": 200,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 60,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wyCou",
+                  "name": "3D",
+                  "width": 132,
+                  "height": 132,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "assets/icons3d/red_heart.png",
+                    "mode": "fit"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "TWSQQ",
+              "x": 600,
+              "y": 90,
+              "name": "Float clipboard",
+              "rotation": -6.000000000000001,
+              "width": 220,
+              "height": 220,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 66,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "p4jXyo",
+                  "name": "3D",
+                  "width": 145.20000000000002,
+                  "height": 145.20000000000002,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "assets/icons3d/clipboard.png",
+                    "mode": "fit"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lNByM",
+              "x": 180,
+              "y": 330,
+              "name": "Float handshake",
+              "rotation": 8,
+              "width": 230,
+              "height": 230,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 69,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "XpVvJ",
+                  "name": "3D",
+                  "width": 151.8,
+                  "height": 151.8,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "assets/icons3d/handshake.png",
+                    "mode": "fit"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "s3E1aC",
+              "x": 520,
+              "y": 380,
+              "name": "Float receipt",
+              "rotation": -12.000000000000002,
+              "width": 190,
+              "height": 190,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 57,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "RUjr6",
+                  "name": "3D",
+                  "width": 125.4,
+                  "height": 125.4,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "assets/icons3d/receipt.png",
+                    "mode": "fit"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Rzfsp",
+      "x": 1180,
+      "y": 12045,
+      "name": "IG Story Peluncuran",
+      "clip": true,
+      "width": 1080,
+      "height": 1920,
+      "fill": [
+        {
+          "type": "gradient",
+          "gradientType": "linear",
+          "enabled": true,
+          "rotation": 200,
+          "size": {
+            "height": 1
+          },
+          "colors": [
+            {
+              "color": "#1F5446",
+              "position": 0
+            },
+            {
+              "color": "#2C6B5A",
+              "position": 0.55
+            },
+            {
+              "color": "#3D8270",
+              "position": 1
+            }
+          ]
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.5
+          },
+          "colors": [
+            {
+              "color": "#FFFFFFFF",
+              "position": 0
+            },
+            {
+              "color": "#FFFFFF00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.15,
+            "y": 0.02
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 40,
+      "padding": [
+        180,
+        80,
+        0,
+        80
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "DGKHt",
+          "name": "Badge",
+          "fill": "#FFFFFF1F",
+          "cornerRadius": 40,
+          "stroke": "#FFFFFF33",
+          "strokeWidth": 2,
+          "gap": 14,
+          "padding": [
+            14,
+            28,
+            14,
+            14
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "o8dLC",
+              "name": "Mark",
+              "width": 52,
+              "height": 52,
+              "fill": "#FFFFFF26",
+              "cornerRadius": 14.560000000000002,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "n4Q00",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Atap",
+                  "geometry": "M30 44l20-17 20 17",
+                  "viewBox": [
+                    0,
+                    0,
+                    100,
+                    100
+                  ],
+                  "width": 52,
+                  "height": 52,
+                  "stroke": "#FFFFFF",
+                  "strokeWidth": 3.64,
+                  "strokeLinejoin": "round",
+                  "strokeLinecap": "round"
+                },
+                {
+                  "type": "text",
+                  "id": "D5clz",
+                  "x": 0,
+                  "y": 24.44,
+                  "name": "ruma",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": 52,
+                  "content": "ruma",
+                  "lineHeight": 1,
+                  "textAlign": "center",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 15.600000000000001,
+                  "fontWeight": "800",
+                  "letterSpacing": -0.624
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "Z4spyu",
+              "name": "t",
+              "fill": "#FFFFFF",
+              "content": "Sudah ada di Google Play",
+              "fontFamily": "Figtree",
+              "fontSize": 30,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "VECJr",
+          "name": "Headline",
+          "fill": "#FFFFFF",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Ruma sudah bisa kalian unduh.",
+          "lineHeight": 1.02,
+          "textAlign": "center",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 100,
+          "fontWeight": "700",
+          "letterSpacing": -3
+        },
+        {
+          "type": "text",
+          "id": "MDhrm",
+          "name": "Sub",
+          "fill": "#FFFFFFC7",
+          "textGrowth": "fixed-width",
+          "width": 840,
+          "content": "Urusan rumah, uang, dan waktu berdua.",
+          "lineHeight": 1.4,
+          "textAlign": "center",
+          "fontFamily": "Figtree",
+          "fontSize": 40,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "F3Aq7n",
+          "name": "Link sticker area",
+          "fill": "#FFFFFF",
+          "cornerRadius": 44,
+          "gap": 14,
+          "padding": [
+            22,
+            40
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "n52wA",
+              "name": "i",
+              "width": 40,
+              "height": 40,
+              "icon": "link",
+              "library": "Material Symbols Rounded",
+              "fill": "#1F5446"
+            },
+            {
+              "type": "text",
+              "id": "jrP8b",
+              "name": "t",
+              "fill": "#1F5446",
+              "content": "Taruh stiker link di sini",
+              "fontFamily": "Figtree",
+              "fontSize": 32,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "LzAFa",
+          "name": "Phone wrap",
+          "width": "fill_container",
+          "padding": [
+            20,
+            0,
+            0,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "sIaYg",
+              "name": "Phone",
+              "width": 620,
+              "height": 1271,
+              "fill": "#FFFFFF33",
+              "cornerRadius": 96.1,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "padding": 16.12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "J08tSW",
+                  "name": "Screen",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "cornerRadius": 80.60000000000001,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "i4nfWh",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Shot",
+                      "width": 587.76,
+                      "height": 1869,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "design-reference/landing/R0TaK.png",
+                        "mode": "stretch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "I5rdR6",
+      "x": 2360,
+      "y": 12045,
+      "name": "X Peluncuran",
+      "clip": true,
+      "width": 1600,
+      "height": 900,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.9,
+            "height": 1.1
+          },
+          "colors": [
+            {
+              "color": "#CFE8DCFF",
+              "position": 0
+            },
+            {
+              "color": "#CFE8DC00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.1
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.8,
+            "height": 1.2
+          },
+          "colors": [
+            {
+              "color": "#F6DCCBFF",
+              "position": 0
+            },
+            {
+              "color": "#F6DCCB00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.9,
+            "y": 0.6
+          }
+        }
+      ],
+      "gap": 40,
+      "padding": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "HmC3L",
+          "name": "Copy",
+          "width": 720,
+          "layout": "vertical",
+          "gap": 28,
+          "children": [
+            {
+              "type": "frame",
+              "id": "rArhC",
+              "name": "Brand",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "s7ibcG",
+                  "name": "Mark",
+                  "width": 56,
+                  "height": 56,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 200,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#1F5446",
+                        "position": 0
+                      },
+                      {
+                        "color": "#2C6B5A",
+                        "position": 0.55
+                      },
+                      {
+                        "color": "#3D8270",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 15.680000000000001,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "jIkOT",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M30 44l20-17 20 17",
+                      "viewBox": [
+                        0,
+                        0,
+                        100,
+                        100
+                      ],
+                      "width": 56,
+                      "height": 56,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 3.9200000000000004,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    },
+                    {
+                      "type": "text",
+                      "id": "n6xSWu",
+                      "x": 0,
+                      "y": 26.320000000000004,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 56,
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "textAlign": "center",
+                      "fontFamily": "Bricolage Grotesque",
+                      "fontSize": 16.8,
+                      "fontWeight": "800",
+                      "letterSpacing": -0.672
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "dku1H",
+                  "name": "n",
+                  "fill": "#15201D",
+                  "content": "Ruma",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 30,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "b6vjS",
+              "name": "Headline",
+              "fill": "#15201D",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Berat sama dipikul, ringan sama dijinjing.",
+              "lineHeight": 1.02,
+              "fontFamily": "Bricolage Grotesque",
+              "fontSize": 84,
+              "fontWeight": "700",
+              "letterSpacing": -3
+            },
+            {
+              "type": "text",
+              "id": "TS1TE",
+              "name": "Sub",
+              "fill": "#5B6864",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Aplikasi rumah tangga untuk pasangan. Urusan, uang, dan waktu berdua, tanpa saling hitung.",
+              "lineHeight": 1.45,
+              "fontFamily": "Figtree",
+              "fontSize": 30,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "b5F5Z",
+          "name": "Phones",
+          "width": "fill_container",
+          "height": 900,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "mdYOC",
+              "layoutPosition": "absolute",
+              "x": 40,
+              "y": 130,
+              "name": "Phone",
+              "rotation": 6.000000000000001,
+              "width": 360,
+              "height": 738,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 55.8,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "padding": 9.36,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CZFnL",
+                  "name": "Screen",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "cornerRadius": 46.800000000000004,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "f5pgo",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Shot",
+                      "width": 341.28,
+                      "height": 1048,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "design-reference/landing/Y7XN1D.png",
+                        "mode": "stretch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "S8MxM",
+              "layoutPosition": "absolute",
+              "x": 330,
+              "y": 90,
+              "name": "Phone",
+              "rotation": -4,
+              "width": 380,
+              "height": 779,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 58.9,
+              "stroke": "#FFFFFFE6",
+              "strokeWidth": 2,
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 40
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#15201D1C",
+                  "offset": {
+                    "x": 0,
+                    "y": 24
+                  },
+                  "blur": 60
+                }
+              ],
+              "padding": 9.879999999999999,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b4aOxw",
+                  "name": "Screen",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "cornerRadius": 49.4,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "u4fje",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Shot",
+                      "width": 360.24,
+                      "height": 1145,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "design-reference/landing/R0TaK.png",
+                        "mode": "stretch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "zbuey",
+      "x": 4060,
+      "y": 12045,
+      "name": "Threads Tanpa skor",
+      "clip": true,
+      "width": 1080,
+      "height": 1080,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.9
+          },
+          "colors": [
+            {
+              "color": "#E4DDF1FF",
+              "position": 0
+            },
+            {
+              "color": "#E4DDF100",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.1
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.9
+          },
+          "colors": [
+            {
+              "color": "#FCE6D2FF",
+              "position": 0
+            },
+            {
+              "color": "#FCE6D200",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.9,
+            "y": 0.9
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 36,
+      "padding": 80,
+      "justifyContent": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "oInJP",
+          "name": "Coret",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "text",
+              "id": "zDdJU",
+              "name": "Old",
+              "fill": "#8A9793",
+              "content": "Kamu 70%, dia 30%.",
+              "fontFamily": "Bricolage Grotesque",
+              "fontSize": 96,
+              "fontWeight": "700",
+              "letterSpacing": -3
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 4,
+              "id": "R8XLK",
+              "layoutPosition": "absolute",
+              "x": -4,
+              "y": 58,
+              "name": "Garis coret",
+              "fill": "#8A9793",
+              "width": 815,
+              "height": 8
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "JalCt",
+          "name": "Kartu",
+          "width": "fill_container",
+          "fill": "#FFFFFFD9",
+          "cornerRadius": 52,
+          "stroke": "#FFFFFFE6",
+          "strokeWidth": 2,
+          "effect": [
+            {
+              "type": "background_blur",
+              "radius": 40
+            },
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#15201D1C",
+              "offset": {
+                "x": 0,
+                "y": 24
+              },
+              "blur": 60
+            }
+          ],
+          "gap": 28,
+          "padding": 36,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Zcv6x",
+              "name": "Icon",
+              "width": 120,
+              "height": 120,
+              "fill": "#FCE6D2",
+              "cornerRadius": 38,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "M16zI",
+                  "name": "3D",
+                  "width": 80,
+                  "height": 80,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "assets/icons3d/heart_hands.png",
+                    "mode": "fit"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Ib0n7",
+              "name": "T",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "O9Ej0",
+                  "name": "t",
+                  "fill": "#15201D",
+                  "content": "Makasih udah bayar listrik",
+                  "fontFamily": "Figtree",
+                  "fontSize": 46,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "UeKLA",
+                  "name": "d",
+                  "fill": "#5B6864",
+                  "content": "dari Dinda, barusan",
+                  "fontFamily": "Figtree",
+                  "fontSize": 30,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "Urbet",
+          "name": "Body",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Di Ruma nggak ada papan skor. Yang ada cuma saling bantu dan terima kasih.",
+          "lineHeight": 1.4,
+          "fontFamily": "Figtree",
+          "fontSize": 40,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "Ufryw",
+          "name": "Brand",
+          "gap": 14,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Q4mMy",
+              "name": "Mark",
+              "width": 56,
+              "height": 56,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 200,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#1F5446",
+                    "position": 0
+                  },
+                  {
+                    "color": "#2C6B5A",
+                    "position": 0.55
+                  },
+                  {
+                    "color": "#3D8270",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 15.680000000000001,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "n9dTd",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Atap",
+                  "geometry": "M30 44l20-17 20 17",
+                  "viewBox": [
+                    0,
+                    0,
+                    100,
+                    100
+                  ],
+                  "width": 56,
+                  "height": 56,
+                  "stroke": "#FFFFFF",
+                  "strokeWidth": 3.9200000000000004,
+                  "strokeLinejoin": "round",
+                  "strokeLinecap": "round"
+                },
+                {
+                  "type": "text",
+                  "id": "onwML",
+                  "x": 0,
+                  "y": 26.320000000000004,
+                  "name": "ruma",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": 56,
+                  "content": "ruma",
+                  "lineHeight": 1,
+                  "textAlign": "center",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 16.8,
+                  "fontWeight": "800",
+                  "letterSpacing": -0.672
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "Toa22",
+              "name": "n",
+              "fill": "#15201D",
+              "content": "Ruma",
+              "fontFamily": "Bricolage Grotesque",
+              "fontSize": 30,
+              "fontWeight": "700"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Nktl3",
+      "x": 0,
+      "y": 14205,
+      "name": "Label Testimoni",
+      "layout": "vertical",
+      "gap": 6,
+      "children": [
+        {
+          "type": "text",
+          "id": "E4bjm",
+          "name": "t",
+          "fill": "#15201D",
+          "content": "Template testimoni",
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 56,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "okYvp",
+          "name": "d",
+          "fill": "#5B6864",
+          "content": "Ganti foto, kutipan, nama, detail, dan fitur favorit. Minta izin tester sebelum memakai foto dan namanya.",
+          "fontFamily": "Figtree",
+          "fontSize": 26,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "G3cWB",
+      "x": 0,
+      "y": 14365,
+      "name": "Testimoni IG dengan foto",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.3,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#CFE8DCFF",
+              "position": 0
+            },
+            {
+              "color": "#CFE8DC00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0.05
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1.2,
+            "height": 0.6
+          },
+          "colors": [
+            {
+              "color": "#F6DCCBFF",
+              "position": 0
+            },
+            {
+              "color": "#F6DCCB00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.95,
+            "y": 0.95
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 40,
+      "padding": 72,
+      "children": [
+        {
+          "type": "frame",
+          "id": "cjDeb",
+          "name": "Foto tester (ganti isi gambar)",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 210,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#DDF0E6",
+                "position": 0
+              },
+              {
+                "color": "#FADFE6",
+                "position": 1
+              }
+            ]
+          },
+          "cornerRadius": 48,
+          "layout": "vertical",
+          "gap": 14,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Ybk0z",
+              "name": "Petunjuk",
+              "fill": "#FFFFFFB3",
+              "cornerRadius": 32,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                24,
+                32
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "OJzRg",
+                  "name": "i",
+                  "width": 56,
+                  "height": 56,
+                  "icon": "add_a_photo",
+                  "library": "Material Symbols Rounded",
+                  "fill": "#2C6B5A"
+                },
+                {
+                  "type": "text",
+                  "id": "ESU9U",
+                  "name": "t",
+                  "fill": "#2C6B5A",
+                  "content": "Ganti dengan foto tester",
+                  "fontFamily": "Figtree",
+                  "fontSize": 26,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "hNhzV",
+                  "name": "d",
+                  "fill": "#5B6864",
+                  "content": "Pilih frame ini, ganti isi gambar, lalu hapus petunjuk",
+                  "fontFamily": "Figtree",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "TYezY",
+          "name": "Kutipan",
+          "fill": "#15201D",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "“Tulis testimoni tester di sini. Dua sampai tiga kalimat yang jujur sudah cukup.”",
+          "lineHeight": 1.12,
+          "fontFamily": "Bricolage Grotesque",
+          "fontSize": 56,
+          "fontWeight": "700",
+          "letterSpacing": -1.6
+        },
+        {
+          "type": "frame",
+          "id": "cN8x7",
+          "name": "Identitas",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "D8pPQ",
+              "name": "Nama",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "U6gay1",
+                  "name": "Nama tester",
+                  "fill": "#15201D",
+                  "content": "Nama Tester dan Pasangan",
+                  "fontFamily": "Figtree",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "JxlRZ",
+                  "name": "Detail",
+                  "fill": "#5B6864",
+                  "content": "Kota, sudah serumah 1 tahun",
+                  "fontFamily": "Figtree",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fcmDl",
+              "name": "Fitur favorit",
+              "fill": "#DDF0E6",
+              "cornerRadius": 30,
+              "gap": 10,
+              "padding": [
+                12,
+                20,
+                12,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "B4z1w",
+                  "name": "ib",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "#FFFFFFB3",
+                  "cornerRadius": 20,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zs3nn",
+                      "name": "3D",
+                      "width": 26,
+                      "height": 26,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "assets/icons3d/money_bag.png",
+                        "mode": "fit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "JE290",
+                  "name": "Fitur",
+                  "fill": "#1F5446",
+                  "content": "Suka fitur Amplop",
+                  "fontFamily": "Figtree",
+                  "fontSize": 22,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "CdUze",
+          "name": "Footer",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "uNAb9",
+              "name": "Brand",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "c8TnP",
+                  "name": "Mark",
+                  "width": 52,
+                  "height": 52,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 200,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#1F5446",
+                        "position": 0
+                      },
+                      {
+                        "color": "#2C6B5A",
+                        "position": 0.55
+                      },
+                      {
+                        "color": "#3D8270",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 14.560000000000002,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "RMn8D",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M30 44l20-17 20 17",
+                      "viewBox": [
+                        0,
+                        0,
+                        100,
+                        100
+                      ],
+                      "width": 52,
+                      "height": 52,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 3.64,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    },
+                    {
+                      "type": "text",
+                      "id": "W5xYAE",
+                      "x": 0,
+                      "y": 24.44,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 52,
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "textAlign": "center",
+                      "fontFamily": "Bricolage Grotesque",
+                      "fontSize": 15.600000000000001,
+                      "fontWeight": "800",
+                      "letterSpacing": -0.624
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "zdubI",
+                  "name": "n",
+                  "fill": "#15201D",
+                  "content": "Ruma",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 28,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "y3LVb",
+              "name": "t",
+              "fill": "#8A9793",
+              "content": "Cerita dari tester Ruma",
+              "fontFamily": "Figtree",
+              "fontSize": 22,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "gBIY2",
+      "x": 1180,
+      "y": 14365,
+      "name": "Testimoni IG tanpa foto",
+      "clip": true,
+      "width": 1080,
+      "height": 1350,
+      "fill": [
+        {
+          "type": "gradient",
+          "gradientType": "linear",
+          "enabled": true,
+          "rotation": 200,
+          "size": {
+            "height": 1
+          },
+          "colors": [
+            {
+              "color": "#1F5446",
+              "position": 0
+            },
+            {
+              "color": "#2C6B5A",
+              "position": 0.55
+            },
+            {
+              "color": "#3D8270",
+              "position": 1
+            }
+          ]
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 1,
+            "height": 0.5
+          },
+          "colors": [
+            {
+              "color": "#FFFFFF1F",
+              "position": 0
+            },
+            {
+              "color": "#FFFFFF00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.1,
+            "y": 0
+          }
+        }
+      ],
+      "layout": "vertical",
+      "gap": 40,
+      "padding": 72,
+      "justifyContent": "space_between",
+      "children": [
+        {
+          "type": "frame",
+          "id": "DbT0W",
+          "name": "Ikon",
+          "width": 120,
+          "height": 120,
+          "fill": "#FFFFFF1F",
+          "cornerRadius": 38,
+          "stroke": "#FFFFFF33",
+          "strokeWidth": 2,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "PZUcw",
+              "name": "3D",
+              "width": 78,
+              "height": 78,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "assets/icons3d/speech_balloon.png",
+                "mode": "fit"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ZPoSR",
+          "name": "Isi",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "children": [
+            {
+              "type": "text",
+              "id": "iAgO7",
+              "name": "Kutipan",
+              "fill": "#FFFFFF",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "“Tulis testimoni tester di sini. Dua sampai tiga kalimat yang jujur sudah cukup.”",
+              "lineHeight": 1.08,
+              "fontFamily": "Bricolage Grotesque",
+              "fontSize": 72,
+              "fontWeight": "700",
+              "letterSpacing": -2.4
+            },
+            {
+              "type": "frame",
+              "id": "fdDe6",
+              "name": "Identitas",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "u1J5jS",
+                  "name": "Nama",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "k5Nes",
+                      "name": "Nama tester",
+                      "fill": "#FFFFFF",
+                      "content": "Nama Tester dan Pasangan",
+                      "fontFamily": "Figtree",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "EvgnQ",
+                      "name": "Detail",
+                      "fill": "#FFFFFFB3",
+                      "content": "Kota, sudah serumah 1 tahun",
+                      "fontFamily": "Figtree",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a4p0ZX",
+                  "name": "Fitur favorit",
+                  "fill": "#FFFFFF1F",
+                  "cornerRadius": 30,
+                  "gap": 10,
+                  "padding": [
+                    12,
+                    20,
+                    12,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "R2BUaL",
+                      "name": "ib",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "#FFFFFFB3",
+                      "cornerRadius": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "nkrSR",
+                          "name": "3D",
+                          "width": 26,
+                          "height": 26,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "assets/icons3d/money_bag.png",
+                            "mode": "fit"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "CM4ok",
+                      "name": "Fitur",
+                      "fill": "#FFFFFF",
+                      "content": "Suka fitur Amplop",
+                      "fontFamily": "Figtree",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yM0He",
+          "name": "Footer",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Z5aybY",
+              "name": "Brand",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "TaKpH",
+                  "name": "Mark",
+                  "width": 52,
+                  "height": 52,
+                  "fill": "#FFFFFF26",
+                  "cornerRadius": 14.560000000000002,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "Xyjcv",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M30 44l20-17 20 17",
+                      "viewBox": [
+                        0,
+                        0,
+                        100,
+                        100
+                      ],
+                      "width": 52,
+                      "height": 52,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 3.64,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Q6pa1p",
+                      "x": 0,
+                      "y": 24.44,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 52,
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "textAlign": "center",
+                      "fontFamily": "Bricolage Grotesque",
+                      "fontSize": 15.600000000000001,
+                      "fontWeight": "800",
+                      "letterSpacing": -0.624
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "t4lMZA",
+                  "name": "n",
+                  "fill": "#FFFFFF",
+                  "content": "Ruma",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 28,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "bhrWm",
+              "name": "t",
+              "fill": "#FFFFFFB3",
+              "content": "Cerita dari tester Ruma",
+              "fontFamily": "Figtree",
+              "fontSize": 22,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "l8IS9l",
+      "x": 2360,
+      "y": 14365,
+      "name": "Testimoni Story",
+      "clip": true,
+      "width": 1080,
+      "height": 1920,
+      "fill": "#F1F2EC",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ud7IR",
+          "x": 0,
+          "y": 0,
+          "name": "Foto tester (ganti isi gambar)",
+          "clip": true,
+          "width": 1080,
+          "height": 1920,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 210,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#DDF0E6",
+                "position": 0
+              },
+              {
+                "color": "#FADFE6",
+                "position": 1
+              }
+            ]
+          },
+          "layout": "vertical",
+          "gap": 14,
+          "padding": [
+            0,
+            0,
+            700,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "x03cW",
+              "name": "Petunjuk",
+              "fill": "#FFFFFFB3",
+              "cornerRadius": 32,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                24,
+                32
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "K245K",
+                  "name": "i",
+                  "width": 56,
+                  "height": 56,
+                  "icon": "add_a_photo",
+                  "library": "Material Symbols Rounded",
+                  "fill": "#2C6B5A"
+                },
+                {
+                  "type": "text",
+                  "id": "ttoG2",
+                  "name": "t",
+                  "fill": "#2C6B5A",
+                  "content": "Ganti dengan foto tester",
+                  "fontFamily": "Figtree",
+                  "fontSize": 26,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "R5rqe",
+                  "name": "d",
+                  "fill": "#5B6864",
+                  "content": "Pilih frame ini, ganti isi gambar, lalu hapus petunjuk",
+                  "fontFamily": "Figtree",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tNr7e",
+          "x": 56,
+          "y": 1080,
+          "name": "Kartu kutipan",
+          "width": 968,
+          "fill": "#FFFFFFE0",
+          "cornerRadius": 56,
+          "stroke": "#FFFFFFE6",
+          "strokeWidth": 2,
+          "effect": [
+            {
+              "type": "background_blur",
+              "radius": 40
+            },
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#15201D1C",
+              "offset": {
+                "x": 0,
+                "y": 24
+              },
+              "blur": 60
+            }
+          ],
+          "layout": "vertical",
+          "gap": 32,
+          "padding": 48,
+          "children": [
+            {
+              "type": "frame",
+              "id": "lCSjD",
+              "name": "Brand",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BXpNK",
+                  "name": "Mark",
+                  "width": 52,
+                  "height": 52,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 200,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#1F5446",
+                        "position": 0
+                      },
+                      {
+                        "color": "#2C6B5A",
+                        "position": 0.55
+                      },
+                      {
+                        "color": "#3D8270",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 14.560000000000002,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "A1sql",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M30 44l20-17 20 17",
+                      "viewBox": [
+                        0,
+                        0,
+                        100,
+                        100
+                      ],
+                      "width": 52,
+                      "height": 52,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 3.64,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    },
+                    {
+                      "type": "text",
+                      "id": "N04pN",
+                      "x": 0,
+                      "y": 24.44,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 52,
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "textAlign": "center",
+                      "fontFamily": "Bricolage Grotesque",
+                      "fontSize": 15.600000000000001,
+                      "fontWeight": "800",
+                      "letterSpacing": -0.624
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "OwI4p",
+                  "name": "n",
+                  "fill": "#15201D",
+                  "content": "Ruma",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 28,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "W5HKfm",
+              "name": "Kutipan",
+              "fill": "#15201D",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "“Tulis testimoni tester di sini. Dua sampai tiga kalimat yang jujur sudah cukup.”",
+              "lineHeight": 1.12,
+              "fontFamily": "Bricolage Grotesque",
+              "fontSize": 52,
+              "fontWeight": "700",
+              "letterSpacing": -1.4
+            },
+            {
+              "type": "frame",
+              "id": "b1QrN",
+              "name": "Identitas",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PLC5n",
+                  "name": "Nama",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Q1f7gV",
+                      "name": "Nama tester",
+                      "fill": "#15201D",
+                      "content": "Nama Tester dan Pasangan",
+                      "fontFamily": "Figtree",
+                      "fontSize": 32,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "J9lZGa",
+                      "name": "Detail",
+                      "fill": "#5B6864",
+                      "content": "Kota, sudah serumah 1 tahun",
+                      "fontFamily": "Figtree",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "x0W9aq",
+                  "name": "Fitur favorit",
+                  "fill": "#DDF0E6",
+                  "cornerRadius": 30,
+                  "gap": 10,
+                  "padding": [
+                    12,
+                    20,
+                    12,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "P1IgyJ",
+                      "name": "ib",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "#FFFFFFB3",
+                      "cornerRadius": 20,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "U9UQ8",
+                          "name": "3D",
+                          "width": 26,
+                          "height": 26,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "assets/icons3d/money_bag.png",
+                            "mode": "fit"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "n8WIBy",
+                      "name": "Fitur",
+                      "fill": "#1F5446",
+                      "content": "Suka fitur Amplop",
+                      "fontFamily": "Figtree",
+                      "fontSize": 22,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "kEWaT",
+      "x": 3560,
+      "y": 14365,
+      "name": "Testimoni X",
+      "clip": true,
+      "width": 1600,
+      "height": 900,
+      "fill": [
+        "#F1F2EC",
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.8,
+            "height": 1
+          },
+          "colors": [
+            {
+              "color": "#CFE8DCFF",
+              "position": 0
+            },
+            {
+              "color": "#CFE8DC00",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.05,
+            "y": 0.1
+          }
+        },
+        {
+          "type": "gradient",
+          "gradientType": "radial",
+          "enabled": true,
+          "rotation": 0,
+          "size": {
+            "width": 0.8,
+            "height": 1
+          },
+          "colors": [
+            {
+              "color": "#FADFE6FF",
+              "position": 0
+            },
+            {
+              "color": "#FADFE600",
+              "position": 1
+            }
+          ],
+          "center": {
+            "x": 0.95,
+            "y": 0.9
+          }
+        }
+      ],
+      "gap": 56,
+      "padding": 56,
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "P1d5Si",
+          "name": "Foto tester (ganti isi gambar)",
+          "clip": true,
+          "width": 620,
+          "height": "fill_container",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 210,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#DDF0E6",
+                "position": 0
+              },
+              {
+                "color": "#FADFE6",
+                "position": 1
+              }
+            ]
+          },
+          "cornerRadius": 48,
+          "layout": "vertical",
+          "gap": 14,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Uy8vm",
+              "name": "Petunjuk",
+              "fill": "#FFFFFFB3",
+              "cornerRadius": 32,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                24,
+                32
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "I1xX9",
+                  "name": "i",
+                  "width": 56,
+                  "height": 56,
+                  "icon": "add_a_photo",
+                  "library": "Material Symbols Rounded",
+                  "fill": "#2C6B5A"
+                },
+                {
+                  "type": "text",
+                  "id": "PT9FH",
+                  "name": "t",
+                  "fill": "#2C6B5A",
+                  "content": "Ganti dengan foto tester",
+                  "fontFamily": "Figtree",
+                  "fontSize": 26,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "ewfst",
+                  "name": "d",
+                  "fill": "#5B6864",
+                  "content": "Pilih frame ini, ganti isi gambar, lalu hapus petunjuk",
+                  "fontFamily": "Figtree",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "LmjJK",
+          "name": "Isi",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "RKBoF",
+              "name": "Brand",
+              "gap": 14,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "VM46F",
+                  "name": "Mark",
+                  "width": 52,
+                  "height": 52,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 200,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#1F5446",
+                        "position": 0
+                      },
+                      {
+                        "color": "#2C6B5A",
+                        "position": 0.55
+                      },
+                      {
+                        "color": "#3D8270",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 14.560000000000002,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "u6rywG",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M30 44l20-17 20 17",
+                      "viewBox": [
+                        0,
+                        0,
+                        100,
+                        100
+                      ],
+                      "width": 52,
+                      "height": 52,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 3.64,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    },
+                    {
+                      "type": "text",
+                      "id": "vbEjZ",
+                      "x": 0,
+                      "y": 24.44,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 52,
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "textAlign": "center",
+                      "fontFamily": "Bricolage Grotesque",
+                      "fontSize": 15.600000000000001,
+                      "fontWeight": "800",
+                      "letterSpacing": -0.624
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "s2UsSw",
+                  "name": "n",
+                  "fill": "#15201D",
+                  "content": "Ruma",
+                  "fontFamily": "Bricolage Grotesque",
+                  "fontSize": 28,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "cRiDr",
+              "name": "Kutipan",
+              "fill": "#15201D",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "“Tulis testimoni tester di sini. Dua sampai tiga kalimat yang jujur sudah cukup.”",
+              "lineHeight": 1.12,
+              "fontFamily": "Bricolage Grotesque",
+              "fontSize": 52,
+              "fontWeight": "700",
+              "letterSpacing": -1.4
+            },
+            {
+              "type": "frame",
+              "id": "hkzto",
+              "name": "Identitas",
+              "layout": "vertical",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "i9LNsd",
+                  "name": "Nama tester",
+                  "fill": "#15201D",
+                  "content": "Nama Tester dan Pasangan",
+                  "fontFamily": "Figtree",
+                  "fontSize": 30,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "JfJ9Z",
+                  "name": "Detail",
+                  "fill": "#5B6864",
+                  "content": "Kota, sudah serumah 1 tahun",
+                  "fontFamily": "Figtree",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
