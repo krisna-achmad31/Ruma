@@ -9,6 +9,7 @@ import '../../../../core/utils/format.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../domain/entities/life_stage_entity.dart';
 import '../viewmodels/life_stage_viewmodel.dart';
@@ -35,13 +36,13 @@ class _Content extends StatelessWidget {
         tab: AppTab.kita,
         children: [
           AppNavBar(title: tr('Menyambut bayi')),
-          HeroCard(
-            colors: AppColors.amberGradient,
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 10, children: [
-              const PlusBadge(onDark: true),
-              Text(tr('Siap menyambut si kecil, berdua.'), style: AppText.display(26, color: Colors.white, height: 1.15)),
-              Text(tr('Anggaran persalinan, tas persalinan, dan pembagian urusan bayi baru.'), style: AppText.body(14, color: const Color(0xCCFFFFFF), height: 1.4)),
-            ]),
+          PastelHero(
+            tone: PastelTone.sky,
+            object: 'baby_bottle',
+            label: tr('Menyambut bayi'),
+            plus: true,
+            head: Text(tr('Siap menyambut si kecil, berdua.'), style: AppText.display(24, height: 1.15)),
+            body: Text(tr('Anggaran persalinan, tas persalinan, dan pembagian urusan bayi baru.'), style: AppText.body(14, color: AppColors.muted, height: 1.4)),
           ),
           PrimaryButton(label: tr('Mulai rencana'), icon: AppIcons.baby, onPressed: () => _setup(context, vm)),
         ],
@@ -62,17 +63,31 @@ class _Content extends StatelessWidget {
           actionIcon: AppIcons.ellipsis,
           onAction: () => showPlanMenu(context, planName: tr('Menyambut bayi'), onEdit: () => _editPlan(context, vm, b), onDelete: vm.deleteBaby),
         ),
-        HeroCard(
-          colors: AppColors.amberGradient,
+        PastelHero(
+          tone: PastelTone.sky,
+          object: 'baby_bottle',
+          objectSize: 136,
+          objectRotation: -16,
+          label: tr('Perkiraan lahir, {0}', [formatFullDate(b.dueDate)]),
+          plus: true,
           onTap: () => _editPlan(context, vm, b),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 10, children: [
-            Row(children: [
-              Expanded(child: Text(tr('Perkiraan lahir · {0}', [formatFullDate(b.dueDate)]), style: AppText.body(13, weight: FontWeight.w600, color: const Color(0xCCFFFFFF)))),
-              const PlusBadge(onDark: true),
-            ]),
-            Text(tr('Minggu ke-{0}', [week]), style: AppText.display(36, color: Colors.white, letterSpacing: -1.1)),
-            Text(tr('Trimester {0} · {1} minggu lagi', [trimester, weeksLeft]), style: AppText.body(13, color: const Color(0xCCFFFFFF))),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 6, children: [
+            HeroNumber('$week', size: 76),
+            Text(tr('minggu. Trimester {0}, {1} minggu lagi ketemu si kecil.', [trimester, weeksLeft]), style: AppText.body(13, color: AppColors.muted, height: 1.4)),
           ]),
+          body: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            spacing: 2,
+            children: [
+              for (int i = 1; i <= 40; i++)
+                Expanded(
+                  child: Container(
+                    height: i == week ? 14 : 8,
+                    decoration: BoxDecoration(color: i <= week ? AppColors.sky : const Color(0x99FFFFFF), borderRadius: BorderRadius.circular(2)),
+                  ),
+                ),
+            ],
+          ),
         ),
         GlassCard(
           child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, spacing: 12, children: [

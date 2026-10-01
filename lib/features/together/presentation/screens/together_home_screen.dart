@@ -12,6 +12,7 @@ import '../../../../core/utils/icon_map.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../domain/entities/check_in_entity.dart';
 import '../../domain/entities/conversation_card_entity.dart';
@@ -35,40 +36,58 @@ class _Content extends StatelessWidget {
     final vm = context.watch<TogetherViewModel>();
     return AppScaffold(
       tab: AppTab.kita,
+      gap: 20,
       children: [
-        LargeTitle(
-          title: tr('Kita'),
-          trailing: GlassCard(
-            radius: 18,
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            child: Row(spacing: 6, children: [
-              const Icon(AppIcons.flame, size: 16, color: AppColors.amber),
-              Text(tr('{0} hari berdua', [vm.streak]), style: AppText.body(13, weight: FontWeight.w700)),
-            ]),
-          ),
+        Row(
+          spacing: 12,
+          children: [
+            Expanded(
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 4, children: [
+                Text(tr('Kita'), style: AppText.largeTitle),
+                Row(spacing: 6, children: [
+                  const Object3D('fire', size: 18),
+                  Flexible(child: Text(tr('{0} hari check-in berturut-turut', [vm.streak]), style: AppText.body(13, weight: FontWeight.w600, color: AppColors.muted))),
+                ]),
+              ]),
+            ),
+            _PhotoTile(vm: vm),
+          ],
         ),
-        _Polaroid(vm: vm),
         _CheckInCard(vm: vm),
         _PartnerCheckIn(vm: vm),
-        _DateNight(vm: vm),
+        IntrinsicHeight(
+          child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, spacing: 12, children: [
+            Expanded(child: _DateNight(vm: vm)),
+            Expanded(
+              child: _SceneCard(
+                tone: PastelTone.mint,
+                object: 'calendar',
+                eyebrow: tr('Tiap akhir bulan'),
+                title: tr('Ngobrol akhir bulan'),
+                note: tr('Jawab berdua, baca bareng.'),
+                onTap: () => context.push('/together/reflection'),
+              ),
+            ),
+          ]),
+        ),
+        _TodayCard(vm: vm),
         Row(spacing: 8, children: [
-          ShortcutTile(label: tr('Obrolan'), icon: AppIcons.messagesSquare, tone: toneRose, onTap: () => context.push('/together/conversation-cards')),
-          ShortcutTile(label: tr('Akhir bulan'), icon: AppIcons.calendarHeart, tone: toneLilac, onTap: () => context.push('/together/reflection')),
-          ShortcutTile(label: tr('Jurnal'), icon: AppIcons.bookHeart, tone: toneAmber, onTap: () => context.push('/together/journal')),
+          ShortcutTile(label: tr('Obrolan'), icon: AppIcons.messagesSquare, tone: toneLilac, onTap: () => context.push('/together/conversation-cards')),
+          ShortcutTile(label: tr('Jurnal'), icon: AppIcons.bookHeart, tone: toneButter, onTap: () => context.push('/together/journal')),
+          ShortcutTile(label: tr('Perjalanan'), icon: AppIcons.milestone, tone: toneRose, onTap: () => context.push('/together/love-timeline')),
         ]),
         _TimelinePreview(vm: vm),
-        _TodayCard(vm: vm),
-        const _TryToday(),
         _MonthReport(vm: vm),
       ],
     );
   }
 }
 
-class _Polaroid extends StatelessWidget {
+/// Foto harian "Kita, hari ini" dalam bentuk ubin kecil di header. Ketuk untuk memotret.
+class _PhotoTile extends StatelessWidget {
   final TogetherViewModel vm;
 
-  const _Polaroid({required this.vm});
+  const _PhotoTile({required this.vm});
 
   Future<void> _take(BuildContext context) async {
     final b64 = await PhotoService().pickBase64();
@@ -80,64 +99,67 @@ class _Polaroid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final photo = vm.dailyPhoto;
-    final isToday = photo != null && isSameDay(photo.takenAt, DateTime.now());
-    return Center(
+    return GestureDetector(
+      onTap: () => _take(context),
       child: Transform.rotate(
-        angle: -0.026,
+        angle: -0.07,
         child: Container(
-          width: 300,
-          padding: const EdgeInsets.fromLTRB(10, 10, 10, 12),
+          width: 58,
+          height: 58,
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(6),
-            boxShadow: const [BoxShadow(color: Color(0x268E3F52), blurRadius: 28, offset: Offset(0, 12))],
+            color: AppColors.roseSoft,
+            borderRadius: BorderRadius.circular(18),
+            border: Border.all(color: Colors.white, width: 2.5),
+            boxShadow: const [BoxShadow(color: Color(0x268E3F52), blurRadius: 16, offset: Offset(0, 6))],
           ),
-          child: Column(
-            spacing: 10,
-            children: [
-              GestureDetector(
-                onTap: () => _take(context),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(3),
-                  child: Container(
-                    height: 190,
-                    width: double.infinity,
-                    color: const Color(0xFFF2E9E4),
-                    child: photo == null
-                        ? Column(mainAxisAlignment: MainAxisAlignment.center, spacing: 6, children: [
-                            const Icon(AppIcons.camera, size: 28, color: AppColors.faint),
-                            Text(tr('Foto kalian hari ini'), style: AppText.body(12, color: AppColors.muted)),
-                          ])
-                        : Image.memory(base64Decode(photo.base64), fit: BoxFit.cover, gaplessPlayback: true),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: Row(children: [
-                  Expanded(
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 1, children: [
-                      Text(isToday || photo == null ? tr('Kita, hari ini') : tr('Kita, terakhir kali'), style: AppText.body(14, weight: FontWeight.w700)),
-                      if (photo != null)
-                        Text(
-                          tr('Difoto {0} · {1}', [photo.byName.split(' ').first, isToday ? '${photo.takenAt.hour.toString().padLeft(2, '0')}.${photo.takenAt.minute.toString().padLeft(2, '0')}' : formatShortDate(photo.takenAt)]),
-                          style: AppText.body(11, color: AppColors.muted),
-                        ),
-                    ]),
-                  ),
-                  GestureDetector(
-                    onTap: () => _take(context),
-                    child: Container(
-                      width: 36,
-                      height: 36,
-                      decoration: const BoxDecoration(color: AppColors.roseSoft, shape: BoxShape.circle),
-                      child: const Icon(AppIcons.camera, size: 17, color: AppColors.rose),
-                    ),
-                  ),
-                ]),
-              ),
-            ],
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: photo == null
+                ? const Center(child: Object3D('camera', size: 30))
+                : Image.memory(base64Decode(photo.base64), fit: BoxFit.cover, gaplessPlayback: true),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Kartu pastel tinggi dengan objek 3D di pojok, dipakai berpasangan.
+class _SceneCard extends StatelessWidget {
+  final PastelTone tone;
+  final String object;
+  final String eyebrow;
+  final String title;
+  final String note;
+  final VoidCallback onTap;
+
+  const _SceneCard({required this.tone, required this.object, required this.eyebrow, required this.title, required this.note, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final radius = BorderRadius.circular(26);
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        constraints: const BoxConstraints(minHeight: 176),
+        decoration: BoxDecoration(
+          borderRadius: radius,
+          gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: tone.colors),
+          border: Border.all(color: const Color(0xB3FFFFFF)),
+        ),
+        child: ClipRRect(
+          borderRadius: radius,
+          child: Stack(children: [
+            Positioned(right: -8, top: -6, child: Object3D(object, size: 82, rotation: 8)),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 80, 16, 16),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.end, spacing: 2, children: [
+                Text(eyebrow, style: AppText.body(11, weight: FontWeight.w700, color: tone.label)),
+                Text(title, style: AppText.display(18, height: 1.1)),
+                Text(note, style: AppText.body(11, color: AppColors.muted, height: 1.3)),
+              ]),
+            ),
+          ]),
         ),
       ),
     );
@@ -167,16 +189,21 @@ class _CheckInCardState extends State<_CheckInCard> {
   Widget build(BuildContext context) {
     final vm = widget.vm;
     final done = vm.myCheckInToday != null;
-    return GlassCard(
-      strong: true,
-      padding: const EdgeInsets.all(20),
+    return Container(
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        gradient: const LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xF0FFFFFF), Color(0xE6FADFE6)]),
+        border: Border.all(color: const Color(0xB3FFFFFF)),
+        boxShadow: const [BoxShadow(color: Color(0x22B9536B), blurRadius: 28, offset: Offset(0, 12))],
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        spacing: 18,
+        spacing: 16,
         children: [
-          Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 4, children: [
-            Text(tr('CHECK-IN 2 MENIT'), style: AppText.eyebrow(AppColors.rose)),
-            Text(done ? tr('Kamu sudah check-in hari ini') : tr('Gimana kamu hari ini?'), style: AppText.display(22)),
+          Row(children: [
+            Expanded(child: Text(done ? tr('Kamu sudah check-in hari ini') : tr('Gimana kamu hari ini?'), style: AppText.display(20, letterSpacing: -0.3))),
+            Pill(tr('2 menit'), icon: AppIcons.timer, color: AppColors.rose, background: const Color(0xCCFFFFFF)),
           ]),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -184,24 +211,32 @@ class _CheckInCardState extends State<_CheckInCard> {
               final sel = vm.draftMood == i;
               return GestureDetector(
                 onTap: () => vm.setDraftMood(i),
-                child: Container(
-                  width: 52,
-                  height: 52,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: sel ? AppColors.jadeSoft : const Color(0x0A15201D),
-                    shape: BoxShape.circle,
-                    border: sel ? Border.all(color: AppColors.jade, width: 2) : null,
+                child: Column(spacing: 4, children: [
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 160),
+                    width: 56,
+                    height: 56,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: sel ? Colors.white : const Color(0x80FFFFFF),
+                      shape: BoxShape.circle,
+                      border: sel ? Border.all(color: AppColors.rose, width: 2) : null,
+                      boxShadow: sel ? const [BoxShadow(color: Color(0x33B9536B), blurRadius: 14, offset: Offset(0, 6))] : null,
+                    ),
+                    child: Image.asset(AppIcons.moodAsset(i), width: sel ? 40 : 34, height: sel ? 40 : 34),
                   ),
-                  child: Text(CheckInEntity.moodEmojis[i], style: const TextStyle(fontSize: 24)),
-                ),
+                  Text(
+                    [tr('Berat'), tr('Capek'), tr('Biasa'), tr('Oke'), tr('Senang')][i],
+                    style: AppText.body(11, weight: sel ? FontWeight.w700 : FontWeight.w500, color: sel ? AppColors.rose : AppColors.faint),
+                  ),
+                ]),
               );
             }),
           ),
           Column(spacing: 8, children: [
             Row(children: [
-              Expanded(child: Text(tr('Energi'), style: AppText.body(13, weight: FontWeight.w600, color: AppColors.muted))),
-              Text(tr('{0} dari 5', [vm.draftEnergy]), style: AppText.body(13, weight: FontWeight.w700, color: AppColors.jade)),
+              Expanded(child: Text(tr('Energi'), style: AppText.body(13, weight: FontWeight.w600))),
+              Text(tr('{0} dari 5', [vm.draftEnergy]), style: AppText.body(13, weight: FontWeight.w700, color: AppColors.rose)),
             ]),
             Row(
               spacing: 6,
@@ -209,7 +244,7 @@ class _CheckInCardState extends State<_CheckInCard> {
                 return Expanded(
                   child: GestureDetector(
                     onTap: () => vm.setDraftEnergy(i + 1),
-                    child: Container(height: 10, decoration: BoxDecoration(color: i < vm.draftEnergy ? AppColors.jade : AppColors.track, borderRadius: BorderRadius.circular(5))),
+                    child: Container(height: 10, decoration: BoxDecoration(color: i < vm.draftEnergy ? AppColors.rose : const Color(0x26B9536B), borderRadius: BorderRadius.circular(5))),
                   ),
                 );
               }),
@@ -217,9 +252,9 @@ class _CheckInCardState extends State<_CheckInCard> {
           ]),
           Container(
             padding: const EdgeInsets.fromLTRB(14, 10, 14, 4),
-            decoration: BoxDecoration(color: AppColors.fieldFill, borderRadius: BorderRadius.circular(16), border: Border.all(color: AppColors.hairline)),
+            decoration: BoxDecoration(color: const Color(0xB3FFFFFF), borderRadius: BorderRadius.circular(16)),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(tr('Satu hal yang kamu butuhkan'), style: AppText.body(12, weight: FontWeight.w600, color: AppColors.muted)),
+              Text(tr('Satu hal yang kamu butuhkan'), style: AppText.body(11, weight: FontWeight.w600, color: AppColors.faint)),
               TextField(
                 controller: _need,
                 maxLines: 2,
@@ -233,6 +268,7 @@ class _CheckInCardState extends State<_CheckInCard> {
             label: done ? tr('Perbarui check-in') : tr('Kirim ke {0}', [vm.partnerName]),
             icon: AppIcons.send,
             height: 50,
+            color: AppColors.rose,
             loading: _sending,
             onPressed: () async {
               setState(() => _sending = true);
@@ -258,18 +294,24 @@ class _PartnerCheckIn extends StatelessWidget {
     final c = vm.partnerLatestCheckIn;
     if (vm.partner == null) return const SizedBox.shrink();
     return GlassCard(
-      padding: const EdgeInsets.all(16),
-      child: Row(spacing: 14, children: [
-        Avatar(name: vm.partnerName, color: AppColors.rose, size: 44),
+      padding: const EdgeInsets.all(14),
+      child: Row(spacing: 12, children: [
+        Container(
+          width: 46,
+          height: 46,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(color: AppColors.roseSoft, borderRadius: BorderRadius.circular(15)),
+          child: c == null ? Avatar(name: vm.partnerName, color: AppColors.rose, size: 34) : Image.asset(AppIcons.moodAsset(c.mood), width: 32, height: 32),
+        ),
         Expanded(
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 3, children: [
             Text(
-              c == null ? tr('{0} belum check-in', [vm.partnerName]) : tr('{0} · {1} · energi {2}/5', [vm.partnerName, c.emoji, c.energy]),
+              c == null ? tr('{0} belum check-in', [vm.partnerName]) : tr('{0}, {1}, energi {2} dari 5', [vm.partnerName, tr(CheckInEntity.moodLabels[c.mood]).toLowerCase(), c.energy]),
               style: AppText.body(14, weight: FontWeight.w700),
             ),
             Text(
               c == null ? tr('Kabar dari {0} akan muncul di sini.', [vm.partnerName]) : (c.need.isEmpty ? tr(CheckInEntity.moodLabels[c.mood]) : '“${c.need}”'),
-              style: AppText.body(13, color: AppColors.muted, height: 1.35),
+              style: AppText.body(12, color: AppColors.muted, height: 1.35),
             ),
           ]),
         ),
@@ -279,10 +321,11 @@ class _PartnerCheckIn extends StatelessWidget {
             if (context.mounted) showSnack(context, tr('Pelukan terkirim.'));
           },
           child: Container(
-            width: 40,
-            height: 40,
+            width: 42,
+            height: 42,
+            alignment: Alignment.center,
             decoration: const BoxDecoration(color: AppColors.roseSoft, shape: BoxShape.circle),
-            child: const Icon(AppIcons.heart, size: 18, color: AppColors.rose),
+            child: const Object3D('red_heart', size: 22),
           ),
         ),
       ]),
@@ -298,19 +341,13 @@ class _DateNight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final d = vm.nextDateNight;
-    return GlassCard(
-      padding: const EdgeInsets.all(16),
+    return _SceneCard(
+      tone: PastelTone.lilac,
+      object: 'wine_glass',
+      eyebrow: d == null ? tr('Belum dijadwalkan') : '${dayNamesId[d.date.weekday - 1]}, ${formatShortDate(d.date)}',
+      title: d == null ? tr('Date night') : d.title,
+      note: d == null ? tr('Jadwalkan di kalender.') : tr('Tandai supaya urusan lain menyesuaikan.'),
       onTap: () => context.push('/urusan/calendar'),
-      child: Row(spacing: 12, children: [
-        const IconBox(icon: AppIcons.wine, color: AppColors.rose, background: AppColors.roseSoft, size: 42),
-        Expanded(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 2, children: [
-            Text(d == null ? tr('Belum ada date night') : '${d.title} ${dayNamesId[d.date.weekday - 1]}, ${formatShortDate(d.date)}', style: AppText.body(15, weight: FontWeight.w700)),
-            Text(d == null ? tr('Jadwalkan di kalender dengan kategori Berdua.') : tr('Tandai di kalender supaya urusan lain menyesuaikan.'), style: AppText.body(12, color: AppColors.muted)),
-          ]),
-        ),
-        const Icon(AppIcons.chevronRight, size: 16, color: AppColors.faint),
-      ]),
     );
   }
 }
@@ -366,70 +403,54 @@ class _TodayCard extends StatelessWidget {
     if (card == null) return const SizedBox.shrink();
     final idx = vm.conversationCards.where((c) => c.category == card.category).toList().indexOf(card) + 1;
     final total = vm.conversationCards.where((c) => c.category == card.category).length;
-    return HeroCard(
-      colors: AppColors.roseGradient,
+    return PastelHero(
+      tone: PastelTone.night,
+      object: 'speech_balloon',
+      objectSize: 84,
+      reserve: 70,
+      label: tr('Obrolan malam ini, {0}  {1}/{2}', [tr(TogetherViewModel.cardCategoryLabels[card.category] ?? card.category).toLowerCase(), idx, total]),
       onTap: () => context.push('/together/conversation-cards'),
-      child: Column(
+      head: Text(card.question, style: AppText.display(21, color: Colors.white, height: 1.25)),
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        spacing: 16,
+        spacing: 14,
         children: [
-          Row(children: [
-            Expanded(
-              child: Text(
-                tr('Obrolan malam ini · {0}', [tr(TogetherViewModel.cardCategoryLabels[card.category] ?? card.category)]),
-                style: AppText.body(12, weight: FontWeight.w600, color: const Color(0xCCFFFFFF)),
-              ),
-            ),
-            Text('$idx/$total', style: AppText.body(12, weight: FontWeight.w700, color: const Color(0xCCFFFFFF))),
-          ]),
-          Text(card.question, style: AppText.display(21, color: Colors.white, height: 1.25)),
           Row(spacing: 10, children: [
-            Expanded(
-              child: GestureDetector(
-                onTap: () => context.push('/together/conversation-cards'),
-                child: Container(
-                  height: 42,
-                  decoration: BoxDecoration(color: const Color(0x26FFFFFF), borderRadius: BorderRadius.circular(21)),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.center, spacing: 6, children: [
-                    const Icon(AppIcons.shuffle, size: 15, color: Colors.white),
-                    Text(tr('Kartu lain'), style: AppText.body(13, weight: FontWeight.w700, color: Colors.white)),
-                  ]),
-                ),
-              ),
-            ),
             Expanded(
               child: GestureDetector(
                 onTap: () => saveAnswerSheet(context, vm, card),
                 child: Container(
-                  height: 42,
-                  decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(21)),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.center, spacing: 6, children: [
-                    const Icon(AppIcons.bookmark, size: 15, color: AppColors.rose),
-                    Text(tr('Simpan jawaban'), style: AppText.body(13, weight: FontWeight.w700, color: AppColors.rose)),
-                  ]),
+                  height: 46,
+                  decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(23)),
+                  alignment: Alignment.center,
+                  child: Text(tr('Simpan jawaban'), style: AppText.body(14, weight: FontWeight.w700)),
                 ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () => context.push('/together/conversation-cards'),
+              child: Container(
+                height: 46,
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                decoration: BoxDecoration(color: const Color(0x1FFFFFFF), borderRadius: BorderRadius.circular(23)),
+                child: Row(mainAxisSize: MainAxisSize.min, spacing: 6, children: [
+                  const Icon(AppIcons.shuffle, size: 15, color: Colors.white),
+                  Text(tr('Kartu lain'), style: AppText.body(14, weight: FontWeight.w700, color: Colors.white)),
+                ]),
+              ),
+            ),
+          ]),
+          Row(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            const Object3D('light_bulb', size: 18),
+            Expanded(
+              child: Text(
+                tr('Coba hari ini: tanya satu hal yang dia pikirkan minggu ini, lalu dengarkan sampai selesai.'),
+                style: AppText.body(12, color: const Color(0xA6FFFFFF), height: 1.4),
               ),
             ),
           ]),
         ],
       ),
-    );
-  }
-}
-
-class _TryToday extends StatelessWidget {
-  const _TryToday();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(color: AppColors.ink, borderRadius: BorderRadius.circular(24)),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
-        Text(tr('COBA HARI INI'), style: AppText.eyebrow(const Color(0x99FFFFFF))),
-        Text(tr('“Rumah tenang bukan yang tanpa masalah, tapi yang masalahnya dibicarakan.”'), style: AppText.display(17, color: Colors.white, height: 1.3)),
-        Text(tr('Tanya satu hal yang dia pikirkan minggu ini, lalu dengarkan sampai selesai.'), style: AppText.body(13, color: const Color(0xB3FFFFFF), height: 1.35)),
-      ]),
     );
   }
 }
@@ -469,7 +490,7 @@ class _MonthReport extends StatelessWidget {
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(color: p.$5, borderRadius: BorderRadius.circular(16)),
                             child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
-                              Icon(p.$3, size: 16, color: p.$4),
+                              IconBox(icon: p.$3, size: 26, color: p.$4, background: Colors.transparent),
                               Text(p.$1, style: AppText.body(11, weight: FontWeight.w600, color: AppColors.muted)),
                               Text(p.$2, style: AppText.body(14, weight: FontWeight.w700, color: p.$4)),
                             ]),

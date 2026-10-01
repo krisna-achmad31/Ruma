@@ -8,6 +8,7 @@ import '../../../../core/utils/format.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../domain/entities/life_stage_entity.dart';
 import '../viewmodels/life_stage_viewmodel.dart';
@@ -36,13 +37,13 @@ class _Content extends StatelessWidget {
         tab: AppTab.kita,
         children: [
           AppNavBar(title: tr('Siap nikah')),
-          HeroCard(
-            colors: AppColors.roseGradient,
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 10, children: [
-              const PlusBadge(onDark: true),
-              Text(tr('Persiapan nikah, dipikul berdua dari awal.'), style: AppText.display(26, color: Colors.white, height: 1.15)),
-              Text(tr('Anggaran, jadwal bayar vendor, dan obrolan penting sebelum tinggal serumah.'), style: AppText.body(14, color: const Color(0xCCFFFFFF), height: 1.4)),
-            ]),
+          PastelHero(
+            tone: PastelTone.rose,
+            object: 'ring',
+            label: tr('Siap nikah'),
+            plus: true,
+            head: Text(tr('Persiapan nikah, dipikul berdua dari awal.'), style: AppText.display(24, height: 1.15)),
+            body: Text(tr('Anggaran, jadwal bayar vendor, dan obrolan penting sebelum tinggal serumah.'), style: AppText.body(14, color: AppColors.muted, height: 1.4)),
           ),
           PrimaryButton(label: tr('Mulai rencana'), icon: AppIcons.gem, onPressed: () => _setup(context, vm)),
         ],
@@ -59,18 +60,20 @@ class _Content extends StatelessWidget {
           actionIcon: AppIcons.ellipsis,
           onAction: () => showPlanMenu(context, planName: tr('Rencana nikah'), onEdit: () => _setup(context, vm, initial: w), onDelete: vm.deleteWedding),
         ),
-        HeroCard(
-          colors: AppColors.roseGradient,
+        PastelHero(
+          tone: PastelTone.rose,
+          object: 'ring',
+          objectSize: 136,
+          label: tr('Akad & resepsi, {0}', [formatFullDate(w.weddingDate)]),
+          plus: true,
           onTap: () => _setup(context, vm, initial: w),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 10, children: [
-            Row(children: [
-              Expanded(child: Text(tr('Akad & resepsi · {0}', [formatFullDate(w.weddingDate)]), style: AppText.body(13, weight: FontWeight.w600, color: const Color(0xCCFFFFFF)))),
-              const PlusBadge(onDark: true),
-            ]),
-            Text(days > 0 ? tr('{0} hari lagi', [days]) : (days == 0 ? tr('Hari ini!') : tr('Selamat menempuh hidup baru')), style: AppText.display(36, color: Colors.white, letterSpacing: -1.1)),
-            Text(tr('{0} · {1} dari {2} persiapan beres', [w.coupleNames, done, w.prep.length]), style: AppText.body(13, color: const Color(0xCCFFFFFF))),
-            ProgressBar(value: w.prep.isEmpty ? 0 : done / w.prep.length, color: Colors.white, track: const Color(0x2EFFFFFF), height: 8),
-          ]),
+          head: days > 0
+              ? Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 6, children: [
+                  HeroNumber('$days', size: 76),
+                  Text(tr('hari lagi ke akad {0}. {1} dari {2} persiapan beres.', [w.coupleNames, done, w.prep.length]), style: AppText.body(13, color: AppColors.muted, height: 1.4)),
+                ])
+              : Text(days == 0 ? tr('Hari ini!') : tr('Selamat menempuh hidup baru'), style: AppText.display(30, height: 1.1)),
+          body: HeroBar(value: w.prep.isEmpty ? 0 : done / w.prep.length, tone: PastelTone.rose),
         ),
         GlassCard(
           onTap: () => _setup(context, vm, initial: w),

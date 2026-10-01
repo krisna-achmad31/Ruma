@@ -1,4 +1,4 @@
-# CLAUDE.md, Aplikasi Rumah Tangga (nama brand belum final)
+# CLAUDE.md, Ruma (aplikasi rumah tangga)
 
 Panduan konteks untuk Claude Code saat bekerja di repo ini. Baca file ini di awal setiap sesi sebelum mulai coding.
 
@@ -87,6 +87,6 @@ Untuk melihat semua layar tanpa login saat debug: `flutter run --dart-define=DEV
 
 ## Yang Belum Diputuskan / Perlu Konfirmasi Krisna
 
-- Nama brand final (masih placeholder di `AppBrand.name`), package name, dan bundle ID
+- Package name dan bundle ID (nama brand sudah final: Ruma, di `AppBrand.name`)
 - Pembayaran Plus (Google Play Billing atau RevenueCat) belum tersambung, paywall baru tampilan
 - SHA-1 keystore rilis dan Play App Signing belum didaftarkan di Firebase, wajib sebelum rilis supaya Masuk dengan Google jalan

@@ -9,6 +9,7 @@ import '../../../../core/utils/format.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../domain/entities/life_stage_entity.dart';
 import '../viewmodels/life_stage_viewmodel.dart';
@@ -27,7 +28,6 @@ class _Content extends StatelessWidget {
   const _Content();
 
   static const _tones = [AppColors.jade, AppColors.sky, AppColors.rose, AppColors.amber, AppColors.lilac, AppColors.butter];
-  static const _hero = [Color(0xFF1F5446), Color(0xFF2C6B5A), Color(0xFFB8702C)];
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +38,13 @@ class _Content extends StatelessWidget {
         tab: AppTab.uang,
         children: [
           AppNavBar(title: tr('Lebaran & THR')),
-          HeroCard(
-            colors: _hero,
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 10, children: [
-              Text(tr('THR aman sampai habis Lebaran.'), style: AppText.display(26, color: Colors.white, height: 1.15)),
-              Text(tr('Rencanakan alokasi THR, salam tempel, dan mudik dari sekarang.'), style: AppText.body(14, color: const Color(0xCCFFFFFF), height: 1.4)),
-            ]),
+          PastelHero(
+            tone: PastelTone.butter,
+            object: 'crescent_moon',
+            label: tr('Lebaran & THR'),
+            plus: true,
+            head: Text(tr('THR aman sampai habis Lebaran.'), style: AppText.display(24, height: 1.15)),
+            body: Text(tr('Rencanakan alokasi THR, salam tempel, dan mudik dari sekarang.'), style: AppText.body(14, color: AppColors.muted, height: 1.4)),
           ),
           PrimaryButton(label: tr('Mulai rencana Lebaran'), icon: AppIcons.moonStar, onPressed: () => _setup(context, vm)),
         ],
@@ -61,18 +62,22 @@ class _Content extends StatelessWidget {
           actionIcon: AppIcons.ellipsis,
           onAction: () => showPlanMenu(context, planName: tr('Rencana Lebaran'), onEdit: () => _setup(context, vm, initial: l), onDelete: vm.deleteLebaran),
         ),
-        HeroCard(
-          colors: _hero,
+        PastelHero(
+          tone: PastelTone.butter,
+          object: 'crescent_moon',
+          objectSize: 136,
+          label: tr('Idulfitri, sekitar {0} {1} {2}', [l.eidDate.day, monthNamesId[l.eidDate.month - 1], l.eidDate.year]),
+          plus: true,
           onTap: () => _setup(context, vm, initial: l),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
-            Text(tr('Idulfitri · sekitar {0} {1} {2}', [l.eidDate.day, monthNamesId[l.eidDate.month - 1], l.eidDate.year]), style: AppText.body(13, weight: FontWeight.w600, color: const Color(0xCCFFFFFF))),
-            Text(days > 0 ? tr('{0} hari lagi', [days]) : tr('Selamat Lebaran'), style: AppText.display(34, color: Colors.white, letterSpacing: -1)),
-            if (days > 0)
-              Text(
-                tr('Sisihkan {0} per bulan mulai sekarang, biar THR nggak habis sebelum mudik.', [formatRupiahShort(vm.lebaranMonthlySetAside(l))]),
-                style: AppText.body(13, color: const Color(0xCCFFFFFF), height: 1.35),
-              ),
-          ]),
+          head: days > 0
+              ? Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 6, children: [
+                  HeroNumber('$days', size: 76),
+                  Text(
+                    tr('hari lagi. Sisihkan {0} per bulan mulai sekarang, biar THR nggak habis sebelum mudik.', [formatRupiahShort(vm.lebaranMonthlySetAside(l))]),
+                    style: AppText.body(13, color: AppColors.muted, height: 1.4),
+                  ),
+                ])
+              : Text(tr('Selamat Lebaran'), style: AppText.display(30, height: 1.1)),
         ),
         GlassCard(
           child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, spacing: 12, children: [

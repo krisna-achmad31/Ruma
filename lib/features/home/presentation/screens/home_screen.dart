@@ -203,7 +203,7 @@ class _StageSpotlight extends StatelessWidget {
         label: tr('Fase kalian: Lebaran'),
         plus: true,
         onTap: () => context.push('/life/lebaran'),
-        head: _countdownHead(PastelTone.butter, '$days', tr('hari lagi ke Idulfitri. Rencana THR {0} sudah dibagi ke {1} pos.', [formatRupiahShort(l.thrAmount), l.allocations.length])),
+        head: _countdownHead(PastelTone.butter, '$days', tr('hari lagi. Sisihkan {0} per bulan mulai sekarang, biar THR nggak habis sebelum mudik.', [formatRupiahShort(life.lebaranMonthlySetAside(l))])),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 14,
