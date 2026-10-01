@@ -191,7 +191,7 @@ class GroupLabel extends StatelessWidget {
   const GroupLabel(this.text, {super.key});
 
   @override
-  Widget build(BuildContext context) => Text(text.toUpperCase(), style: AppText.eyebrow(AppColors.faint));
+  Widget build(BuildContext context) => Text(text, style: AppText.body(12, weight: FontWeight.w600, color: AppColors.faint));
 }
 
 class IconBox extends StatelessWidget {
@@ -269,15 +269,12 @@ class PlusBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
       decoration: BoxDecoration(
-        color: onDark ? const Color(0x26FFFFFF) : AppColors.amberSoft,
-        borderRadius: BorderRadius.circular(8),
+        color: onDark ? const Color(0xCCFFFFFF) : AppColors.ink,
+        borderRadius: BorderRadius.circular(7),
       ),
-      child: Text(
-        tr('PLUS'),
-        style: AppText.body(10, weight: FontWeight.w700, letterSpacing: 0.8, color: onDark ? Colors.white : AppColors.amber),
-      ),
+      child: Text(tr('Plus'), style: AppText.body(10, weight: FontWeight.w700, color: onDark ? AppColors.ink : Colors.white)),
     );
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../core/constants/app_brand.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/di/injection.dart';
 import '../../../../core/theme/app_text.dart';
@@ -12,6 +11,7 @@ import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
 import '../../../../core/widgets/family_scope.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../domain/entities/task_entity.dart';
 import '../viewmodels/tasks_viewmodel.dart';
@@ -69,7 +69,7 @@ class _ContentState extends State<_Content> {
       children: [
         LargeTitle(
           title: tr('Urusan'),
-          subtitle: AppBrand.taglineId,
+          subtitle: tr('Siapa yang ingat, siapa yang kerjakan.'),
           trailing: Row(
             spacing: 8,
             children: [
@@ -92,8 +92,19 @@ class _ContentState extends State<_Content> {
           GlassCard(child: EmptyNote(tr('Belum ada urusan di sini. Tambah dengan tombol + di atas.')))
         else
           ...groups.entries.map(
-            (g) => LabeledGroup(label: g.key, rows: g.value.map((t) => _TaskRow(task: t, vm: vm)).toList()),
+            (g) => Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              spacing: 8,
+              children: [
+                Row(spacing: 8, children: [
+                  Text(g.key, style: AppText.display(18, letterSpacing: -0.3)),
+                  Text(tr('{0} urusan', [g.value.length]), style: AppText.body(12, weight: FontWeight.w600, color: AppColors.faint)),
+                ]),
+                ListCard(children: g.value.map((t) => _TaskRow(task: t, vm: vm)).toList()),
+              ],
+            ),
           ),
+        PrimaryButton(label: tr('Tambah urusan'), icon: AppIcons.plus, height: 52, onPressed: () => showAddTaskSheet(context, vm)),
       ],
     );
   }
@@ -107,47 +118,42 @@ class _InvisibleWork extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items = vm.invisibleWork;
-    return Container(
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
-        gradient: const LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: AppColors.warmGradient),
-        border: Border.all(color: AppColors.glassEdge),
+    return PastelHero(
+      tone: PastelTone.rose,
+      object: 'brain',
+      objectSize: 112,
+      label: tr('Yang dipikirin diam-diam'),
+      head: Text(
+        tr('{0} ingat {1} hal kecil minggu ini', [vm.partnerName, items.length]),
+        style: AppText.display(22, letterSpacing: -0.5, height: 1.15),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 14,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        spacing: 6,
         children: [
-          Row(spacing: 10, children: [
-            const Icon(AppIcons.brain, size: 20, color: AppColors.rose),
-            Text(tr('Yang dipikirin diam-diam'), style: AppText.body(15, weight: FontWeight.w700)),
-          ]),
-          Text(
-            tr('Minggu ini {0} yang ingat hal-hal ini. Kecil, tapi bikin rumah tetap jalan.', [vm.partnerName]),
-            style: AppText.body(13, color: AppColors.muted, height: 1.4),
-          ),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: items
-                .map((t) => Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                      decoration: BoxDecoration(color: const Color(0xB3FFFFFF), borderRadius: BorderRadius.circular(14)),
-                      child: Row(mainAxisSize: MainAxisSize.min, spacing: 8, children: [
-                        Icon(iconFor(t.icon), size: 15, color: AppColors.rose),
-                        Text(t.title, style: AppText.body(13, weight: FontWeight.w500)),
-                      ]),
-                    ))
-                .toList(),
-          ),
-          PrimaryButton(
-            label: tr('Bilang makasih ke {0}', [vm.partnerName]),
-            icon: AppIcons.heartHandshake,
-            height: 44,
-            onPressed: () async {
+          for (final t in items)
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+              decoration: BoxDecoration(color: const Color(0xB3FFFFFF), borderRadius: BorderRadius.circular(14)),
+              child: Row(spacing: 8, children: [
+                IconBox(icon: iconFor(t.icon), size: 28, color: AppColors.rose, background: Colors.transparent),
+                Expanded(child: Text(t.title, style: AppText.body(13, weight: FontWeight.w600))),
+              ]),
+            ),
+          const SizedBox(height: 6),
+          GestureDetector(
+            onTap: () async {
               await vm.sendThanks(tr('Makasih udah ingat {0}', [items.first.title.toLowerCase()]));
               if (context.mounted) showSnack(context, tr('Ucapan makasih terkirim ke {0}.', [vm.partnerName]));
             },
+            child: Container(
+              height: 46,
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(23), border: Border.all(color: const Color(0x40B9536B))),
+              child: Row(mainAxisAlignment: MainAxisAlignment.center, spacing: 8, children: [
+                const Object3D('red_heart', size: 18),
+                Text(tr('Bilang makasih ke {0}', [vm.partnerName]), style: AppText.body(14, weight: FontWeight.w700, color: AppColors.rose)),
+              ]),
+            ),
           ),
         ],
       ),
@@ -173,24 +179,13 @@ class _TaskRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final thinker = vm.isMe(task.thinkerUid) ? tr('Kamu ingat') : tr('{0} ingat', [vm.firstNameOf(task.thinkerName)]);
-    Widget doer;
+    final open = !task.together && task.doerUid == null;
+    Widget? doer;
     if (task.together) {
-      doer = _role(AppIcons.hand, tr('Dikerjakan berdua'), AppColors.jade, AppColors.jadeSoft);
-    } else if (task.doerUid == null) {
-      doer = GestureDetector(
-        onTap: () => vm.takeOver(task),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: AppColors.amber)),
-          child: Row(mainAxisSize: MainAxisSize.min, spacing: 4, children: [
-            const Icon(AppIcons.handHelping, size: 12, color: AppColors.amber),
-            Text(tr('Siapa yang ambil?'), style: AppText.body(11, weight: FontWeight.w700, color: AppColors.amber)),
-          ]),
-        ),
-      );
-    } else {
+      doer = _role(AppIcons.users, tr('Berdua'), AppColors.muted, AppColors.fieldFill);
+    } else if (!open) {
       final who = vm.isMe(task.doerUid) ? tr('Kamu kerjakan') : tr('{0} kerjakan', [vm.firstNameOf(task.doerName)]);
-      doer = _role(AppIcons.hand, who, AppColors.jade, AppColors.jadeSoft);
+      doer = _role(AppIcons.hand, who, AppColors.muted, AppColors.fieldFill);
     }
 
     return Dismissible(
@@ -204,11 +199,11 @@ class _TaskRow extends StatelessWidget {
       confirmDismiss: (_) => showConfirmDialog(context, title: tr('Hapus urusan ini?'), message: task.title, confirmLabel: tr('Hapus'), destructive: true, icon: AppIcons.trash2),
       onDismissed: (_) => vm.delete(task),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 13),
+        padding: const EdgeInsets.symmetric(vertical: 12),
         child: Row(
           spacing: 12,
           children: [
-            CheckCircle(checked: task.isDone, onTap: () => vm.toggle(task)),
+            Opacity(opacity: task.isDone ? 0.5 : 1, child: IconBox(icon: iconFor(task.icon), size: 42, color: AppColors.muted, background: AppColors.fieldFill)),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -222,13 +217,24 @@ class _TaskRow extends StatelessWidget {
                         decoration: task.isDone ? TextDecoration.lineThrough : null),
                   ),
                   Wrap(spacing: 6, runSpacing: 6, children: [
-                    _role(AppIcons.brain, thinker, AppColors.rose, AppColors.roseSoft),
-                    doer,
+                    _role(AppIcons.lightbulb, thinker, AppColors.muted, AppColors.fieldFill),
+                    ?doer,
+                    if (task.time != null) _role(AppIcons.clock, task.time!, AppColors.muted, AppColors.fieldFill),
                   ]),
                 ],
               ),
             ),
-            if (task.time != null) Text(task.time!, style: AppText.body(12, color: AppColors.muted)),
+            if (open && !task.isDone)
+              GestureDetector(
+                onTap: () => vm.takeOver(task),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  decoration: BoxDecoration(color: AppColors.jadeSoft, borderRadius: BorderRadius.circular(16)),
+                  child: Text(tr('Aku ambil'), style: AppText.body(12, weight: FontWeight.w700, color: AppColors.jade)),
+                ),
+              )
+            else
+              CheckCircle(checked: task.isDone, size: 26, onTap: () => vm.toggle(task)),
           ],
         ),
       ),

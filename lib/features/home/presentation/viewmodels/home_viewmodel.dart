@@ -180,7 +180,7 @@ class HomeViewModel extends ChangeNotifier {
     } else {
       doer = tr('{0} yang kerjakan', [(t.doerName ?? '').split(' ').first]);
     }
-    return '$thinker · $doer';
+    return '$thinker, $doer';
   }
 
   Future<void> toggleTask(TaskEntity t) => _taskRepository.setDone(familyId, t.id, !t.isDone);

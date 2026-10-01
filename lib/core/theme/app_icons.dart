@@ -214,4 +214,12 @@ class AppIcons {
     final name = threeD[icon];
     return name == null ? null : 'assets/icons3d/$name.png';
   }
+
+  /// Path aset 3D dari nama file, misalnya `object3d('money_bag')`.
+  static String object3d(String name) => 'assets/icons3d/$name.png';
+
+  /// Wajah 3D untuk mood check-in 0 sampai 4, urutannya sama dengan CheckInEntity.moodEmojis.
+  static const List<String> moodFaces = ['disappointed_face', 'face_exhaling', 'neutral_face', 'slightly_smiling_face', 'smiling_face_with_hearts'];
+
+  static String moodAsset(int mood) => object3d(moodFaces[mood.clamp(0, 4)]);
 }

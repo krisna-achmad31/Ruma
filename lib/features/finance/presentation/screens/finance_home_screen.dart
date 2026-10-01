@@ -9,7 +9,10 @@ import '../../../../core/utils/icon_map.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
+import '../../../life_stage/presentation/viewmodels/life_stage_viewmodel.dart';
+import '../../../life_stage/presentation/widgets/life_stage_scope.dart';
 import '../../domain/entities/money_extras_entity.dart';
 import '../viewmodels/finance_viewmodel.dart';
 import '../widgets/finance_scope.dart';
@@ -20,7 +23,7 @@ class FinanceHomeScreen extends StatelessWidget {
   const FinanceHomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) => const FinanceScope(child: _Content());
+  Widget build(BuildContext context) => const FinanceScope(child: LifeStageScope(child: _Content()));
 }
 
 class _Content extends StatelessWidget {
@@ -57,10 +60,13 @@ class _Content extends StatelessWidget {
             child: GlassCard(
               radius: 18,
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              child: Row(spacing: 6, children: [
-                Text(monthNamesId[month.month - 1], style: AppText.body(13, weight: FontWeight.w600)),
-                const Icon(AppIcons.chevronDown, size: 14),
-              ]),
+              child: Row(
+                spacing: 6,
+                children: [
+                  Text(monthNamesId[month.month - 1], style: AppText.body(13, weight: FontWeight.w600)),
+                  const Icon(AppIcons.chevronDown, size: 14),
+                ],
+              ),
             ),
           ),
         ),
@@ -75,13 +81,16 @@ class _Content extends StatelessWidget {
             ShortcutTile(label: tr('Rekap'), icon: AppIcons.chartColumn, tone: toneLilac, onTap: () => context.push('/finance/report')),
           ],
         ),
+        _EnvelopeGrid(vm: vm),
+        const _LebaranStrip(),
+        _InstallmentCard(vm: vm),
         SectionHeader(title: tr('Transaksi terbaru'), action: tr('Catat'), onAction: () => context.push('/finance/add')),
         ListCard(
           children: recent.isEmpty
               ? [EmptyNote(tr('Belum ada transaksi. Catat yang pertama lewat tombol Catat.'))]
               : recent.map((t) {
                   final c = vm.categoryById(t.categoryId);
-                  final who = t.createdByName == null ? '' : tr(' · dicatat {0}', [t.createdByName!.split(' ').first]);
+                  final who = t.createdByName == null ? '' : tr(', dicatat {0}', [t.createdByName!.split(' ').first]);
                   return ListRow(
                     icon: t.isIncome ? AppIcons.briefcase : iconFor(c?.icon ?? 'payments'),
                     iconColor: t.isIncome ? AppColors.jade : AppColors.amber,
@@ -93,8 +102,6 @@ class _Content extends StatelessWidget {
                   );
                 }).toList(),
         ),
-        _EnvelopeGrid(vm: vm),
-        _InstallmentCard(vm: vm),
         _WishlistCard(vm: vm),
       ],
     );
@@ -108,50 +115,138 @@ class _HouseholdCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HeroCard(
-      colors: AppColors.jadeGradient,
-      padding: const EdgeInsets.all(20),
+    return PastelHero(
+      tone: PastelTone.jade,
+      object: 'bank',
+      objectSize: 104,
+      objectRotation: 8,
+      label: tr('Uang rumah, gabungan {0} dompet', [vm.spendingWallets.length]),
       onTap: () => context.push('/finance/wallets'),
-      child: Column(
+      head: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 14,
         children: [
-          Row(children: [
-            Expanded(child: Text(tr('Uang rumah'), style: AppText.body(14, weight: FontWeight.w600, color: const Color(0xCCFFFFFF)))),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              decoration: BoxDecoration(color: const Color(0x26FFFFFF), borderRadius: BorderRadius.circular(20), border: Border.all(color: const Color(0x40FFFFFF))),
-              child: Text(tr('{0} dompet', [vm.spendingWallets.length]), style: AppText.body(11, weight: FontWeight.w600, color: Colors.white)),
-            ),
-          ]),
-          Text(formatRupiah(vm.householdMoney), style: AppText.display(38, color: Colors.white, letterSpacing: -1.3)),
-          Row(
-            spacing: 10,
+          HeroNumber(formatRupiah(vm.householdMoney), size: 36, color: Colors.white),
+          Wrap(
+            spacing: 16,
+            runSpacing: 8,
             children: [
-              for (final s in [(tr('Masuk|uang'), vm.monthIncome, AppIcons.arrowDownLeft), (tr('Keluar|uang'), vm.monthExpense, AppIcons.arrowUpRight)])
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(color: const Color(0x1AFFFFFF), borderRadius: BorderRadius.circular(16)),
-                    child: Row(spacing: 10, children: [
-                      Container(
-                        width: 28,
-                        height: 28,
-                        decoration: const BoxDecoration(color: Color(0x26FFFFFF), shape: BoxShape.circle),
-                        child: Icon(s.$3, size: 15, color: Colors.white),
-                      ),
-                      Expanded(
-                        child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 1, children: [
-                          Text(s.$1, style: AppText.body(11, color: const Color(0xB3FFFFFF))),
-                          Text(formatRupiahShort(s.$2), style: AppText.body(15, weight: FontWeight.w700, color: Colors.white)),
-                        ]),
-                      ),
-                    ]),
-                  ),
+              for (final s in [(tr('Masuk|uang'), vm.monthIncome, 'chart_up'), (tr('Keluar|uang'), vm.monthExpense, 'chart_down')])
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  spacing: 8,
+                  children: [
+                    Container(
+                      width: 32,
+                      height: 32,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(color: const Color(0x24FFFFFF), borderRadius: BorderRadius.circular(11)),
+                      child: Object3D(s.$3, size: 22),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(s.$1, style: AppText.body(11, color: const Color(0xB3FFFFFF))),
+                        Text(
+                          formatRupiahShort(s.$2),
+                          style: AppText.body(14, weight: FontWeight.w700, color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
             ],
           ),
         ],
+      ),
+      body: Row(
+        spacing: 10,
+        children: [
+          Expanded(
+            child: GestureDetector(
+              onTap: () => context.push('/finance/add'),
+              child: Container(
+                height: 48,
+                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(24)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 8,
+                  children: [
+                    const Icon(AppIcons.plus, size: 18, color: AppColors.ink),
+                    Text(tr('Catat transaksi'), style: AppText.body(14, weight: FontWeight.w700)),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () => context.push('/finance/transfer'),
+            child: Container(
+              height: 48,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              decoration: BoxDecoration(color: const Color(0x24FFFFFF), borderRadius: BorderRadius.circular(24)),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                spacing: 6,
+                children: [
+                  const Icon(AppIcons.arrowLeftRight, size: 16, color: Colors.white),
+                  Text(
+                    tr('Pindah'),
+                    style: AppText.body(14, weight: FontWeight.w700, color: Colors.white),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Jembatan ke rencana Lebaran, hanya tampil kalau rencananya sudah dibuat.
+class _LebaranStrip extends StatelessWidget {
+  const _LebaranStrip();
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.watch<LifeStageViewModel>();
+    final plan = l.lebaran;
+    if (plan == null) return const SizedBox.shrink();
+    final days = l.daysUntil(plan.eidDate).clamp(0, 9999);
+    return GestureDetector(
+      onTap: () => context.push('/life/lebaran'),
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(14, 12, 12, 12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(22),
+          gradient: LinearGradient(colors: PastelTone.butter.colors),
+        ),
+        child: Row(
+          spacing: 12,
+          children: [
+            const Object3D('crescent_moon', size: 40),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 2,
+                children: [
+                  Row(
+                    spacing: 6,
+                    children: [
+                      Flexible(
+                        child: Text(tr('Lebaran {0} hari lagi', [days]), style: AppText.body(13, weight: FontWeight.w700)),
+                      ),
+                      const PlusBadge(),
+                    ],
+                  ),
+                  Text(tr('Rencana THR {0}', [formatRupiahShort(plan.thrAmount)]), style: AppText.body(12, color: AppColors.muted)),
+                ],
+              ),
+            ),
+            const Icon(AppIcons.chevronRight, size: 18, color: AppColors.faint),
+          ],
+        ),
       ),
     );
   }
@@ -172,20 +267,35 @@ class _WalletStrip extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         spacing: 8,
         children: [
-          ...shown.map((w) => Expanded(
-                child: GlassCard(
-                  radius: 18,
-                  padding: const EdgeInsets.all(12),
-                  onTap: () => context.push('/finance/wallets'),
-                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+          ...shown.map(
+            (w) => Expanded(
+              child: GlassCard(
+                radius: 18,
+                padding: const EdgeInsets.all(12),
+                onTap: () => context.push('/finance/wallets'),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 8,
+                  children: [
                     IconBox(icon: iconForWalletType(w.type), size: 30, color: toneForWalletType(w.type).$1, background: toneForWalletType(w.type).$2),
-                    Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 1, children: [
-                      Text(w.name, style: AppText.body(12, weight: FontWeight.w600, color: AppColors.muted), maxLines: 1, overflow: TextOverflow.ellipsis),
-                      Text(formatRupiahShort(w.balance), style: AppText.body(14, weight: FontWeight.w700)),
-                    ]),
-                  ]),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 1,
+                      children: [
+                        Text(
+                          w.name,
+                          style: AppText.body(12, weight: FontWeight.w600, color: AppColors.muted),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        Text(formatRupiahShort(w.balance), style: AppText.body(14, weight: FontWeight.w700)),
+                      ],
+                    ),
+                  ],
                 ),
-              )),
+              ),
+            ),
+          ),
           if (extra > 0)
             SizedBox(
               width: 56,
@@ -193,10 +303,17 @@ class _WalletStrip extends StatelessWidget {
                 radius: 18,
                 padding: EdgeInsets.zero,
                 onTap: () => context.push('/finance/wallets'),
-                child: Column(mainAxisAlignment: MainAxisAlignment.center, spacing: 2, children: [
-                  Text('+$extra', style: AppText.body(15, weight: FontWeight.w700, color: AppColors.jade)),
-                  Text(tr('lagi'), style: AppText.body(10, color: AppColors.muted)),
-                ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 2,
+                  children: [
+                    Text(
+                      '+$extra',
+                      style: AppText.body(15, weight: FontWeight.w700, color: AppColors.jade),
+                    ),
+                    Text(tr('lagi'), style: AppText.body(10, color: AppColors.muted)),
+                  ],
+                ),
               ),
             ),
         ],
@@ -219,7 +336,10 @@ class _EnvelopeGrid extends StatelessWidget {
       children: [
         SectionHeader(
           title: tr('Amplop'),
-          trailing: Text(tr('Sisa {0}', [formatRupiahShort(vm.budgetRemaining)]), style: AppText.body(13, weight: FontWeight.w600, color: AppColors.muted)),
+          trailing: Text(
+            tr('Sisa {0}', [formatRupiahShort(vm.budgetRemaining)]),
+            style: AppText.body(13, weight: FontWeight.w600, color: AppColors.muted),
+          ),
         ),
         if (cats.isEmpty)
           GlassCard(onTap: () => context.push('/finance/categories'), child: EmptyNote(tr('Belum ada amplop. Buat amplop pertama di halaman Amplop.')))
@@ -232,27 +352,54 @@ class _EnvelopeGrid extends StatelessWidget {
                 children: [
                   for (final c in cats.skip(i).take(2))
                     Expanded(
-                      child: GlassCard(
-                        radius: 22,
-                        padding: const EdgeInsets.all(16),
+                      child: GestureDetector(
                         onTap: () => context.push('/finance/category/${c.id}'),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          spacing: 10,
-                          children: [
-                            IconBox(
-                              icon: iconFor(c.icon),
-                              size: 34,
-                              color: toneForCategory(c.icon, c.name).$1,
-                              background: toneForCategory(c.icon, c.name).$2,
-                            ),
-                            Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 1, children: [
-                              Text(c.name, style: AppText.body(13, weight: FontWeight.w600)),
-                              Text(formatRupiahShort(vm.remainingOf(c)), style: AppText.display(18, color: vm.isLow(c) ? AppColors.amber : AppColors.ink)),
-                              Text(tr('sisa dari {0}', [formatRupiahShort(c.budgetAmount)]), style: AppText.body(11, color: AppColors.faint)),
-                            ]),
-                            ProgressBar(value: vm.remainingFractionOf(c), color: vm.isLow(c) ? AppColors.amber : AppColors.jade),
-                          ],
+                        child: Container(
+                          padding: const EdgeInsets.all(14),
+                          decoration: BoxDecoration(
+                            color: toneForCategory(c.icon, c.name).$2,
+                            borderRadius: BorderRadius.circular(24),
+                            border: Border.all(color: vm.isLow(c) ? AppColors.amber : const Color(0xB3FFFFFF), width: vm.isLow(c) ? 1.5 : 1),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            spacing: 8,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  IconBox(icon: iconFor(c.icon), size: 44, color: toneForCategory(c.icon, c.name).$1, background: Colors.transparent),
+                                  const Spacer(),
+                                  if (vm.isLow(c))
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
+                                      decoration: BoxDecoration(color: const Color(0xCCFFFFFF), borderRadius: BorderRadius.circular(8)),
+                                      child: Text(
+                                        tr('Tinggal sedikit'),
+                                        style: AppText.body(10, weight: FontWeight.w700, color: AppColors.amber),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                spacing: 1,
+                                children: [
+                                  Text(
+                                    c.name,
+                                    style: AppText.body(12, weight: FontWeight.w600, color: AppColors.muted),
+                                  ),
+                                  Text(formatRupiahShort(vm.remainingOf(c)), style: AppText.display(22, color: vm.isLow(c) ? AppColors.amber : AppColors.ink)),
+                                  Text(tr('sisa dari {0}', [formatRupiahShort(c.budgetAmount)]), style: AppText.body(11, color: AppColors.faint)),
+                                ],
+                              ),
+                              ProgressBar(
+                                value: vm.remainingFractionOf(c),
+                                color: vm.isLow(c) ? AppColors.amber : toneForCategory(c.icon, c.name).$1,
+                                track: const Color(0x99FFFFFF),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -280,39 +427,57 @@ class _InstallmentCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         spacing: 14,
         children: [
-          Row(spacing: 10, children: [
-            const IconBox(icon: AppIcons.calendarClock, color: AppColors.amber, background: AppColors.amberSoft),
-            Expanded(
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 2, children: [
-                Text(tr('Cicilan & paylater'), style: AppText.body(15, weight: FontWeight.w700)),
-                Text(
-                  vm.installments.isEmpty ? tr('Belum ada cicilan tercatat') : tr('{0} tagihan · {1} bulan ini', [vm.installments.length, formatRupiahShort(vm.installmentsMonthly)]),
-                  style: AppText.body(12, color: AppColors.muted),
-                ),
-              ]),
-            ),
-            const PlusBadge(),
-          ]),
-          if (vm.installments.isNotEmpty) ...[
-            ProgressBar(value: vm.debtRatio / 0.5, color: safe ? AppColors.jade : AppColors.rose, height: 8),
-            Row(children: [
+          Row(
+            spacing: 10,
+            children: [
+              const Object3D('credit_card', size: 44, rotation: -10),
               Expanded(
-                child: Text(
-                  tr('{0}% dari pendapatan{1}', [(vm.debtRatio * 100).round(), safe ? tr(', masih aman') : tr(', lewat batas aman')]),
-                  style: AppText.body(12, weight: FontWeight.w700, color: safe ? AppColors.jade : AppColors.rose),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 2,
+                  children: [
+                    Text(tr('Cicilan & paylater'), style: AppText.body(15, weight: FontWeight.w700)),
+                    Text(
+                      vm.installments.isEmpty
+                          ? tr('Belum ada cicilan tercatat')
+                          : tr('{0} tagihan, {1} bulan ini', [vm.installments.length, formatRupiahShort(vm.installmentsMonthly)]),
+                      style: AppText.body(12, color: AppColors.muted),
+                    ),
+                  ],
                 ),
               ),
-              Text(tr('batas 30%'), style: AppText.body(12, color: AppColors.faint)),
-            ]),
+              const PlusBadge(),
+            ],
+          ),
+          if (vm.installments.isNotEmpty) ...[
+            ProgressBar(value: vm.debtRatio / 0.5, color: safe ? AppColors.jade : AppColors.rose, height: 8),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    tr('{0}% dari pendapatan{1}', [(vm.debtRatio * 100).round(), safe ? tr(', masih aman') : tr(', lewat batas aman')]),
+                    style: AppText.body(12, weight: FontWeight.w700, color: safe ? AppColors.jade : AppColors.rose),
+                  ),
+                ),
+                Text(tr('batas 30%'), style: AppText.body(12, color: AppColors.faint)),
+              ],
+            ),
           ],
           if (next != null)
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(color: const Color(0x99FFFFFF), borderRadius: BorderRadius.circular(14)),
-              child: Row(children: [
-                Expanded(child: Text('${next.provider}, ${next.name.toLowerCase()} ${next.paidCount + 1}/${next.totalCount}', style: AppText.body(13, weight: FontWeight.w500))),
-                Text(tr('Jatuh tempo {0}', [formatShortDate(next.nextDueDate)]), style: AppText.body(12, weight: FontWeight.w700, color: AppColors.amber)),
-              ]),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text('${next.provider}, ${next.name.toLowerCase()} ${next.paidCount + 1}/${next.totalCount}', style: AppText.body(13, weight: FontWeight.w500)),
+                  ),
+                  Text(
+                    tr('Jatuh tempo {0}', [formatShortDate(next.nextDueDate)]),
+                    style: AppText.body(12, weight: FontWeight.w700, color: AppColors.amber),
+                  ),
+                ],
+              ),
             ),
         ],
       ),
@@ -392,30 +557,46 @@ class _WishlistRow extends StatelessWidget {
           SizedBox(
             width: 46,
             height: 46,
-            child: Stack(alignment: Alignment.center, children: [
-              CircularProgressIndicator(value: item.holdProgress(now), strokeWidth: 4, color: AppColors.rose, backgroundColor: AppColors.track),
-              Text(done ? 'OK' : '${hours}j', style: AppText.body(13, weight: FontWeight.w700)),
-            ]),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                CircularProgressIndicator(value: item.holdProgress(now), strokeWidth: 4, color: AppColors.rose, backgroundColor: AppColors.track),
+                Text(done ? 'OK' : '${hours}j', style: AppText.body(13, weight: FontWeight.w700)),
+              ],
+            ),
           ),
           Expanded(
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 2, children: [
-              Text('${item.name} · ${formatRupiahShort(item.price)}', style: AppText.body(15, weight: FontWeight.w600)),
-              Text(
-                done ? tr('Masa tunggu selesai.{0}', [response]) : tr('Tunggu {0} jam lagi.{1}', [hours, response]),
-                style: AppText.body(12, color: AppColors.muted, height: 1.35),
-              ),
-              if (!mine && item.response == null)
-                Padding(
-                  padding: const EdgeInsets.only(top: 6),
-                  child: Row(spacing: 8, children: [
-                    GestureDetector(onTap: () => vm.respondWishlist(item, 'setuju'), child: Pill(tr('Setuju'))),
-                    GestureDetector(onTap: () => vm.respondWishlist(item, tr('nanti dulu ya')), child: Pill(tr('Nanti dulu'), color: AppColors.rose, background: AppColors.roseSoft)),
-                  ]),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 2,
+              children: [
+                Text('${item.name}, ${formatRupiahShort(item.price)}', style: AppText.body(15, weight: FontWeight.w600)),
+                Text(
+                  done ? tr('Masa tunggu selesai.{0}', [response]) : tr('Tunggu {0} jam lagi.{1}', [hours, response]),
+                  style: AppText.body(12, color: AppColors.muted, height: 1.35),
                 ),
-            ]),
+                if (!mine && item.response == null)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 6),
+                    child: Row(
+                      spacing: 8,
+                      children: [
+                        GestureDetector(onTap: () => vm.respondWishlist(item, 'setuju'), child: Pill(tr('Setuju'))),
+                        GestureDetector(
+                          onTap: () => vm.respondWishlist(item, tr('nanti dulu ya')),
+                          child: Pill(tr('Nanti dulu'), color: AppColors.rose, background: AppColors.roseSoft),
+                        ),
+                      ],
+                    ),
+                  ),
+              ],
+            ),
           ),
           if (done)
-            GestureDetector(onTap: () => vm.removeWishlist(item), child: const Icon(AppIcons.x, size: 18, color: AppColors.faint)),
+            GestureDetector(
+              onTap: () => vm.removeWishlist(item),
+              child: const Icon(AppIcons.x, size: 18, color: AppColors.faint),
+            ),
         ],
       ),
     );
