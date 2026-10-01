@@ -71,6 +71,7 @@ class SettingsViewModel extends ChangeNotifier {
   Future<void> markBackup() => _settingsRepository.markBackup(familyId);
   Future<void> resetData() => _settingsRepository.resetData(familyId);
   Future<void> updateFamily({String? name, String? location}) => _settingsRepository.updateFamily(familyId, name: name, location: location);
+  Future<void> setLifeStage(String stage) => _settingsRepository.updateFamily(familyId, lifeStage: stage);
 
   Future<void> addVaultItem(String group, String title, String value) =>
       _settingsRepository.addVaultItem(familyId: familyId, group: group, title: title, value: value);

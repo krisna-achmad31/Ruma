@@ -62,7 +62,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: ListView(
               padding: const EdgeInsets.fromLTRB(24, 4, 24, 28),
               children: [
-                AppNavBar(title: tr('Langkah 1 dari 2')),
+                AppNavBar(title: tr('Langkah 1 dari 3')),
                 const SizedBox(height: 24),
                 Text(tr('Buat akun rumahmu'), style: AppText.display(30, letterSpacing: -0.8)),
                 const SizedBox(height: 8),

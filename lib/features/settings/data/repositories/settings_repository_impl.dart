@@ -41,7 +41,8 @@ class SettingsRepositoryImpl implements SettingsRepository {
       _remote.addVaultItem(familyId: familyId, group: group, title: title, value: value, note: note);
 
   @override
-  Future<void> updateFamily(String familyId, {String? name, String? location}) => _remote.updateFamily(familyId, name: name, location: location);
+  Future<void> updateFamily(String familyId, {String? name, String? location, String? lifeStage}) =>
+      _remote.updateFamily(familyId, name: name, location: location, lifeStage: lifeStage);
 
   @override
   Future<void> resetData(String familyId) => _remote.resetData(familyId);

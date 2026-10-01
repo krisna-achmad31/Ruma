@@ -9,6 +9,7 @@ import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
 import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
+import '../../../life_stage/domain/entities/family_stage.dart';
 import '../../../life_stage/presentation/viewmodels/life_stage_viewmodel.dart';
 import '../../../life_stage/presentation/widgets/life_stage_scope.dart';
 import '../viewmodels/settings_viewmodel.dart';
@@ -133,7 +134,10 @@ class _LifeStages extends StatelessWidget {
         active: life.baby != null,
         route: '/life/baby',
       ),
-    ]..sort((a, b) => (b.active ? 1 : 0) - (a.active ? 1 : 0));
+    ];
+    final preferred = FamilyStage.planFor(context.watch<SettingsViewModel>().familyInfo.lifeStage);
+    int rank(_StageCard c) => (c.active ? 2 : 0) + (c.route.endsWith(preferred) ? 1 : 0);
+    cards.sort((a, b) => rank(b) - rank(a));
 
     final width = MediaQuery.sizeOf(context).width;
     return Column(
@@ -144,7 +148,15 @@ class _LifeStages extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 2,
           children: [
-            Row(spacing: 8, children: [Text(tr('Fase hidup'), style: AppText.sectionTitle), const PlusBadge()]),
+            Row(spacing: 8, children: [
+              Text(tr('Fase hidup'), style: AppText.sectionTitle),
+              const PlusBadge(),
+              const Spacer(),
+              GestureDetector(
+                onTap: () => context.push('/life/stage'),
+                child: Text(tr('Ubah fase'), style: AppText.body(14, weight: FontWeight.w600, color: AppColors.jade)),
+              ),
+            ]),
             Text(tr('Pendamping di momen paling sibuk kalian'), style: AppText.body(12, color: AppColors.muted)),
           ],
         ),

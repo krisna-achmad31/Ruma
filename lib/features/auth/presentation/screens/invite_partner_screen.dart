@@ -38,7 +38,7 @@ class _InviteContent extends StatelessWidget {
     final fromSignup = auth.pendingInvite;
     auth.finishInvite();
     if (fromSignup) {
-      context.go('/paywall?from=onboarding');
+      context.go('/life/stage?from=onboarding');
     } else if (context.canPop()) {
       context.pop();
     } else {
@@ -76,7 +76,7 @@ class _InviteContent extends StatelessWidget {
         ],
       ),
       children: [
-        AppNavBar(title: auth.pendingInvite ? tr('Langkah 2 dari 2') : tr('Undang anggota'), onLeading: () => _done(context)),
+        AppNavBar(title: auth.pendingInvite ? tr('Langkah 2 dari 3') : tr('Undang anggota'), onLeading: () => _done(context)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: 10,

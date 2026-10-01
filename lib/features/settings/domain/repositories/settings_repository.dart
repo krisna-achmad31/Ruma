@@ -13,7 +13,7 @@ abstract class SettingsRepository {
   Future<void> updateBudgetPeriod(String familyId, {String? type, int? resetDay});
   Future<void> markBackup(String familyId);
   Future<void> addVaultItem({required String familyId, required String group, required String title, required String value, String note = ''});
-  Future<void> updateFamily(String familyId, {String? name, String? location});
+  Future<void> updateFamily(String familyId, {String? name, String? location, String? lifeStage});
 
   /// Menghapus transaksi, jurnal, dan momen keluarga ini.
   Future<void> resetData(String familyId);

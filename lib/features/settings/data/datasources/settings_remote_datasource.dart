@@ -44,6 +44,7 @@ class SettingsRemoteDataSource {
         location: (data['location'] as String?) ?? '',
         memberCount: members.length,
         inviteCode: (data['inviteCode'] as String?) ?? '',
+        lifeStage: (data['lifeStage'] as String?) ?? '',
       );
     });
   }
@@ -102,8 +103,8 @@ class SettingsRemoteDataSource {
     return _familyDoc(familyId).collection('vault').add({'group': group, 'title': title, 'value': value, 'note': note});
   }
 
-  Future<void> updateFamily(String familyId, {String? name, String? location}) {
-    return _familyDoc(familyId).set({'name': ?name, 'location': ?location}, SetOptions(merge: true));
+  Future<void> updateFamily(String familyId, {String? name, String? location, String? lifeStage}) {
+    return _familyDoc(familyId).set({'name': ?name, 'location': ?location, 'lifeStage': ?lifeStage}, SetOptions(merge: true));
   }
 
   Future<void> resetData(String familyId) async {

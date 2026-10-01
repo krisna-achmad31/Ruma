@@ -24,6 +24,7 @@ import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/home/presentation/screens/notifications_screen.dart';
 import '../../features/home/presentation/screens/search_screen.dart';
 import '../../features/life_stage/presentation/screens/baby_screen.dart';
+import '../../features/life_stage/presentation/screens/stage_picker_screen.dart';
 import '../../features/life_stage/presentation/screens/lebaran_screen.dart';
 import '../../features/life_stage/presentation/screens/wedding_screen.dart';
 import '../../features/settings/presentation/screens/important_links_screen.dart';
@@ -142,6 +143,7 @@ GoRouter buildAppRouter(AuthViewModel authViewModel) {
       GoRoute(path: '/life/wedding', builder: (context, state) => const WeddingScreen()),
       GoRoute(path: '/life/baby', builder: (context, state) => const BabyScreen()),
       GoRoute(path: '/life/lebaran', builder: (context, state) => const LebaranScreen()),
+      GoRoute(path: '/life/stage', builder: (context, state) => StagePickerScreen(fromOnboarding: state.uri.queryParameters['from'] == 'onboarding')),
     ],
   );
 }

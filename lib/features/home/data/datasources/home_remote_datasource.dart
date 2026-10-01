@@ -16,6 +16,7 @@ class HomeRemoteDataSource {
       return FamilySummaryEntity(
         name: (data['name'] as String?) ?? '',
         location: (data['location'] as String?) ?? '',
+        lifeStage: (data['lifeStage'] as String?) ?? '',
       );
     });
   }

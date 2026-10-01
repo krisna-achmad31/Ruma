@@ -12,6 +12,7 @@ import '../../../../core/widgets/app_tab_bar.dart';
 import '../../../../core/widgets/family_scope.dart';
 import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
+import '../../../life_stage/domain/entities/family_stage.dart';
 import '../../../life_stage/presentation/viewmodels/life_stage_viewmodel.dart';
 import '../../../life_stage/presentation/widgets/life_stage_scope.dart';
 import '../../../tasks/domain/entities/task_entity.dart';
@@ -151,111 +152,24 @@ class _SafeToSpendHero extends StatelessWidget {
   }
 }
 
-/// Sorotan fase hidup: rencana yang sedang berjalan, atau ajakan memulai Lebaran.
+//// Sorotan fase hidup: rencana yang cocok dengan fase pilihan keluarga, rencana lain yang berjalan,
+/// atau ajakan memulai rencana yang cocok.
 class _StageSpotlight extends StatelessWidget {
   const _StageSpotlight();
 
   static const _allocationColors = [AppColors.jade, AppColors.sky, AppColors.rose, AppColors.amber, AppColors.butter];
+  static const _kinds = ['wedding', 'baby', 'lebaran'];
 
   @override
   Widget build(BuildContext context) {
     final life = context.watch<LifeStageViewModel>();
-    final Widget hero;
-    final List<(String, String, String, String)> others;
+    final stage = context.select<HomeViewModel, String>((vm) => vm.family?.lifeStage ?? '');
+    bool active(String k) => switch (k) { 'wedding' => life.wedding != null, 'baby' => life.baby != null, _ => life.lebaran != null };
 
-    if (life.wedding != null) {
-      final w = life.wedding!;
-      final days = life.daysUntil(w.weddingDate).clamp(0, 9999);
-      hero = _countdownHero(
-        context,
-        tone: PastelTone.rose,
-        object: 'ring',
-        label: tr('Fase kalian: siap nikah'),
-        number: '$days',
-        caption: tr('hari lagi ke akad. {0} dari {1} persiapan beres.', [w.prepDone, w.prep.length]),
-        progress: w.prep.isEmpty ? null : w.prepDone / w.prep.length,
-        cta: tr('Buka persiapan nikah'),
-        route: '/life/wedding',
-      );
-      others = [('baby_bottle', tr('Menyambut bayi'), tr('Persalinan & jaga malam'), '/life/baby'), ('crescent_moon', tr('Lebaran & THR'), tr('Rencana THR & mudik'), '/life/lebaran')];
-    } else if (life.baby != null) {
-      final b = life.baby!;
-      final week = b.weekOf(DateTime.now());
-      hero = _countdownHero(
-        context,
-        tone: PastelTone.sky,
-        object: 'baby_bottle',
-        label: tr('Fase kalian: menyambut bayi'),
-        number: '$week',
-        caption: tr('minggu. Perkiraan lahir {0}.', [formatFullDate(b.dueDate)]),
-        progress: week / 40,
-        cta: tr('Buka rencana bayi'),
-        route: '/life/baby',
-      );
-      others = [('crescent_moon', tr('Lebaran & THR'), tr('Rencana THR & mudik'), '/life/lebaran'), ('ring', tr('Siap nikah'), tr('Anggaran & vendor'), '/life/wedding')];
-    } else if (life.lebaran != null) {
-      final l = life.lebaran!;
-      final days = life.daysUntil(l.eidDate).clamp(0, 9999);
-      final total = l.allocatedTotal;
-      hero = PastelHero(
-        tone: PastelTone.butter,
-        object: 'crescent_moon',
-        label: tr('Fase kalian: Lebaran'),
-        plus: true,
-        onTap: () => context.push('/life/lebaran'),
-        head: _countdownHead(PastelTone.butter, '$days', tr('hari lagi. Sisihkan {0} per bulan mulai sekarang, biar THR nggak habis sebelum mudik.', [formatRupiahShort(life.lebaranMonthlySetAside(l))])),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 14,
-          children: [
-            if (total > 0)
-              ClipRRect(
-                borderRadius: BorderRadius.circular(4),
-                child: SizedBox(
-                  height: 8,
-                  child: Row(
-                    spacing: 3,
-                    children: [
-                      for (int i = 0; i < l.allocations.length; i++)
-                        if (l.allocations[i].total > 0)
-                          Expanded(
-                            flex: (l.allocations[i].total / total * 1000).round().clamp(1, 1000),
-                            child: ColoredBox(color: _allocationColors[i % _allocationColors.length]),
-                          ),
-                    ],
-                  ),
-                ),
-              ),
-            HeroButton(label: tr('Lanjutkan rencana Lebaran'), onTap: () => context.push('/life/lebaran')),
-          ],
-        ),
-      );
-      others = [('ring', tr('Siap nikah'), tr('Anggaran & vendor'), '/life/wedding'), ('baby_bottle', tr('Menyambut bayi'), tr('Persalinan & jaga malam'), '/life/baby')];
-    } else {
-      hero = PastelHero(
-        tone: PastelTone.butter,
-        object: 'crescent_moon',
-        label: tr('Fase hidup'),
-        plus: true,
-        onTap: () => context.push('/life/lebaran'),
-        head: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 8,
-          children: [
-            Text(tr('Siapkan Lebaran dari sekarang'), style: AppText.display(24, letterSpacing: -0.6, height: 1.1)),
-            Text(tr('Bagi THR ke zakat, mudik, salam tempel, dan tabungan sebelum habis duluan.'), style: AppText.body(13, color: AppColors.muted, height: 1.4)),
-          ],
-        ),
-        body: Row(
-          spacing: 12,
-          children: [
-            HeroButton(label: tr('Mulai rencana'), onTap: () => context.push('/life/lebaran')),
-            Text(tr('Gratis 14 hari'), style: AppText.body(12, weight: FontWeight.w600, color: PastelTone.butter.label)),
-          ],
-        ),
-      );
-      others = [('ring', tr('Siap nikah'), tr('Anggaran & vendor'), '/life/wedding'), ('baby_bottle', tr('Menyambut bayi'), tr('Persalinan & jaga malam'), '/life/baby')];
-    }
+    final preferred = FamilyStage.planFor(stage);
+    final kind = active(preferred) ? preferred : _kinds.firstWhere(active, orElse: () => preferred);
+    final hero = active(kind) ? _activeHero(context, life, kind) : _promoHero(context, kind);
+    final others = _kinds.where((k) => k != kind).map(_shortcut).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -291,6 +205,114 @@ class _StageSpotlight extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+
+  static (String, String, String, String) _shortcut(String kind) => switch (kind) {
+        'wedding' => ('ring', tr('Siap nikah'), tr('Anggaran & vendor'), '/life/wedding'),
+        'baby' => ('baby_bottle', tr('Menyambut bayi'), tr('Persalinan & jaga malam'), '/life/baby'),
+        _ => ('crescent_moon', tr('Lebaran & THR'), tr('Rencana THR & mudik'), '/life/lebaran'),
+      };
+
+  Widget _activeHero(BuildContext context, LifeStageViewModel life, String kind) {
+    switch (kind) {
+      case 'wedding':
+        final w = life.wedding!;
+        return _countdownHero(
+          context,
+          tone: PastelTone.rose,
+          object: 'ring',
+          label: tr('Fase kalian: siap nikah'),
+          number: '${life.daysUntil(w.weddingDate).clamp(0, 9999)}',
+          caption: tr('hari lagi ke akad. {0} dari {1} persiapan beres.', [w.prepDone, w.prep.length]),
+          progress: w.prep.isEmpty ? null : w.prepDone / w.prep.length,
+          cta: tr('Buka persiapan nikah'),
+          route: '/life/wedding',
+        );
+      case 'baby':
+        final b = life.baby!;
+        final week = b.weekOf(DateTime.now());
+        return _countdownHero(
+          context,
+          tone: PastelTone.sky,
+          object: 'baby_bottle',
+          label: tr('Fase kalian: menyambut bayi'),
+          number: '$week',
+          caption: tr('minggu. Perkiraan lahir {0}.', [formatFullDate(b.dueDate)]),
+          progress: week / 40,
+          cta: tr('Buka rencana bayi'),
+          route: '/life/baby',
+        );
+      default:
+        final l = life.lebaran!;
+        final total = l.allocatedTotal;
+        return PastelHero(
+          tone: PastelTone.butter,
+          object: 'crescent_moon',
+          label: tr('Fase kalian: Lebaran'),
+          plus: true,
+          onTap: () => context.push('/life/lebaran'),
+          head: _countdownHead(
+            PastelTone.butter,
+            '${life.daysUntil(l.eidDate).clamp(0, 9999)}',
+            tr('hari lagi. Sisihkan {0} per bulan mulai sekarang, biar THR nggak habis sebelum mudik.', [formatRupiahShort(life.lebaranMonthlySetAside(l))]),
+          ),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 14,
+            children: [
+              if (total > 0)
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: SizedBox(
+                    height: 8,
+                    child: Row(
+                      spacing: 3,
+                      children: [
+                        for (int i = 0; i < l.allocations.length; i++)
+                          if (l.allocations[i].total > 0)
+                            Expanded(
+                              flex: (l.allocations[i].total / total * 1000).round().clamp(1, 1000),
+                              child: ColoredBox(color: _allocationColors[i % _allocationColors.length]),
+                            ),
+                      ],
+                    ),
+                  ),
+                ),
+              HeroButton(label: tr('Lanjutkan rencana Lebaran'), onTap: () => context.push('/life/lebaran')),
+            ],
+          ),
+        );
+    }
+  }
+
+  Widget _promoHero(BuildContext context, String kind) {
+    final (tone, object, title, body, route) = switch (kind) {
+      'wedding' => (PastelTone.rose, 'ring', tr('Siapkan pernikahan berdua'), tr('Anggaran nikah, jadwal bayar vendor, dan obrolan penting sebelum tinggal serumah.'), '/life/wedding'),
+      'baby' => (PastelTone.sky, 'baby_bottle', tr('Siapkan kedatangan si kecil'), tr('Anggaran persalinan, tas persalinan, dan gantian jaga malam.'), '/life/baby'),
+      _ => (PastelTone.butter, 'crescent_moon', tr('Siapkan Lebaran dari sekarang'), tr('Bagi THR ke zakat, mudik, salam tempel, dan tabungan sebelum habis duluan.'), '/life/lebaran'),
+    };
+    return PastelHero(
+      tone: tone,
+      object: object,
+      label: tr('Fase hidup'),
+      plus: true,
+      onTap: () => context.push(route),
+      head: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 8,
+        children: [
+          Text(title, style: AppText.display(24, letterSpacing: -0.6, height: 1.1)),
+          Text(body, style: AppText.body(13, color: AppColors.muted, height: 1.4)),
+        ],
+      ),
+      body: Row(
+        spacing: 12,
+        children: [
+          HeroButton(label: tr('Mulai rencana'), onTap: () => context.push(route)),
+          Text(tr('Gratis 14 hari'), style: AppText.body(12, weight: FontWeight.w600, color: tone.label)),
+        ],
+      ),
     );
   }
 

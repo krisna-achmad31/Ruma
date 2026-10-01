@@ -4,7 +4,10 @@ class FamilyInfoEntity {
   final int memberCount;
   final String inviteCode;
 
-  const FamilyInfoEntity({required this.name, required this.location, required this.memberCount, this.inviteCode = ''});
+  /// Fase hidup pilihan keluarga, lihat FamilyStage. Kosong kalau belum dipilih.
+  final String lifeStage;
+
+  const FamilyInfoEntity({required this.name, required this.location, required this.memberCount, this.inviteCode = '', this.lifeStage = ''});
 }
 
 class MemberEntity {
