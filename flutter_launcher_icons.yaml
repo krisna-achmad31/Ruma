@@ -1,0 +1,11 @@
+# Ikon launcher Ruma. Sumber desain: ruma_landing_page_design.pen (papan "Ruma App Icon").
+# Jalankan ulang setelah mengganti gambar: dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: "assets/brand/ruma_icon_1024.png"
+  android: "ic_launcher"
+  adaptive_icon_background: "assets/brand/ruma_icon_background_432.png"
+  adaptive_icon_foreground: "assets/brand/ruma_icon_foreground_432.png"
+  adaptive_icon_foreground_inset: 0
+  min_sdk_android: 24
+  ios: true
+  remove_alpha_ios: true
