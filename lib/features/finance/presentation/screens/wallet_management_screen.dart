@@ -9,6 +9,7 @@ import '../../../../core/utils/icon_map.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../viewmodels/finance_viewmodel.dart';
 import '../widgets/finance_scope.dart';
@@ -34,11 +35,20 @@ class _Content extends StatelessWidget {
       tab: AppTab.uang,
       children: [
         AppNavBar(title: tr('Dompet'), actionIcon: AppIcons.plus, onAction: () => _addWallet(context, vm)),
-        GlassCard(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 4, children: [
-            Text(tr('Total semua dompet'), style: AppText.body(13, weight: FontWeight.w600, color: AppColors.muted)),
-            Text(formatRupiah(vm.householdMoney), style: AppText.display(28, letterSpacing: -0.8)),
-            if (vm.savingsMoney > 0) Text(tr('Belum termasuk tabungan {0}', [formatRupiahShort(vm.savingsMoney)]), style: AppText.body(12, color: AppColors.faint)),
+        PastelHero(
+          tone: PastelTone.sky,
+          object: 'bank',
+          objectSize: 104,
+          objectRotation: 8,
+          label: tr('Total semua dompet'),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            HeroNumber(formatRupiah(vm.householdMoney), size: 32),
+            Text(
+              vm.savingsMoney > 0
+                  ? tr('{0} dompet. Belum termasuk tabungan {1}.', [vm.spendingWallets.length, formatRupiahShort(vm.savingsMoney)])
+                  : tr('{0} dompet dipakai bersama.', [vm.spendingWallets.length]),
+              style: AppText.body(13, color: AppColors.muted, height: 1.4),
+            ),
           ]),
         ),
         SegmentedControl(labels: [for (final f in _filters) tr(f)], selected: _filters.indexOf(vm.walletFilter).clamp(0, 3), onChanged: (i) => vm.setWalletFilter(_filters[i])),

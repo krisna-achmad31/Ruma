@@ -8,6 +8,7 @@ import '../../../../core/theme/app_text.dart';
 import '../../../../core/utils/format.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../domain/entities/transaction_entity.dart';
 import '../viewmodels/finance_viewmodel.dart';
@@ -82,29 +83,24 @@ class _ContentState extends State<_Content> {
       children: [
         AppNavBar(title: tr('Rekap'), actionIcon: AppIcons.share2, onAction: () => _share(vm, list.length)),
         SegmentedControl(labels: [tr('Hari'), tr('Minggu'), tr('Bulan'), tr('Tahun')], selected: _period, onChanged: (i) => setState(() => _period = i)),
-        HeroCard(
-          colors: AppColors.jadeGradient,
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 8,
-            children: [
-              Text(tr('Kekayaan bersih · {0} {1}', [monthNamesId[now.month - 1], now.year]), style: AppText.body(13, weight: FontWeight.w600, color: const Color(0xCCFFFFFF))),
-              Text(formatRupiah(netWorth), style: AppText.display(34, color: Colors.white, letterSpacing: -1.1)),
-              if (report != null && report.wealthChangePercent != 0)
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  decoration: BoxDecoration(color: const Color(0x26FFFFFF), borderRadius: BorderRadius.circular(12)),
-                  child: Row(mainAxisSize: MainAxisSize.min, spacing: 4, children: [
-                    Icon(report.wealthChangePercent >= 0 ? AppIcons.trendingUp : AppIcons.trendingDown, size: 13, color: Colors.white),
-                    Text(tr('{0}{1}% dari bulan lalu', [report.wealthChangePercent >= 0 ? '+' : '', report.wealthChangePercent.toStringAsFixed(1).replaceAll('.', ',')]),
-                        style: AppText.body(12, weight: FontWeight.w700, color: Colors.white)),
-                  ]),
-                ),
-              Text(tr('Kas {0} · Investasi {1}', [formatRupiahShort(report?.cash ?? vm.totalAllWallets), formatRupiahShort(report?.investment ?? vm.investmentTotal)]),
-                  style: AppText.body(12, color: const Color(0xB3FFFFFF))),
-            ],
-          ),
+        PastelHero(
+          tone: PastelTone.mint,
+          object: 'chart_up',
+          objectSize: 104,
+          objectRotation: 6,
+          label: tr('Kekayaan bersih, {0} {1}', [monthNamesId[now.month - 1], now.year]),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            HeroNumber(formatRupiah(netWorth), size: 32),
+            Text(tr('Kas {0}, investasi {1}.', [formatRupiahShort(report?.cash ?? vm.totalAllWallets), formatRupiahShort(report?.investment ?? vm.investmentTotal)]),
+                style: AppText.body(13, color: AppColors.muted)),
+            if (report != null && report.wealthChangePercent != 0)
+              Pill(
+                tr('{0}{1}% dari bulan lalu', [report.wealthChangePercent >= 0 ? '+' : '', report.wealthChangePercent.toStringAsFixed(1).replaceAll('.', ',')]),
+                icon: report.wealthChangePercent >= 0 ? AppIcons.trendingUp : AppIcons.trendingDown,
+                color: report.wealthChangePercent >= 0 ? AppColors.jade : AppColors.rose,
+                background: const Color(0xCCFFFFFF),
+              ),
+          ]),
         ),
         for (int i = 0; i < 4; i += 2)
           Row(

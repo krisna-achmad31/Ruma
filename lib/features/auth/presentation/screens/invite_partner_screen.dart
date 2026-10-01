@@ -10,6 +10,7 @@ import '../../../../core/di/injection.dart';
 import '../../../../core/theme/app_text.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/family_scope.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../../settings/presentation/viewmodels/settings_viewmodel.dart';
 import '../viewmodels/auth_viewmodel.dart';
@@ -50,7 +51,7 @@ class _InviteContent extends StatelessWidget {
     final vm = context.watch<SettingsViewModel>();
     final auth = context.watch<AuthViewModel>();
     final code = vm.familyInfo.inviteCode;
-    final display = code.length == 6 ? '${code.substring(0, 3)} · ${code.substring(3)}' : (code.isEmpty ? '......' : code);
+    final display = code.length == 6 ? '${code.substring(0, 3)} ${code.substring(3)}' : (code.isEmpty ? '......' : code);
     final name = auth.currentUser?.name ?? '';
 
     return AppScaffold(
@@ -101,28 +102,32 @@ class _InviteContent extends StatelessWidget {
             ),
           ],
         ),
-        GlassCard(
-          strong: true,
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            spacing: 12,
-            children: [
-              Text(tr('KODE RUMAH'), style: AppText.eyebrow(AppColors.faint)),
-              Text(display, style: AppText.display(36, letterSpacing: 3)),
-              GestureDetector(
-                onTap: () {
-                  Clipboard.setData(ClipboardData(text: code));
-                  showSnack(context, tr('Kode rumah disalin.'));
-                },
-                child: Pill(tr('Salin kode'), icon: AppIcons.copy),
-              ),
-            ],
+        PastelHero(
+          tone: PastelTone.rose,
+          object: 'envelope',
+          objectSize: 104,
+          objectRotation: -12,
+          label: tr('Kode rumah'),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            FittedBox(fit: BoxFit.scaleDown, alignment: Alignment.centerLeft, child: Text(display, style: AppText.display(40, letterSpacing: 2))),
+            Text(tr('Kirim kode ini supaya pasanganmu gabung ke rumah yang sama.'), style: AppText.body(13, color: AppColors.muted, height: 1.4)),
+          ]),
+          body: Align(
+            alignment: Alignment.centerLeft,
+            child: HeroButton(
+              label: tr('Salin kode'),
+              icon: AppIcons.copy,
+              onTap: () {
+                Clipboard.setData(ClipboardData(text: code));
+                showSnack(context, tr('Kode rumah disalin.'));
+              },
+            ),
           ),
         ),
         Row(
           spacing: 8,
           children: [
-            const Icon(AppIcons.sparkles, size: 15, color: AppColors.amber),
+            const Object3D('sparkles', size: 18),
             Expanded(child: Text(tr('Langganan Plus otomatis berlaku untuk berdua.'), style: AppText.body(13, color: AppColors.muted))),
           ],
         ),

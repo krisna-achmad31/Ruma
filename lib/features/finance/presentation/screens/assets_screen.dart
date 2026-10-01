@@ -8,6 +8,7 @@ import '../../../../core/utils/format.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../viewmodels/finance_viewmodel.dart';
 import '../widgets/finance_scope.dart';
@@ -46,11 +47,15 @@ class _Content extends StatelessWidget {
             if (i == 1) context.pushReplacement('/finance/goals');
           },
         ),
-        GlassCard(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 6, children: [
-            Text(tr('Aset dikurangi utang'), style: AppText.body(13, weight: FontWeight.w600, color: AppColors.muted)),
-            Text(formatRupiah(vm.assetNet), style: AppText.display(28, letterSpacing: -0.8)),
-            Text(tr('Ikut dihitung di Rekap sebagai kekayaan bersih.'), style: AppText.body(12, color: AppColors.faint)),
+        PastelHero(
+          tone: PastelTone.sky,
+          object: 'banknote',
+          objectSize: 104,
+          objectRotation: -8,
+          label: tr('Aset dikurangi utang'),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            HeroNumber(formatRupiah(vm.assetNet), size: 32),
+            Text(tr('Ikut dihitung di Rekap sebagai kekayaan bersih.'), style: AppText.body(13, color: AppColors.muted, height: 1.4)),
           ]),
         ),
         for (final g in _groups)

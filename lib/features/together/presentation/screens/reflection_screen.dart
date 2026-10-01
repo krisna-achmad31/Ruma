@@ -6,6 +6,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/theme/app_text.dart';
 import '../../../../core/utils/format.dart';
 import '../../../../core/widgets/app_scaffold.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../viewmodels/together_viewmodel.dart';
 import '../widgets/together_scope.dart';
@@ -76,15 +77,20 @@ class _ContentState extends State<_Content> {
           : null,
       children: [
         AppNavBar(title: tr('Ngobrol akhir bulan'), actionIcon: AppIcons.history, onAction: () => context.push('/together/reflection/history')),
-        Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 6, children: [
-          Text(monthNamesId[now.month - 1], style: AppText.display(30, letterSpacing: -0.8)),
-          Pill(
-            vm.reflectionOpen ? tr('Dibuka 25 sampai {0} {1}', [lastDay, shortMonthNamesId[now.month - 1]]) : tr('Dibuka tanggal 25'),
-            icon: AppIcons.calendarHeart,
-            color: AppColors.rose,
-            background: AppColors.roseSoft,
-          ),
-        ]),
+        PastelHero(
+          tone: PastelTone.mint,
+          object: 'calendar',
+          objectSize: 104,
+          objectRotation: -8,
+          label: tr('Ngobrol akhir bulan'),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            Text(monthNamesId[now.month - 1], style: AppText.display(34, letterSpacing: -1, height: 1)),
+            Text(
+              vm.reflectionOpen ? tr('Dibuka 25 sampai {0} {1}. Jawab, lalu baca bareng.', [lastDay, shortMonthNamesId[now.month - 1]]) : tr('Dibuka tanggal 25'),
+              style: AppText.body(13, color: AppColors.muted, height: 1.4),
+            ),
+          ]),
+        ),
         if (vm.partner != null)
           GlassCard(
             padding: const EdgeInsets.all(14),

@@ -9,6 +9,7 @@ import '../../../../core/utils/icon_map.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../viewmodels/finance_viewmodel.dart';
 import '../widgets/finance_scope.dart';
@@ -36,24 +37,15 @@ class _Content extends StatelessWidget {
       tab: AppTab.uang,
       children: [
         AppNavBar(title: tr('Amplop'), actionIcon: AppIcons.plus, onAction: () => _addCategory(context, vm)),
-        GlassCard(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            spacing: 12,
-            children: [
-              Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                Expanded(
-                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 2, children: [
-                    Text(tr('Sisa anggaran {0}', [monthNamesId[DateTime.now().month - 1]]), style: AppText.body(13, weight: FontWeight.w600, color: AppColors.muted)),
-                    Text(formatRupiah(vm.budgetRemaining), style: AppText.display(28, letterSpacing: -0.8)),
-                  ]),
-                ),
-                Text(tr('dari {0}', [formatRupiahShort(vm.budgetTotal)]), style: AppText.body(13, color: AppColors.muted)),
-              ]),
-              ProgressBar(value: 1 - spentFraction, height: 8),
-              Text(tr('Amplop terisi ulang tiap tanggal {0}, pas gajian.', [vm.resetDay]), style: AppText.body(12, color: AppColors.muted)),
-            ],
-          ),
+        PastelHero(
+          tone: PastelTone.mint,
+          object: 'envelope',
+          label: tr('Sisa anggaran {0}', [monthNamesId[DateTime.now().month - 1]]),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            HeroNumber(formatRupiah(vm.budgetRemaining), size: 34),
+            Text(tr('dari {0}. Amplop terisi ulang tiap tanggal {1}, pas gajian.', [formatRupiahShort(vm.budgetTotal), vm.resetDay]), style: AppText.body(13, color: AppColors.muted, height: 1.4)),
+          ]),
+          body: HeroBar(value: vm.budgetTotal <= 0 ? 0 : 1 - spentFraction, tone: PastelTone.mint),
         ),
         SegmentedControl(
           labels: [tr('Belanja'), tr('Tabungan'), tr('Utang & aset')],

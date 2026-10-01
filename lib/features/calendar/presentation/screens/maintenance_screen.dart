@@ -9,6 +9,7 @@ import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
 import '../../../../core/widgets/family_scope.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../domain/entities/maintenance_item_entity.dart';
 import '../viewmodels/calendar_viewmodel.dart';
@@ -84,25 +85,18 @@ class _Content extends StatelessWidget {
           selected: _maintenanceFilters.indexOf(vm.maintenanceFilter).clamp(0, 3),
           onChanged: (i) => vm.setMaintenanceFilter(_maintenanceFilters[i]),
         ),
-        Container(
-          padding: const EdgeInsets.all(18),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24),
-            gradient: const LinearGradient(colors: [Color(0xFFF7E3D2), Color(0xFFF6EBDD)]),
-            border: Border.all(color: AppColors.glassEdge),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 8,
-            children: [
-              Text(tr('BULAN INI'), style: AppText.eyebrow(AppColors.amber)),
-              Text(due.isEmpty ? tr('Semua aman') : tr('{0} perlu dicek', [due.length]), style: AppText.display(24)),
-              Text(
-                due.isEmpty ? tr('Tidak ada jadwal perawatan sampai akhir bulan.') : tr('Estimasi {0}. Siapkan dari amplop Rumah & Tagihan.', [formatRupiahShort(cost)]),
-                style: AppText.body(13, color: AppColors.muted),
-              ),
-            ],
-          ),
+        PastelHero(
+          tone: PastelTone.peach,
+          object: 'hammer_wrench',
+          objectSize: 104,
+          label: tr('Bulan ini'),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            Text(due.isEmpty ? tr('Semua aman') : tr('{0} perlu dicek', [due.length]), style: AppText.display(30, height: 1.05)),
+            Text(
+              due.isEmpty ? tr('Tidak ada jadwal perawatan sampai akhir bulan.') : tr('Estimasi {0}. Siapkan dari amplop Rumah & Tagihan.', [formatRupiahShort(cost)]),
+              style: AppText.body(13, color: AppColors.muted, height: 1.4),
+            ),
+          ]),
         ),
         ListCard(
           children: vm.filteredMaintenance.isEmpty

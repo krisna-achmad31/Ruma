@@ -7,6 +7,7 @@ import '../../../../core/utils/format.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../viewmodels/finance_viewmodel.dart';
 import '../widgets/finance_scope.dart';
@@ -31,27 +32,23 @@ class _Content extends StatelessWidget {
       tab: AppTab.uang,
       children: [
         AppNavBar(title: tr('Cicilan & paylater'), actionIcon: AppIcons.plus, onAction: () => _add(context, vm)),
-        GlassCard(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            spacing: 12,
-            children: [
-              Text(tr('Total bulan ini'), style: AppText.body(13, weight: FontWeight.w600, color: AppColors.muted)),
-              Text(formatRupiah(vm.installmentsMonthly), style: AppText.display(28, letterSpacing: -0.8)),
-              ProgressBar(value: vm.debtRatio / 0.5, color: safe ? AppColors.jade : AppColors.rose, height: 8),
-              Row(children: [
-                Expanded(
-                  child: Text(
-                    vm.monthlyIncomeEstimate <= 0
-                        ? tr('Catat pemasukan dulu supaya rasio bisa dihitung')
-                        : tr('{0}% dari pendapatan{1}', [(vm.debtRatio * 100).round(), safe ? tr(', masih aman') : tr(', lewat batas aman')]),
-                    style: AppText.body(12, weight: FontWeight.w700, color: safe ? AppColors.jade : AppColors.rose),
-                  ),
-                ),
-                Text(tr('batas 30%'), style: AppText.body(12, color: AppColors.faint)),
-              ]),
-            ],
-          ),
+        PastelHero(
+          tone: PastelTone.butter,
+          object: 'credit_card',
+          objectSize: 104,
+          objectRotation: -14,
+          label: tr('Total cicilan bulan ini'),
+          plus: true,
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            HeroNumber(formatRupiah(vm.installmentsMonthly), size: 32),
+            Text(
+              vm.monthlyIncomeEstimate <= 0
+                  ? tr('Catat pemasukan dulu supaya rasio bisa dihitung')
+                  : tr('{0}% dari pendapatan{1}. Batas aman 30%.', [(vm.debtRatio * 100).round(), safe ? tr(', masih aman') : tr(', lewat batas aman')]),
+              style: AppText.body(13, color: AppColors.muted, height: 1.4),
+            ),
+          ]),
+          body: HeroBar(value: vm.debtRatio / 0.5, tone: PastelTone.butter, color: safe ? AppColors.jade : AppColors.rose),
         ),
         SectionHeader(title: tr('Jatuh tempo')),
         ListCard(

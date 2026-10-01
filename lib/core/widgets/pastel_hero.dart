@@ -25,6 +25,10 @@ class PastelTone {
   static const jade = PastelTone(AppColors.jadeGradient, Color(0xCCFFFFFF), Colors.white, dark: true);
   static const night = PastelTone([Color(0xFF15201D), Color(0xFF2A2440)], Color(0xFFC9BEF0), Colors.white, dark: true);
 
+  /// Hero pastel dari pasangan warna (aksen, latar lembut) milik amplop atau dompet.
+  factory PastelTone.of((Color, Color) tone) =>
+      PastelTone([Color.lerp(tone.$2, Colors.white, 0.35)!, tone.$2], Color.lerp(tone.$1, AppColors.ink, 0.25)!, tone.$1);
+
   Color get text => dark ? Colors.white : AppColors.ink;
   Color get subtext => dark ? const Color(0xB3FFFFFF) : AppColors.muted;
 }

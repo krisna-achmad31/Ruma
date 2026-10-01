@@ -8,6 +8,8 @@ import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
 import '../../../../core/widgets/pin_pad.dart';
+import '../../../../core/theme/app_text.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../domain/entities/family_info_entity.dart';
 import '../viewmodels/settings_viewmodel.dart';
@@ -77,7 +79,21 @@ class _Unlocked extends StatelessWidget {
       tab: AppTab.rumah,
       children: [
         AppNavBar(title: tr('Brankas'), actionIcon: AppIcons.plus, onAction: () => _add(context)),
-        InfoBanner(icon: AppIcons.lockOpen, text: tr('Terbuka. Terkunci lagi otomatis dalam 1 menit.')),
+        PastelHero(
+          tone: PastelTone.lilac,
+          object: 'key',
+          objectSize: 104,
+          objectRotation: -20,
+          label: tr('Brankas terbuka'),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            Text(tr('{0} catatan penting', [_groups.fold<int>(0, (s, g) => s + vm.vaultOf(g.$1).length)]), style: AppText.display(30, height: 1.05)),
+            Text(tr('Nomor, dokumen, dan akun keluarga. Terkunci lagi otomatis dalam 1 menit.'), style: AppText.body(13, color: AppColors.muted, height: 1.4)),
+          ]),
+          body: Align(
+            alignment: Alignment.centerLeft,
+            child: Pill(tr('Hanya anggota keluarga'), icon: AppIcons.shieldCheck, color: PastelTone.lilac.label, background: const Color(0xCCFFFFFF)),
+          ),
+        ),
         for (final g in _groups)
           LabeledGroup(
             label: tr(g.$2),

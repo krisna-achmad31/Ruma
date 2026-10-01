@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +8,7 @@ import '../../../../core/utils/icon_map.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../domain/entities/category_entity.dart';
 import '../viewmodels/finance_viewmodel.dart';
@@ -46,28 +45,15 @@ class _Content extends StatelessWidget {
       tab: AppTab.uang,
       children: [
         AppNavBar(title: c.name, actionIcon: AppIcons.ellipsis, onAction: () => _rename(context, vm, c)),
-        GlassCard(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            spacing: 16,
-            children: [
-              SizedBox(
-                width: 170,
-                height: 170,
-                child: Stack(alignment: Alignment.center, children: [
-                  SizedBox.expand(
-                    child: CustomPaint(painter: _RingPainter(value: vm.remainingFractionOf(c), color: vm.isLow(c) ? AppColors.amber : AppColors.jade)),
-                  ),
-                  Column(mainAxisSize: MainAxisSize.min, spacing: 2, children: [
-                    Text(tr('sisa'), style: AppText.body(12, weight: FontWeight.w600, color: AppColors.muted)),
-                    Text(formatRupiahShort(vm.remainingOf(c)), style: AppText.display(26, letterSpacing: -0.6)),
-                    Text(tr('dari {0}', [formatRupiahShort(c.budgetAmount)]), style: AppText.body(12, color: AppColors.faint)),
-                  ]),
-                ]),
-              ),
-              Pill(tr('Aman dipakai {0} per hari sampai gajian', [formatRupiahShort(vm.safePerDay(c))]), icon: AppIcons.shieldCheck),
-            ],
-          ),
+        PastelHero(
+          tone: PastelTone.of(vm.isLow(c) ? (AppColors.amber, AppColors.amberSoft) : toneForCategory(c.icon, c.name)),
+          object: AppIcons.objectNameFor(iconFor(c.icon), 'envelope'),
+          label: tr('{0}, sisa', [c.name]),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            HeroNumber(formatRupiahShort(vm.remainingOf(c)), size: 44),
+            Text(tr('dari {0}. Aman dipakai {1} per hari sampai gajian.', [formatRupiahShort(c.budgetAmount), formatRupiahShort(vm.safePerDay(c))]), style: AppText.body(13, color: AppColors.muted, height: 1.4)),
+          ]),
+          body: HeroBar(value: vm.remainingFractionOf(c), tone: PastelTone.of(toneForCategory(c.icon, c.name)), color: vm.isLow(c) ? AppColors.amber : null),
         ),
         Row(
           spacing: 8,
@@ -155,31 +141,4 @@ class _Action extends StatelessWidget {
       ),
     );
   }
-}
-
-class _RingPainter extends CustomPainter {
-  final double value;
-  final Color color;
-
-  _RingPainter({required this.value, required this.color});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    const stroke = 14.0;
-    final rect = Offset.zero & size;
-    final track = Paint()
-      ..color = const Color(0x1015201D)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = stroke;
-    final arc = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round
-      ..strokeWidth = stroke;
-    canvas.drawArc(rect.deflate(stroke / 2), 0, math.pi * 2, false, track);
-    canvas.drawArc(rect.deflate(stroke / 2), -math.pi / 2, math.pi * 2 * value.clamp(0, 1), false, arc);
-  }
-
-  @override
-  bool shouldRepaint(_RingPainter old) => old.value != value || old.color != color;
 }

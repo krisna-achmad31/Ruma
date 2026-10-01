@@ -9,6 +9,7 @@ import '../../../../core/utils/icon_map.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../domain/entities/money_extras_entity.dart';
 import '../viewmodels/finance_viewmodel.dart';
@@ -53,6 +54,23 @@ class _Content extends StatelessWidget {
             if (i == 2) context.pushReplacement('/finance/assets');
           },
         ),
+        if (vm.goals.isNotEmpty)
+          PastelHero(
+            tone: PastelTone.mint,
+            object: 'coin',
+            objectSize: 104,
+            objectRotation: 0,
+            label: tr('Total tabungan berdua'),
+            head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+              HeroNumber(formatRupiah(vm.goals.fold<double>(0, (s, g) => s + g.currentAmount)), size: 32),
+              Text(
+                last.isEmpty
+                    ? tr('{0} target berjalan.', [vm.goals.length])
+                    : tr('{0} target berjalan. Terakhir: {1} +{2}.', [vm.goals.length, last.first.name, formatRupiahShort(last.first.lastContribution)]),
+                style: AppText.body(13, color: AppColors.muted, height: 1.4),
+              ),
+            ]),
+          ),
         if (vm.goals.isEmpty) GlassCard(child: EmptyNote(tr('Belum ada target tabungan. Tambah dengan tombol +.'), icon: AppIcons.piggyBank)),
         ...List.generate(vm.goals.length, (i) {
           final g = vm.goals[i];

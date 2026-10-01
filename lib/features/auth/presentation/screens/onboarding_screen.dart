@@ -8,6 +8,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/theme/app_icons.dart';
 import '../../../../core/theme/app_text.dart';
 import '../../../../core/widgets/app_scaffold.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../../../../core/l10n/app_locale.dart';
 
@@ -50,11 +51,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               spacing: 20,
               children: [
                 Row(children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(14), border: Border.all(color: AppColors.faint)),
-                    child: Text(AppBrand.name, style: AppText.body(13, weight: FontWeight.w700, color: AppColors.muted)),
-                  ),
+                  Row(spacing: 8, children: [
+                    Container(
+                      width: 34,
+                      height: 34,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(11), gradient: const LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xFF1F5446), Color(0xFF3D8270)])),
+                      child: const Object3D('house', size: 24),
+                    ),
+                    Text(AppBrand.name, style: AppText.display(18, letterSpacing: -0.4)),
+                  ]),
                   const Spacer(),
                   const _LanguageToggle(),
                   if (!last) const SizedBox(width: 16),
@@ -106,7 +112,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   PrimaryButton(label: tr('Lanjut'), onPressed: _next)
                 else ...[
                   PrimaryButton(label: tr('Mulai berdua'), onPressed: () => context.push('/register')),
-                  PrimaryButton(label: tr('Aku diundang pasangan'), secondary: true, onPressed: () => context.push('/login?next=join')),
+                  PrimaryButton(label: tr('Aku punya kode undangan'), secondary: true, onPressed: () => context.push('/login?next=join')),
                 ],
                 GestureDetector(
                   onTap: () => context.push('/login'),
@@ -134,9 +140,9 @@ class _PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cards = [
-      (AppIcons.heart, AppColors.roseSoft, tr('Dinda lagi capek'), tr('energi 2/5 · butuh malam tenang'), -3.0, 0.0),
-      (AppIcons.wallet, AppColors.jadeSoft, tr('Rp182.000'), tr('aman dipakai hari ini'), 2.0, 40.0),
-      (AppIcons.heartHandshake, AppColors.amberSoft, tr('Makasih udah bayar listrik'), tr('dari Dinda, barusan'), -2.0, 10.0),
+      (AppIcons.heart, AppColors.roseSoft, tr('Dinda lagi capek'), tr('energi 2 dari 5, butuh malam tenang'), -3.0, 0.0, tr('Kita'), AppColors.rose),
+      (AppIcons.wallet, AppColors.jadeSoft, tr('Rp182.000'), tr('aman dipakai hari ini'), 2.0, 40.0, tr('Uang'), AppColors.jade),
+      (AppIcons.heartHandshake, AppColors.amberSoft, tr('Makasih udah bayar listrik'), tr('dari Dinda, barusan'), -2.0, 10.0, tr('Urusan'), AppColors.amber),
     ];
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -158,6 +164,7 @@ class _PageOne extends StatelessWidget {
                           IconBox(icon: c.$1, background: c.$2, size: 42),
                           Expanded(
                             child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, spacing: 2, children: [
+                              Text(c.$7, style: AppText.body(10, weight: FontWeight.w700, color: c.$8)),
                               Text(c.$3, style: AppText.body(15, weight: FontWeight.w700, color: c.$1 == AppIcons.wallet ? AppColors.jade : AppColors.ink)),
                               Text(c.$4, style: AppText.body(12, color: AppColors.muted)),
                             ]),
@@ -223,7 +230,7 @@ class _PageTwo extends StatelessWidget {
               Row(spacing: 12, children: [const CheckCircle(checked: false), Text(tr('Bayar listrik PLN'), style: AppText.body(15, weight: FontWeight.w600))]),
               Padding(
                 padding: const EdgeInsets.only(left: 36),
-                child: Row(spacing: 6, children: [_role(tr('Kamu ingat'), AppColors.rose, AppColors.roseSoft), _role(tr('Dinda kerjakan'), AppColors.jade, AppColors.jadeSoft)]),
+                child: Row(spacing: 6, children: [_role(tr('Kamu ingat'), AppColors.muted, AppColors.fieldFill), _role(tr('Dinda kerjakan'), AppColors.muted, AppColors.fieldFill)]),
               ),
             ]),
           ),
@@ -246,7 +253,6 @@ class _PageThree extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const moods = ['😞', '😮‍💨', '😐', '🙂', '🥰'];
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -266,11 +272,11 @@ class _PageThree extends StatelessWidget {
                     height: 46,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: i == 3 ? AppColors.jadeSoft : const Color(0x0A15201D),
+                      color: i == 3 ? Colors.white : const Color(0x0A15201D),
                       shape: BoxShape.circle,
-                      border: i == 3 ? Border.all(color: AppColors.jade, width: 2) : null,
+                      border: i == 3 ? Border.all(color: AppColors.rose, width: 2) : null,
                     ),
-                    child: Text(moods[i], style: const TextStyle(fontSize: 22)),
+                    child: Image.asset(AppIcons.moodAsset(i), width: i == 3 ? 34 : 30, height: i == 3 ? 34 : 30),
                   );
                 }),
               ),

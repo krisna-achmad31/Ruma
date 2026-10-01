@@ -8,6 +8,7 @@ import '../../../../core/utils/icon_map.dart';
 import '../../../../core/widgets/app_scaffold.dart';
 import '../../../../core/widgets/app_sheet.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
+import '../../../../core/widgets/pastel_hero.dart';
 import '../../../../core/widgets/ui_kit.dart';
 import '../viewmodels/together_viewmodel.dart';
 import '../widgets/together_scope.dart';
@@ -49,14 +50,15 @@ class _Content extends StatelessWidget {
       tab: AppTab.kita,
       children: [
         AppNavBar(title: tr('Perjalanan kita'), actionIcon: AppIcons.plus, onAction: () => _add(context, vm)),
-        HeroCard(
-          colors: AppColors.roseGradient,
-          padding: const EdgeInsets.all(20),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 6, children: [
-            Text(first == null ? tr('Perjalanan kalian') : tr('Bersama sejak {0} {1} {2}', [first.day, monthNamesId[first.month - 1], first.year]),
-                style: AppText.body(13, weight: FontWeight.w600, color: const Color(0xCCFFFFFF))),
-            Text(since(), style: AppText.display(30, color: Colors.white, letterSpacing: -0.8)),
-            Text(tr('{0} momen tercatat, {1} di antaranya otomatis dari kebiasaan kalian.', [moments.length, autoCount]), style: AppText.body(12, color: const Color(0xB3FFFFFF))),
+        PastelHero(
+          tone: PastelTone.rose,
+          object: 'heart_hands',
+          objectSize: 104,
+          objectRotation: 0,
+          label: first == null ? tr('Perjalanan kalian') : tr('Bersama sejak {0} {1} {2}', [first.day, monthNamesId[first.month - 1], first.year]),
+          head: Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: 8, children: [
+            Text(since(), style: AppText.display(30, letterSpacing: -0.8, height: 1.05)),
+            Text(tr('{0} momen tercatat, {1} di antaranya otomatis dari kebiasaan kalian.', [moments.length, autoCount]), style: AppText.body(13, color: AppColors.muted, height: 1.4)),
           ]),
         ),
         if (moments.isEmpty)

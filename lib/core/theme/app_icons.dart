@@ -215,6 +215,9 @@ class AppIcons {
     return name == null ? null : 'assets/icons3d/$name.png';
   }
 
+  /// Nama objek 3D pasangan ikon, atau [fallback] kalau tidak ada.
+  static String objectNameFor(IconData icon, String fallback) => threeD[icon] ?? fallback;
+
   /// Path aset 3D dari nama file, misalnya `object3d('money_bag')`.
   static String object3d(String name) => 'assets/icons3d/$name.png';
 
