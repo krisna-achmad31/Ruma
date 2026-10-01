@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,0,0&display=block" rel="stylesheet">
+<style>
+  body { margin:0; background:#EDEBE7; font-family:'Plus Jakarta Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#A65B6B; text-decoration:none; }
+  a:hover { color:#8B4757; }
+</style>
+</helmet>
+<div style="background:#EDEBE7;padding:64px 72px 96px;min-width:2000px;color:#241F1A">
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:60px;margin-bottom:56px">
+    <div style="max-width:560px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8A8178;margin-bottom:14px">Seruma — Family Management Companion</div>
+      <h1 style="font-size:54px;font-weight:800;letter-spacing:-.03em;line-height:1.02;margin:0 0 16px">Mobile UI Spec<br>24 Screens</h1>
+      <p style="font-size:14px;line-height:1.6;color:#6B635A;margin:0;text-wrap:pretty">Satu aplikasi pendamping keluarga: keuangan bersama, kalender &amp; maintenance rumah, modul relasi “Berdua”, dan jurnal. Semua frame memakai satu design system — krem hangat, aksen mustard gold, dan dusty rose untuk modul relasi.</p>
+    </div>
+    <div style="text-align:right;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8178;line-height:1.8;white-space:nowrap">Family Companion App<br>Design Reference v1</div>
+  </div>
+
+  <div style="background:#F6F4F0;border:1px solid #E2DED7;border-radius:20px;padding:20px 22px;margin-bottom:56px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8A8178;margin-bottom:16px">Color System</div>
+    <div style="display:flex;flex-wrap:wrap;gap:18px 26px">
+      <div style="width:150px"><div style="height:52px;border-radius:12px;background:#FAF8F4;border:1px solid #E2DED7"></div><div style="font-size:11px;font-weight:700;margin-top:8px">Surface / Background</div><div style="font-size:10px;font-family:ui-monospace,monospace;color:#8A8178;margin-top:2px">#FAF8F4</div></div>
+      <div style="width:150px"><div style="height:52px;border-radius:12px;background:linear-gradient(120deg,#2A2620,#4A443A)"></div><div style="font-size:11px;font-weight:700;margin-top:8px">Hero Card / Dark Surface</div><div style="font-size:10px;font-family:ui-monospace,monospace;color:#8A8178;margin-top:2px">#2A2620 → #4A443A</div></div>
+      <div style="width:150px"><div style="height:52px;border-radius:12px;background:#C9A227"></div><div style="font-size:11px;font-weight:700;margin-top:8px">Primary / CTA (Gold)</div><div style="font-size:10px;font-family:ui-monospace,monospace;color:#8A8178;margin-top:2px">#C9A227</div></div>
+      <div style="width:150px"><div style="height:52px;border-radius:12px;background:#A65B6B"></div><div style="font-size:11px;font-weight:700;margin-top:8px">Berdua / Relationship</div><div style="font-size:10px;font-family:ui-monospace,monospace;color:#8A8178;margin-top:2px">#A65B6B</div></div>
+      <div style="width:150px"><div style="height:52px;border-radius:12px;background:#7A8B6F"></div><div style="font-size:11px;font-weight:700;margin-top:8px">Success / Pemasukan</div><div style="font-size:10px;font-family:ui-monospace,monospace;color:#8A8178;margin-top:2px">#7A8B6F</div></div>
+      <div style="width:150px"><div style="height:52px;border-radius:12px;background:#C2504A"></div><div style="font-size:11px;font-weight:700;margin-top:8px">Danger / Pengeluaran</div><div style="font-size:10px;font-family:ui-monospace,monospace;color:#8A8178;margin-top:2px">#C2504A</div></div>
+      <div style="width:150px"><div style="height:52px;border-radius:12px;background:#4A8B87"></div><div style="font-size:11px;font-weight:700;margin-top:8px">Info / Maintenance</div><div style="font-size:10px;font-family:ui-monospace,monospace;color:#8A8178;margin-top:2px">#4A8B87</div></div>
+      <div style="width:150px"><div style="height:52px;border-radius:12px;background:#5B6B8C"></div><div style="font-size:11px;font-weight:700;margin-top:8px">Laporan / Chart</div><div style="font-size:10px;font-family:ui-monospace,monospace;color:#8A8178;margin-top:2px">#5B6B8C</div></div>
+    </div>
+  </div>
+
+  <sc-if value="{{ showGroupHeaders }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;align-items:center;gap:14px;margin:0 0 22px">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8178">00 — Onboarding</span>
+    <span style="flex:1;height:1px;background:#DEDAD3"></span>
+  </div>
+  </sc-if>
+  <div style="display:flex;flex-wrap:wrap;gap:36px 34px;margin-bottom:64px">
+
+    <!-- 1 Login -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">1</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Login</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:02</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="flex:1;overflow:hidden;padding:22px 22px 0;display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:9px">
+              <img src="uploads/seruma-logo-nav.png" alt="Seruma" style="width:36px;height:36px;object-fit:contain;display:block">
+              <div style="font-size:15px;font-weight:800">Seruma</div>
+            </div>
+            <div style="text-align:center;margin-top:6px">
+              <div style="font-size:20px;font-weight:800;letter-spacing:-.02em">Selamat datang kembali</div>
+              <div style="font-size:11px;color:#8A8178;margin-top:5px">Masuk untuk lanjut mengelola keluarga.</div>
+            </div>
+            <div style="margin-top:6px">
+              <div style="font-size:10px;font-weight:700;color:#8A8178;margin-bottom:6px">Email</div>
+              <div style="background:#fff;border:1px solid #E8E1D5;border-radius:14px;padding:13px 12px;font-size:12px;font-weight:600">andri@contoh.id</div>
+            </div>
+            <div>
+              <div style="font-size:10px;font-weight:700;color:#8A8178;margin-bottom:6px">Password</div>
+              <div style="display:flex;align-items:center;gap:9px;background:#fff;border:1px solid #E8E1D5;border-radius:14px;padding:13px 12px"><span style="flex:1;font-size:13px;font-weight:700;letter-spacing:.18em">••••••••</span><span style="font-family:'Material Symbols Rounded';font-size:17px;color:#8A8178">visibility_off</span></div>
+              <div style="text-align:right;font-size:10px;font-weight:700;color:#8A8178;margin-top:7px">Lupa password?</div>
+            </div>
+            <div style="background:#C9A227;color:#fff;border-radius:15px;padding:15px 0;text-align:center;font-size:13px;font-weight:800;margin-top:2px">Masuk</div>
+            <div style="display:flex;align-items:center;gap:11px"><span style="flex:1;height:1px;background:#E5DFD4"></span><span style="font-size:10px;color:#9A9188;font-weight:600">atau</span><span style="flex:1;height:1px;background:#E5DFD4"></span></div>
+            <div style="display:flex;align-items:center;justify-content:center;gap:9px;background:#fff;border:1px solid #E8E1D5;border-radius:15px;padding:14px 0;font-size:12px;font-weight:700"><span style="width:16px;height:16px;border-radius:50%;background:#E8E1D5"></span>Masuk dengan Google</div>
+            <div style="text-align:center;font-size:11px;color:#8A8178;margin-top:auto;padding-bottom:20px">Belum punya akun? <span style="color:#C9A227;font-weight:800">Daftar</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Register / Paywall -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">2</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Register · Lifetime Access</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#F5EFE6;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:05</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="flex:1;overflow:hidden;padding:8px 18px 0;display:flex;flex-direction:column;gap:7px">
+            <div style="text-align:center">
+              <div style="font-size:17px;font-weight:800;line-height:1.25;letter-spacing:-.02em">Mulai hidup yang lebih<br>tenang bersama Seruma</div>
+              <div style="font-size:10px;color:#8A8178;margin-top:6px">Akses Lifetime selama masa Early Access.</div>
+            </div>
+            <div style="text-align:center;margin-top:2px">
+              <div style="font-size:11px;color:#A39A90;text-decoration:line-through">Rp 150.000/bulan</div>
+              <div style="font-size:26px;font-weight:800;letter-spacing:-.03em;margin-top:1px">Rp 99.000</div>
+              <div style="font-size:10px;font-weight:700;color:#8A7B4E;margin-top:3px">Bayar sekali. Selamanya.</div>
+              <div style="display:inline-block;background:#C9A227;color:#fff;border-radius:20px;padding:5px 13px;font-size:10px;font-weight:700;margin-top:7px">Tersisa 5 dari 50 slot</div>
+            </div>
+            <div style="font-size:11px;font-weight:800;text-align:center;margin-top:2px">Yang didapat</div>
+            <div style="display:flex;flex-direction:column;gap:5px">
+              <div style="display:flex;align-items:center;gap:9px;background:#fff;border-radius:12px;padding:7px 10px"><span style="width:22px;height:22px;border-radius:7px;background:#7A8B6F;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center;flex:none">check</span><span style="font-size:10px;font-weight:600">Semua fitur Seruma</span></div>
+              <div style="display:flex;align-items:center;gap:9px;background:#fff;border-radius:12px;padding:7px 10px"><span style="width:22px;height:22px;border-radius:7px;background:#A65B6B;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center;flex:none">favorite</span><span style="font-size:10px;font-weight:600;line-height:1.35">Modul Berdua: Conversation Cards, Love Timeline, Reflection</span></div>
+              <div style="display:flex;align-items:center;gap:9px;background:#fff;border-radius:12px;padding:7px 10px"><span style="width:22px;height:22px;border-radius:7px;background:#5B6B8C;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center;flex:none">auto_awesome</span><span style="font-size:10px;font-weight:600">AI Assistant untuk laporan</span></div>
+              <div style="display:flex;align-items:center;gap:9px;background:#fff;border-radius:12px;padding:7px 10px"><span style="width:22px;height:22px;border-radius:7px;background:#4A8B87;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center;flex:none">update</span><span style="font-size:10px;font-weight:600">Semua update fitur berikutnya</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:7px;margin-top:2px">
+              <div><div style="font-size:9px;font-weight:700;color:#8A8178;margin-bottom:4px">Nama Lengkap</div><div style="background:#fff;border-radius:11px;padding:8px 11px;font-size:10px;color:#B9B1A8">Andri Prasetya</div></div>
+              <div><div style="font-size:9px;font-weight:700;color:#8A8178;margin-bottom:4px">Email</div><div style="background:#fff;border-radius:11px;padding:8px 11px;font-size:10px;color:#B9B1A8">andri@contoh.id</div></div>
+              <div><div style="font-size:9px;font-weight:700;color:#8A8178;margin-bottom:4px">No. HP / WhatsApp</div><div style="background:#fff;border-radius:11px;padding:8px 11px;font-size:10px;color:#B9B1A8">0812 0000 0000</div></div>
+            </div>
+            <div style="background:#2A2620;color:#fff;border-radius:14px;padding:13px 0;text-align:center;font-size:12px;font-weight:800;margin-top:3px">Klaim Sekarang</div>
+            <div style="text-align:center;font-size:9px;color:#8A8178;padding-bottom:12px">Pembayaran aman via Transfer Bank &amp; QRIS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <sc-if value="{{ showGroupHeaders }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;align-items:center;gap:14px;margin:0 0 22px">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8178">01 — Beranda</span>
+    <span style="flex:1;height:1px;background:#DEDAD3"></span>
+  </div>
+  </sc-if>
+  <div style="display:flex;flex-wrap:wrap;gap:36px 34px;margin-bottom:64px">
+
+    <!-- 1 Beranda -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">3</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Beranda / Home</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;color:#241F1A;flex:none">
+            <span>21:13</span>
+            <span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 14px 10px;flex:none">
+            <div style="display:flex;align-items:center;gap:9px">
+              <img src="uploads/seruma-logo-nav.png" alt="Seruma" style="width:22px;height:22px;object-fit:contain;display:block">
+              <div>
+                <div style="font-size:14px;font-weight:800;letter-spacing:-.01em;line-height:1.1">Seruma</div>
+                <div style="font-size:9px;color:#8A8178;font-weight:500">Keluarga Demo</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:11px;color:#4A443A;font-family:'Material Symbols Rounded';font-size:16px">sync search notifications</div>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:11px">
+            <div style="background:linear-gradient(150deg,#2A2620,#4A443A);border-radius:18px;padding:14px;color:#F3EFE7">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                <div style="font-size:15px;font-weight:800">Selamat malam,</div>
+                <div style="text-align:right;font-size:9px;color:#C9BEAE">Selasa, 18 Agu</div>
+              </div>
+              <div style="font-size:11px;color:#C9BEAE;margin-top:2px">Keluarga Demo · Pontianak</div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:12px;background:rgba(250,248,244,.09);border-radius:12px;padding:9px 6px">
+                <div style="text-align:center"><div style="font-size:8px;color:#C9BEAE;font-weight:600">Pagi</div><div style="font-family:'Material Symbols Rounded';font-size:15px;color:#D4AF37;margin:2px 0">cloud</div><div style="font-size:12px;font-weight:700">25°</div></div>
+                <div style="text-align:center"><div style="font-size:8px;color:#C9BEAE;font-weight:600">Siang</div><div style="font-family:'Material Symbols Rounded';font-size:15px;color:#D4AF37;margin:2px 0">clear_day</div><div style="font-size:12px;font-weight:700">33°</div></div>
+                <div style="text-align:center"><div style="font-size:8px;color:#C9BEAE;font-weight:600">Sore</div><div style="font-family:'Material Symbols Rounded';font-size:15px;color:#D4AF37;margin:2px 0">cloud</div><div style="font-size:12px;font-weight:700">34°</div></div>
+                <div style="text-align:center"><div style="font-size:8px;color:#C9BEAE;font-weight:600">Malam</div><div style="font-family:'Material Symbols Rounded';font-size:15px;color:#D4AF37;margin:2px 0">bedtime</div><div style="font-size:12px;font-weight:700">29°</div></div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 6px">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:38px;height:38px;border-radius:13px;background:#C9A227;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:20px">wallet</div><div style="font-size:9px;font-weight:600;text-align:center;line-height:1.2">Keuangan</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:38px;height:38px;border-radius:13px;background:#4E8C8A;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:20px">calendar_month</div><div style="font-size:9px;font-weight:600;text-align:center;line-height:1.2">Kalender</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:38px;height:38px;border-radius:13px;background:#B8763E;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:20px">build</div><div style="font-size:9px;font-weight:600;text-align:center;line-height:1.2">Maintenance</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:38px;height:38px;border-radius:13px;background:#A65B6B;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:20px">favorite</div><div style="font-size:9px;font-weight:600;text-align:center;line-height:1.2">Berdua</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:38px;height:38px;border-radius:13px;background:#8B5E83;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:20px">menu_book</div><div style="font-size:9px;font-weight:600;text-align:center;line-height:1.2">Jurnal</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:38px;height:38px;border-radius:13px;background:#3F7F7C;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:20px">link</div><div style="font-size:9px;font-weight:600;text-align:center;line-height:1.2">Link Penting</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:38px;height:38px;border-radius:13px;background:#6B7C99;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:20px">trending_up</div><div style="font-size:9px;font-weight:600;text-align:center;line-height:1.2">Laporan</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:38px;height:38px;border-radius:13px;background:#7C8F6B;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:20px">apps</div><div style="font-size:9px;font-weight:600;text-align:center;line-height:1.2">Lainnya</div></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:18px;padding:13px;box-shadow:0 1px 3px rgba(36,31,26,.05)">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div style="font-size:14px;font-weight:700">Agenda Hari Ini</div>
+                <div style="display:flex;align-items:center;gap:7px"><span style="font-size:9px;font-weight:700;color:#5E7049;background:#EDF1E6;border-radius:20px;padding:4px 8px">0/2 selesai</span><span style="width:20px;height:20px;border-radius:7px;background:#C9A227;color:#fff;font-family:'Material Symbols Rounded';font-size:14px;display:flex;align-items:center;justify-content:center">add</span></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px;margin-top:11px">
+                <div style="display:flex;align-items:center;gap:9px;background:#FAF8F4;border-radius:12px;padding:9px 10px">
+                  <span style="width:16px;height:16px;border-radius:5px;border:1.5px solid #C9BEAE"></span>
+                  <span style="flex:1;font-size:11px;font-weight:600">Ganti oli mobil</span>
+                  <span style="font-size:9px;color:#8A8178">Maintenance</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:9px;background:#FAF8F4;border-radius:12px;padding:9px 10px">
+                  <span style="width:16px;height:16px;border-radius:5px;border:1.5px solid #C9BEAE"></span>
+                  <span style="flex:1;font-size:11px;font-weight:600">Bayar listrik</span>
+                  <span style="font-size:9px;color:#8A8178">Jadwal Bayar</span>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <div style="flex:1;background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px 11px"><div style="font-size:9px;color:#8A8178;font-weight:600">Ringkasan Keuangan</div><div style="font-size:13px;font-weight:800;margin-top:3px">Rp 6.015.000</div></div>
+              <div style="flex:1;background:#FDF7E4;border:1px solid #F1E4BE;border-radius:14px;padding:10px 11px"><div style="font-size:9px;color:#8A7B4E;font-weight:600">Agenda Minggu ini</div><div style="font-size:13px;font-weight:800;margin-top:3px">4 jadwal</div></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">home</span><span style="font-size:8px;font-weight:700">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Beranda Agenda Minggu -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">4</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Beranda · Agenda Minggu</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:13</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 14px 10px;flex:none">
+            <div style="display:flex;align-items:center;gap:9px">
+              <img src="uploads/seruma-logo-nav.png" alt="Seruma" style="width:22px;height:22px;object-fit:contain;display:block">
+              <div><div style="font-size:14px;font-weight:800;line-height:1.1">Seruma</div><div style="font-size:9px;color:#8A8178;font-weight:500">Keluarga Demo</div></div>
+            </div>
+            <div style="display:flex;gap:11px;color:#4A443A;font-family:'Material Symbols Rounded';font-size:16px">sync search notifications</div>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;position:relative;display:flex;flex-direction:column;gap:10px">
+            <div style="background:linear-gradient(150deg,#2A2620,#4A443A);border-radius:18px;padding:13px;color:#F3EFE7">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start"><div style="font-size:14px;font-weight:800">Selamat malam,</div><div style="font-size:9px;color:#C9BEAE">Selasa, 18 Agu</div></div>
+              <div style="font-size:10px;color:#C9BEAE;margin-top:2px">Keluarga Demo · Pontianak</div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px;background:rgba(250,248,244,.09);border-radius:12px;padding:8px 6px">
+                <div style="text-align:center"><div style="font-size:8px;color:#C9BEAE;font-weight:600">Pagi</div><div style="font-size:11px;font-weight:700;margin-top:3px">25°</div></div>
+                <div style="text-align:center"><div style="font-size:8px;color:#C9BEAE;font-weight:600">Siang</div><div style="font-size:11px;font-weight:700;margin-top:3px">33°</div></div>
+                <div style="text-align:center"><div style="font-size:8px;color:#C9BEAE;font-weight:600">Sore</div><div style="font-size:11px;font-weight:700;margin-top:3px">34°</div></div>
+                <div style="text-align:center"><div style="font-size:8px;color:#C9BEAE;font-weight:600">Malam</div><div style="font-size:11px;font-weight:700;margin-top:3px">29°</div></div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px 6px">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:34px;height:34px;border-radius:11px;background:#C9A227;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:18px">wallet</div><div style="font-size:8px;font-weight:600">Keuangan</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:34px;height:34px;border-radius:11px;background:#4A8B87;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:18px">calendar_month</div><div style="font-size:8px;font-weight:600">Kalender</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:34px;height:34px;border-radius:11px;background:#B8763E;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:18px">build</div><div style="font-size:8px;font-weight:600">Maintenance</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="width:34px;height:34px;border-radius:11px;background:#A65B6B;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Material Symbols Rounded';font-size:18px">favorite</div><div style="font-size:8px;font-weight:600">Berdua</div></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:11px 12px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:700">Agenda Hari Ini</span><span style="font-size:9px;font-weight:700;color:#5E7049;background:#EDF1E6;border-radius:20px;padding:3px 8px">0/2</span></div>
+              <div style="display:flex;align-items:center;gap:8px;background:#FAF8F4;border-radius:11px;padding:8px 9px;margin-top:8px"><span style="width:14px;height:14px;border-radius:4px;border:1.5px solid #C9BEAE"></span><span style="flex:1;font-size:10px;font-weight:600">Ganti oli mobil</span></div>
+            </div>
+            <div style="display:flex;gap:6px;background:#F1ECE2;border-radius:12px;padding:4px">
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;padding:7px 0">Ringkasan Keuangan</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:700;background:#fff;border-radius:9px;padding:7px 0;box-shadow:0 1px 2px rgba(36,31,26,.08)">Agenda Minggu Ini</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;padding-right:56px">
+              <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #F0EBE2;border-radius:13px;padding:8px 10px"><div style="width:34px;text-align:center;background:#2A2620;color:#fff;border-radius:9px;padding:5px 0"><div style="font-size:7px;font-weight:700">Sel</div><div style="font-size:12px;font-weight:800">18</div></div><span style="width:6px;height:6px;border-radius:50%;background:#C9A227"></span><span style="flex:1;font-size:10px;font-weight:600">Ganti oli mobil</span></div>
+              <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #F0EBE2;border-radius:13px;padding:8px 10px"><div style="width:34px;text-align:center;background:#F4F1EA;border-radius:9px;padding:5px 0"><div style="font-size:7px;font-weight:700;color:#8A8178">Rab</div><div style="font-size:12px;font-weight:800">19</div></div><span style="width:6px;height:6px;border-radius:50%;background:#A65B6B"></span><span style="flex:1;font-size:10px;font-weight:600">Date night</span></div>
+              <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #F0EBE2;border-radius:13px;padding:8px 10px"><div style="width:34px;text-align:center;background:#F4F1EA;border-radius:9px;padding:5px 0"><div style="font-size:7px;font-weight:700;color:#8A8178">Kam</div><div style="font-size:12px;font-weight:800">20</div></div><span style="width:6px;height:6px;border-radius:50%;background:#E3DDD2"></span><span style="flex:1;font-size:10px;color:#A39A90">—</span></div>
+              </div>
+            <div style="position:absolute;right:14px;bottom:12px;width:44px;height:44px;border-radius:50%;background:#C9A227;color:#fff;font-family:'Material Symbols Rounded';font-size:24px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(201,162,39,.4)">add</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">home</span><span style="font-size:8px;font-weight:700">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Notifikasi -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">5</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Notifikasi Overlay</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none">
+            <span>21:13</span>
+            <span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 14px 10px;flex:none">
+            <div style="display:flex;align-items:center;gap:9px">
+              <img src="uploads/seruma-logo-nav.png" alt="Seruma" style="width:22px;height:22px;object-fit:contain;display:block">
+              <div><div style="font-size:14px;font-weight:800;line-height:1.1">Seruma</div><div style="font-size:9px;color:#8A8178;font-weight:500">Keluarga Demo</div></div>
+            </div>
+            <div style="display:flex;gap:11px;color:#4A443A;font-family:'Material Symbols Rounded';font-size:16px"><span>sync</span><span>search</span><span style="color:#C9A227;font-variation-settings:'FILL' 1">notifications</span></div>
+          </div>
+          <div style="flex:1;overflow:hidden;position:relative;padding:0 14px">
+            <div style="opacity:.35;filter:blur(1px);display:flex;flex-direction:column;gap:10px">
+              <div style="height:120px;background:linear-gradient(150deg,#2A2620,#4A443A);border-radius:18px"></div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:9px">
+                <div style="height:38px;border-radius:13px;background:#C9A227"></div><div style="height:38px;border-radius:13px;background:#4E8C8A"></div><div style="height:38px;border-radius:13px;background:#B8763E"></div><div style="height:38px;border-radius:13px;background:#A65B6B"></div>
+              </div>
+            </div>
+            <div style="position:absolute;top:0;right:0;width:258px;background:#fff;border:1px solid #EDE8DF;border-radius:18px;box-shadow:0 16px 34px rgba(36,31,26,.18);overflow:hidden">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 13px;border-bottom:1px solid #F3EEE5">
+                <span style="font-size:13px;font-weight:800">Notifikasi</span>
+                <span style="font-size:9px;font-weight:700;color:#C9A227">Tandai dibaca</span>
+              </div>
+              <div style="display:flex;flex-direction:column">
+                <div style="display:flex;gap:10px;padding:11px 13px;border-bottom:1px solid #F7F3EB;background:#FDFAF3">
+                  <span style="width:28px;height:28px;border-radius:9px;background:#B8763E;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center;flex:none">build</span>
+                  <div><div style="font-size:11px;font-weight:700">Servis motor jatuh tempo</div><div style="font-size:9px;color:#8A8178;margin-top:2px">16 jam lalu</div></div>
+                </div>
+                <div style="display:flex;gap:10px;padding:11px 13px;border-bottom:1px solid #F7F3EB">
+                  <span style="width:28px;height:28px;border-radius:9px;background:#C9A227;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center;flex:none">payments</span>
+                  <div><div style="font-size:11px;font-weight:700">Tagihan internet H-2</div><div style="font-size:9px;color:#8A8178;margin-top:2px">1 hari lalu</div></div>
+                </div>
+                <div style="display:flex;gap:10px;padding:11px 13px;border-bottom:1px solid #F7F3EB">
+                  <span style="width:28px;height:28px;border-radius:9px;background:#A65B6B;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center;flex:none">favorite</span>
+                  <div><div style="font-size:11px;font-weight:700">Reflection bulan ini belum diisi</div><div style="font-size:9px;color:#8A8178;margin-top:2px">2 hari lalu</div></div>
+                </div>
+                <div style="display:flex;gap:10px;padding:11px 13px">
+                  <span style="width:28px;height:28px;border-radius:9px;background:#7C8F6B;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center;flex:none">savings</span>
+                  <div><div style="font-size:11px;font-weight:700">Goal “Dana Liburan” +Rp 500.000</div><div style="font-size:9px;color:#8A8178;margin-top:2px">5 hari lalu</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">home</span><span style="font-size:8px;font-weight:700">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Global search -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">6</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Global Search</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none">
+            <span>21:14</span>
+            <span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span>
+          </div>
+          <div style="padding:8px 14px 10px;flex:none">
+            <div style="display:flex;align-items:center;gap:9px;background:#fff;border:1px solid #E8E1D5;border-radius:14px;padding:11px 12px;box-shadow:0 2px 6px rgba(36,31,26,.05)">
+              <span style="font-family:'Material Symbols Rounded';font-size:17px;color:#8A8178">search</span>
+              <span style="flex:1;font-size:12px;font-weight:600">lapor</span>
+              <span style="font-family:'Material Symbols Rounded';font-size:15px;color:#8A8178">close</span>
+            </div>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:14px">
+            <div>
+              <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A8178;margin-bottom:7px">Menu Utama</div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;overflow:hidden">
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-bottom:1px solid #F7F3EB"><span style="width:26px;height:26px;border-radius:9px;background:#6B7C99;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center">trending_up</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Laporan Keuangan</div><div style="font-size:9px;color:#8A8178">Ringkasan periodik keluarga</div></div><span style="font-family:'Material Symbols Rounded';font-size:15px;color:#C9BEAE">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 12px"><span style="width:26px;height:26px;border-radius:9px;background:#B8763E;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center">build</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Laporan Maintenance</div><div style="font-size:9px;color:#8A8178">Riwayat servis &amp; perbaikan</div></div><span style="font-family:'Material Symbols Rounded';font-size:15px;color:#C9BEAE">chevron_right</span></div>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A8178;margin-bottom:7px">Keuangan</div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;overflow:hidden">
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-bottom:1px solid #F7F3EB"><span style="width:26px;height:26px;border-radius:9px;background:#C9A227;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center">receipt_long</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Laporan Bulanan Agustus</div><div style="font-size:9px;color:#8A8178">Rp 4.120.000 keluar</div></div></div>
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 12px"><span style="width:26px;height:26px;border-radius:9px;background:#7C8F6B;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center">savings</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Laporan Goal/Tabungan</div><div style="font-size:9px;color:#8A8178">3 goal aktif</div></div></div>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A8178;margin-bottom:7px">Berdua</div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px"><div style="display:flex;align-items:center;gap:10px;padding:11px 12px"><span style="width:26px;height:26px;border-radius:9px;background:#A65B6B;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center">history_edu</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Reflection — Riwayat</div><div style="font-size:9px;color:#8A8178">Juli 2026 lengkap</div></div></div></div>
+            </div>
+            <div>
+              <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A8178;margin-bottom:7px">Lainnya</div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px"><div style="display:flex;align-items:center;gap:10px;padding:11px 12px"><span style="width:26px;height:26px;border-radius:9px;background:#3F7F7C;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center">backup</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Backup Laporan ke Excel</div><div style="font-size:9px;color:#8A8178">Pengaturan · Data</div></div></div></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">home</span><span style="font-size:8px;font-weight:700">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <sc-if value="{{ showGroupHeaders }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;align-items:center;gap:14px;margin:0 0 22px">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8178">02 — Keuangan</span>
+    <span style="flex:1;height:1px;background:#DEDAD3"></span>
+  </div>
+  </sc-if>
+  <div style="display:flex;flex-wrap:wrap;gap:36px 34px;margin-bottom:64px">
+
+    <!-- 4 Keuangan Ringkasan -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">7</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Keuangan Ringkasan</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:15</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 14px 10px;flex:none">
+            <div style="display:flex;align-items:center;gap:9px">
+              <img src="uploads/seruma-logo-nav.png" alt="Seruma" style="width:22px;height:22px;object-fit:contain;display:block">
+              <div><div style="font-size:14px;font-weight:800;line-height:1.1">Seruma</div><div style="font-size:9px;color:#8A8178;font-weight:500">Keluarga Demo</div></div>
+            </div>
+            <div style="display:flex;gap:11px;color:#4A443A;font-family:'Material Symbols Rounded';font-size:16px">sync search notifications</div>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:10px">
+            <div style="background:linear-gradient(150deg,#2A2620,#4A443A);border-radius:18px;padding:14px;color:#F3EFE7">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:10px;color:#C9BEAE;font-weight:600">Total Kekayaan Keluarga</span><span style="font-size:9px;color:#D4AF37;font-weight:700">Lihat rincian →</span></div>
+              <div style="font-size:28px;font-weight:800;letter-spacing:-.02em;margin:6px 0 3px">Rp 182.532.350</div>
+              <div style="font-size:9px;color:#C9BEAE">Kas Rp 6.015.000 · Investasi Rp 176.517.350</div>
+            </div>
+            <div style="display:flex;gap:6px;background:#F1ECE2;border-radius:12px;padding:4px">
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:700;background:#fff;border-radius:9px;padding:7px 0;box-shadow:0 1px 2px rgba(36,31,26,.08)">Semua</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;padding:7px 0">Tunai</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;padding:7px 0">Bank</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;padding:7px 0">E-wallet</span>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:18px;padding:13px;box-shadow:0 1px 3px rgba(36,31,26,.05)">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:10px;color:#8A8178;font-weight:600">Saldo Aktif</span><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#7C8F6B">visibility</span></div>
+              <div style="font-size:26px;font-weight:800;letter-spacing:-.02em;margin-top:4px">Rp 6.015.000</div>
+              <div style="font-size:9px;color:#8A8178;margin-top:3px">Di luar dana Tabungan/Goal · Agustus 2026</div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <div style="flex:1;background:#EDF1E6;border:1px solid #DCE4D0;border-radius:14px;padding:11px"><div style="display:flex;align-items:center;gap:5px;color:#5E7049"><span style="font-family:'Material Symbols Rounded';font-size:14px">south_west</span><span style="font-size:9px;font-weight:700">Pemasukan</span></div><div style="font-size:14px;font-weight:800;margin-top:4px;color:#3F5230">Rp 9.250.000</div></div>
+              <div style="flex:1;background:#F9E9E7;border:1px solid #EFD5D1;border-radius:14px;padding:11px"><div style="display:flex;align-items:center;gap:5px;color:#A6544A"><span style="font-family:'Material Symbols Rounded';font-size:14px">north_east</span><span style="font-size:9px;font-weight:700">Pengeluaran</span></div><div style="font-size:14px;font-weight:800;margin-top:4px;color:#8B3F36">Rp 4.120.000</div></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:18px;padding:13px 13px 5px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px"><span style="font-size:13px;font-weight:700">Transaksi Terbaru</span><span style="font-size:9px;font-weight:700;color:#C9A227">Semua</span></div>
+              <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #F7F3EB"><span style="width:26px;height:26px;border-radius:9px;background:#4E8C8A;color:#fff;font-family:'Material Symbols Rounded';font-size:14px;display:flex;align-items:center;justify-content:center">router</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Internet</div><div style="font-size:9px;color:#8A8178">18 Agu · BCA</div></div><span style="font-size:11px;font-weight:800;color:#A6544A">−350.000</span></div>
+              <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #F7F3EB"><span style="width:26px;height:26px;border-radius:9px;background:#7C8F6B;color:#fff;font-family:'Material Symbols Rounded';font-size:14px;display:flex;align-items:center;justify-content:center">payments</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Gaji Andri</div><div style="font-size:9px;color:#8A8178">17 Agu · BCA</div></div><span style="font-size:11px;font-weight:800;color:#5E7049">+7.500.000</span></div>
+              <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #F7F3EB"><span style="width:26px;height:26px;border-radius:9px;background:#C9A227;color:#fff;font-family:'Material Symbols Rounded';font-size:14px;display:flex;align-items:center;justify-content:center">shopping_basket</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Belanja bulanan</div><div style="font-size:9px;color:#8A8178">16 Agu · Tunai</div></div><span style="font-size:11px;font-weight:800;color:#A6544A">−825.000</span></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">wallet</span><span style="font-size:8px;font-weight:700">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 Kategori Budget -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">8</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Kategori &amp; Budget</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:16</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Kategori Pengeluaran</span>
+            <img src="uploads/seruma-logo-nav.png" alt="Seruma" style="width:20px;height:20px;object-fit:contain;display:block">
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:11px">
+            <div style="display:flex;gap:7px">
+              <div style="flex:1;background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px 9px"><span style="width:24px;height:24px;border-radius:8px;background:#C9A227;color:#fff;font-family:'Material Symbols Rounded';font-size:14px;display:flex;align-items:center;justify-content:center">handshake</span><div style="font-size:9px;font-weight:700;margin-top:7px;line-height:1.25">Utang<br>Piutang</div></div>
+              <div style="flex:1;background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px 9px"><span style="width:24px;height:24px;border-radius:8px;background:#A65B6B;color:#fff;font-family:'Material Symbols Rounded';font-size:14px;display:flex;align-items:center;justify-content:center">target</span><div style="font-size:9px;font-weight:700;margin-top:7px;line-height:1.25">Goal /<br>Tabungan</div></div>
+              <div style="flex:1;background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px 9px"><span style="width:24px;height:24px;border-radius:8px;background:#6B7C99;color:#fff;font-family:'Material Symbols Rounded';font-size:14px;display:flex;align-items:center;justify-content:center">show_chart</span><div style="font-size:9px;font-weight:700;margin-top:7px;line-height:1.25">Aset<br>Investasi</div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700">Anggaran Bulan Ini</span><span style="font-size:9px;font-weight:700;color:#C9A227">+ Kategori</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px"><div style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:22px;border-radius:7px;background:#C9A227;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center">bolt</span><span style="font-size:10px;font-weight:700">Listrik</span></div><div style="font-size:12px;font-weight:800;margin:6px 0 5px">Rp 420.000</div><div style="height:4px;border-radius:4px;background:#F1ECE2"><div style="width:72%;height:4px;border-radius:4px;background:#C9A227"></div></div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px"><div style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:22px;border-radius:7px;background:#4E8C8A;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center">water_drop</span><span style="font-size:10px;font-weight:700">Air</span></div><div style="font-size:12px;font-weight:800;margin:6px 0 5px">Rp 145.000</div><div style="height:4px;border-radius:4px;background:#F1ECE2"><div style="width:48%;height:4px;border-radius:4px;background:#4E8C8A"></div></div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px"><div style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:22px;border-radius:7px;background:#8B5E83;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center">school</span><span style="font-size:10px;font-weight:700">Sekolah</span></div><div style="font-size:12px;font-weight:800;margin:6px 0 5px">Rp 1.200.000</div><div style="height:4px;border-radius:4px;background:#F1ECE2"><div style="width:90%;height:4px;border-radius:4px;background:#8B5E83"></div></div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px"><div style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:22px;border-radius:7px;background:#B8763E;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center">shopping_basket</span><span style="font-size:10px;font-weight:700">Belanja</span></div><div style="font-size:12px;font-weight:800;margin:6px 0 5px">Rp 825.000</div><div style="height:4px;border-radius:4px;background:#F1ECE2"><div style="width:63%;height:4px;border-radius:4px;background:#B8763E"></div></div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px"><div style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:22px;border-radius:7px;background:#A65B6B;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center">credit_card</span><span style="font-size:10px;font-weight:700">Cicilan</span></div><div style="font-size:12px;font-weight:800;margin:6px 0 5px">Rp 950.000</div><div style="height:4px;border-radius:4px;background:#F1ECE2"><div style="width:100%;height:4px;border-radius:4px;background:#A65B6B"></div></div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px"><div style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:22px;border-radius:7px;background:#7C8F6B;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center">directions_car</span><span style="font-size:10px;font-weight:700">Transport</span></div><div style="font-size:12px;font-weight:800;margin:6px 0 5px">Rp 380.000</div><div style="height:4px;border-radius:4px;background:#F1ECE2"><div style="width:41%;height:4px;border-radius:4px;background:#7C8F6B"></div></div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px"><div style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:22px;border-radius:7px;background:#3F7F7C;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center">router</span><span style="font-size:10px;font-weight:700">Internet</span></div><div style="font-size:12px;font-weight:800;margin:6px 0 5px">Rp 350.000</div><div style="height:4px;border-radius:4px;background:#F1ECE2"><div style="width:100%;height:4px;border-radius:4px;background:#3F7F7C"></div></div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:10px"><div style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:22px;border-radius:7px;background:#6B7C99;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center">subscriptions</span><span style="font-size:10px;font-weight:700">Langganan</span></div><div style="font-size:12px;font-weight:800;margin:6px 0 5px">Rp 165.000</div><div style="height:4px;border-radius:4px;background:#F1ECE2"><div style="width:55%;height:4px;border-radius:4px;background:#6B7C99"></div></div></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">wallet</span><span style="font-size:8px;font-weight:700">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Detail Kategori -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">9</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Detail Kategori</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:18</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Detail Kategori</span>
+            <span style="font-family:'Material Symbols Rounded';font-size:18px;color:#8A8178">delete</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:12px">
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:20px;padding:20px 14px;text-align:center;box-shadow:0 1px 3px rgba(36,31,26,.05)">
+              <div style="width:62px;height:62px;border-radius:20px;background:#8B5E83;color:#fff;font-family:'Material Symbols Rounded';font-size:32px;display:flex;align-items:center;justify-content:center;margin:0 auto">school</div>
+              <div style="font-size:15px;font-weight:700;margin-top:11px">Sekolah</div>
+              <div style="font-size:30px;font-weight:800;letter-spacing:-.02em;margin-top:4px">Rp 1.200.000</div>
+              <div style="font-size:10px;color:#8A8178;margin-top:3px">Terpakai dari anggaran Rp 1.350.000</div>
+              <div style="height:5px;border-radius:5px;background:#F1ECE2;margin-top:11px"><div style="width:89%;height:5px;border-radius:5px;background:#8B5E83"></div></div>
+            </div>
+            <div style="display:flex;gap:7px">
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:700;background:#fff;border:1px solid #E8E1D5;border-radius:11px;padding:9px 0">Ubah Nama</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:700;background:#fff;border:1px solid #E8E1D5;border-radius:11px;padding:9px 0">Ubah Wallet</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:700;background:#C9A227;color:#fff;border-radius:11px;padding:9px 0">Ubah Anggaran</span>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:18px;padding:13px 13px 6px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-size:13px;font-weight:700">Sub-kategori</span><span style="font-size:9px;font-weight:700;color:#C9A227">+ Tambah</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid #F7F3EB"><span style="font-size:11px;font-weight:600">SPP bulanan</span><span style="font-size:11px;font-weight:800">Rp 750.000</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid #F7F3EB"><span style="font-size:11px;font-weight:600">Les &amp; kursus</span><span style="font-size:11px;font-weight:800">Rp 300.000</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid #F7F3EB"><span style="font-size:11px;font-weight:600">Alat tulis</span><span style="font-size:11px;font-weight:800">Rp 150.000</span></div>
+            </div>
+            <div style="background:#F4F1EA;border-radius:14px;padding:11px 12px;font-size:10px;color:#6B635A;line-height:1.5">Wallet default: <strong style="color:#241F1A">BCA</strong> · Anggaran reset tiap tanggal 1</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">wallet</span><span style="font-size:8px;font-weight:700">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 Kelola Wallet -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">10</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Kelola Wallet</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:20</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Kelola Wallet</span>
+            <span style="font-family:'Material Symbols Rounded';font-size:18px;color:#C9A227">add_circle</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:11px">
+            <div style="background:linear-gradient(150deg,#2A2620,#4A443A);border-radius:16px;padding:13px;color:#F3EFE7"><div style="font-size:10px;color:#C9BEAE;font-weight:600">Total Semua Wallet</div><div style="font-size:24px;font-weight:800;margin-top:4px">Rp 6.015.000</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:12px"><span style="width:28px;height:28px;border-radius:9px;background:#7C8F6B;color:#fff;font-family:'Material Symbols Rounded';font-size:16px;display:flex;align-items:center;justify-content:center">payments</span><div style="font-size:11px;font-weight:700;margin-top:9px">Tunai</div><div style="font-size:14px;font-weight:800;margin-top:2px">Rp 850.000</div><div style="font-size:9px;color:#8A8178;margin-top:2px">Dompet rumah</div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:12px"><span style="width:28px;height:28px;border-radius:9px;background:#6B7C99;color:#fff;font-family:'Material Symbols Rounded';font-size:16px;display:flex;align-items:center;justify-content:center">account_balance</span><div style="font-size:11px;font-weight:700;margin-top:9px">BCA</div><div style="font-size:14px;font-weight:800;margin-top:2px">Rp 4.320.000</div><div style="font-size:9px;color:#8A8178;margin-top:2px">Rekening utama</div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:12px"><span style="width:28px;height:28px;border-radius:9px;background:#4E8C8A;color:#fff;font-family:'Material Symbols Rounded';font-size:16px;display:flex;align-items:center;justify-content:center">smartphone</span><div style="font-size:11px;font-weight:700;margin-top:9px">E-wallet</div><div style="font-size:14px;font-weight:800;margin-top:2px">Rp 645.000</div><div style="font-size:9px;color:#8A8178;margin-top:2px">Dompet digital</div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:12px"><span style="width:28px;height:28px;border-radius:9px;background:#B8763E;color:#fff;font-family:'Material Symbols Rounded';font-size:16px;display:flex;align-items:center;justify-content:center">savings</span><div style="font-size:11px;font-weight:700;margin-top:9px">Tabungan</div><div style="font-size:14px;font-weight:800;margin-top:2px">Rp 200.000</div><div style="font-size:9px;color:#8A8178;margin-top:2px">Dana darurat</div></div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <span style="flex:1;text-align:center;font-size:11px;font-weight:700;background:#fff;border:1px solid #E8E1D5;border-radius:13px;padding:12px 0">+ Tambah Wallet</span>
+              <span style="flex:1;text-align:center;font-size:11px;font-weight:700;background:#C9A227;color:#fff;border-radius:13px;padding:12px 0">Transfer</span>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:12px 12px 5px">
+              <div style="font-size:12px;font-weight:700;margin-bottom:7px">Transfer Terakhir</div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid #F7F3EB"><span style="font-size:10px;color:#6B635A">BCA → Tunai</span><span style="font-size:10px;font-weight:700">Rp 500.000</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid #F7F3EB"><span style="font-size:10px;color:#6B635A">BCA → E-wallet</span><span style="font-size:10px;font-weight:700">Rp 250.000</span></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">wallet</span><span style="font-size:8px;font-weight:700">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 Form Transfer -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">11</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Form Transfer Wallet</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:21</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">close</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Transfer Antar Wallet</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:12px">
+            <div>
+              <div style="font-size:10px;font-weight:700;color:#8A8178;margin-bottom:6px">Dari Wallet</div>
+              <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E8E1D5;border-radius:14px;padding:12px"><span style="width:26px;height:26px;border-radius:8px;background:#6B7C99;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center">account_balance</span><div style="flex:1"><div style="font-size:12px;font-weight:700">BCA</div><div style="font-size:9px;color:#8A8178">Saldo Rp 4.320.000</div></div><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#8A8178">expand_more</span></div>
+            </div>
+            <div style="display:flex;justify-content:center"><span style="width:30px;height:30px;border-radius:50%;background:#F1ECE2;color:#4A443A;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">swap_vert</span></div>
+            <div>
+              <div style="font-size:10px;font-weight:700;color:#8A8178;margin-bottom:6px">Ke Wallet</div>
+              <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E8E1D5;border-radius:14px;padding:12px"><span style="width:26px;height:26px;border-radius:8px;background:#4E8C8A;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center">smartphone</span><div style="flex:1"><div style="font-size:12px;font-weight:700">E-wallet</div><div style="font-size:9px;color:#8A8178">Saldo Rp 645.000</div></div><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#8A8178">expand_more</span></div>
+            </div>
+            <div>
+              <div style="font-size:10px;font-weight:700;color:#8A8178;margin-bottom:6px">Nominal</div>
+              <div style="background:#fff;border:1.5px solid #C9A227;border-radius:14px;padding:13px 12px;display:flex;align-items:baseline;gap:6px"><span style="font-size:12px;font-weight:700;color:#8A8178">Rp</span><span style="font-size:22px;font-weight:800;letter-spacing:-.02em">500.000</span></div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <div style="flex:1"><div style="font-size:10px;font-weight:700;color:#8A8178;margin-bottom:6px">Biaya Admin</div><div style="background:#fff;border:1px solid #E8E1D5;border-radius:14px;padding:12px;font-size:12px;font-weight:700;color:#8A8178">Rp 0</div></div>
+              <div style="flex:1"><div style="font-size:10px;font-weight:700;color:#8A8178;margin-bottom:6px">Tanggal</div><div style="background:#fff;border:1px solid #E8E1D5;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:700">18 Agu 2026</span><span style="font-family:'Material Symbols Rounded';font-size:15px;color:#8A8178">calendar_month</span></div></div>
+            </div>
+            <div style="background:#F4F1EA;border-radius:12px;padding:10px 12px;font-size:10px;color:#6B635A">Transfer tidak dihitung sebagai pengeluaran.</div>
+            <div style="margin-top:auto;padding-bottom:12px"><div style="background:#C9A227;color:#fff;border-radius:15px;padding:15px 0;text-align:center;font-size:13px;font-weight:800">Transfer Sekarang</div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">wallet</span><span style="font-size:8px;font-weight:700">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 Laporan Keuangan -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">12</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Laporan Keuangan</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:24</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Laporan Keuangan</span>
+            <span style="font-family:'Material Symbols Rounded';font-size:18px;color:#8A8178">download</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:11px">
+            <div style="display:flex;gap:5px;background:#F1ECE2;border-radius:12px;padding:4px">
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;padding:7px 0">Harian</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;padding:7px 0">Mingguan</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:700;background:#fff;border-radius:9px;padding:7px 0;box-shadow:0 1px 2px rgba(36,31,26,.08)">Bulanan</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;padding:7px 0">Tahunan</span>
+            </div>
+            <div style="background:linear-gradient(150deg,#2A2620,#4A443A);border-radius:18px;padding:14px;color:#F3EFE7">
+              <div style="font-size:10px;color:#C9BEAE;font-weight:600">Total Kekayaan · Agustus 2026</div>
+              <div style="display:flex;align-items:flex-end;gap:9px;margin-top:5px"><span style="font-size:26px;font-weight:800;letter-spacing:-.02em">Rp 182.532.350</span></div>
+              <div style="display:inline-flex;align-items:center;gap:4px;background:rgba(124,143,107,.28);border-radius:20px;padding:4px 9px;margin-top:9px"><span style="font-family:'Material Symbols Rounded';font-size:13px;color:#B9CFA4">trending_up</span><span style="font-size:10px;font-weight:700;color:#D6E6C6">+4,8% vs Juli</span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:11px"><div style="font-size:9px;color:#8A8178;font-weight:600">Pemasukan</div><div style="font-size:14px;font-weight:800;color:#5E7049;margin-top:3px">9.250.000</div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:11px"><div style="font-size:9px;color:#8A8178;font-weight:600">Pengeluaran</div><div style="font-size:14px;font-weight:800;color:#A6544A;margin-top:3px">4.120.000</div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:11px"><div style="font-size:9px;color:#8A8178;font-weight:600">Investasi</div><div style="font-size:14px;font-weight:800;color:#6B7C99;margin-top:3px">3.000.000</div></div>
+              <div style="background:#fff;border:1px solid #F0EBE2;border-radius:14px;padding:11px"><div style="font-size:9px;color:#8A8178;font-weight:600">Saldo Akhir</div><div style="font-size:14px;font-weight:800;margin-top:3px">6.015.000</div></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:18px;padding:13px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:700">Tren 6 Bulan</span><span style="font-size:9px;color:#8A8178">Kekayaan bersih</span></div>
+              <div style="display:flex;align-items:flex-end;gap:7px;height:74px;margin-top:11px">
+                <div style="flex:1;height:38%;background:#E4DED1;border-radius:5px 5px 3px 3px"></div>
+                <div style="flex:1;height:46%;background:#E4DED1;border-radius:5px 5px 3px 3px"></div>
+                <div style="flex:1;height:42%;background:#E4DED1;border-radius:5px 5px 3px 3px"></div>
+                <div style="flex:1;height:63%;background:#E4DED1;border-radius:5px 5px 3px 3px"></div>
+                <div style="flex:1;height:78%;background:#D9CDA6;border-radius:5px 5px 3px 3px"></div>
+                <div style="flex:1;height:100%;background:#C9A227;border-radius:5px 5px 3px 3px"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:8px;color:#9A9188;font-weight:600;margin-top:7px"><span>Mar</span><span>Apr</span><span>Mei</span><span>Jun</span><span>Jul</span><span>Agu</span></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">wallet</span><span style="font-size:8px;font-weight:700">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <sc-if value="{{ showGroupHeaders }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;align-items:center;gap:14px;margin:0 0 22px">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8178">03 — Kalender &amp; Maintenance</span>
+    <span style="flex:1;height:1px;background:#DEDAD3"></span>
+  </div>
+  </sc-if>
+  <div style="display:flex;flex-wrap:wrap;gap:36px 34px;margin-bottom:64px">
+
+    <!-- 10 Kalender -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">13</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Kalender Bulanan</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:26</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 14px 10px;flex:none">
+            <div style="display:flex;align-items:center;gap:9px">
+              <img src="uploads/seruma-logo-nav.png" alt="Seruma" style="width:22px;height:22px;object-fit:contain;display:block">
+              <div><div style="font-size:14px;font-weight:800;line-height:1.1">Seruma</div><div style="font-size:9px;color:#8A8178;font-weight:500">Keluarga Demo</div></div>
+            </div>
+            <div style="display:flex;gap:11px;color:#4A443A;font-family:'Material Symbols Rounded';font-size:16px">sync search notifications</div>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:9px">
+            <div style="display:flex;align-items:center;gap:9px;background:#fff;border:1px solid #F0EBE2;border-radius:13px;padding:10px 12px"><span style="width:22px;height:22px;border-radius:7px;background:#4A8B87;color:#fff;font-family:'Material Symbols Rounded';font-size:13px;display:flex;align-items:center;justify-content:center">repeat</span><span style="flex:1;font-size:11px;font-weight:700">Transaksi Rutin</span><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#C9BEAE">arrow_forward</span></div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:18px;padding:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px">
+                <span style="font-family:'Material Symbols Rounded';font-size:17px;color:#8A8178">chevron_left</span>
+                <span style="font-size:13px;font-weight:800">Agustus 2026</span>
+                <span style="font-family:'Material Symbols Rounded';font-size:17px;color:#8A8178">chevron_right</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;font-size:8px;font-weight:700;color:#9A9188;text-align:center;margin-bottom:5px"><span>S</span><span>S</span><span>R</span><span>K</span><span>J</span><span>S</span><span>M</span></div>
+              <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center">
+                <div style="padding:5px 0;font-size:10px;color:#C9BEAE">27</div><div style="padding:5px 0;font-size:10px;color:#C9BEAE">28</div><div style="padding:5px 0;font-size:10px;color:#C9BEAE">29</div><div style="padding:5px 0;font-size:10px;color:#C9BEAE">30</div><div style="padding:5px 0;font-size:10px;color:#C9BEAE">31</div><div style="padding:5px 0;font-size:10px;font-weight:600">1</div><div style="padding:5px 0;font-size:10px;font-weight:600">2</div>
+                <div style="padding:5px 0;font-size:10px;font-weight:600">3</div><div style="padding:5px 0;font-size:10px;font-weight:600">4</div><div style="padding:5px 0;font-size:10px;font-weight:600">5<div style="width:4px;height:4px;border-radius:50%;background:#C9A227;margin:2px auto 0"></div></div><div style="padding:5px 0;font-size:10px;font-weight:600">6</div><div style="padding:5px 0;font-size:10px;font-weight:600">7</div><div style="padding:5px 0;font-size:10px;font-weight:600">8</div><div style="padding:5px 0;font-size:10px;font-weight:600">9</div>
+                <div style="padding:5px 0;font-size:10px;font-weight:600">10<div style="width:4px;height:4px;border-radius:50%;background:#4E8C8A;margin:2px auto 0"></div></div><div style="padding:5px 0;font-size:10px;font-weight:600">11</div><div style="padding:5px 0;font-size:10px;font-weight:600">12</div><div style="padding:5px 0;font-size:10px;font-weight:600">13</div><div style="padding:5px 0;font-size:10px;font-weight:600">14<div style="width:4px;height:4px;border-radius:50%;background:#A65B6B;margin:2px auto 0"></div></div><div style="padding:5px 0;font-size:10px;font-weight:600">15</div><div style="padding:5px 0;font-size:10px;font-weight:600">16</div>
+                <div style="padding:5px 0;font-size:10px;font-weight:600">17</div><div style="padding:5px 0;font-size:10px;font-weight:800;background:#2A2620;color:#FAF8F4;border-radius:9px">18<div style="width:4px;height:4px;border-radius:50%;background:#D4AF37;margin:2px auto 0"></div></div><div style="padding:5px 0;font-size:10px;font-weight:600">19<div style="width:4px;height:4px;border-radius:50%;background:#A65B6B;margin:2px auto 0"></div></div><div style="padding:5px 0;font-size:10px;font-weight:600">20</div><div style="padding:5px 0;font-size:10px;font-weight:600">21<div style="width:4px;height:4px;border-radius:50%;background:#C9A227;margin:2px auto 0"></div></div><div style="padding:5px 0;font-size:10px;font-weight:600">22</div><div style="padding:5px 0;font-size:10px;font-weight:600">23</div>
+                <div style="padding:5px 0;font-size:10px;font-weight:600">24</div><div style="padding:5px 0;font-size:10px;font-weight:600">25<div style="width:4px;height:4px;border-radius:50%;background:#4E8C8A;margin:2px auto 0"></div></div><div style="padding:5px 0;font-size:10px;font-weight:600">26</div><div style="padding:5px 0;font-size:10px;font-weight:600">27</div><div style="padding:5px 0;font-size:10px;font-weight:600">28</div><div style="padding:5px 0;font-size:10px;font-weight:600">29</div><div style="padding:5px 0;font-size:10px;font-weight:600">30</div>
+                <div style="padding:5px 0;font-size:10px;font-weight:600">31</div>
+              </div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:9px"><span style="width:26px;height:26px;border-radius:9px;background:#4E8C8A;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center">build</span><span style="font-size:12px;font-weight:700">Jadwal Maintenance</span></div><span style="font-size:9px;font-weight:700;color:#8A8178">1/3</span></div>
+              <div style="height:4px;border-radius:4px;background:#F1ECE2;margin-top:9px"><div style="width:33%;height:4px;border-radius:4px;background:#4E8C8A"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:10px;margin-top:9px"><span style="color:#6B635A">Ganti oli mobil</span><span style="font-weight:700">18 Agu</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:10px;margin-top:6px"><span style="color:#6B635A">Servis AC ruang tamu</span><span style="font-weight:700">25 Agu</span></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:9px"><span style="width:26px;height:26px;border-radius:9px;background:#C9A227;color:#fff;font-family:'Material Symbols Rounded';font-size:15px;display:flex;align-items:center;justify-content:center">receipt_long</span><span style="font-size:12px;font-weight:700">Jadwal Bayar &amp; Belanja</span></div><span style="font-size:9px;font-weight:700;color:#8A8178">2/4</span></div>
+              <div style="height:4px;border-radius:4px;background:#F1ECE2;margin-top:9px"><div style="width:50%;height:4px;border-radius:4px;background:#C9A227"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:10px;margin-top:9px"><span style="color:#6B635A">Bayar internet</span><span style="font-weight:700">21 Agu</span></div>
+              </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">calendar_month</span><span style="font-size:8px;font-weight:700">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 Maintenance -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">14</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Maintenance</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:28</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Maintenance</span>
+            <span style="font-family:'Material Symbols Rounded';font-size:18px;color:#C9A227">add_circle</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:11px">
+            <div style="display:flex;gap:6px;background:#F1ECE2;border-radius:12px;padding:4px">
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:700;background:#fff;border-radius:9px;padding:7px 0;box-shadow:0 1px 2px rgba(36,31,26,.08)">Kendaraan</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;padding:7px 0">Rumah</span>
+              <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;padding:7px 0">Elektronik</span>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:18px;padding:13px">
+              <div style="display:flex;gap:11px;align-items:flex-start">
+                <span style="width:34px;height:34px;border-radius:11px;background:#B8763E;color:#fff;font-family:'Material Symbols Rounded';font-size:19px;display:flex;align-items:center;justify-content:center;flex:none">directions_car</span>
+                <div style="flex:1"><div style="font-size:13px;font-weight:700">Mobil — Avanza 2019</div><div style="font-size:10px;color:#8A8178;margin-top:2px">Ganti oli tiap 5.000 km</div></div>
+                <span style="font-size:9px;font-weight:700;color:#8B3F36;background:#F9E9E7;border-radius:20px;padding:4px 8px">Hari ini</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:11px;padding-top:10px;border-top:1px solid #F7F3EB"><div><div style="font-size:9px;color:#8A8178">Servis berikutnya</div><div style="font-size:11px;font-weight:700;margin-top:2px">18 Agu 2026</div></div><div style="text-align:right"><div style="font-size:9px;color:#8A8178">Estimasi biaya</div><div style="font-size:11px;font-weight:700;margin-top:2px">Rp 450.000</div></div></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:18px;padding:13px">
+              <div style="display:flex;gap:11px;align-items:flex-start">
+                <span style="width:34px;height:34px;border-radius:11px;background:#4E8C8A;color:#fff;font-family:'Material Symbols Rounded';font-size:19px;display:flex;align-items:center;justify-content:center;flex:none">two_wheeler</span>
+                <div style="flex:1"><div style="font-size:13px;font-weight:700">Motor — Vario</div><div style="font-size:10px;color:#8A8178;margin-top:2px">Servis rutin tiap 3 bulan</div></div>
+                <span style="font-size:9px;font-weight:700;color:#8A7B4E;background:#FDF7E4;border-radius:20px;padding:4px 8px">H-9</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:11px;padding-top:10px;border-top:1px solid #F7F3EB"><div><div style="font-size:9px;color:#8A8178">Servis berikutnya</div><div style="font-size:11px;font-weight:700;margin-top:2px">27 Agu 2026</div></div><div style="text-align:right"><div style="font-size:9px;color:#8A8178">Estimasi biaya</div><div style="font-size:11px;font-weight:700;margin-top:2px">Rp 180.000</div></div></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:18px;padding:13px">
+              <div style="display:flex;gap:11px;align-items:flex-start">
+                <span style="width:34px;height:34px;border-radius:11px;background:#7C8F6B;color:#fff;font-family:'Material Symbols Rounded';font-size:19px;display:flex;align-items:center;justify-content:center;flex:none">local_car_wash</span>
+                <div style="flex:1"><div style="font-size:13px;font-weight:700">Cuci &amp; salon mobil</div><div style="font-size:10px;color:#8A8178;margin-top:2px">Tiap 2 minggu</div></div>
+                <span style="font-size:9px;font-weight:700;color:#5E7049;background:#EDF1E6;border-radius:20px;padding:4px 8px">Aman</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:11px;padding-top:10px;border-top:1px solid #F7F3EB"><div><div style="font-size:9px;color:#8A8178">Servis berikutnya</div><div style="font-size:11px;font-weight:700;margin-top:2px">2 Sep 2026</div></div><div style="text-align:right"><div style="font-size:9px;color:#8A8178">Estimasi biaya</div><div style="font-size:11px;font-weight:700;margin-top:2px">Rp 75.000</div></div></div>
+            </div>
+            <div style="border:1.5px dashed #D9D2C5;border-radius:16px;padding:14px;text-align:center;font-size:11px;font-weight:700;color:#8A8178">+ Tambah Item Maintenance</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">calendar_month</span><span style="font-size:8px;font-weight:700">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <sc-if value="{{ showGroupHeaders }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;align-items:center;gap:14px;margin:0 0 22px">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8178">04 — Berdua</span>
+    <span style="flex:1;height:1px;background:#DEDAD3"></span>
+  </div>
+  </sc-if>
+  <div style="display:flex;flex-wrap:wrap;gap:36px 34px;margin-bottom:64px">
+
+    <!-- 12 Berdua Home -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">15</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Berdua Home</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FDF9F8;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:31</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 14px 8px;flex:none">
+            <div style="display:flex;align-items:center;gap:9px">
+              <img src="uploads/seruma-logo-nav.png" alt="Seruma" style="width:22px;height:22px;object-fit:contain;display:block">
+              <div><div style="font-size:14px;font-weight:800;line-height:1.1">Seruma</div><div style="font-size:9px;color:#8A8178;font-weight:500">Keluarga Demo</div></div>
+            </div>
+            <div style="display:flex;gap:11px;color:#4A443A;font-family:'Material Symbols Rounded';font-size:16px">sync search notifications</div>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:8px">
+            <div style="text-align:center">
+              <div style="font-size:22px;font-weight:800;color:#A65B6B;letter-spacing:-.02em">Berdua</div>
+              <div style="font-size:10px;color:#A0808A;margin-top:2px">Hubungan baik dibangun dari hal-hal kecil.</div>
+            </div>
+            <div style="display:flex;justify-content:center">
+              <div style="position:relative;background:#fff;border-radius:4px;padding:8px 8px 6px;box-shadow:0 8px 20px rgba(120,70,80,.14);transform:rotate(-1.5deg)">
+                <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(-4deg);width:44px;height:15px;background:#EBDCA8;opacity:.85"></div>
+                <div style="width:126px;height:86px;background:repeating-linear-gradient(45deg,#F2EBE2,#F2EBE2 8px,#EDE4D9 8px,#EDE4D9 16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px">
+                  <span style="font-family:'Material Symbols Rounded';font-size:22px;color:#A99B8C">photo_camera</span>
+                  <span style="font-size:9px;font-family:ui-monospace,monospace;color:#8A7E70">foto pasangan</span>
+                </div>
+                <div style="text-align:center;font-size:10px;font-weight:700;margin-top:8px">Kita, hari ini</div>
+              </div>
+            </div>
+            <div style="background:#F7E4E6;border-radius:14px;padding:10px 12px"><div style="font-size:11px;font-weight:800;color:#8B4757">Hubungan kalian baik-baik aja</div><div style="font-size:10px;color:#A0808A;margin-top:2px">Date night dijadwalkan 19 Agu 2026</div></div>
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-size:13px;font-weight:700">Love Timeline</span><span style="font-size:9px;font-weight:700;color:#A65B6B">Lihat semua</span></div>
+              <div style="display:flex;gap:8px">
+                <div style="flex:1;background:#fff;border:1px solid #F2E4E6;border-radius:12px;padding:8px"><div style="height:32px;background:#F7E4E6;border-radius:8px;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:19px;color:#C98F9C">favorite</span></div><div style="font-size:9px;font-weight:700;margin-top:6px;line-height:1.25">Pertama Kali Bertemu</div><div style="font-size:8px;color:#A0808A;margin-top:2px">14 Februari</div></div>
+                <div style="flex:1;background:#fff;border:1px solid #F2E4E6;border-radius:12px;padding:8px"><div style="height:32px;background:#F7E4E6;border-radius:8px;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:19px;color:#C98F9C">restaurant</span></div><div style="font-size:9px;font-weight:700;margin-top:6px;line-height:1.25">Kencan Pertama</div><div style="font-size:8px;color:#A0808A;margin-top:2px">2 Maret</div></div>
+                <div style="flex:1;background:#fff;border:1px solid #F2E4E6;border-radius:12px;padding:8px"><div style="height:32px;background:#F7E4E6;border-radius:8px;display:flex;align-items:center;justify-content:center"><span style="font-family:'Material Symbols Rounded';font-size:19px;color:#C98F9C">diamond</span></div><div style="font-size:9px;font-weight:700;margin-top:6px;line-height:1.25">Lamaran</div><div style="font-size:8px;color:#A0808A;margin-top:2px">20 Juni</div></div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <div style="flex:1;background:#fff;border:1px solid #F2E4E6;border-radius:14px;padding:11px"><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#A65B6B">chat_bubble</span><div style="font-size:10px;font-weight:700;margin-top:5px">Conversation Cards</div></div>
+              <div style="flex:1;background:#fff;border:1px solid #F2E4E6;border-radius:14px;padding:11px"><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#A65B6B">edit_note</span><div style="font-size:10px;font-weight:700;margin-top:5px">Reflection Bulanan</div></div>
+            </div>
+            <div style="background:linear-gradient(150deg,#2A2620,#4A443A);border-radius:15px;padding:10px 12px;color:#F3EFE7">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C9BEAE">Knowledge Hari Ini</div>
+              <div style="font-size:11px;font-weight:700;line-height:1.35;margin-top:5px">“Rumah tenang bukan yang tanpa masalah, tapi yang masalahnya dibicarakan.”</div>
+              <div style="font-size:9px;color:#C9BEAE;margin-top:6px">Coba hari ini: tanya satu hal yang dia pikirkan minggu ini.</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #F2E4E6;background:#FFFDFC;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">favorite</span><span style="font-size:8px;font-weight:700">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13 Love Timeline -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">16</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Love Timeline</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FDF9F8;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:33</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Love Timeline</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:10px">
+            <div style="background:#A65B6B;color:#fff;border-radius:15px;padding:13px 0;text-align:center;font-size:12px;font-weight:800">+ Tambah Momen</div>
+            <div style="display:flex;gap:11px;align-items:center;background:#fff;border:1px solid #F2E4E6;border-radius:15px;padding:12px"><span style="width:32px;height:32px;border-radius:10px;background:#A65B6B;color:#fff;font-family:'Material Symbols Rounded';font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">favorite</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Pertama Kali Bertemu</div><div style="font-size:9px;color:#A0808A;margin-top:2px">14 Februari 2018</div></div><span style="display:flex;gap:8px;color:#C9BEAE;font-family:'Material Symbols Rounded';font-size:15px">edit delete</span></div>
+            <div style="display:flex;gap:11px;align-items:center;background:#fff;border:1px solid #F2E4E6;border-radius:15px;padding:12px"><span style="width:32px;height:32px;border-radius:10px;background:#C98F9C;color:#fff;font-family:'Material Symbols Rounded';font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">restaurant</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Kencan Pertama</div><div style="font-size:9px;color:#A0808A;margin-top:2px">2 Maret 2018</div></div><span style="display:flex;gap:8px;color:#C9BEAE;font-family:'Material Symbols Rounded';font-size:15px">edit delete</span></div>
+            <div style="display:flex;gap:11px;align-items:center;background:#fff;border:1px solid #F2E4E6;border-radius:15px;padding:12px"><span style="width:32px;height:32px;border-radius:10px;background:#B8763E;color:#fff;font-family:'Material Symbols Rounded';font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">diamond</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Lamaran</div><div style="font-size:9px;color:#A0808A;margin-top:2px">20 Juni 2020</div></div><span style="display:flex;gap:8px;color:#C9BEAE;font-family:'Material Symbols Rounded';font-size:15px">edit delete</span></div>
+            <div style="display:flex;gap:11px;align-items:center;background:#fff;border:1px solid #F2E4E6;border-radius:15px;padding:12px"><span style="width:32px;height:32px;border-radius:10px;background:#C9A227;color:#fff;font-family:'Material Symbols Rounded';font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">celebration</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Hari Pernikahan</div><div style="font-size:9px;color:#A0808A;margin-top:2px">11 Oktober 2020</div></div><span style="display:flex;gap:8px;color:#C9BEAE;font-family:'Material Symbols Rounded';font-size:15px">edit delete</span></div>
+            <div style="display:flex;gap:11px;align-items:center;background:#fff;border:1px solid #F2E4E6;border-radius:15px;padding:12px"><span style="width:32px;height:32px;border-radius:10px;background:#7C8F6B;color:#fff;font-family:'Material Symbols Rounded';font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">home</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Pindah Rumah Pertama</div><div style="font-size:9px;color:#A0808A;margin-top:2px">3 Januari 2021</div></div><span style="display:flex;gap:8px;color:#C9BEAE;font-family:'Material Symbols Rounded';font-size:15px">edit delete</span></div>
+            <div style="display:flex;gap:11px;align-items:center;background:#fff;border:1px solid #F2E4E6;border-radius:15px;padding:12px"><span style="width:32px;height:32px;border-radius:10px;background:#4E8C8A;color:#fff;font-family:'Material Symbols Rounded';font-size:18px;display:flex;align-items:center;justify-content:center;flex:none">child_care</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Anak Pertama Lahir</div><div style="font-size:9px;color:#A0808A;margin-top:2px">27 September 2022</div></div><span style="display:flex;gap:8px;color:#C9BEAE;font-family:'Material Symbols Rounded';font-size:15px">edit delete</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #F2E4E6;background:#FFFDFC;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">favorite</span><span style="font-size:8px;font-weight:700">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14 Conversation Cards -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">17</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Conversation Cards</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FDF9F8;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:36</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Conversation Cards</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:13px">
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <span style="font-size:9px;font-weight:700;color:#fff;background:#A65B6B;border-radius:20px;padding:6px 11px">Relationship</span>
+              <span style="font-size:9px;font-weight:600;color:#8B4757;background:#F7E4E6;border-radius:20px;padding:6px 11px">Deep Talk</span>
+              <span style="font-size:9px;font-weight:600;color:#8B4757;background:#F7E4E6;border-radius:20px;padding:6px 11px">Fun</span>
+              <span style="font-size:9px;font-weight:600;color:#8B4757;background:#F7E4E6;border-radius:20px;padding:6px 11px">Parenting</span>
+              <span style="font-size:9px;font-weight:600;color:#8B4757;background:#F7E4E6;border-radius:20px;padding:6px 11px">Money</span>
+            </div>
+            <div style="flex:1;display:flex;align-items:center">
+              <div style="width:100%;border-radius:22px;padding:26px 20px;background:#A65B6B;background-image:radial-gradient(circle at 12px 12px,rgba(255,255,255,.16) 2.5px,transparent 3px);background-size:26px 26px;color:#fff;box-shadow:0 14px 30px rgba(140,70,85,.28);text-align:center">
+                <div style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.8">Relationship · Kartu 7</div>
+                <div style="font-size:19px;font-weight:800;line-height:1.35;margin-top:16px;text-wrap:pretty">Kapan terakhir kali kamu merasa paling didukung olehku?</div>
+                <div style="font-size:11px;opacity:.85;margin-top:16px;line-height:1.5">Ambil waktu 5 menit. Jawab bergantian, tanpa menyela.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;padding-bottom:6px">
+              <span style="flex:1;text-align:center;font-size:11px;font-weight:700;background:#fff;border:1px solid #E9D6D9;border-radius:14px;padding:13px 0;color:#8B4757">Ganti Pertanyaan</span>
+              <span style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;font-weight:800;background:#2A2620;color:#fff;border-radius:14px;padding:13px 0"><span style="font-family:'Material Symbols Rounded';font-size:15px">mic</span>Rekam Jawaban</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #F2E4E6;background:#FFFDFC;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">favorite</span><span style="font-size:8px;font-weight:700">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15 Reflection Bulan Ini -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">18</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Reflection Bulan Ini</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FDF9F8;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:39</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Reflection · Agustus</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;gap:6px;background:#F7E4E6;border-radius:12px;padding:4px">
+              <span style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;font-size:10px;font-weight:700;background:#fff;border-radius:9px;padding:8px 0">Andri <span style="font-family:'Material Symbols Rounded';font-size:13px;color:#7C8F6B">check_circle</span></span>
+              <span style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;font-size:10px;font-weight:600;color:#8B4757;padding:8px 0">Anita <span style="font-family:'Material Symbols Rounded';font-size:13px;color:#C9BEAE">radio_button_unchecked</span></span>
+            </div>
+            <div style="background:#fff;border:1px solid #F2E4E6;border-radius:15px;padding:10px 11px">
+              <div style="font-size:11px;font-weight:700;line-height:1.4">1. Momen apa yang paling kamu syukuri?</div>
+              <div style="background:#FBF7F6;border:1px solid #F0E6E4;border-radius:11px;height:28px;margin-top:7px;padding:7px 8px;font-size:10px;color:#B9AFAA">Tulis jawabanmu…</div>
+            </div>
+            <div style="background:#fff;border:1px solid #F2E4E6;border-radius:15px;padding:10px 11px">
+              <div style="font-size:11px;font-weight:700;line-height:1.4">2. Apa yang ingin kamu perbaiki dariku?</div>
+              <div style="background:#FBF7F6;border:1px solid #F0E6E4;border-radius:11px;height:28px;margin-top:7px;padding:7px 8px;font-size:10px;color:#B9AFAA">Tulis jawabanmu…</div>
+            </div>
+            <div style="background:#fff;border:1px solid #F2E4E6;border-radius:15px;padding:10px 11px">
+              <div style="font-size:11px;font-weight:700;line-height:1.4">3. Keputusan mana yang terasa paling berat?</div>
+              <div style="background:#FBF7F6;border:1px solid #F0E6E4;border-radius:11px;height:28px;margin-top:7px;padding:7px 8px;font-size:10px;color:#B9AFAA">Tulis jawabanmu…</div>
+            </div>
+            <div style="background:#fff;border:1px solid #F2E4E6;border-radius:15px;padding:10px 11px">
+              <div style="font-size:11px;font-weight:700;line-height:1.4">4. Apa yang ingin kita coba bulan depan?</div>
+              <div style="background:#FBF7F6;border:1px solid #F0E6E4;border-radius:11px;height:28px;margin-top:7px;padding:7px 8px;font-size:10px;color:#B9AFAA">Tulis jawabanmu…</div>
+            </div>
+            <div style="background:#A65B6B;color:#fff;border-radius:15px;padding:14px 0;text-align:center;font-size:13px;font-weight:800">Simpan Reflection</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #F2E4E6;background:#FFFDFC;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">favorite</span><span style="font-size:8px;font-weight:700">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16 Reflection Riwayat -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">19</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Reflection Riwayat</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FDF9F8;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:41</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Riwayat Reflection</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:11px">
+            <div style="background:#fff;border:1px solid #F2E4E6;border-radius:16px;padding:13px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:800">Juli 2026</span><span style="font-size:9px;font-weight:700;color:#5E7049;background:#EDF1E6;border-radius:20px;padding:4px 9px">Lengkap</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid #F7EFEF;margin-top:8px"><span style="font-size:10px;color:#6B635A;flex:1">Momen paling disyukuri</span><span style="display:flex;gap:4px"><span style="width:19px;height:19px;border-radius:50%;background:#A65B6B;color:#fff;font-size:8px;font-weight:700;line-height:19px;text-align:center">A</span><span style="width:19px;height:19px;border-radius:50%;background:#C9A227;color:#fff;font-size:8px;font-weight:700;line-height:19px;text-align:center">N</span></span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid #F7EFEF"><span style="font-size:10px;color:#6B635A;flex:1">Hal yang ingin diperbaiki</span><span style="display:flex;gap:4px"><span style="width:19px;height:19px;border-radius:50%;background:#A65B6B;color:#fff;font-size:8px;font-weight:700;line-height:19px;text-align:center">A</span><span style="width:19px;height:19px;border-radius:50%;background:#C9A227;color:#fff;font-size:8px;font-weight:700;line-height:19px;text-align:center">N</span></span></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F2E4E6;border-radius:16px;padding:13px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:800">Juni 2026</span><span style="font-size:9px;font-weight:700;color:#8A7B4E;background:#FDF7E4;border-radius:20px;padding:4px 9px;white-space:nowrap">1 belum isi</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid #F7EFEF;margin-top:8px"><span style="font-size:10px;color:#6B635A;flex:1">Keputusan terberat</span><span style="display:flex;gap:4px"><span style="width:19px;height:19px;border-radius:50%;background:#A65B6B;color:#fff;font-size:8px;font-weight:700;line-height:19px;text-align:center">A</span><span style="width:19px;height:19px;border-radius:50%;background:#F1ECE2;color:#B0A79E;font-size:8px;font-weight:700;line-height:19px;text-align:center">N</span></span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid #F7EFEF"><span style="font-size:10px;color:#6B635A;flex:1">Rencana bulan depan</span><span style="display:flex;gap:4px"><span style="width:19px;height:19px;border-radius:50%;background:#A65B6B;color:#fff;font-size:8px;font-weight:700;line-height:19px;text-align:center">A</span><span style="width:19px;height:19px;border-radius:50%;background:#C9A227;color:#fff;font-size:8px;font-weight:700;line-height:19px;text-align:center">N</span></span></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F2E4E6;border-radius:16px;padding:13px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:800">Mei 2026</span><span style="font-size:9px;font-weight:700;color:#5E7049;background:#EDF1E6;border-radius:20px;padding:4px 9px">Lengkap</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid #F7EFEF;margin-top:8px"><span style="font-size:10px;color:#6B635A;flex:1">Momen paling disyukuri</span><span style="display:flex;gap:4px"><span style="width:19px;height:19px;border-radius:50%;background:#A65B6B;color:#fff;font-size:8px;font-weight:700;line-height:19px;text-align:center">A</span><span style="width:19px;height:19px;border-radius:50%;background:#C9A227;color:#fff;font-size:8px;font-weight:700;line-height:19px;text-align:center">N</span></span></div>
+            </div>
+            <div style="background:#F7E4E6;border-radius:14px;padding:12px;font-size:10px;color:#8B4757;line-height:1.5">Reflection dibuka tiap tanggal 25 dan ditutup akhir bulan.</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #F2E4E6;background:#FFFDFC;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">favorite</span><span style="font-size:8px;font-weight:700">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">more_horiz</span><span style="font-size:8px;font-weight:600">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17 Jurnal Keluarga -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">20</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Jurnal Keluarga</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:44</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Jurnal Keluarga</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:10px">
+            <div style="background:#8B5E83;color:#fff;border-radius:15px;padding:12px 0;text-align:center;font-size:12px;font-weight:800">+ Tambah Entri</div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:11px 12px">
+              <div style="display:flex;align-items:center;gap:9px"><span style="width:26px;height:26px;border-radius:50%;background:#A65B6B;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">A</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Andri</div><div style="font-size:9px;color:#8A8178">17 Agu 2026 · 21:02</div></div><span style="font-family:'Material Symbols Rounded';font-size:15px;color:#C9BEAE">more_vert</span></div>
+              <div style="font-size:12px;font-weight:700;margin-top:9px">Lomba 17-an di komplek</div>
+              <div style="font-size:10px;color:#6B635A;line-height:1.55;margin-top:4px">Anak-anak ikut balap karung, pulang capek tapi ketawa terus. Sore hari kita makan bareng tetangga…</div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:11px 12px">
+              <div style="display:flex;align-items:center;gap:9px"><span style="width:26px;height:26px;border-radius:50%;background:#C9A227;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">N</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Anita</div><div style="font-size:9px;color:#8A8178">12 Agu 2026 · 07:30</div></div><span style="font-family:'Material Symbols Rounded';font-size:15px;color:#C9BEAE">more_vert</span></div>
+              <div style="font-size:12px;font-weight:700;margin-top:9px">Hari pertama masuk TK</div>
+              <div style="font-size:10px;color:#6B635A;line-height:1.55;margin-top:4px">Nangis lima menit di gerbang, lalu langsung asyik main. Aku yang malah baper di parkiran…</div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:11px 12px">
+              <div style="display:flex;align-items:center;gap:9px"><span style="width:26px;height:26px;border-radius:50%;background:#A65B6B;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">A</span><div style="flex:1"><div style="font-size:11px;font-weight:700">Andri</div><div style="font-size:9px;color:#8A8178">3 Agu 2026 · 20:15</div></div><span style="font-family:'Material Symbols Rounded';font-size:15px;color:#C9BEAE">more_vert</span></div>
+              <div style="font-size:12px;font-weight:700;margin-top:9px">Renovasi dapur akhirnya selesai</div>
+              <div style="font-size:10px;color:#6B635A;line-height:1.55;margin-top:4px">Total di bawah anggaran. Rak baru pas banget untuk stok bulanan…</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">more_horiz</span><span style="font-size:8px;font-weight:700">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <sc-if value="{{ showGroupHeaders }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;align-items:center;gap:14px;margin:0 0 22px">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8178">05 — Pengaturan &amp; Lainnya</span>
+    <span style="flex:1;height:1px;background:#DEDAD3"></span>
+  </div>
+  </sc-if>
+  <div style="display:flex;flex-wrap:wrap;gap:36px 34px">
+
+    <!-- 18 Menu Lainnya -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">21</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Menu Lainnya</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:47</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 14px 12px;flex:none">
+            <div style="display:flex;align-items:center;gap:9px">
+              <img src="uploads/seruma-logo-nav.png" alt="Seruma" style="width:22px;height:22px;object-fit:contain;display:block">
+              <div><div style="font-size:14px;font-weight:800;line-height:1.1">Seruma</div><div style="font-size:9px;color:#8A8178;font-weight:500">Keluarga Demo</div></div>
+            </div>
+            <div style="display:flex;gap:11px;color:#4A443A;font-family:'Material Symbols Rounded';font-size:16px">sync search notifications</div>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:7px">
+            <div style="font-size:15px;font-weight:800;margin-bottom:0">Lainnya</div>
+            <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #F0EBE2;border-radius:15px;padding:10px 12px"><span style="width:30px;height:30px;border-radius:10px;background:#B8763E;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">build</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Maintenance</div><div style="font-size:9px;color:#8A8178">Jadwal servis kendaraan &amp; rumah</div></div><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#C9BEAE">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #F0EBE2;border-radius:15px;padding:10px 12px"><span style="width:30px;height:30px;border-radius:10px;background:#C9A227;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">wallet</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Kelola Wallet</div><div style="font-size:9px;color:#8A8178">Tunai, bank, dompet digital</div></div><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#C9BEAE">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #F0EBE2;border-radius:15px;padding:10px 12px"><span style="width:30px;height:30px;border-radius:10px;background:#3F7F7C;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">link</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Link Penting</div><div style="font-size:9px;color:#8A8178">Dokumen &amp; akun keluarga</div></div><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#C9BEAE">lock</span></div>
+            <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #F0EBE2;border-radius:15px;padding:10px 12px"><span style="width:30px;height:30px;border-radius:10px;background:#6B7C99;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">trending_up</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Laporan Keuangan</div><div style="font-size:9px;color:#8A8178">Harian sampai tahunan</div></div><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#C9BEAE">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #F0EBE2;border-radius:15px;padding:10px 12px"><span style="width:30px;height:30px;border-radius:10px;background:#8B5E83;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">menu_book</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Jurnal Keluarga</div><div style="font-size:9px;color:#8A8178">Catatan momen sehari-hari</div></div><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#C9BEAE">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #F0EBE2;border-radius:15px;padding:10px 12px"><span style="width:30px;height:30px;border-radius:10px;background:#7C8F6B;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">person</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Profil</div><div style="font-size:9px;color:#8A8178">Data keluarga &amp; anggota</div></div><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#C9BEAE">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #F0EBE2;border-radius:15px;padding:10px 12px"><span style="width:30px;height:30px;border-radius:10px;background:#4A443A;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">settings</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Pengaturan</div><div style="font-size:9px;color:#8A8178">PIN, split ratio, backup</div></div><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#C9BEAE">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #F0EBE2;border-radius:15px;padding:10px 12px"><span style="width:30px;height:30px;border-radius:10px;background:#A99B8C;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">info</span><div style="flex:1"><div style="font-size:12px;font-weight:700">Tentang</div><div style="font-size:9px;color:#8A8178">Versi 1.0.0</div></div><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#C9BEAE">chevron_right</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">more_horiz</span><span style="font-size:8px;font-weight:700">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 19 Link Penting Terkunci -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">22</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Link Penting · Terkunci</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:49</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Link Penting</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px">
+            <div style="width:78px;height:78px;border-radius:26px;background:#3F7F7C;color:#fff;font-family:'Material Symbols Rounded';font-size:38px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 26px rgba(63,127,124,.28)">lock</div>
+            <div style="font-size:17px;font-weight:800">Bagian ini terkunci</div>
+            <div style="font-size:11px;color:#8A8178;line-height:1.6">Link Penting menyimpan dokumen dan akun keluarga. Setel PIN dulu untuk membukanya.</div>
+            <div style="background:#C9A227;color:#fff;border-radius:14px;padding:13px 26px;font-size:12px;font-weight:800;margin-top:4px">Setel PIN</div>
+            <div style="font-size:10px;font-weight:700;color:#8A8178">Pelajari cara kerja PIN</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">more_horiz</span><span style="font-size:8px;font-weight:700">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 20 Profil -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">23</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Profil</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:52</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Profil</span>
+            <span style="font-family:'Material Symbols Rounded';font-size:18px;color:#8A8178">edit</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:9px;padding:6px 0 2px">
+              <div style="width:80px;height:80px;border-radius:50%;background:repeating-linear-gradient(45deg,#F2EBE2,#F2EBE2 7px,#E9E0D3 7px,#E9E0D3 14px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:1px solid #E5DCCE">
+                <span style="font-family:'Material Symbols Rounded';font-size:20px;color:#A99B8C">add_a_photo</span>
+                <span style="font-size:7px;font-family:ui-monospace,monospace;color:#8A7E70">foto profil</span>
+              </div>
+              <div style="text-align:center"><div style="font-size:15px;font-weight:800">Andri Prasetya</div><div style="font-size:10px;color:#8A8178">Admin · Keluarga Demo</div></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:6px 13px">
+              <div style="display:flex;justify-content:space-between;padding:11px 0"><span style="font-size:10px;color:#8A8178;font-weight:600">Organisasi / Keluarga</span><span style="font-size:11px;font-weight:700">Keluarga Demo</span></div>
+              <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid #F7F3EB"><span style="font-size:10px;color:#8A8178;font-weight:600">Nama</span><span style="font-size:11px;font-weight:700">Andri Prasetya</span></div>
+              <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid #F7F3EB"><span style="font-size:10px;color:#8A8178;font-weight:600">Email</span><span style="font-size:11px;font-weight:700">andri@contoh.id</span></div>
+              <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid #F7F3EB"><span style="font-size:10px;color:#8A8178;font-weight:600">Anggota</span><span style="font-size:11px;font-weight:700">2 orang</span></div>
+            </div>
+            <div style="display:flex;gap:11px;background:#EDF1E6;border:1px solid #DCE4D0;border-radius:16px;padding:13px">
+              <span style="width:30px;height:30px;border-radius:10px;background:#7C8F6B;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center;flex:none">lock</span>
+              <div><div style="font-size:11px;font-weight:800;color:#3F5230">Data kamu terenkripsi</div><div style="font-size:10px;color:#5E7049;line-height:1.5;margin-top:2px">Catatan keuangan dan jurnal disimpan terenkripsi di perangkat &amp; cadangan.</div></div>
+            </div>
+            <div style="background:#fff;border:1px solid #E8E1D5;border-radius:14px;padding:13px 0;text-align:center;font-size:12px;font-weight:800">Ganti Password</div>
+            <div style="text-align:center;font-size:11px;font-weight:700;color:#A6544A;padding:4px 0">Keluar dari Akun</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">more_horiz</span><span style="font-size:8px;font-weight:700">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 21 Pengaturan -->
+    <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:19px;height:19px;border-radius:50%;background:#2A2620;color:#FAF8F4;font-size:10px;font-weight:700;line-height:19px;text-align:center">24</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B635A">Pengaturan</span>
+      </div>
+      <div style="width:300px;height:650px;background:#17140F;border-radius:35px;padding:3px;box-shadow:0 20px 44px rgba(36,31,26,.16)">
+        <div style="position:relative;width:294px;height:644px;border-radius:32px;overflow:hidden;background:#FAF8F4;display:flex;flex-direction:column">
+          <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:58px;height:14px;border-radius:8px;background:#17140F;z-index:9"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 18px 0;height:30px;font-size:10px;font-weight:700;flex:none"><span>21:55</span><span style="display:flex;gap:4px;align-items:center;font-family:'Material Symbols Rounded';font-size:12px">signal_cellular_alt wifi battery_full</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 12px;flex:none">
+            <span style="font-family:'Material Symbols Rounded';font-size:19px;color:#2A2620">arrow_back</span>
+            <span style="flex:1;font-size:15px;font-weight:800">Pengaturan</span>
+          </div>
+          <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:11px">
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:13px;display:flex;align-items:center;gap:11px">
+              <span style="width:30px;height:30px;border-radius:10px;background:#4A443A;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">password</span>
+              <div style="flex:1"><div style="font-size:12px;font-weight:700">PIN Keamanan</div><div style="font-size:9px;color:#8A8178">Belum disetel · untuk Link Penting</div></div>
+              <span style="font-size:10px;font-weight:800;color:#fff;background:#C9A227;border-radius:20px;padding:7px 13px">Setel</span>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:13px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:700">Split Ratio Pengeluaran</span><span style="font-size:10px;font-weight:800;color:#C9A227">50 / 50</span></div>
+              <div style="position:relative;height:5px;border-radius:5px;background:#F1ECE2;margin:16px 0 10px">
+                <div style="width:50%;height:5px;border-radius:5px;background:#C9A227"></div>
+                <div style="position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:17px;height:17px;border-radius:50%;background:#fff;border:2.5px solid #C9A227;box-shadow:0 2px 5px rgba(36,31,26,.18)"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:#6B635A"><span>Andri 50%</span><span>Anita 50%</span></div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:13px">
+              <div style="font-size:12px;font-weight:700;margin-bottom:9px">Periode Anggaran</div>
+              <div style="display:flex;gap:6px">
+                <span style="flex:1;text-align:center;font-size:9px;font-weight:700;background:#2A2620;color:#fff;border-radius:10px;padding:8px 0">Bulanan</span>
+                <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;background:#F4F1EA;border-radius:10px;padding:8px 0">Mingguan</span>
+                <span style="flex:1;text-align:center;font-size:9px;font-weight:600;color:#8A8178;background:#F4F1EA;border-radius:10px;padding:8px 0">Kustom</span>
+              </div>
+              <div style="font-size:9px;color:#8A8178;margin-top:9px">Reset otomatis tiap tanggal 1</div>
+            </div>
+            <div style="background:#fff;border:1px solid #F0EBE2;border-radius:16px;padding:13px;display:flex;align-items:center;gap:11px">
+              <span style="width:30px;height:30px;border-radius:10px;background:#7C8F6B;color:#fff;font-family:'Material Symbols Rounded';font-size:17px;display:flex;align-items:center;justify-content:center">backup</span>
+              <div style="flex:1"><div style="font-size:12px;font-weight:700">Backup Data ke Excel</div><div style="font-size:9px;color:#8A8178">Terakhir: 1 Agu 2026</div></div>
+              <span style="font-family:'Material Symbols Rounded';font-size:17px;color:#C9BEAE">download</span>
+            </div>
+            <div style="background:#F9E9E7;border:1px solid #EFD5D1;border-radius:16px;padding:13px">
+              <div style="display:flex;align-items:center;gap:8px"><span style="font-family:'Material Symbols Rounded';font-size:16px;color:#8B3F36">warning</span><span style="font-size:12px;font-weight:800;color:#8B3F36">Reset Data</span></div>
+              <div style="font-size:10px;color:#A6544A;line-height:1.5;margin-top:5px">Menghapus semua transaksi, jurnal, dan momen. Tindakan ini tidak bisa dibatalkan.</div>
+              <div style="background:#fff;border:1px solid #E9C6C0;color:#8B3F36;border-radius:12px;padding:10px 0;text-align:center;font-size:11px;font-weight:800;margin-top:10px">Reset Semua Data</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:56px;border-top:1px solid #EDE8DF;background:#FCFAF7;flex:none">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">home</span><span style="font-size:8px;font-weight:600">Beranda</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">wallet</span><span style="font-size:8px;font-weight:600">Keuangan</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">calendar_month</span><span style="font-size:8px;font-weight:600">Kalender</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9A9188"><span style="font-family:'Material Symbols Rounded';font-size:19px">favorite</span><span style="font-size:8px;font-weight:600">Berdua</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#C9A227"><span style="font-family:'Material Symbols Rounded';font-size:19px;font-variation-settings:'FILL' 1">more_horiz</span><span style="font-size:8px;font-weight:700">Lainnya</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showGroupHeaders&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Spec sheet&quot;},&quot;showNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Spec sheet&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showGroupHeaders: this.props.showGroupHeaders ?? true,
+      showNumbers: this.props.showNumbers ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+{
+  "families": {
+    "family_demo": {
+      "name": "Keluarga Demo",
+      "location": "Pontianak",
+      "members": ["uid_andri", "uid_anita"],
+      "createdAt": "2026-01-01T00:00:00Z"
+    }
+  },
+
+  "users": {
+    "uid_andri": {
+      "name": "Andri Prasetya",
+      "email": "andri@contoh.id",
+      "phone": "0812 0000 0000",
+      "familyId": "family_demo",
+      "role": "admin",
+      "photoUrl": null
+    },
+    "uid_anita": {
+      "name": "Anita",
+      "email": "anita@contoh.id",
+      "familyId": "family_demo",
+      "role": "member",
+      "photoUrl": null
+    }
+  },
+
+  "families/family_demo/wallets": {
+    "wallet_tunai": { "name": "Tunai", "subtitle": "Dompet rumah", "type": "cash", "balance": 850000, "isDefault": true, "order": 1 },
+    "wallet_bca": { "name": "BCA", "subtitle": "Rekening utama", "type": "bank", "balance": 4320000, "isDefault": false, "order": 2 },
+    "wallet_ewallet": { "name": "E-wallet", "subtitle": "Dompet digital", "type": "ewallet", "balance": 645000, "isDefault": false, "order": 3 },
+    "wallet_tabungan": { "name": "Tabungan", "subtitle": "Dana darurat", "type": "savings", "balance": 200000, "isDefault": false, "order": 4 }
+  },
+
+  "families/family_demo/categories": {
+    "cat_listrik": { "name": "Listrik", "icon": "bolt", "color": "#C9A227", "budgetAmount": 420000, "spentAmount": 420000, "walletId": "wallet_bca", "order": 1 },
+    "cat_air": { "name": "Air", "icon": "water_drop", "color": "#4A8B87", "budgetAmount": 145000, "spentAmount": 145000, "walletId": "wallet_bca", "order": 2 },
+    "cat_sekolah": {
+      "name": "Sekolah",
+      "icon": "school",
+      "color": "#B8763E",
+      "budgetAmount": 1350000,
+      "spentAmount": 1200000,
+      "walletId": "wallet_bca",
+      "resetDay": 1,
+      "order": 3,
+      "subCategories": {
+        "sub_spp": { "name": "SPP bulanan", "amount": 750000 },
+        "sub_les": { "name": "Les & kursus", "amount": 300000 },
+        "sub_alat_tulis": { "name": "Alat tulis", "amount": 150000 }
+      }
+    },
+    "cat_belanja": { "name": "Belanja", "icon": "shopping_basket", "color": "#7C8F6B", "budgetAmount": 825000, "spentAmount": 825000, "walletId": "wallet_tunai", "order": 4 },
+    "cat_cicilan": { "name": "Cicilan", "icon": "credit_card", "color": "#A6544A", "budgetAmount": 950000, "spentAmount": 950000, "walletId": "wallet_bca", "order": 5 },
+    "cat_transport": { "name": "Transport", "icon": "directions_car", "color": "#B8763E", "budgetAmount": 380000, "spentAmount": 380000, "walletId": "wallet_tunai", "order": 6 },
+    "cat_internet": { "name": "Internet", "icon": "router", "color": "#4E8C8A", "budgetAmount": 350000, "spentAmount": 350000, "walletId": "wallet_bca", "order": 7 },
+    "cat_langganan": { "name": "Langganan", "icon": "subscriptions", "color": "#8B4757", "budgetAmount": 165000, "spentAmount": 165000, "walletId": "wallet_bca", "order": 8 }
+  },
+
+  "families/family_demo/transactions": {
+    "tx_1": { "title": "Internet", "categoryId": "cat_internet", "walletId": "wallet_bca", "amount": -350000, "type": "expense", "date": "2026-08-18" },
+    "tx_2": { "title": "Gaji Andri", "categoryId": null, "walletId": "wallet_bca", "amount": 7500000, "type": "income", "date": "2026-08-17" },
+    "tx_3": { "title": "Belanja bulanan", "categoryId": "cat_belanja", "walletId": "wallet_tunai", "amount": -825000, "type": "expense", "date": "2026-08-16" }
+  },
+
+  "families/family_demo/walletTransfers": {
+    "transfer_1": { "fromWalletId": "wallet_bca", "toWalletId": "wallet_tunai", "amount": 500000, "adminFee": 0, "date": "2026-08-10" },
+    "transfer_2": { "fromWalletId": "wallet_bca", "toWalletId": "wallet_ewallet", "amount": 250000, "adminFee": 0, "date": "2026-08-05" }
+  },
+
+  "families/family_demo/monthlyReports": {
+    "2026-08": {
+      "totalWealth": 182532350,
+      "cash": 6015000,
+      "investment": 176517350,
+      "income": 9250000,
+      "expense": 4120000,
+      "investmentContribution": 3000000,
+      "endingBalance": 6015000,
+      "wealthChangePercent": 4.8,
+      "trend6Months": {
+        "2026-03": 158000000,
+        "2026-04": 162500000,
+        "2026-05": 167800000,
+        "2026-06": 172100000,
+        "2026-07": 168475000,
+        "2026-08": 182532350
+      }
+    }
+  },
+
+  "families/family_demo/goals": {
+    "goal_liburan": { "name": "Dana Liburan", "targetAmount": 5000000, "currentAmount": 500000, "lastContribution": 500000, "date": "2026-08-13" }
+  },
+
+  "families/family_demo/calendarEvents": {
+    "event_1": { "title": "Ganti oli mobil", "category": "maintenance", "date": "2026-08-18", "isDone": false },
+    "event_2": { "title": "Servis AC ruang tamu", "category": "maintenance", "date": "2026-08-25", "isDone": false },
+    "event_3": { "title": "Bayar internet", "category": "bayar_belanja", "date": "2026-08-21", "isDone": false },
+    "event_4": { "title": "Date night", "category": "berdua", "date": "2026-08-19", "isDone": false }
+  },
+
+  "families/family_demo/maintenanceItems": {
+    "maint_mobil": { "name": "Mobil — Avanza 2019", "type": "kendaraan", "note": "Ganti oli tiap 5.000 km", "status": "Hari ini", "nextServiceDate": "2026-08-18", "estimatedCost": 450000 },
+    "maint_motor": { "name": "Motor — Vario", "type": "kendaraan", "note": "Servis rutin tiap 3 bulan", "status": "H-9", "nextServiceDate": "2026-08-27", "estimatedCost": 180000 },
+    "maint_cuci": { "name": "Cuci & salon mobil", "type": "kendaraan", "note": "Tiap 2 minggu", "status": "Aman", "nextServiceDate": "2026-09-02", "estimatedCost": 75000 }
+  },
+
+  "families/family_demo/loveTimeline": {
+    "moment_1": { "title": "Pertama Kali Bertemu", "icon": "favorite", "date": "2018-02-14" },
+    "moment_2": { "title": "Kencan Pertama", "icon": "restaurant", "date": "2018-03-02" },
+    "moment_3": { "title": "Lamaran", "icon": "diamond", "date": "2020-06-20" },
+    "moment_4": { "title": "Hari Pernikahan", "icon": "celebration", "date": "2020-10-11" },
+    "moment_5": { "title": "Pindah Rumah Pertama", "icon": "home", "date": "2021-01-03" },
+    "moment_6": { "title": "Anak Pertama Lahir", "icon": "child_care", "date": "2022-09-27" }
+  },
+
+  "families/family_demo/conversationCards": {
+    "card_pool_relationship_7": {
+      "category": "Relationship",
+      "cardNumber": 7,
+      "question": "Kapan terakhir kali kamu merasa paling didukung olehku?",
+      "instruction": "Ambil waktu 5 menit. Jawab bergantian, tanpa menyela.",
+      "isToday": true,
+      "answeredBy": [],
+      "recordedAnswerUrl": null
+    }
+  },
+
+  "families/family_demo/reflections": {
+    "2026-08": {
+      "questions": [
+        "Momen apa yang paling kamu syukuri?",
+        "Apa yang ingin kamu perbaiki dariku?",
+        "Keputusan mana yang terasa paling berat?",
+        "Apa yang ingin kita coba bulan depan?"
+      ],
+      "status": "belum_lengkap",
+      "openDate": "2026-08-25",
+      "closeDate": "2026-08-31",
+      "memberAnswers": {
+        "uid_andri": { "completed": true, "answers": [null, null, null, null] },
+        "uid_anita": { "completed": false, "answers": [null, null, null, null] }
+      }
+    },
+    "2026-07": { "status": "lengkap", "memberAnswers": { "uid_andri": { "completed": true }, "uid_anita": { "completed": true } } },
+    "2026-06": { "status": "1_belum_isi", "memberAnswers": { "uid_andri": { "completed": true }, "uid_anita": { "completed": false } } },
+    "2026-05": { "status": "lengkap", "memberAnswers": { "uid_andri": { "completed": true }, "uid_anita": { "completed": true } } }
+  },
+
+  "families/family_demo/journalEntries": {
+    "journal_1": {
+      "authorUid": "uid_andri",
+      "authorName": "Andri",
+      "title": "Lomba 17-an di komplek",
+      "text": "Anak-anak ikut balap karung, pulang capek tapi ketawa terus. Sore hari kita makan bareng tetangga.",
+      "date": "2026-08-17",
+      "time": "21:02"
+    },
+    "journal_2": {
+      "authorUid": "uid_anita",
+      "authorName": "Anita",
+      "title": "Hari pertama masuk TK",
+      "text": "Nangis lima menit di gerbang, lalu langsung asyik main. Aku yang malah baper di parkiran.",
+      "date": "2026-08-12",
+      "time": "07:30"
+    },
+    "journal_3": {
+      "authorUid": "uid_andri",
+      "authorName": "Andri",
+      "title": "Renovasi dapur akhirnya selesai",
+      "text": "Total di bawah anggaran. Rak baru pas banget untuk stok bulanan.",
+      "date": "2026-08-03",
+      "time": "20:15"
+    }
+  },
+
+  "families/family_demo/notifications": {
+    "notif_1": { "icon": "build", "title": "Servis motor jatuh tempo", "createdAt": "2026-08-17T05:00:00Z", "isRead": false },
+    "notif_2": { "icon": "payments", "title": "Tagihan internet H-2", "createdAt": "2026-08-17T21:00:00Z", "isRead": false },
+    "notif_3": { "icon": "favorite", "title": "Reflection bulan ini belum diisi", "createdAt": "2026-08-16T21:00:00Z", "isRead": false },
+    "notif_4": { "icon": "savings", "title": "Goal \"Dana Liburan\" +Rp 500.000", "createdAt": "2026-08-13T21:00:00Z", "isRead": true }
+  },
+
+  "families/family_demo/settings": {
+    "security": { "pinSet": false },
+    "splitRatio": { "uid_andri": 50, "uid_anita": 50 },
+    "budgetPeriod": { "type": "bulanan", "resetDay": 1 },
+    "backup": { "format": "excel", "lastBackupDate": "2026-08-01" }
+  }
+}

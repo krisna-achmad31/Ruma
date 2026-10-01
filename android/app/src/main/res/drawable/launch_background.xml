@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Splash native sebelum Flutter tampil: latar krem dan ikon rumah 3D di tengah. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/splash_background" />
+    <item android:width="112dp" android:height="112dp" android:gravity="center">
+        <bitmap android:gravity="fill" android:src="@drawable/splash_house" />
+    </item>
+</layer-list>
