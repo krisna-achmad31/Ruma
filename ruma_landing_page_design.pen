@@ -1,5 +1,5 @@
 {
-  "version": "2.19",
+  "version": "2.20",
   "children": [
     {
       "type": "frame",
@@ -145,82 +145,46 @@
                   "children": [
                     {
                       "type": "frame",
-                      "id": "t4rc2E",
-                      "name": "Mark",
-                      "clip": true,
-                      "width": 44,
-                      "height": 44,
-                      "fill": {
-                        "type": "gradient",
-                        "gradientType": "linear",
-                        "enabled": true,
-                        "rotation": 200,
-                        "size": {
-                          "height": 1
-                        },
-                        "colors": [
-                          {
-                            "color": "#1F5446",
-                            "position": 0
-                          },
-                          {
-                            "color": "#3D8270",
-                            "position": 1
-                          }
-                        ]
-                      },
-                      "cornerRadius": 14,
+                      "id": "tf0Vu",
+                      "name": "Logo Ruma",
+                      "width": 102,
+                      "height": 48,
                       "layout": "none",
                       "children": [
                         {
+                          "type": "text",
+                          "id": "V41DE",
+                          "x": 0,
+                          "y": 13.143103448275864,
+                          "name": "ruma",
+                          "fill": "#2C6B5A",
+                          "content": "ruma",
+                          "lineHeight": 1,
+                          "fontFamily": "Nunito",
+                          "fontSize": 41.72413793103449,
+                          "fontWeight": "800"
+                        },
+                        {
                           "type": "path",
-                          "id": "glAph",
+                          "id": "BH3p3",
                           "x": 0,
                           "y": 0,
                           "name": "Atap",
-                          "geometry": "M30 44l20-17 20 17",
+                          "geometry": "M29 144l213-126 213 126",
                           "viewBox": [
                             0,
                             0,
-                            100,
-                            100
+                            490,
+                            232
                           ],
-                          "width": 44,
-                          "height": 44,
-                          "stroke": "#FFFFFF",
-                          "strokeWidth": 3.08,
+                          "width": 102.22413793103449,
+                          "height": 48.400000000000006,
+                          "stroke": "#2C6B5A",
+                          "strokeWidth": 7.301724137931036,
                           "strokeLinejoin": "round",
                           "strokeLinecap": "round"
-                        },
-                        {
-                          "type": "text",
-                          "id": "RqK29",
-                          "x": 0,
-                          "y": 20.68,
-                          "name": "ruma",
-                          "fill": "#FFFFFF",
-                          "textGrowth": "fixed-width",
-                          "width": 44,
-                          "content": "ruma",
-                          "lineHeight": 1,
-                          "textAlign": "center",
-                          "fontFamily": "Bricolage Grotesque",
-                          "fontSize": 13.2,
-                          "fontWeight": "800",
-                          "letterSpacing": -0.528
                         }
                       ]
-                    },
-                    {
-                      "type": "text",
-                      "id": "h86CsB",
-                      "name": "Wordmark",
-                      "fill": "$ink",
-                      "content": "Ruma",
-                      "fontFamily": "$font-display",
-                      "fontSize": 24,
-                      "fontWeight": "700",
-                      "letterSpacing": -0.6
                     }
                   ]
                 },
@@ -451,7 +415,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/smiling_face_with_hearts.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -477,10 +441,10 @@
                       "width": "fill_container",
                       "content": "Share the load, not just the bills.",
                       "lineHeight": 1,
-                      "fontFamily": "$font-display",
+                      "fontFamily": "$font-body",
                       "fontSize": 76,
-                      "fontWeight": "700",
-                      "letterSpacing": -3
+                      "fontWeight": "800",
+                      "letterSpacing": -0.9
                     },
                     {
                       "type": "text",
@@ -612,7 +576,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/envelope.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             },
                             {
@@ -761,7 +725,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/red_heart.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -861,7 +825,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/heart_hands.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -961,7 +925,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/money_bag.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -1043,10 +1007,10 @@
                   "width": 720,
                   "content": "One home, three things to handle together.",
                   "lineHeight": 1.04,
-                  "fontFamily": "$font-display",
+                  "fontFamily": "$font-body",
                   "fontSize": 56,
-                  "fontWeight": "700",
-                  "letterSpacing": -2
+                  "fontWeight": "800",
+                  "letterSpacing": -0.7
                 },
                 {
                   "type": "text",
@@ -1141,7 +1105,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/clipboard.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -1167,10 +1131,10 @@
                       "width": "fill_container",
                       "content": "The one who remembers and the one who does it, both get credit.",
                       "lineHeight": 1.06,
-                      "fontFamily": "$font-display",
+                      "fontFamily": "$font-body",
                       "fontSize": 44,
-                      "fontWeight": "700",
-                      "letterSpacing": -1.4
+                      "fontWeight": "800",
+                      "letterSpacing": -0.5
                     },
                     {
                       "type": "text",
@@ -1227,7 +1191,7 @@
                                     "type": "image",
                                     "enabled": true,
                                     "url": "assets/icons3d/heart_hands.png",
-                                    "mode": "fit"
+                                    "mode": "contain"
                                   }
                                 }
                               ]
@@ -1272,7 +1236,7 @@
                                     "type": "image",
                                     "enabled": true,
                                     "url": "assets/icons3d/alarm_clock.png",
-                                    "mode": "fit"
+                                    "mode": "contain"
                                   }
                                 }
                               ]
@@ -1317,7 +1281,7 @@
                                     "type": "image",
                                     "enabled": true,
                                     "url": "assets/icons3d/wrench.png",
-                                    "mode": "fit"
+                                    "mode": "contain"
                                   }
                                 }
                               ]
@@ -1578,7 +1542,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/money_bag.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -1604,10 +1568,10 @@
                       "width": "fill_container",
                       "content": "Pool the household money, split it into envelopes.",
                       "lineHeight": 1.06,
-                      "fontFamily": "$font-display",
+                      "fontFamily": "$font-body",
                       "fontSize": 44,
-                      "fontWeight": "700",
-                      "letterSpacing": -1.4
+                      "fontWeight": "800",
+                      "letterSpacing": -0.5
                     },
                     {
                       "type": "text",
@@ -1664,7 +1628,7 @@
                                     "type": "image",
                                     "enabled": true,
                                     "url": "assets/icons3d/banknote.png",
-                                    "mode": "fit"
+                                    "mode": "contain"
                                   }
                                 }
                               ]
@@ -1709,7 +1673,7 @@
                                     "type": "image",
                                     "enabled": true,
                                     "url": "assets/icons3d/credit_card.png",
-                                    "mode": "fit"
+                                    "mode": "contain"
                                   }
                                 }
                               ]
@@ -1754,7 +1718,7 @@
                                     "type": "image",
                                     "enabled": true,
                                     "url": "assets/icons3d/chart_up.png",
-                                    "mode": "fit"
+                                    "mode": "contain"
                                   }
                                 }
                               ]
@@ -1881,7 +1845,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/red_heart.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -1907,10 +1871,10 @@
                       "width": "fill_container",
                       "content": "More than coordination. Still talking as a couple.",
                       "lineHeight": 1.06,
-                      "fontFamily": "$font-display",
+                      "fontFamily": "$font-body",
                       "fontSize": 44,
-                      "fontWeight": "700",
-                      "letterSpacing": -1.4
+                      "fontWeight": "800",
+                      "letterSpacing": -0.5
                     },
                     {
                       "type": "text",
@@ -1967,7 +1931,7 @@
                                     "type": "image",
                                     "enabled": true,
                                     "url": "assets/icons3d/speech_balloon.png",
-                                    "mode": "fit"
+                                    "mode": "contain"
                                   }
                                 }
                               ]
@@ -2012,7 +1976,7 @@
                                     "type": "image",
                                     "enabled": true,
                                     "url": "assets/icons3d/thought_balloon.png",
-                                    "mode": "fit"
+                                    "mode": "contain"
                                   }
                                 }
                               ]
@@ -2057,7 +2021,7 @@
                                     "type": "image",
                                     "enabled": true,
                                     "url": "assets/icons3d/notebook.png",
-                                    "mode": "fit"
+                                    "mode": "contain"
                                   }
                                 }
                               ]
@@ -2212,10 +2176,10 @@
                   "width": "fill_container",
                   "content": "There is no scoreboard in Ruma.",
                   "lineHeight": 1.04,
-                  "fontFamily": "$font-display",
+                  "fontFamily": "$font-body",
                   "fontSize": 56,
-                  "fontWeight": "700",
-                  "letterSpacing": -2
+                  "fontWeight": "800",
+                  "letterSpacing": -0.7
                 },
                 {
                   "type": "text",
@@ -2285,7 +2249,7 @@
                           "type": "text",
                           "id": "FkmEj",
                           "name": "Old",
-                          "fill": "$faint",
+                          "fill": "#D64545",
                           "content": "You 70%, them 30%",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
@@ -2299,7 +2263,7 @@
                           "x": -4,
                           "y": 11,
                           "name": "Garis coret",
-                          "fill": "$faint",
+                          "fill": "#D64545",
                           "width": 162,
                           "height": 2
                         }
@@ -2342,7 +2306,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/heart_hands.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -2406,7 +2370,7 @@
                           "type": "text",
                           "id": "ac7mh",
                           "name": "Old",
-                          "fill": "$faint",
+                          "fill": "#D64545",
                           "content": "My wallet, your wallet",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
@@ -2420,7 +2384,7 @@
                           "x": -4,
                           "y": 11,
                           "name": "Garis coret",
-                          "fill": "$faint",
+                          "fill": "#D64545",
                           "width": 200,
                           "height": 2
                         }
@@ -2463,7 +2427,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/money_bag.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -2527,7 +2491,7 @@
                           "type": "text",
                           "id": "b8MWt",
                           "name": "Old",
-                          "fill": "$faint",
+                          "fill": "#D64545",
                           "content": "Who does it most",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
@@ -2541,7 +2505,7 @@
                           "x": -4,
                           "y": 11,
                           "name": "Garis coret",
-                          "fill": "$faint",
+                          "fill": "#D64545",
                           "width": 148,
                           "height": 2
                         }
@@ -2584,7 +2548,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/handshake.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -2648,7 +2612,7 @@
                           "type": "text",
                           "id": "MGKv9",
                           "name": "Old",
-                          "fill": "$faint",
+                          "fill": "#D64545",
                           "content": "Favors on a tally",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
@@ -2662,7 +2626,7 @@
                           "x": -4,
                           "y": 11,
                           "name": "Garis coret",
-                          "fill": "$faint",
+                          "fill": "#D64545",
                           "width": 150,
                           "height": 2
                         }
@@ -2705,7 +2669,7 @@
                                 "type": "image",
                                 "enabled": true,
                                 "url": "assets/icons3d/notebook.png",
-                                "mode": "fit"
+                                "mode": "contain"
                               }
                             }
                           ]
@@ -2759,10 +2723,10 @@
                   "width": 760,
                   "content": "Ruma changes when your life does.",
                   "lineHeight": 1.04,
-                  "fontFamily": "$font-display",
+                  "fontFamily": "$font-body",
                   "fontSize": 56,
-                  "fontWeight": "700",
-                  "letterSpacing": -2
+                  "fontWeight": "800",
+                  "letterSpacing": -0.7
                 },
                 {
                   "type": "text",
@@ -2834,7 +2798,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/ring.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     },
                     {
@@ -2934,7 +2898,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/baby_bottle.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     },
                     {
@@ -3034,7 +2998,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/crescent_moon.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     },
                     {
@@ -3143,10 +3107,10 @@
                   "name": "Title",
                   "fill": "$ink",
                   "content": "One subscription, shared by two.",
-                  "fontFamily": "$font-display",
+                  "fontFamily": "$font-body",
                   "fontSize": 56,
-                  "fontWeight": "700",
-                  "letterSpacing": -2
+                  "fontWeight": "800",
+                  "letterSpacing": -0.7
                 },
                 {
                   "type": "text",
@@ -3520,7 +3484,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/sparkles.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     },
                     {
@@ -4304,7 +4268,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/money_bag.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -4352,7 +4316,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/calendar.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -4400,7 +4364,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/red_heart.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -4448,7 +4412,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/shopping_cart.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -4495,7 +4459,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/sparkles.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -4543,7 +4507,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/clipboard.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -4558,10 +4522,10 @@
                   "content": "Start with one small chore tonight.",
                   "lineHeight": 1.02,
                   "textAlign": "center",
-                  "fontFamily": "$font-display",
+                  "fontFamily": "$font-body",
                   "fontSize": 60,
-                  "fontWeight": "700",
-                  "letterSpacing": -2.2
+                  "fontWeight": "800",
+                  "letterSpacing": -0.7
                 },
                 {
                   "type": "text",
@@ -4670,81 +4634,46 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "SQ2Pp",
-                  "name": "Mark",
-                  "clip": true,
-                  "width": 36,
-                  "height": 36,
-                  "fill": {
-                    "type": "gradient",
-                    "gradientType": "linear",
-                    "enabled": true,
-                    "rotation": 200,
-                    "size": {
-                      "height": 1
-                    },
-                    "colors": [
-                      {
-                        "color": "#1F5446",
-                        "position": 0
-                      },
-                      {
-                        "color": "#3D8270",
-                        "position": 1
-                      }
-                    ]
-                  },
-                  "cornerRadius": 11,
+                  "id": "a9gJL",
+                  "name": "Logo Ruma",
+                  "width": 84,
+                  "height": 40,
                   "layout": "none",
                   "children": [
                     {
+                      "type": "text",
+                      "id": "woR83",
+                      "x": 0,
+                      "y": 10.75344827586207,
+                      "name": "ruma",
+                      "fill": "#2C6B5A",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 34.13793103448276,
+                      "fontWeight": "800"
+                    },
+                    {
                       "type": "path",
-                      "id": "knG5M",
+                      "id": "nYiAC",
                       "x": 0,
                       "y": 0,
                       "name": "Atap",
-                      "geometry": "M30 44l20-17 20 17",
+                      "geometry": "M29 144l213-126 213 126",
                       "viewBox": [
                         0,
                         0,
-                        100,
-                        100
+                        490,
+                        232
                       ],
-                      "width": 36,
-                      "height": 36,
-                      "stroke": "#FFFFFF",
-                      "strokeWidth": 2.52,
+                      "width": 83.63793103448276,
+                      "height": 39.6,
+                      "stroke": "#2C6B5A",
+                      "strokeWidth": 5.974137931034483,
                       "strokeLinejoin": "round",
                       "strokeLinecap": "round"
-                    },
-                    {
-                      "type": "text",
-                      "id": "IbA1l",
-                      "x": 0,
-                      "y": 16.919999999999998,
-                      "name": "ruma",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": 36,
-                      "content": "ruma",
-                      "lineHeight": 1,
-                      "textAlign": "center",
-                      "fontFamily": "Bricolage Grotesque",
-                      "fontSize": 10.799999999999999,
-                      "fontWeight": "800",
-                      "letterSpacing": -0.432
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "ZEnEW",
-                  "name": "w",
-                  "fill": "$ink",
-                  "content": "Ruma",
-                  "fontFamily": "$font-display",
-                  "fontSize": 20,
-                  "fontWeight": "700"
                 },
                 {
                   "type": "text",
@@ -4909,7 +4838,7 @@
               "fill": "#5B6864",
               "textGrowth": "fixed-width",
               "width": 720,
-              "content": "Atap di atas nama ruma, rumah dalam bahasa sehari-hari. Putih di atas jade yang sama dengan kartu utama aplikasi.",
+              "content": "Garis atap tumbuh dari huruf r dan turun ke huruf a, jadi atap dan nama ruma satu bentuk. Putih di atas jade yang sama dengan kartu utama aplikasi.",
               "lineHeight": 1.55,
               "fontFamily": "Figtree",
               "fontSize": 18,
@@ -4995,41 +4924,49 @@
               "layout": "none",
               "children": [
                 {
-                  "type": "path",
-                  "id": "wbfCY",
-                  "x": 0,
-                  "y": 0,
-                  "name": "Atap",
-                  "geometry": "M30 44l20-17 20 17",
-                  "viewBox": [
-                    0,
-                    0,
-                    100,
-                    100
-                  ],
-                  "width": 440,
-                  "height": 440,
-                  "stroke": "#FFFFFF",
-                  "strokeWidth": 30.800000000000004,
-                  "strokeLinejoin": "round",
-                  "strokeLinecap": "round"
-                },
-                {
-                  "type": "text",
-                  "id": "icMSq",
-                  "x": 0,
-                  "y": 206.8,
-                  "name": "ruma",
-                  "fill": "#FFFFFF",
-                  "textGrowth": "fixed-width",
-                  "width": 440,
-                  "content": "ruma",
-                  "lineHeight": 1,
-                  "textAlign": "center",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 132,
-                  "fontWeight": "800",
-                  "letterSpacing": -5.28
+                  "type": "frame",
+                  "id": "Feal3",
+                  "x": 61.599999999999994,
+                  "y": 140.60244897959183,
+                  "name": "Logo Ruma",
+                  "width": 316.8,
+                  "height": 149.99510204081633,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "nGcmW",
+                      "x": 0,
+                      "y": 40.73142857142857,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 129.30612244897958,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "path",
+                      "id": "Z2mR6",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M29 144l213-126 213 126",
+                      "viewBox": [
+                        0,
+                        0,
+                        490,
+                        232
+                      ],
+                      "width": 316.8,
+                      "height": 149.99510204081633,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 22.628571428571426,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    }
+                  ]
                 }
               ]
             },
@@ -5066,7 +5003,7 @@
                       "fill": "#5B6864",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Atap garis tebal dengan ujung membulat, di atas kata ruma huruf kecil Bricolage Grotesque ExtraBold 800.",
+                      "content": "Tebal garis atap sama dengan batang huruf, ujung membulat seperti huruf Nunito ExtraBold 800.",
                       "lineHeight": 1.5,
                       "fontFamily": "Figtree",
                       "fontSize": 17,
@@ -5231,41 +5168,49 @@
                           "layout": "none",
                           "children": [
                             {
-                              "type": "path",
-                              "id": "TXtuT",
-                              "x": 0,
-                              "y": 0,
-                              "name": "Atap",
-                              "geometry": "M30 44l20-17 20 17",
-                              "viewBox": [
-                                0,
-                                0,
-                                100,
-                                100
-                              ],
-                              "width": 192,
-                              "height": 192,
-                              "stroke": "#FFFFFF",
-                              "strokeWidth": 13.44,
-                              "strokeLinejoin": "round",
-                              "strokeLinecap": "round"
-                            },
-                            {
-                              "type": "text",
-                              "id": "MKFAW",
-                              "x": 0,
-                              "y": 90.24,
-                              "name": "ruma",
-                              "fill": "#FFFFFF",
-                              "textGrowth": "fixed-width",
-                              "width": 192,
-                              "content": "ruma",
-                              "lineHeight": 1,
-                              "textAlign": "center",
-                              "fontFamily": "Bricolage Grotesque",
-                              "fontSize": 57.599999999999994,
-                              "fontWeight": "800",
-                              "letterSpacing": -2.304
+                              "type": "frame",
+                              "id": "c3SLq",
+                              "x": 26.879999999999995,
+                              "y": 61.35379591836734,
+                              "name": "Logo Ruma",
+                              "width": 138.24,
+                              "height": 65.45240816326532,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "niQIg",
+                                  "x": 0,
+                                  "y": 17.773714285714288,
+                                  "name": "ruma",
+                                  "fill": "#FFFFFF",
+                                  "content": "ruma",
+                                  "lineHeight": 1,
+                                  "fontFamily": "Nunito",
+                                  "fontSize": 56.424489795918376,
+                                  "fontWeight": "800"
+                                },
+                                {
+                                  "type": "path",
+                                  "id": "y5kXt",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Atap",
+                                  "geometry": "M29 144l213-126 213 126",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    490,
+                                    232
+                                  ],
+                                  "width": 138.24,
+                                  "height": 65.45240816326532,
+                                  "stroke": "#FFFFFF",
+                                  "strokeWidth": 9.874285714285715,
+                                  "strokeLinejoin": "round",
+                                  "strokeLinecap": "round"
+                                }
+                              ]
                             }
                           ]
                         },
@@ -5359,41 +5304,49 @@
                           "layout": "none",
                           "children": [
                             {
-                              "type": "path",
-                              "id": "H1mZSJ",
-                              "x": 0,
-                              "y": 0,
-                              "name": "Atap",
-                              "geometry": "M30 44l20-17 20 17",
-                              "viewBox": [
-                                0,
-                                0,
-                                100,
-                                100
-                              ],
-                              "width": 96,
-                              "height": 96,
-                              "stroke": "#FFFFFF",
-                              "strokeWidth": 6.72,
-                              "strokeLinejoin": "round",
-                              "strokeLinecap": "round"
-                            },
-                            {
-                              "type": "text",
-                              "id": "E6wSo",
-                              "x": 0,
-                              "y": 45.12,
-                              "name": "ruma",
-                              "fill": "#FFFFFF",
-                              "textGrowth": "fixed-width",
-                              "width": 96,
-                              "content": "ruma",
-                              "lineHeight": 1,
-                              "textAlign": "center",
-                              "fontFamily": "Bricolage Grotesque",
-                              "fontSize": 28.799999999999997,
-                              "fontWeight": "800",
-                              "letterSpacing": -1.152
+                              "type": "frame",
+                              "id": "vP3Tp",
+                              "x": 13.439999999999998,
+                              "y": 30.67689795918367,
+                              "name": "Logo Ruma",
+                              "width": 69.12,
+                              "height": 32.72620408163266,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "y1IPi",
+                                  "x": 0,
+                                  "y": 8.886857142857144,
+                                  "name": "ruma",
+                                  "fill": "#FFFFFF",
+                                  "content": "ruma",
+                                  "lineHeight": 1,
+                                  "fontFamily": "Nunito",
+                                  "fontSize": 28.212244897959188,
+                                  "fontWeight": "800"
+                                },
+                                {
+                                  "type": "path",
+                                  "id": "pfosn",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Atap",
+                                  "geometry": "M29 144l213-126 213 126",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    490,
+                                    232
+                                  ],
+                                  "width": 69.12,
+                                  "height": 32.72620408163266,
+                                  "stroke": "#FFFFFF",
+                                  "strokeWidth": 4.937142857142858,
+                                  "strokeLinejoin": "round",
+                                  "strokeLinecap": "round"
+                                }
+                              ]
                             }
                           ]
                         },
@@ -5477,41 +5430,49 @@
                           "layout": "none",
                           "children": [
                             {
-                              "type": "path",
-                              "id": "xquJi",
-                              "x": 0,
-                              "y": 0,
-                              "name": "Atap",
-                              "geometry": "M30 44l20-17 20 17",
-                              "viewBox": [
-                                0,
-                                0,
-                                100,
-                                100
-                              ],
-                              "width": 64,
-                              "height": 64,
-                              "stroke": "#FFFFFF",
-                              "strokeWidth": 4.48,
-                              "strokeLinejoin": "round",
-                              "strokeLinecap": "round"
-                            },
-                            {
-                              "type": "text",
-                              "id": "z32o9",
-                              "x": 0,
-                              "y": 30.080000000000002,
-                              "name": "ruma",
-                              "fill": "#FFFFFF",
-                              "textGrowth": "fixed-width",
-                              "width": 64,
-                              "content": "ruma",
-                              "lineHeight": 1,
-                              "textAlign": "center",
-                              "fontFamily": "Bricolage Grotesque",
-                              "fontSize": 19.2,
-                              "fontWeight": "800",
-                              "letterSpacing": -0.768
+                              "type": "frame",
+                              "id": "RRrX7",
+                              "x": 8.96,
+                              "y": 20.45126530612245,
+                              "name": "Logo Ruma",
+                              "width": 46.08,
+                              "height": 21.8174693877551,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "YWZue",
+                                  "x": 0,
+                                  "y": 5.924571428571428,
+                                  "name": "ruma",
+                                  "fill": "#FFFFFF",
+                                  "content": "ruma",
+                                  "lineHeight": 1,
+                                  "fontFamily": "Nunito",
+                                  "fontSize": 18.80816326530612,
+                                  "fontWeight": "800"
+                                },
+                                {
+                                  "type": "path",
+                                  "id": "ThmAz",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Atap",
+                                  "geometry": "M29 144l213-126 213 126",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    490,
+                                    232
+                                  ],
+                                  "width": 46.08,
+                                  "height": 21.8174693877551,
+                                  "stroke": "#FFFFFF",
+                                  "strokeWidth": 3.2914285714285714,
+                                  "strokeLinejoin": "round",
+                                  "strokeLinecap": "round"
+                                }
+                              ]
                             }
                           ]
                         },
@@ -5595,41 +5556,49 @@
                           "layout": "none",
                           "children": [
                             {
-                              "type": "path",
-                              "id": "S5YtXm",
-                              "x": 0,
-                              "y": 0,
-                              "name": "Atap",
-                              "geometry": "M30 44l20-17 20 17",
-                              "viewBox": [
-                                0,
-                                0,
-                                100,
-                                100
-                              ],
-                              "width": 48,
-                              "height": 48,
-                              "stroke": "#FFFFFF",
-                              "strokeWidth": 3.36,
-                              "strokeLinejoin": "round",
-                              "strokeLinecap": "round"
-                            },
-                            {
-                              "type": "text",
-                              "id": "n4tVo",
-                              "x": 0,
-                              "y": 22.56,
-                              "name": "ruma",
-                              "fill": "#FFFFFF",
-                              "textGrowth": "fixed-width",
-                              "width": 48,
-                              "content": "ruma",
-                              "lineHeight": 1,
-                              "textAlign": "center",
-                              "fontFamily": "Bricolage Grotesque",
-                              "fontSize": 14.399999999999999,
-                              "fontWeight": "800",
-                              "letterSpacing": -0.576
+                              "type": "frame",
+                              "id": "ZPf6k",
+                              "x": 6.719999999999999,
+                              "y": 15.338448979591835,
+                              "name": "Logo Ruma",
+                              "width": 34.56,
+                              "height": 16.36310204081633,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "P5KjS",
+                                  "x": 0,
+                                  "y": 4.443428571428572,
+                                  "name": "ruma",
+                                  "fill": "#FFFFFF",
+                                  "content": "ruma",
+                                  "lineHeight": 1,
+                                  "fontFamily": "Nunito",
+                                  "fontSize": 14.106122448979594,
+                                  "fontWeight": "800"
+                                },
+                                {
+                                  "type": "path",
+                                  "id": "gxGDG",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Atap",
+                                  "geometry": "M29 144l213-126 213 126",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    490,
+                                    232
+                                  ],
+                                  "width": 34.56,
+                                  "height": 16.36310204081633,
+                                  "stroke": "#FFFFFF",
+                                  "strokeWidth": 2.468571428571429,
+                                  "strokeLinejoin": "round",
+                                  "strokeLinecap": "round"
+                                }
+                              ]
                             }
                           ]
                         },
@@ -5756,41 +5725,49 @@
                       "layout": "none",
                       "children": [
                         {
-                          "type": "path",
-                          "id": "m1sRO",
-                          "x": 0,
-                          "y": 0,
-                          "name": "Atap",
-                          "geometry": "M30 44l20-17 20 17",
-                          "viewBox": [
-                            0,
-                            0,
-                            100,
-                            100
-                          ],
-                          "width": 220,
-                          "height": 220,
-                          "stroke": "#FFFFFF",
-                          "strokeWidth": 15.400000000000002,
-                          "strokeLinejoin": "round",
-                          "strokeLinecap": "round"
-                        },
-                        {
-                          "type": "text",
-                          "id": "LnLaT",
-                          "x": 0,
-                          "y": 103.4,
-                          "name": "ruma",
-                          "fill": "#FFFFFF",
-                          "textGrowth": "fixed-width",
-                          "width": 220,
-                          "content": "ruma",
-                          "lineHeight": 1,
-                          "textAlign": "center",
-                          "fontFamily": "Bricolage Grotesque",
-                          "fontSize": 66,
-                          "fontWeight": "800",
-                          "letterSpacing": -2.64
+                          "type": "frame",
+                          "id": "GHWYB",
+                          "x": 30.799999999999997,
+                          "y": 70.30122448979591,
+                          "name": "Logo Ruma",
+                          "width": 158.4,
+                          "height": 74.99755102040817,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "GDKXG",
+                              "x": 0,
+                              "y": 20.365714285714287,
+                              "name": "ruma",
+                              "fill": "#FFFFFF",
+                              "content": "ruma",
+                              "lineHeight": 1,
+                              "fontFamily": "Nunito",
+                              "fontSize": 64.65306122448979,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "path",
+                              "id": "v2j4Rn",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Atap",
+                              "geometry": "M29 144l213-126 213 126",
+                              "viewBox": [
+                                0,
+                                0,
+                                490,
+                                232
+                              ],
+                              "width": 158.4,
+                              "height": 74.99755102040817,
+                              "stroke": "#FFFFFF",
+                              "strokeWidth": 11.314285714285713,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            }
+                          ]
                         }
                       ]
                     },
@@ -5886,41 +5863,49 @@
                       "layout": "none",
                       "children": [
                         {
-                          "type": "path",
-                          "id": "OXD0P",
-                          "x": 0,
-                          "y": 0,
-                          "name": "Atap",
-                          "geometry": "M30 44l20-17 20 17",
-                          "viewBox": [
-                            0,
-                            0,
-                            100,
-                            100
-                          ],
-                          "width": 220,
-                          "height": 220,
-                          "stroke": "#2C6B5A",
-                          "strokeWidth": 15.400000000000002,
-                          "strokeLinejoin": "round",
-                          "strokeLinecap": "round"
-                        },
-                        {
-                          "type": "text",
-                          "id": "qyMDz",
-                          "x": 0,
-                          "y": 103.4,
-                          "name": "ruma",
-                          "fill": "#2C6B5A",
-                          "textGrowth": "fixed-width",
-                          "width": 220,
-                          "content": "ruma",
-                          "lineHeight": 1,
-                          "textAlign": "center",
-                          "fontFamily": "Bricolage Grotesque",
-                          "fontSize": 66,
-                          "fontWeight": "800",
-                          "letterSpacing": -2.64
+                          "type": "frame",
+                          "id": "hcFmD",
+                          "x": 30.799999999999997,
+                          "y": 70.30122448979591,
+                          "name": "Logo Ruma",
+                          "width": 158.4,
+                          "height": 74.99755102040817,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "SZ0vq",
+                              "x": 0,
+                              "y": 20.365714285714287,
+                              "name": "ruma",
+                              "fill": "#2C6B5A",
+                              "content": "ruma",
+                              "lineHeight": 1,
+                              "fontFamily": "Nunito",
+                              "fontSize": 64.65306122448979,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "path",
+                              "id": "QkyrM",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Atap",
+                              "geometry": "M29 144l213-126 213 126",
+                              "viewBox": [
+                                0,
+                                0,
+                                490,
+                                232
+                              ],
+                              "width": 158.4,
+                              "height": 74.99755102040817,
+                              "stroke": "#2C6B5A",
+                              "strokeWidth": 11.314285714285713,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            }
+                          ]
                         }
                       ]
                     },
@@ -6016,41 +6001,49 @@
                       "layout": "none",
                       "children": [
                         {
-                          "type": "path",
-                          "id": "m2j7y",
-                          "x": 0,
-                          "y": 0,
-                          "name": "Atap",
-                          "geometry": "M30 44l20-17 20 17",
-                          "viewBox": [
-                            0,
-                            0,
-                            100,
-                            100
-                          ],
-                          "width": 220,
-                          "height": 220,
-                          "stroke": "#2C6B5A",
-                          "strokeWidth": 15.400000000000002,
-                          "strokeLinejoin": "round",
-                          "strokeLinecap": "round"
-                        },
-                        {
-                          "type": "text",
-                          "id": "EoAIx",
-                          "x": 0,
-                          "y": 103.4,
-                          "name": "ruma",
-                          "fill": "#2C6B5A",
-                          "textGrowth": "fixed-width",
-                          "width": 220,
-                          "content": "ruma",
-                          "lineHeight": 1,
-                          "textAlign": "center",
-                          "fontFamily": "Bricolage Grotesque",
-                          "fontSize": 66,
-                          "fontWeight": "800",
-                          "letterSpacing": -2.64
+                          "type": "frame",
+                          "id": "x0mBED",
+                          "x": 30.799999999999997,
+                          "y": 70.30122448979591,
+                          "name": "Logo Ruma",
+                          "width": 158.4,
+                          "height": 74.99755102040817,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "d75Sln",
+                              "x": 0,
+                              "y": 20.365714285714287,
+                              "name": "ruma",
+                              "fill": "#2C6B5A",
+                              "content": "ruma",
+                              "lineHeight": 1,
+                              "fontFamily": "Nunito",
+                              "fontSize": 64.65306122448979,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "path",
+                              "id": "Sr0fw",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Atap",
+                              "geometry": "M29 144l213-126 213 126",
+                              "viewBox": [
+                                0,
+                                0,
+                                490,
+                                232
+                              ],
+                              "width": 158.4,
+                              "height": 74.99755102040817,
+                              "stroke": "#2C6B5A",
+                              "strokeWidth": 11.314285714285713,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            }
+                          ]
                         }
                       ]
                     },
@@ -6204,41 +6197,49 @@
                               "layout": "none",
                               "children": [
                                 {
-                                  "type": "path",
-                                  "id": "gtPOp",
-                                  "x": 0,
-                                  "y": 0,
-                                  "name": "Atap",
-                                  "geometry": "M30 44l20-17 20 17",
-                                  "viewBox": [
-                                    0,
-                                    0,
-                                    100,
-                                    100
-                                  ],
-                                  "width": 64,
-                                  "height": 64,
-                                  "stroke": "#FFFFFF",
-                                  "strokeWidth": 4.48,
-                                  "strokeLinejoin": "round",
-                                  "strokeLinecap": "round"
-                                },
-                                {
-                                  "type": "text",
-                                  "id": "hrexM",
-                                  "x": 0,
-                                  "y": 30.080000000000002,
-                                  "name": "ruma",
-                                  "fill": "#FFFFFF",
-                                  "textGrowth": "fixed-width",
-                                  "width": 64,
-                                  "content": "ruma",
-                                  "lineHeight": 1,
-                                  "textAlign": "center",
-                                  "fontFamily": "Bricolage Grotesque",
-                                  "fontSize": 19.2,
-                                  "fontWeight": "800",
-                                  "letterSpacing": -0.768
+                                  "type": "frame",
+                                  "id": "i1rD7G",
+                                  "x": 8.96,
+                                  "y": 20.45126530612245,
+                                  "name": "Logo Ruma",
+                                  "width": 46.08,
+                                  "height": 21.8174693877551,
+                                  "layout": "none",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "id": "wyKL4",
+                                      "x": 0,
+                                      "y": 5.924571428571428,
+                                      "name": "ruma",
+                                      "fill": "#FFFFFF",
+                                      "content": "ruma",
+                                      "lineHeight": 1,
+                                      "fontFamily": "Nunito",
+                                      "fontSize": 18.80816326530612,
+                                      "fontWeight": "800"
+                                    },
+                                    {
+                                      "type": "path",
+                                      "id": "J3EVwa",
+                                      "x": 0,
+                                      "y": 0,
+                                      "name": "Atap",
+                                      "geometry": "M29 144l213-126 213 126",
+                                      "viewBox": [
+                                        0,
+                                        0,
+                                        490,
+                                        232
+                                      ],
+                                      "width": 46.08,
+                                      "height": 21.8174693877551,
+                                      "stroke": "#FFFFFF",
+                                      "strokeWidth": 3.2914285714285714,
+                                      "strokeLinejoin": "round",
+                                      "strokeLinecap": "round"
+                                    }
+                                  ]
                                 }
                               ]
                             },
@@ -6391,41 +6392,49 @@
       "layout": "none",
       "children": [
         {
-          "type": "path",
-          "id": "niyrm",
-          "x": 0,
-          "y": 0,
-          "name": "Atap",
-          "geometry": "M30 44l20-17 20 17",
-          "viewBox": [
-            0,
-            0,
-            100,
-            100
-          ],
-          "width": 1024,
-          "height": 1024,
-          "stroke": "#FFFFFF",
-          "strokeWidth": 71.68,
-          "strokeLinejoin": "round",
-          "strokeLinecap": "round"
-        },
-        {
-          "type": "text",
-          "id": "rBFgz",
-          "x": 0,
-          "y": 481.28000000000003,
-          "name": "ruma",
-          "fill": "#FFFFFF",
-          "textGrowth": "fixed-width",
-          "width": 1024,
-          "content": "ruma",
-          "lineHeight": 1,
-          "textAlign": "center",
-          "fontFamily": "Bricolage Grotesque",
-          "fontSize": 307.2,
-          "fontWeight": "800",
-          "letterSpacing": -12.288
+          "type": "frame",
+          "id": "fhJmq",
+          "x": 143.36,
+          "y": 327.2202448979592,
+          "name": "Logo Ruma",
+          "width": 737.28,
+          "height": 349.0795102040816,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "A8GeRf",
+              "x": 0,
+              "y": 94.79314285714285,
+              "name": "ruma",
+              "fill": "#FFFFFF",
+              "content": "ruma",
+              "lineHeight": 1,
+              "fontFamily": "Nunito",
+              "fontSize": 300.93061224489793,
+              "fontWeight": "800"
+            },
+            {
+              "type": "path",
+              "id": "o2eonn",
+              "x": 0,
+              "y": 0,
+              "name": "Atap",
+              "geometry": "M29 144l213-126 213 126",
+              "viewBox": [
+                0,
+                0,
+                490,
+                232
+              ],
+              "width": 737.28,
+              "height": 349.0795102040816,
+              "stroke": "#FFFFFF",
+              "strokeWidth": 52.66285714285714,
+              "strokeLinejoin": "round",
+              "strokeLinecap": "round"
+            }
+          ]
         }
       ]
     },
@@ -6441,41 +6450,49 @@
       "layout": "none",
       "children": [
         {
-          "type": "path",
-          "id": "VsZ9I",
-          "x": 73.44,
-          "y": 73.44,
-          "name": "Atap",
-          "geometry": "M30 44l20-17 20 17",
-          "viewBox": [
-            0,
-            0,
-            100,
-            100
-          ],
-          "width": 285.12,
-          "height": 285.12,
-          "stroke": "#FFFFFF",
-          "strokeWidth": 19.9584,
-          "strokeLinejoin": "round",
-          "strokeLinecap": "round"
-        },
-        {
-          "type": "text",
-          "id": "CganU",
-          "x": 73.44,
-          "y": 207.44639999999998,
-          "name": "ruma",
-          "fill": "#FFFFFF",
-          "textGrowth": "fixed-width",
-          "width": 285.12,
-          "content": "ruma",
-          "lineHeight": 1,
-          "textAlign": "center",
-          "fontFamily": "Bricolage Grotesque",
-          "fontSize": 85.536,
-          "fontWeight": "800",
-          "letterSpacing": -3.42144
+          "type": "frame",
+          "id": "o9knJ5",
+          "x": 90.72000000000001,
+          "y": 152.36375510204084,
+          "name": "Logo Ruma",
+          "width": 250.55999999999997,
+          "height": 118.63248979591836,
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "m0HbZ3",
+              "x": 0,
+              "y": 32.21485714285714,
+              "name": "ruma",
+              "fill": "#FFFFFF",
+              "content": "ruma",
+              "lineHeight": 1,
+              "fontFamily": "Nunito",
+              "fontSize": 102.26938775510203,
+              "fontWeight": "800"
+            },
+            {
+              "type": "path",
+              "id": "dIwsQ",
+              "x": 0,
+              "y": 0,
+              "name": "Atap",
+              "geometry": "M29 144l213-126 213 126",
+              "viewBox": [
+                0,
+                0,
+                490,
+                232
+              ],
+              "width": 250.55999999999997,
+              "height": 118.63248979591836,
+              "stroke": "#FFFFFF",
+              "strokeWidth": 17.897142857142857,
+              "strokeLinejoin": "round",
+              "strokeLinecap": "round"
+            }
+          ]
         }
       ]
     },
@@ -6640,10 +6657,10 @@
           "content": "Berat sama dipikul, ringan sama dijinjing.",
           "lineHeight": 1.02,
           "textAlign": "center",
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 92,
-          "fontWeight": "700",
-          "letterSpacing": -3.4
+          "fontWeight": "800",
+          "letterSpacing": -1.1
         },
         {
           "type": "text",
@@ -6785,7 +6802,7 @@
                     "type": "image",
                     "enabled": true,
                     "url": "assets/icons3d/heart_hands.png",
-                    "mode": "fit"
+                    "mode": "contain"
                   }
                 }
               ]
@@ -6914,10 +6931,10 @@
           "content": "Saling bantu, bukan saling hitung.",
           "lineHeight": 1.02,
           "textAlign": "center",
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 92,
-          "fontWeight": "700",
-          "letterSpacing": -3.4
+          "fontWeight": "800",
+          "letterSpacing": -1.1
         },
         {
           "type": "text",
@@ -7085,10 +7102,10 @@
           "content": "Uang rumah digabung, dibagi ke amplop.",
           "lineHeight": 1.02,
           "textAlign": "center",
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 92,
-          "fontWeight": "700",
-          "letterSpacing": -3.4
+          "fontWeight": "800",
+          "letterSpacing": -1.1
         },
         {
           "type": "text",
@@ -7258,10 +7275,10 @@
           "content": "Bukan cuma koordinasi. Tetap ngobrol berdua.",
           "lineHeight": 1.02,
           "textAlign": "center",
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 92,
-          "fontWeight": "700",
-          "letterSpacing": -3.4
+          "fontWeight": "800",
+          "letterSpacing": -1.1
         },
         {
           "type": "text",
@@ -7431,10 +7448,10 @@
           "content": "Ikut berubah waktu hidup kalian berubah.",
           "lineHeight": 1.02,
           "textAlign": "center",
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 92,
-          "fontWeight": "700",
-          "letterSpacing": -3.4
+          "fontWeight": "800",
+          "letterSpacing": -1.1
         },
         {
           "type": "text",
@@ -7599,10 +7616,10 @@
           "content": "Di Ruma nggak ada papan skor.",
           "lineHeight": 1.02,
           "textAlign": "center",
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 92,
-          "fontWeight": "700",
-          "letterSpacing": -3.4
+          "fontWeight": "800",
+          "letterSpacing": -1.1
         },
         {
           "type": "text",
@@ -7674,7 +7691,7 @@
                       "type": "text",
                       "id": "znr7s",
                       "name": "Old",
-                      "fill": "#8A9793",
+                      "fill": "#D64545",
                       "content": "Kamu 70%, dia 30%",
                       "fontFamily": "Figtree",
                       "fontSize": 30,
@@ -7688,7 +7705,7 @@
                       "x": -4,
                       "y": 18,
                       "name": "Garis coret",
-                      "fill": "#8A9793",
+                      "fill": "#D64545",
                       "width": 273,
                       "height": 2
                     }
@@ -7722,7 +7739,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "assets/icons3d/heart_hands.png",
-                            "mode": "fit"
+                            "mode": "contain"
                           }
                         }
                       ]
@@ -7783,7 +7800,7 @@
                       "type": "text",
                       "id": "l866s0",
                       "name": "Old",
-                      "fill": "#8A9793",
+                      "fill": "#D64545",
                       "content": "Dompetku, dompetmu",
                       "fontFamily": "Figtree",
                       "fontSize": 30,
@@ -7797,7 +7814,7 @@
                       "x": -4,
                       "y": 18,
                       "name": "Garis coret",
-                      "fill": "#8A9793",
+                      "fill": "#D64545",
                       "width": 313,
                       "height": 2
                     }
@@ -7831,7 +7848,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "assets/icons3d/money_bag.png",
-                            "mode": "fit"
+                            "mode": "contain"
                           }
                         }
                       ]
@@ -7892,7 +7909,7 @@
                       "type": "text",
                       "id": "EyhgB",
                       "name": "Old",
-                      "fill": "#8A9793",
+                      "fill": "#D64545",
                       "content": "Siapa paling sering",
                       "fontFamily": "Figtree",
                       "fontSize": 30,
@@ -7906,7 +7923,7 @@
                       "x": -4,
                       "y": 18,
                       "name": "Garis coret",
-                      "fill": "#8A9793",
+                      "fill": "#D64545",
                       "width": 262,
                       "height": 2
                     }
@@ -7940,7 +7957,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "assets/icons3d/handshake.png",
-                            "mode": "fit"
+                            "mode": "contain"
                           }
                         }
                       ]
@@ -8001,7 +8018,7 @@
                       "type": "text",
                       "id": "XXHhO",
                       "name": "Old",
-                      "fill": "#8A9793",
+                      "fill": "#D64545",
                       "content": "Utang budi dicatat",
                       "fontFamily": "Figtree",
                       "fontSize": 30,
@@ -8015,7 +8032,7 @@
                       "x": -4,
                       "y": 18,
                       "name": "Garis coret",
-                      "fill": "#8A9793",
+                      "fill": "#D64545",
                       "width": 260,
                       "height": 2
                     }
@@ -8049,7 +8066,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "assets/icons3d/notebook.png",
-                            "mode": "fit"
+                            "mode": "contain"
                           }
                         }
                       ]
@@ -8106,7 +8123,7 @@
                     "type": "image",
                     "enabled": true,
                     "url": "assets/icons3d/sparkles.png",
-                    "mode": "fit"
+                    "mode": "contain"
                   }
                 },
                 {
@@ -8135,29 +8152,7 @@
       "width": 1024,
       "height": 500,
       "fill": [
-        {
-          "type": "gradient",
-          "gradientType": "linear",
-          "enabled": true,
-          "rotation": 200,
-          "size": {
-            "height": 1
-          },
-          "colors": [
-            {
-              "color": "#1F5446",
-              "position": 0
-            },
-            {
-              "color": "#2C6B5A",
-              "position": 0.55
-            },
-            {
-              "color": "#3D8270",
-              "position": 1
-            }
-          ]
-        },
+        "#FFFFFF",
         {
           "type": "gradient",
           "gradientType": "radial",
@@ -8165,21 +8160,21 @@
           "rotation": 0,
           "size": {
             "width": 0.9,
-            "height": 1.2
+            "height": 1.4
           },
           "colors": [
             {
-              "color": "#FFFFFF24",
+              "color": "#DDF0E6",
               "position": 0
             },
             {
-              "color": "#FFFFFF00",
+              "color": "#DDF0E600",
               "position": 1
             }
           ],
           "center": {
-            "x": 0.1,
-            "y": 0
+            "x": 0.92,
+            "y": 0.4
           }
         }
       ],
@@ -8206,64 +8201,46 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "NqytG",
-                  "name": "Mark",
-                  "width": 64,
-                  "height": 64,
-                  "fill": "#FFFFFF1F",
-                  "cornerRadius": 16,
-                  "stroke": "#FFFFFF40",
-                  "strokeWidth": 1.5,
+                  "id": "He0fD",
+                  "name": "Logo Ruma",
+                  "width": 149,
+                  "height": 70,
                   "layout": "none",
                   "children": [
                     {
+                      "type": "text",
+                      "id": "lNInh",
+                      "x": 0,
+                      "y": 19.117241379310347,
+                      "name": "ruma",
+                      "fill": "#2C6B5A",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 60.6896551724138,
+                      "fontWeight": "800"
+                    },
+                    {
                       "type": "path",
-                      "id": "ywj8Y",
+                      "id": "TeGYs",
                       "x": 0,
                       "y": 0,
                       "name": "Atap",
-                      "geometry": "M30 44l20-17 20 17",
+                      "geometry": "M29 144l213-126 213 126",
                       "viewBox": [
                         0,
                         0,
-                        100,
-                        100
+                        490,
+                        232
                       ],
-                      "width": 64,
-                      "height": 64,
-                      "stroke": "#FFFFFF",
-                      "strokeWidth": 4.48,
+                      "width": 148.6896551724138,
+                      "height": 70.4,
+                      "stroke": "#2C6B5A",
+                      "strokeWidth": 10.620689655172416,
                       "strokeLinejoin": "round",
                       "strokeLinecap": "round"
-                    },
-                    {
-                      "type": "text",
-                      "id": "oyLOo",
-                      "x": 0,
-                      "y": 30.080000000000002,
-                      "name": "ruma",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": 64,
-                      "content": "ruma",
-                      "lineHeight": 1,
-                      "textAlign": "center",
-                      "fontFamily": "Bricolage Grotesque",
-                      "fontSize": 19.2,
-                      "fontWeight": "800",
-                      "letterSpacing": -0.768
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "GoQ8n",
-                  "name": "Ruma",
-                  "fill": "#FFFFFF",
-                  "content": "Ruma",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 34,
-                  "fontWeight": "700"
                 }
               ]
             },
@@ -8271,21 +8248,21 @@
               "type": "text",
               "id": "aanpt",
               "name": "Headline",
-              "fill": "#FFFFFF",
+              "fill": "$ink",
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "Berat sama dipikul, ringan sama dijinjing.",
               "lineHeight": 1.04,
-              "fontFamily": "Bricolage Grotesque",
+              "fontFamily": "Figtree",
               "fontSize": 50,
-              "fontWeight": "700",
-              "letterSpacing": -1.8
+              "fontWeight": "800",
+              "letterSpacing": -0.5
             },
             {
               "type": "text",
               "id": "VczK3",
               "name": "Sub",
-              "fill": "#FFFFFFC7",
+              "fill": "$muted",
               "content": "Urusan, uang, dan kita. Satu rumah.",
               "fontFamily": "Figtree",
               "fontSize": 22,
@@ -8302,13 +8279,19 @@
           "rotation": -8,
           "width": 250,
           "height": 250,
-          "fill": "#FFFFFF2E",
+          "fill": "#FFFFFFB3",
           "cornerRadius": 75,
-          "stroke": "#FFFFFF4D",
+          "stroke": "#15201D0F",
           "strokeWidth": 1.5,
           "effect": {
-            "type": "background_blur",
-            "radius": 20
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#15201D14",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 28
           },
           "justifyContent": "center",
           "alignItems": "center",
@@ -8323,7 +8306,7 @@
                 "type": "image",
                 "enabled": true,
                 "url": "assets/icons3d/house.png",
-                "mode": "fit"
+                "mode": "contain"
               }
             }
           ]
@@ -8337,13 +8320,19 @@
           "rotation": 12.000000000000002,
           "width": 120,
           "height": 120,
-          "fill": "#FFFFFF2E",
+          "fill": "#FFFFFFB3",
           "cornerRadius": 36,
-          "stroke": "#FFFFFF4D",
+          "stroke": "#15201D0F",
           "strokeWidth": 1.5,
           "effect": {
-            "type": "background_blur",
-            "radius": 20
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#15201D14",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 28
           },
           "justifyContent": "center",
           "alignItems": "center",
@@ -8358,7 +8347,7 @@
                 "type": "image",
                 "enabled": true,
                 "url": "assets/icons3d/red_heart.png",
-                "mode": "fit"
+                "mode": "contain"
               }
             }
           ]
@@ -8372,13 +8361,19 @@
           "rotation": -10,
           "width": 140,
           "height": 140,
-          "fill": "#FFFFFF2E",
+          "fill": "#FFFFFFB3",
           "cornerRadius": 42,
-          "stroke": "#FFFFFF4D",
+          "stroke": "#15201D0F",
           "strokeWidth": 1.5,
           "effect": {
-            "type": "background_blur",
-            "radius": 20
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#15201D14",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 28
           },
           "justifyContent": "center",
           "alignItems": "center",
@@ -8393,7 +8388,7 @@
                 "type": "image",
                 "enabled": true,
                 "url": "assets/icons3d/money_bag.png",
-                "mode": "fit"
+                "mode": "contain"
               }
             }
           ]
@@ -8407,13 +8402,19 @@
           "rotation": 10,
           "width": 110,
           "height": 110,
-          "fill": "#FFFFFF2E",
+          "fill": "#FFFFFFB3",
           "cornerRadius": 33,
-          "stroke": "#FFFFFF4D",
+          "stroke": "#15201D0F",
           "strokeWidth": 1.5,
           "effect": {
-            "type": "background_blur",
-            "radius": 20
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#15201D14",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 28
           },
           "justifyContent": "center",
           "alignItems": "center",
@@ -8428,7 +8429,7 @@
                 "type": "image",
                 "enabled": true,
                 "url": "assets/icons3d/clipboard.png",
-                "mode": "fit"
+                "mode": "contain"
               }
             }
           ]
@@ -8450,9 +8451,10 @@
           "name": "t",
           "fill": "#15201D",
           "content": "Instagram carousel peluncuran, 1080 x 1350",
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 56,
-          "fontWeight": "700"
+          "fontWeight": "800",
+          "letterSpacing": -0.7
         },
         {
           "type": "text",
@@ -8544,10 +8546,10 @@
           "width": "fill_container",
           "content": "Di rumahmu, siapa yang selalu ingat bayar listrik?",
           "lineHeight": 1.02,
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 96,
-          "fontWeight": "700",
-          "letterSpacing": -3
+          "fontWeight": "800",
+          "letterSpacing": -1.2
         },
         {
           "type": "frame",
@@ -8610,7 +8612,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/high_voltage.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -8710,7 +8712,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/heart_hands.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -8776,84 +8778,46 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "ej90o",
-                  "name": "Mark",
-                  "width": 56,
-                  "height": 56,
-                  "fill": {
-                    "type": "gradient",
-                    "gradientType": "linear",
-                    "enabled": true,
-                    "rotation": 200,
-                    "size": {
-                      "height": 1
-                    },
-                    "colors": [
-                      {
-                        "color": "#1F5446",
-                        "position": 0
-                      },
-                      {
-                        "color": "#2C6B5A",
-                        "position": 0.55
-                      },
-                      {
-                        "color": "#3D8270",
-                        "position": 1
-                      }
-                    ]
-                  },
-                  "cornerRadius": 15.680000000000001,
+                  "id": "x8zlo",
+                  "name": "Logo Ruma",
+                  "width": 130,
+                  "height": 62,
                   "layout": "none",
                   "children": [
                     {
+                      "type": "text",
+                      "id": "BVbe7",
+                      "x": 0,
+                      "y": 16.727586206896554,
+                      "name": "ruma",
+                      "fill": "#2C6B5A",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 53.10344827586208,
+                      "fontWeight": "800"
+                    },
+                    {
                       "type": "path",
-                      "id": "r148SJ",
+                      "id": "ARUTq",
                       "x": 0,
                       "y": 0,
                       "name": "Atap",
-                      "geometry": "M30 44l20-17 20 17",
+                      "geometry": "M29 144l213-126 213 126",
                       "viewBox": [
                         0,
                         0,
-                        100,
-                        100
+                        490,
+                        232
                       ],
-                      "width": 56,
-                      "height": 56,
-                      "stroke": "#FFFFFF",
-                      "strokeWidth": 3.9200000000000004,
+                      "width": 130.1034482758621,
+                      "height": 61.60000000000001,
+                      "stroke": "#2C6B5A",
+                      "strokeWidth": 9.293103448275863,
                       "strokeLinejoin": "round",
                       "strokeLinecap": "round"
-                    },
-                    {
-                      "type": "text",
-                      "id": "d3Zdyj",
-                      "x": 0,
-                      "y": 26.320000000000004,
-                      "name": "ruma",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": 56,
-                      "content": "ruma",
-                      "lineHeight": 1,
-                      "textAlign": "center",
-                      "fontFamily": "Bricolage Grotesque",
-                      "fontSize": 16.8,
-                      "fontWeight": "800",
-                      "letterSpacing": -0.672
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "d707Z",
-                  "name": "n",
-                  "fill": "#15201D",
-                  "content": "Ruma",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 30,
-                  "fontWeight": "700"
                 }
               ]
             },
@@ -8949,10 +8913,10 @@
           "width": "fill_container",
           "content": "Beban mikirin juga kerja. Cuma sering nggak kelihatan.",
           "lineHeight": 1.02,
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 84,
-          "fontWeight": "700",
-          "letterSpacing": -3
+          "fontWeight": "800",
+          "letterSpacing": -1
         },
         {
           "type": "text",
@@ -9030,7 +8994,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/baby_bottle.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -9100,7 +9064,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/shopping_cart.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -9170,7 +9134,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/receipt.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -9240,7 +9204,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/party_popper.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -9276,84 +9240,46 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "PPuZL",
-                  "name": "Mark",
-                  "width": 56,
-                  "height": 56,
-                  "fill": {
-                    "type": "gradient",
-                    "gradientType": "linear",
-                    "enabled": true,
-                    "rotation": 200,
-                    "size": {
-                      "height": 1
-                    },
-                    "colors": [
-                      {
-                        "color": "#1F5446",
-                        "position": 0
-                      },
-                      {
-                        "color": "#2C6B5A",
-                        "position": 0.55
-                      },
-                      {
-                        "color": "#3D8270",
-                        "position": 1
-                      }
-                    ]
-                  },
-                  "cornerRadius": 15.680000000000001,
+                  "id": "R1l8q0",
+                  "name": "Logo Ruma",
+                  "width": 130,
+                  "height": 62,
                   "layout": "none",
                   "children": [
                     {
+                      "type": "text",
+                      "id": "K9I9o",
+                      "x": 0,
+                      "y": 16.727586206896554,
+                      "name": "ruma",
+                      "fill": "#2C6B5A",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 53.10344827586208,
+                      "fontWeight": "800"
+                    },
+                    {
                       "type": "path",
-                      "id": "NWJVA",
+                      "id": "oPg8H",
                       "x": 0,
                       "y": 0,
                       "name": "Atap",
-                      "geometry": "M30 44l20-17 20 17",
+                      "geometry": "M29 144l213-126 213 126",
                       "viewBox": [
                         0,
                         0,
-                        100,
-                        100
+                        490,
+                        232
                       ],
-                      "width": 56,
-                      "height": 56,
-                      "stroke": "#FFFFFF",
-                      "strokeWidth": 3.9200000000000004,
+                      "width": 130.1034482758621,
+                      "height": 61.60000000000001,
+                      "stroke": "#2C6B5A",
+                      "strokeWidth": 9.293103448275863,
                       "strokeLinejoin": "round",
                       "strokeLinecap": "round"
-                    },
-                    {
-                      "type": "text",
-                      "id": "YOIiv",
-                      "x": 0,
-                      "y": 26.320000000000004,
-                      "name": "ruma",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": 56,
-                      "content": "ruma",
-                      "lineHeight": 1,
-                      "textAlign": "center",
-                      "fontFamily": "Bricolage Grotesque",
-                      "fontSize": 16.8,
-                      "fontWeight": "800",
-                      "letterSpacing": -0.672
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "G9jFp",
-                  "name": "n",
-                  "fill": "#15201D",
-                  "content": "Ruma",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 30,
-                  "fontWeight": "700"
                 }
               ]
             },
@@ -9449,10 +9375,10 @@
           "width": "fill_container",
           "content": "Di Ruma, yang ingat dan yang kerjakan sama-sama kelihatan.",
           "lineHeight": 1.02,
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 72,
-          "fontWeight": "700",
-          "letterSpacing": -2.4
+          "fontWeight": "800",
+          "letterSpacing": -0.9
         },
         {
           "type": "frame",
@@ -9598,10 +9524,10 @@
           "width": "fill_container",
           "content": "Uang rumah digabung,\ndibagi ke amplop.",
           "lineHeight": 1.02,
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 80,
-          "fontWeight": "700",
-          "letterSpacing": -3
+          "fontWeight": "800",
+          "letterSpacing": -1
         },
         {
           "type": "text",
@@ -9755,100 +9681,53 @@
       "children": [
         {
           "type": "frame",
-          "id": "TGcbO",
-          "name": "Mark",
-          "width": 220,
-          "height": 220,
-          "fill": [
-            {
-              "type": "gradient",
-              "gradientType": "linear",
-              "enabled": true,
-              "rotation": 200,
-              "size": {
-                "height": 1
-              },
-              "colors": [
-                {
-                  "color": "#1F5446",
-                  "position": 0
-                },
-                {
-                  "color": "#2C6B5A",
-                  "position": 0.55
-                },
-                {
-                  "color": "#3D8270",
-                  "position": 1
-                }
-              ]
-            },
-            {
-              "type": "gradient",
-              "gradientType": "radial",
-              "enabled": true,
-              "rotation": 0,
-              "size": {
-                "width": 1.2,
-                "height": 0.9
-              },
-              "colors": [
-                {
-                  "color": "#FFFFFF38",
-                  "position": 0
-                },
-                {
-                  "color": "#FFFFFF00",
-                  "position": 1
-                }
-              ],
-              "center": {
-                "x": 0.2,
-                "y": 0.05
-              }
-            }
-          ],
-          "cornerRadius": 61.60000000000001,
+          "id": "U6Tl8",
+          "name": "Logo Ruma",
+          "width": 304,
+          "height": 144,
           "layout": "none",
           "children": [
             {
+              "type": "text",
+              "id": "DGVLP",
+              "x": 0,
+              "y": 39.06,
+              "name": "ruma",
+              "fill": "#2C6B5A",
+              "content": "ruma",
+              "lineHeight": 1,
+              "fontFamily": "Nunito",
+              "fontSize": 124,
+              "fontWeight": "800"
+            },
+            {
               "type": "path",
-              "id": "GtaRS",
+              "id": "DAVnb",
               "x": 0,
               "y": 0,
               "name": "Atap",
-              "geometry": "M30 44l20-17 20 17",
+              "geometry": "M29 144l213-126 213 126",
               "viewBox": [
                 0,
                 0,
-                100,
-                100
+                490,
+                232
               ],
-              "width": 220,
-              "height": 220,
-              "stroke": "#FFFFFF",
-              "strokeWidth": 15.400000000000002,
+              "width": 303.8,
+              "height": 143.84,
+              "stroke": "#2C6B5A",
+              "strokeWidth": 21.7,
               "strokeLinejoin": "round",
               "strokeLinecap": "round"
-            },
-            {
-              "type": "text",
-              "id": "U5eXK",
-              "x": 0,
-              "y": 103.4,
-              "name": "ruma",
-              "fill": "#FFFFFF",
-              "textGrowth": "fixed-width",
-              "width": 220,
-              "content": "ruma",
-              "lineHeight": 1,
-              "textAlign": "center",
-              "fontFamily": "Bricolage Grotesque",
-              "fontSize": 66,
-              "fontWeight": "800",
-              "letterSpacing": -2.64
             }
           ]
+        },
+        {
+          "type": "frame",
+          "id": "xGyOO",
+          "name": "Jarak logo",
+          "width": 10,
+          "height": 24
         },
         {
           "type": "text",
@@ -9860,10 +9739,10 @@
           "content": "Berat sama dipikul, ringan sama dijinjing.",
           "lineHeight": 1.02,
           "textAlign": "center",
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 88,
-          "fontWeight": "700",
-          "letterSpacing": -3
+          "fontWeight": "800",
+          "letterSpacing": -1.1
         },
         {
           "type": "text",
@@ -9962,9 +9841,10 @@
           "name": "t",
           "fill": "#15201D",
           "content": "TikTok, Story, X, Threads",
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 56,
-          "fontWeight": "700"
+          "fontWeight": "800",
+          "letterSpacing": -0.7
         },
         {
           "type": "text",
@@ -10080,84 +9960,46 @@
           "children": [
             {
               "type": "frame",
-              "id": "XtkzK",
-              "name": "Mark",
-              "width": 56,
-              "height": 56,
-              "fill": {
-                "type": "gradient",
-                "gradientType": "linear",
-                "enabled": true,
-                "rotation": 200,
-                "size": {
-                  "height": 1
-                },
-                "colors": [
-                  {
-                    "color": "#1F5446",
-                    "position": 0
-                  },
-                  {
-                    "color": "#2C6B5A",
-                    "position": 0.55
-                  },
-                  {
-                    "color": "#3D8270",
-                    "position": 1
-                  }
-                ]
-              },
-              "cornerRadius": 15.680000000000001,
+              "id": "hynb9",
+              "name": "Logo Ruma",
+              "width": 130,
+              "height": 62,
               "layout": "none",
               "children": [
                 {
+                  "type": "text",
+                  "id": "l1M5f",
+                  "x": 0,
+                  "y": 16.727586206896554,
+                  "name": "ruma",
+                  "fill": "#2C6B5A",
+                  "content": "ruma",
+                  "lineHeight": 1,
+                  "fontFamily": "Nunito",
+                  "fontSize": 53.10344827586208,
+                  "fontWeight": "800"
+                },
+                {
                   "type": "path",
-                  "id": "r7Yg0",
+                  "id": "iVkuP",
                   "x": 0,
                   "y": 0,
                   "name": "Atap",
-                  "geometry": "M30 44l20-17 20 17",
+                  "geometry": "M29 144l213-126 213 126",
                   "viewBox": [
                     0,
                     0,
-                    100,
-                    100
+                    490,
+                    232
                   ],
-                  "width": 56,
-                  "height": 56,
-                  "stroke": "#FFFFFF",
-                  "strokeWidth": 3.9200000000000004,
+                  "width": 130.1034482758621,
+                  "height": 61.60000000000001,
+                  "stroke": "#2C6B5A",
+                  "strokeWidth": 9.293103448275863,
                   "strokeLinejoin": "round",
                   "strokeLinecap": "round"
-                },
-                {
-                  "type": "text",
-                  "id": "KYlqB",
-                  "x": 0,
-                  "y": 26.320000000000004,
-                  "name": "ruma",
-                  "fill": "#FFFFFF",
-                  "textGrowth": "fixed-width",
-                  "width": 56,
-                  "content": "ruma",
-                  "lineHeight": 1,
-                  "textAlign": "center",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 16.8,
-                  "fontWeight": "800",
-                  "letterSpacing": -0.672
                 }
               ]
-            },
-            {
-              "type": "text",
-              "id": "tqH1D",
-              "name": "n",
-              "fill": "#15201D",
-              "content": "Ruma",
-              "fontFamily": "Bricolage Grotesque",
-              "fontSize": 30,
-              "fontWeight": "700"
             }
           ]
         },
@@ -10170,10 +10012,10 @@
           "width": "fill_container",
           "content": "Baru serumah, terus ribut soal siapa bayar apa?",
           "lineHeight": 1.02,
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 104,
-          "fontWeight": "700",
-          "letterSpacing": -3.6
+          "fontWeight": "800",
+          "letterSpacing": -1.2
         },
         {
           "type": "text",
@@ -10237,7 +10079,7 @@
                     "type": "image",
                     "enabled": true,
                     "url": "assets/icons3d/money_bag.png",
-                    "mode": "fit"
+                    "mode": "contain"
                   }
                 }
               ]
@@ -10284,7 +10126,7 @@
                     "type": "image",
                     "enabled": true,
                     "url": "assets/icons3d/red_heart.png",
-                    "mode": "fit"
+                    "mode": "contain"
                   }
                 }
               ]
@@ -10331,7 +10173,7 @@
                     "type": "image",
                     "enabled": true,
                     "url": "assets/icons3d/clipboard.png",
-                    "mode": "fit"
+                    "mode": "contain"
                   }
                 }
               ]
@@ -10378,7 +10220,7 @@
                     "type": "image",
                     "enabled": true,
                     "url": "assets/icons3d/handshake.png",
-                    "mode": "fit"
+                    "mode": "contain"
                   }
                 }
               ]
@@ -10425,7 +10267,7 @@
                     "type": "image",
                     "enabled": true,
                     "url": "assets/icons3d/receipt.png",
-                    "mode": "fit"
+                    "mode": "contain"
                   }
                 }
               ]
@@ -10521,50 +10363,44 @@
           "children": [
             {
               "type": "frame",
-              "id": "o8dLC",
-              "name": "Mark",
-              "width": 52,
-              "height": 52,
-              "fill": "#FFFFFF26",
-              "cornerRadius": 14.560000000000002,
+              "id": "xYi3w",
+              "name": "Logo Ruma",
+              "width": 121,
+              "height": 57,
               "layout": "none",
               "children": [
                 {
+                  "type": "text",
+                  "id": "YejkX",
+                  "x": 0,
+                  "y": 15.532758620689657,
+                  "name": "ruma",
+                  "fill": "#FFFFFF",
+                  "content": "ruma",
+                  "lineHeight": 1,
+                  "fontFamily": "Nunito",
+                  "fontSize": 49.31034482758621,
+                  "fontWeight": "800"
+                },
+                {
                   "type": "path",
-                  "id": "n4Q00",
+                  "id": "JHGoh",
                   "x": 0,
                   "y": 0,
                   "name": "Atap",
-                  "geometry": "M30 44l20-17 20 17",
+                  "geometry": "M29 144l213-126 213 126",
                   "viewBox": [
                     0,
                     0,
-                    100,
-                    100
+                    490,
+                    232
                   ],
-                  "width": 52,
-                  "height": 52,
+                  "width": 120.81034482758622,
+                  "height": 57.2,
                   "stroke": "#FFFFFF",
-                  "strokeWidth": 3.64,
+                  "strokeWidth": 8.629310344827587,
                   "strokeLinejoin": "round",
                   "strokeLinecap": "round"
-                },
-                {
-                  "type": "text",
-                  "id": "D5clz",
-                  "x": 0,
-                  "y": 24.44,
-                  "name": "ruma",
-                  "fill": "#FFFFFF",
-                  "textGrowth": "fixed-width",
-                  "width": 52,
-                  "content": "ruma",
-                  "lineHeight": 1,
-                  "textAlign": "center",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 15.600000000000001,
-                  "fontWeight": "800",
-                  "letterSpacing": -0.624
                 }
               ]
             },
@@ -10590,10 +10426,10 @@
           "content": "Ruma sudah bisa kalian unduh.",
           "lineHeight": 1.02,
           "textAlign": "center",
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 100,
-          "fontWeight": "700",
-          "letterSpacing": -3
+          "fontWeight": "800",
+          "letterSpacing": -1.2
         },
         {
           "type": "text",
@@ -10804,84 +10640,46 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "s7ibcG",
-                  "name": "Mark",
-                  "width": 56,
-                  "height": 56,
-                  "fill": {
-                    "type": "gradient",
-                    "gradientType": "linear",
-                    "enabled": true,
-                    "rotation": 200,
-                    "size": {
-                      "height": 1
-                    },
-                    "colors": [
-                      {
-                        "color": "#1F5446",
-                        "position": 0
-                      },
-                      {
-                        "color": "#2C6B5A",
-                        "position": 0.55
-                      },
-                      {
-                        "color": "#3D8270",
-                        "position": 1
-                      }
-                    ]
-                  },
-                  "cornerRadius": 15.680000000000001,
+                  "id": "P7agzB",
+                  "name": "Logo Ruma",
+                  "width": 130,
+                  "height": 62,
                   "layout": "none",
                   "children": [
                     {
+                      "type": "text",
+                      "id": "a4HcO",
+                      "x": 0,
+                      "y": 16.727586206896554,
+                      "name": "ruma",
+                      "fill": "#2C6B5A",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 53.10344827586208,
+                      "fontWeight": "800"
+                    },
+                    {
                       "type": "path",
-                      "id": "jIkOT",
+                      "id": "b5uRk3",
                       "x": 0,
                       "y": 0,
                       "name": "Atap",
-                      "geometry": "M30 44l20-17 20 17",
+                      "geometry": "M29 144l213-126 213 126",
                       "viewBox": [
                         0,
                         0,
-                        100,
-                        100
+                        490,
+                        232
                       ],
-                      "width": 56,
-                      "height": 56,
-                      "stroke": "#FFFFFF",
-                      "strokeWidth": 3.9200000000000004,
+                      "width": 130.1034482758621,
+                      "height": 61.60000000000001,
+                      "stroke": "#2C6B5A",
+                      "strokeWidth": 9.293103448275863,
                       "strokeLinejoin": "round",
                       "strokeLinecap": "round"
-                    },
-                    {
-                      "type": "text",
-                      "id": "n6xSWu",
-                      "x": 0,
-                      "y": 26.320000000000004,
-                      "name": "ruma",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": 56,
-                      "content": "ruma",
-                      "lineHeight": 1,
-                      "textAlign": "center",
-                      "fontFamily": "Bricolage Grotesque",
-                      "fontSize": 16.8,
-                      "fontWeight": "800",
-                      "letterSpacing": -0.672
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "dku1H",
-                  "name": "n",
-                  "fill": "#15201D",
-                  "content": "Ruma",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 30,
-                  "fontWeight": "700"
                 }
               ]
             },
@@ -10894,10 +10692,10 @@
               "width": "fill_container",
               "content": "Berat sama dipikul, ringan sama dijinjing.",
               "lineHeight": 1.02,
-              "fontFamily": "Bricolage Grotesque",
+              "fontFamily": "$font-body",
               "fontSize": 84,
-              "fontWeight": "700",
-              "letterSpacing": -3
+              "fontWeight": "800",
+              "letterSpacing": -1
             },
             {
               "type": "text",
@@ -11123,12 +10921,12 @@
               "type": "text",
               "id": "zDdJU",
               "name": "Old",
-              "fill": "#8A9793",
+              "fill": "#D64545",
               "content": "Kamu 70%, dia 30%.",
-              "fontFamily": "Bricolage Grotesque",
+              "fontFamily": "$font-body",
               "fontSize": 96,
-              "fontWeight": "700",
-              "letterSpacing": -3
+              "fontWeight": "800",
+              "letterSpacing": -1.2
             },
             {
               "type": "rectangle",
@@ -11138,7 +10936,7 @@
               "x": -4,
               "y": 58,
               "name": "Garis coret",
-              "fill": "#8A9793",
+              "fill": "#D64545",
               "width": 815,
               "height": 8
             }
@@ -11194,7 +10992,7 @@
                     "type": "image",
                     "enabled": true,
                     "url": "assets/icons3d/heart_hands.png",
-                    "mode": "fit"
+                    "mode": "contain"
                   }
                 }
               ]
@@ -11246,91 +11044,62 @@
         },
         {
           "type": "frame",
+          "id": "U4LHc",
+          "name": "Spacer",
+          "width": "fill_container",
+          "height": "fill_container"
+        },
+        {
+          "type": "frame",
           "id": "Ufryw",
           "name": "Brand",
+          "width": "fill_container",
           "gap": 14,
+          "justifyContent": "center",
           "alignItems": "center",
           "children": [
             {
               "type": "frame",
-              "id": "Q4mMy",
-              "name": "Mark",
-              "width": 56,
-              "height": 56,
-              "fill": {
-                "type": "gradient",
-                "gradientType": "linear",
-                "enabled": true,
-                "rotation": 200,
-                "size": {
-                  "height": 1
-                },
-                "colors": [
-                  {
-                    "color": "#1F5446",
-                    "position": 0
-                  },
-                  {
-                    "color": "#2C6B5A",
-                    "position": 0.55
-                  },
-                  {
-                    "color": "#3D8270",
-                    "position": 1
-                  }
-                ]
-              },
-              "cornerRadius": 15.680000000000001,
+              "id": "OdNJS",
+              "name": "Logo Ruma",
+              "width": 130,
+              "height": 62,
               "layout": "none",
               "children": [
                 {
+                  "type": "text",
+                  "id": "vY03X",
+                  "x": 0,
+                  "y": 16.727586206896554,
+                  "name": "ruma",
+                  "fill": "#2C6B5A",
+                  "content": "ruma",
+                  "lineHeight": 1,
+                  "fontFamily": "Nunito",
+                  "fontSize": 53.10344827586208,
+                  "fontWeight": "800"
+                },
+                {
                   "type": "path",
-                  "id": "n9dTd",
+                  "id": "uZkZz",
                   "x": 0,
                   "y": 0,
                   "name": "Atap",
-                  "geometry": "M30 44l20-17 20 17",
+                  "geometry": "M29 144l213-126 213 126",
                   "viewBox": [
                     0,
                     0,
-                    100,
-                    100
+                    490,
+                    232
                   ],
-                  "width": 56,
-                  "height": 56,
-                  "stroke": "#FFFFFF",
-                  "strokeWidth": 3.9200000000000004,
+                  "width": 130.1034482758621,
+                  "height": 61.60000000000001,
+                  "stroke": "#2C6B5A",
+                  "strokeWidth": 9.293103448275863,
                   "strokeLinejoin": "round",
                   "strokeLinecap": "round"
-                },
-                {
-                  "type": "text",
-                  "id": "onwML",
-                  "x": 0,
-                  "y": 26.320000000000004,
-                  "name": "ruma",
-                  "fill": "#FFFFFF",
-                  "textGrowth": "fixed-width",
-                  "width": 56,
-                  "content": "ruma",
-                  "lineHeight": 1,
-                  "textAlign": "center",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 16.8,
-                  "fontWeight": "800",
-                  "letterSpacing": -0.672
                 }
               ]
-            },
-            {
-              "type": "text",
-              "id": "Toa22",
-              "name": "n",
-              "fill": "#15201D",
-              "content": "Ruma",
-              "fontFamily": "Bricolage Grotesque",
-              "fontSize": 30,
-              "fontWeight": "700"
             }
           ]
         }
@@ -11520,10 +11289,10 @@
           "width": "fill_container",
           "content": "“Tulis testimoni tester di sini. Dua sampai tiga kalimat yang jujur sudah cukup.”",
           "lineHeight": 1.12,
-          "fontFamily": "Bricolage Grotesque",
+          "fontFamily": "$font-body",
           "fontSize": 56,
-          "fontWeight": "700",
-          "letterSpacing": -1.6
+          "fontWeight": "800",
+          "letterSpacing": -0.7
         },
         {
           "type": "frame",
@@ -11598,7 +11367,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "assets/icons3d/money_bag.png",
-                        "mode": "fit"
+                        "mode": "contain"
                       }
                     }
                   ]
@@ -11634,84 +11403,46 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "c8TnP",
-                  "name": "Mark",
-                  "width": 52,
-                  "height": 52,
-                  "fill": {
-                    "type": "gradient",
-                    "gradientType": "linear",
-                    "enabled": true,
-                    "rotation": 200,
-                    "size": {
-                      "height": 1
-                    },
-                    "colors": [
-                      {
-                        "color": "#1F5446",
-                        "position": 0
-                      },
-                      {
-                        "color": "#2C6B5A",
-                        "position": 0.55
-                      },
-                      {
-                        "color": "#3D8270",
-                        "position": 1
-                      }
-                    ]
-                  },
-                  "cornerRadius": 14.560000000000002,
+                  "id": "QJP2W",
+                  "name": "Logo Ruma",
+                  "width": 121,
+                  "height": 57,
                   "layout": "none",
                   "children": [
                     {
+                      "type": "text",
+                      "id": "DiGoZ",
+                      "x": 0,
+                      "y": 15.532758620689657,
+                      "name": "ruma",
+                      "fill": "#2C6B5A",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 49.31034482758621,
+                      "fontWeight": "800"
+                    },
+                    {
                       "type": "path",
-                      "id": "RMn8D",
+                      "id": "TjQNN",
                       "x": 0,
                       "y": 0,
                       "name": "Atap",
-                      "geometry": "M30 44l20-17 20 17",
+                      "geometry": "M29 144l213-126 213 126",
                       "viewBox": [
                         0,
                         0,
-                        100,
-                        100
+                        490,
+                        232
                       ],
-                      "width": 52,
-                      "height": 52,
-                      "stroke": "#FFFFFF",
-                      "strokeWidth": 3.64,
+                      "width": 120.81034482758622,
+                      "height": 57.2,
+                      "stroke": "#2C6B5A",
+                      "strokeWidth": 8.629310344827587,
                       "strokeLinejoin": "round",
                       "strokeLinecap": "round"
-                    },
-                    {
-                      "type": "text",
-                      "id": "W5xYAE",
-                      "x": 0,
-                      "y": 24.44,
-                      "name": "ruma",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": 52,
-                      "content": "ruma",
-                      "lineHeight": 1,
-                      "textAlign": "center",
-                      "fontFamily": "Bricolage Grotesque",
-                      "fontSize": 15.600000000000001,
-                      "fontWeight": "800",
-                      "letterSpacing": -0.624
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "zdubI",
-                  "name": "n",
-                  "fill": "#15201D",
-                  "content": "Ruma",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 28,
-                  "fontWeight": "700"
                 }
               ]
             },
@@ -11815,7 +11546,7 @@
                 "type": "image",
                 "enabled": true,
                 "url": "assets/icons3d/speech_balloon.png",
-                "mode": "fit"
+                "mode": "contain"
               }
             }
           ]
@@ -11837,10 +11568,10 @@
               "width": "fill_container",
               "content": "“Tulis testimoni tester di sini. Dua sampai tiga kalimat yang jujur sudah cukup.”",
               "lineHeight": 1.08,
-              "fontFamily": "Bricolage Grotesque",
+              "fontFamily": "$font-body",
               "fontSize": 72,
-              "fontWeight": "700",
-              "letterSpacing": -2.4
+              "fontWeight": "800",
+              "letterSpacing": -0.9
             },
             {
               "type": "frame",
@@ -11915,7 +11646,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "assets/icons3d/money_bag.png",
-                            "mode": "fit"
+                            "mode": "contain"
                           }
                         }
                       ]
@@ -11953,62 +11684,46 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "TaKpH",
-                  "name": "Mark",
-                  "width": 52,
-                  "height": 52,
-                  "fill": "#FFFFFF26",
-                  "cornerRadius": 14.560000000000002,
+                  "id": "MZj4L",
+                  "name": "Logo Ruma",
+                  "width": 121,
+                  "height": 57,
                   "layout": "none",
                   "children": [
                     {
+                      "type": "text",
+                      "id": "nhLHx",
+                      "x": 0,
+                      "y": 15.532758620689657,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 49.31034482758621,
+                      "fontWeight": "800"
+                    },
+                    {
                       "type": "path",
-                      "id": "Xyjcv",
+                      "id": "SU0QF",
                       "x": 0,
                       "y": 0,
                       "name": "Atap",
-                      "geometry": "M30 44l20-17 20 17",
+                      "geometry": "M29 144l213-126 213 126",
                       "viewBox": [
                         0,
                         0,
-                        100,
-                        100
+                        490,
+                        232
                       ],
-                      "width": 52,
-                      "height": 52,
+                      "width": 120.81034482758622,
+                      "height": 57.2,
                       "stroke": "#FFFFFF",
-                      "strokeWidth": 3.64,
+                      "strokeWidth": 8.629310344827587,
                       "strokeLinejoin": "round",
                       "strokeLinecap": "round"
-                    },
-                    {
-                      "type": "text",
-                      "id": "Q6pa1p",
-                      "x": 0,
-                      "y": 24.44,
-                      "name": "ruma",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": 52,
-                      "content": "ruma",
-                      "lineHeight": 1,
-                      "textAlign": "center",
-                      "fontFamily": "Bricolage Grotesque",
-                      "fontSize": 15.600000000000001,
-                      "fontWeight": "800",
-                      "letterSpacing": -0.624
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "t4lMZA",
-                  "name": "n",
-                  "fill": "#FFFFFF",
-                  "content": "Ruma",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 28,
-                  "fontWeight": "700"
                 }
               ]
             },
@@ -12165,84 +11880,46 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "BXpNK",
-                  "name": "Mark",
-                  "width": 52,
-                  "height": 52,
-                  "fill": {
-                    "type": "gradient",
-                    "gradientType": "linear",
-                    "enabled": true,
-                    "rotation": 200,
-                    "size": {
-                      "height": 1
-                    },
-                    "colors": [
-                      {
-                        "color": "#1F5446",
-                        "position": 0
-                      },
-                      {
-                        "color": "#2C6B5A",
-                        "position": 0.55
-                      },
-                      {
-                        "color": "#3D8270",
-                        "position": 1
-                      }
-                    ]
-                  },
-                  "cornerRadius": 14.560000000000002,
+                  "id": "l3Gz1v",
+                  "name": "Logo Ruma",
+                  "width": 121,
+                  "height": 57,
                   "layout": "none",
                   "children": [
                     {
+                      "type": "text",
+                      "id": "YFouF",
+                      "x": 0,
+                      "y": 15.532758620689657,
+                      "name": "ruma",
+                      "fill": "#2C6B5A",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 49.31034482758621,
+                      "fontWeight": "800"
+                    },
+                    {
                       "type": "path",
-                      "id": "A1sql",
+                      "id": "LzVPE",
                       "x": 0,
                       "y": 0,
                       "name": "Atap",
-                      "geometry": "M30 44l20-17 20 17",
+                      "geometry": "M29 144l213-126 213 126",
                       "viewBox": [
                         0,
                         0,
-                        100,
-                        100
+                        490,
+                        232
                       ],
-                      "width": 52,
-                      "height": 52,
-                      "stroke": "#FFFFFF",
-                      "strokeWidth": 3.64,
+                      "width": 120.81034482758622,
+                      "height": 57.2,
+                      "stroke": "#2C6B5A",
+                      "strokeWidth": 8.629310344827587,
                       "strokeLinejoin": "round",
                       "strokeLinecap": "round"
-                    },
-                    {
-                      "type": "text",
-                      "id": "N04pN",
-                      "x": 0,
-                      "y": 24.44,
-                      "name": "ruma",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": 52,
-                      "content": "ruma",
-                      "lineHeight": 1,
-                      "textAlign": "center",
-                      "fontFamily": "Bricolage Grotesque",
-                      "fontSize": 15.600000000000001,
-                      "fontWeight": "800",
-                      "letterSpacing": -0.624
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "OwI4p",
-                  "name": "n",
-                  "fill": "#15201D",
-                  "content": "Ruma",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 28,
-                  "fontWeight": "700"
                 }
               ]
             },
@@ -12255,10 +11932,10 @@
               "width": "fill_container",
               "content": "“Tulis testimoni tester di sini. Dua sampai tiga kalimat yang jujur sudah cukup.”",
               "lineHeight": 1.12,
-              "fontFamily": "Bricolage Grotesque",
+              "fontFamily": "$font-body",
               "fontSize": 52,
-              "fontWeight": "700",
-              "letterSpacing": -1.4
+              "fontWeight": "800",
+              "letterSpacing": -0.6
             },
             {
               "type": "frame",
@@ -12333,7 +12010,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "assets/icons3d/money_bag.png",
-                            "mode": "fit"
+                            "mode": "contain"
                           }
                         }
                       ]
@@ -12519,84 +12196,46 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "VM46F",
-                  "name": "Mark",
-                  "width": 52,
-                  "height": 52,
-                  "fill": {
-                    "type": "gradient",
-                    "gradientType": "linear",
-                    "enabled": true,
-                    "rotation": 200,
-                    "size": {
-                      "height": 1
-                    },
-                    "colors": [
-                      {
-                        "color": "#1F5446",
-                        "position": 0
-                      },
-                      {
-                        "color": "#2C6B5A",
-                        "position": 0.55
-                      },
-                      {
-                        "color": "#3D8270",
-                        "position": 1
-                      }
-                    ]
-                  },
-                  "cornerRadius": 14.560000000000002,
+                  "id": "Qzs6H",
+                  "name": "Logo Ruma",
+                  "width": 121,
+                  "height": 57,
                   "layout": "none",
                   "children": [
                     {
+                      "type": "text",
+                      "id": "dzTzq",
+                      "x": 0,
+                      "y": 15.532758620689657,
+                      "name": "ruma",
+                      "fill": "#2C6B5A",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 49.31034482758621,
+                      "fontWeight": "800"
+                    },
+                    {
                       "type": "path",
-                      "id": "u6rywG",
+                      "id": "pHVkC",
                       "x": 0,
                       "y": 0,
                       "name": "Atap",
-                      "geometry": "M30 44l20-17 20 17",
+                      "geometry": "M29 144l213-126 213 126",
                       "viewBox": [
                         0,
                         0,
-                        100,
-                        100
+                        490,
+                        232
                       ],
-                      "width": 52,
-                      "height": 52,
-                      "stroke": "#FFFFFF",
-                      "strokeWidth": 3.64,
+                      "width": 120.81034482758622,
+                      "height": 57.2,
+                      "stroke": "#2C6B5A",
+                      "strokeWidth": 8.629310344827587,
                       "strokeLinejoin": "round",
                       "strokeLinecap": "round"
-                    },
-                    {
-                      "type": "text",
-                      "id": "vbEjZ",
-                      "x": 0,
-                      "y": 24.44,
-                      "name": "ruma",
-                      "fill": "#FFFFFF",
-                      "textGrowth": "fixed-width",
-                      "width": 52,
-                      "content": "ruma",
-                      "lineHeight": 1,
-                      "textAlign": "center",
-                      "fontFamily": "Bricolage Grotesque",
-                      "fontSize": 15.600000000000001,
-                      "fontWeight": "800",
-                      "letterSpacing": -0.624
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "s2UsSw",
-                  "name": "n",
-                  "fill": "#15201D",
-                  "content": "Ruma",
-                  "fontFamily": "Bricolage Grotesque",
-                  "fontSize": 28,
-                  "fontWeight": "700"
                 }
               ]
             },
@@ -12609,10 +12248,10 @@
               "width": "fill_container",
               "content": "“Tulis testimoni tester di sini. Dua sampai tiga kalimat yang jujur sudah cukup.”",
               "lineHeight": 1.12,
-              "fontFamily": "Bricolage Grotesque",
+              "fontFamily": "$font-body",
               "fontSize": 52,
-              "fontWeight": "700",
-              "letterSpacing": -1.4
+              "fontWeight": "800",
+              "letterSpacing": -0.6
             },
             {
               "type": "frame",
@@ -12640,6 +12279,1304 @@
                   "fontFamily": "Figtree",
                   "fontSize": 24,
                   "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "v5Lfr",
+      "x": 3120,
+      "y": 0,
+      "name": "Logo Ruma & Panduan",
+      "width": 1600,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "gap": 64,
+      "padding": [
+        96,
+        100,
+        100,
+        100
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "HVfzp",
+          "name": "Header",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 14,
+          "children": [
+            {
+              "type": "text",
+              "id": "XxAfQ",
+              "name": "Eyebrow",
+              "fill": "$jade",
+              "content": "IDENTITAS",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "700",
+              "letterSpacing": 2
+            },
+            {
+              "type": "text",
+              "id": "uuilD",
+              "name": "Title",
+              "fill": "$ink",
+              "content": "Logo Ruma",
+              "fontFamily": "$font-display",
+              "fontSize": 64,
+              "fontWeight": "700",
+              "letterSpacing": -0.5
+            },
+            {
+              "type": "text",
+              "id": "BDhHf",
+              "name": "Desc",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": 820,
+              "content": "Garis atap tumbuh dari huruf r dan turun ke huruf a, jadi atap dan nama adalah satu bentuk. Tebal garis atap sama dengan batang huruf, ujungnya membulat seperti huruf Nunito.",
+              "lineHeight": 1.5,
+              "fontFamily": "$font-body",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "R4Yto",
+          "name": "Varian",
+          "width": "fill_container",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "fnSOg",
+              "name": "Utama",
+              "width": "fill_container",
+              "height": 420,
+              "fill": "#FFFFFF",
+              "cornerRadius": 32,
+              "stroke": "#15201D14",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 28,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b0guTY",
+                  "name": "Logo Jade",
+                  "width": 323,
+                  "height": 153,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BrNWO",
+                      "x": 0,
+                      "y": 41.580000000000005,
+                      "name": "ruma",
+                      "fill": "#2C6B5A",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 132,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "path",
+                      "id": "pSCHC",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M29 144l213-126 213 126",
+                      "viewBox": [
+                        0,
+                        0,
+                        490,
+                        232
+                      ],
+                      "width": 323.40000000000003,
+                      "height": 153.12,
+                      "stroke": "#2C6B5A",
+                      "strokeWidth": 23.1,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "LQe57",
+              "name": "Di atas jade",
+              "width": "fill_container",
+              "height": 420,
+              "fill": "#2C6B5A",
+              "cornerRadius": 32,
+              "layout": "vertical",
+              "gap": 28,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "y3jL4f",
+                  "name": "Logo Putih",
+                  "width": 323,
+                  "height": 153,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "vszv9",
+                      "x": 0,
+                      "y": 41.580000000000005,
+                      "name": "ruma",
+                      "fill": "#FFFFFF",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 132,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "path",
+                      "id": "sQCHU",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M29 144l213-126 213 126",
+                      "viewBox": [
+                        0,
+                        0,
+                        490,
+                        232
+                      ],
+                      "width": 323.40000000000003,
+                      "height": 153.12,
+                      "stroke": "#FFFFFF",
+                      "strokeWidth": 23.1,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vz0p4",
+              "name": "Dengan tagline",
+              "width": "fill_container",
+              "height": 420,
+              "fill": "#F1F2EC",
+              "cornerRadius": 32,
+              "layout": "vertical",
+              "gap": 28,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Dw7P1",
+                  "name": "Logo Jade",
+                  "width": 304,
+                  "height": 144,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "e2GgFy",
+                      "x": 0,
+                      "y": 39.06,
+                      "name": "ruma",
+                      "fill": "#2C6B5A",
+                      "content": "ruma",
+                      "lineHeight": 1,
+                      "fontFamily": "Nunito",
+                      "fontSize": 124,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "path",
+                      "id": "WbZk8",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Atap",
+                      "geometry": "M29 144l213-126 213 126",
+                      "viewBox": [
+                        0,
+                        0,
+                        490,
+                        232
+                      ],
+                      "width": 303.8,
+                      "height": 143.84,
+                      "stroke": "#2C6B5A",
+                      "strokeWidth": 21.7,
+                      "strokeLinejoin": "round",
+                      "strokeLinecap": "round"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "tBQYD",
+                  "name": "Tagline",
+                  "fill": "$muted",
+                  "content": "Berat sama dipikul, ringan sama dijinjing.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jqNzh",
+          "name": "Dos Donts",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "children": [
+            {
+              "type": "text",
+              "id": "Fx1UK",
+              "name": "Title",
+              "fill": "$ink",
+              "content": "Pakai begini, jangan begitu",
+              "fontFamily": "$font-body",
+              "fontSize": 32,
+              "fontWeight": "800"
+            },
+            {
+              "type": "frame",
+              "id": "IiMkk",
+              "name": "Do",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Ts8Cj",
+                  "name": "Do Latar putih atau terang, logo jade.",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OTpfo",
+                      "name": "Contoh",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 24,
+                      "stroke": "#15201D14",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "vuDo2",
+                          "name": "Logo",
+                          "width": 206,
+                          "height": 97,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "p8p6cT",
+                              "x": 0,
+                              "y": 26.459999999999997,
+                              "name": "ruma",
+                              "fill": "#2C6B5A",
+                              "content": "ruma",
+                              "lineHeight": 1,
+                              "fontFamily": "Nunito",
+                              "fontSize": 84,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "path",
+                              "id": "niCg6",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Atap",
+                              "geometry": "M29 144l213-126 213 126",
+                              "viewBox": [
+                                0,
+                                0,
+                                490,
+                                232
+                              ],
+                              "width": 205.79999999999998,
+                              "height": 97.44,
+                              "stroke": "#2C6B5A",
+                              "strokeWidth": 14.7,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Wj3SF",
+                      "name": "Keterangan",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "i6KSx",
+                          "name": "Badge",
+                          "width": 26,
+                          "height": 26,
+                          "fill": "#2C6B5A",
+                          "cornerRadius": 13,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "YuvO1",
+                              "name": "check",
+                              "width": 15,
+                              "height": 15,
+                              "icon": "check",
+                              "library": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "YzVPW",
+                          "name": "Label",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Latar putih atau terang, logo jade.",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fGwRO",
+                  "name": "Do Latar jade, logo putih.",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ysaHX",
+                      "name": "Contoh",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": "#2C6B5A",
+                      "cornerRadius": 24,
+                      "stroke": "#15201D14",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "bnPEC",
+                          "name": "Logo",
+                          "width": 206,
+                          "height": 97,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "WFknk",
+                              "x": 0,
+                              "y": 26.459999999999997,
+                              "name": "ruma",
+                              "fill": "#FFFFFF",
+                              "content": "ruma",
+                              "lineHeight": 1,
+                              "fontFamily": "Nunito",
+                              "fontSize": 84,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "path",
+                              "id": "vSdBR",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Atap",
+                              "geometry": "M29 144l213-126 213 126",
+                              "viewBox": [
+                                0,
+                                0,
+                                490,
+                                232
+                              ],
+                              "width": 205.79999999999998,
+                              "height": 97.44,
+                              "stroke": "#FFFFFF",
+                              "strokeWidth": 14.7,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fPjdQ",
+                      "name": "Keterangan",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "bNjvD",
+                          "name": "Badge",
+                          "width": 26,
+                          "height": 26,
+                          "fill": "#2C6B5A",
+                          "cornerRadius": 13,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "xborV",
+                              "name": "check",
+                              "width": 15,
+                              "height": 15,
+                              "icon": "check",
+                              "library": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "J9B8sb",
+                          "name": "Label",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Latar jade, logo putih.",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bIuSk",
+                  "name": "Do Logo saja, atau logo dengan tagline di bawahnya.",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "s94XwZ",
+                      "name": "Contoh",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 24,
+                      "stroke": "#15201D14",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "gYQxo",
+                          "name": "Logo",
+                          "width": 176,
+                          "height": 84,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "DjlHX",
+                              "x": 0,
+                              "y": 22.68,
+                              "name": "ruma",
+                              "fill": "#2C6B5A",
+                              "content": "ruma",
+                              "lineHeight": 1,
+                              "fontFamily": "Nunito",
+                              "fontSize": 72,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "path",
+                              "id": "u8adR",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Atap",
+                              "geometry": "M29 144l213-126 213 126",
+                              "viewBox": [
+                                0,
+                                0,
+                                490,
+                                232
+                              ],
+                              "width": 176.4,
+                              "height": 83.52,
+                              "stroke": "#2C6B5A",
+                              "strokeWidth": 12.6,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "qCpFf",
+                          "name": "Tagline",
+                          "fill": "$muted",
+                          "content": "Berat sama dipikul, ringan sama dijinjing.",
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "SKomz",
+                      "name": "Keterangan",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "uCe0S",
+                          "name": "Badge",
+                          "width": 26,
+                          "height": 26,
+                          "fill": "#2C6B5A",
+                          "cornerRadius": 13,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "d9vvO9",
+                              "name": "check",
+                              "width": 15,
+                              "height": 15,
+                              "icon": "check",
+                              "library": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "ccski",
+                          "name": "Label",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Logo saja, atau logo dengan tagline di bawahnya.",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ooWhT",
+                  "name": "Do Beri ruang kosong minimal setinggi huruf u di sekeliling logo.",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "tprLi",
+                      "name": "Contoh",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 24,
+                      "stroke": "#15201D14",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "wBKVP",
+                          "name": "Zona",
+                          "cornerRadius": 4,
+                          "stroke": "#2C6B5A66",
+                          "strokeWidth": 1.5,
+                          "padding": 22,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "u8RDuv",
+                              "name": "Logo",
+                              "width": 167,
+                              "height": 79,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "u16FrG",
+                                  "x": 0,
+                                  "y": 21.42,
+                                  "name": "ruma",
+                                  "fill": "#2C6B5A",
+                                  "content": "ruma",
+                                  "lineHeight": 1,
+                                  "fontFamily": "Nunito",
+                                  "fontSize": 68,
+                                  "fontWeight": "800"
+                                },
+                                {
+                                  "type": "path",
+                                  "id": "D5hCi",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Atap",
+                                  "geometry": "M29 144l213-126 213 126",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    490,
+                                    232
+                                  ],
+                                  "width": 166.60000000000002,
+                                  "height": 78.88000000000001,
+                                  "stroke": "#2C6B5A",
+                                  "strokeWidth": 11.9,
+                                  "strokeLinejoin": "round",
+                                  "strokeLinecap": "round"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vZbZC",
+                      "name": "Keterangan",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "DZVPW",
+                          "name": "Badge",
+                          "width": 26,
+                          "height": 26,
+                          "fill": "#2C6B5A",
+                          "cornerRadius": 13,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "NRLY2",
+                              "name": "check",
+                              "width": 15,
+                              "height": 15,
+                              "icon": "check",
+                              "library": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "aR895",
+                          "name": "Label",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Beri ruang kosong minimal setinggi huruf u di sekeliling logo.",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SlBmy",
+              "name": "Dont",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "EkfaD",
+                  "name": "Dont Jangan beri kotak atau garis tepi di sekeliling logo.",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "W4klT",
+                      "name": "Contoh",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 24,
+                      "stroke": "#15201D14",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "QM5Tt",
+                          "name": "Kotak",
+                          "fill": "#2C6B5A14",
+                          "cornerRadius": 18,
+                          "stroke": "#2C6B5A",
+                          "strokeWidth": 3,
+                          "padding": [
+                            14,
+                            20
+                          ],
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "XtCSH",
+                              "name": "Logo",
+                              "width": 176,
+                              "height": 84,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "tbpUV",
+                                  "x": 0,
+                                  "y": 22.68,
+                                  "name": "ruma",
+                                  "fill": "#2C6B5A",
+                                  "content": "ruma",
+                                  "lineHeight": 1,
+                                  "fontFamily": "Nunito",
+                                  "fontSize": 72,
+                                  "fontWeight": "800"
+                                },
+                                {
+                                  "type": "path",
+                                  "id": "feXTG",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Atap",
+                                  "geometry": "M29 144l213-126 213 126",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    490,
+                                    232
+                                  ],
+                                  "width": 176.4,
+                                  "height": 83.52,
+                                  "stroke": "#2C6B5A",
+                                  "strokeWidth": 12.6,
+                                  "strokeLinejoin": "round",
+                                  "strokeLinecap": "round"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wFs2k",
+                      "name": "Keterangan",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "JfoQt",
+                          "name": "Badge",
+                          "width": 26,
+                          "height": 26,
+                          "fill": "#C0392B",
+                          "cornerRadius": 13,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "zqB1g",
+                              "name": "x",
+                              "width": 15,
+                              "height": 15,
+                              "icon": "x",
+                              "library": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "JJxVY",
+                          "name": "Label",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Jangan beri kotak atau garis tepi di sekeliling logo.",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gmWHp",
+                  "name": "Dont Jangan tulis Ruma lagi di samping logo. Logonya sudah menyebut nama.",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "CKQTf",
+                      "name": "Contoh",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 24,
+                      "stroke": "#15201D14",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "RyjqQ",
+                          "name": "Pair",
+                          "gap": 16,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "XAF3a",
+                              "name": "Logo",
+                              "width": 147,
+                              "height": 70,
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "dJIkp",
+                                  "x": 0,
+                                  "y": 18.9,
+                                  "name": "ruma",
+                                  "fill": "#2C6B5A",
+                                  "content": "ruma",
+                                  "lineHeight": 1,
+                                  "fontFamily": "Nunito",
+                                  "fontSize": 60,
+                                  "fontWeight": "800"
+                                },
+                                {
+                                  "type": "path",
+                                  "id": "P2EWuY",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Atap",
+                                  "geometry": "M29 144l213-126 213 126",
+                                  "viewBox": [
+                                    0,
+                                    0,
+                                    490,
+                                    232
+                                  ],
+                                  "width": 147,
+                                  "height": 69.6,
+                                  "stroke": "#2C6B5A",
+                                  "strokeWidth": 10.5,
+                                  "strokeLinejoin": "round",
+                                  "strokeLinecap": "round"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "pOowY",
+                              "name": "Ruma",
+                              "fill": "$ink",
+                              "content": "Ruma",
+                              "fontFamily": "$font-body",
+                              "fontSize": 34,
+                              "fontWeight": "800"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "i2ia1U",
+                      "name": "Keterangan",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Vfyvy",
+                          "name": "Badge",
+                          "width": 26,
+                          "height": 26,
+                          "fill": "#C0392B",
+                          "cornerRadius": 13,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "X0WwiK",
+                              "name": "x",
+                              "width": 15,
+                              "height": 15,
+                              "icon": "x",
+                              "library": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "z9Zn7",
+                          "name": "Label",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Jangan tulis Ruma lagi di samping logo. Logonya sudah menyebut nama.",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a3uREw",
+                  "name": "Dont Jangan pisahkan atap dari huruf atau ganti fontnya.",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Z8fZWh",
+                      "name": "Contoh",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 24,
+                      "stroke": "#15201D14",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "nbbAw",
+                          "name": "Pisah",
+                          "layout": "vertical",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "m0E5T",
+                              "name": "Atap",
+                              "geometry": "M8 34l37-26 37 26",
+                              "viewBox": [
+                                0,
+                                0,
+                                90,
+                                40
+                              ],
+                              "width": 90,
+                              "height": 40,
+                              "stroke": "#2C6B5A",
+                              "strokeWidth": 12,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Y5b1o",
+                              "name": "ruma",
+                              "fill": "#2C6B5A",
+                              "content": "ruma",
+                              "fontFamily": "Bricolage Grotesque",
+                              "fontSize": 56,
+                              "fontWeight": "800",
+                              "letterSpacing": -2
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PjWVb",
+                      "name": "Keterangan",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "w8K5Fc",
+                          "name": "Badge",
+                          "width": 26,
+                          "height": 26,
+                          "fill": "#C0392B",
+                          "cornerRadius": 13,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "tPg1l",
+                              "name": "x",
+                              "width": 15,
+                              "height": 15,
+                              "icon": "x",
+                              "library": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "GAmvQ",
+                          "name": "Label",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Jangan pisahkan atap dari huruf atau ganti fontnya.",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YFWdB",
+                  "name": "Dont Jangan taruh di latar ramai atau warna yang bentrok.",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "p5mrWz",
+                      "name": "Contoh",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": 240,
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 120,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#E9A23B",
+                            "position": 0
+                          },
+                          {
+                            "color": "#D9487A",
+                            "position": 0.5
+                          },
+                          {
+                            "color": "#6E58B5",
+                            "position": 1
+                          }
+                        ]
+                      },
+                      "cornerRadius": 24,
+                      "stroke": "#15201D14",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "UEauf",
+                          "name": "Logo",
+                          "width": 206,
+                          "height": 97,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Losrp",
+                              "x": 0,
+                              "y": 26.459999999999997,
+                              "name": "ruma",
+                              "fill": "#2C6B5A",
+                              "content": "ruma",
+                              "lineHeight": 1,
+                              "fontFamily": "Nunito",
+                              "fontSize": 84,
+                              "fontWeight": "800"
+                            },
+                            {
+                              "type": "path",
+                              "id": "d6uCWT",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Atap",
+                              "geometry": "M29 144l213-126 213 126",
+                              "viewBox": [
+                                0,
+                                0,
+                                490,
+                                232
+                              ],
+                              "width": 205.79999999999998,
+                              "height": 97.44,
+                              "stroke": "#2C6B5A",
+                              "strokeWidth": 14.7,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ji5uJ",
+                      "name": "Keterangan",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "RI4Hd",
+                          "name": "Badge",
+                          "width": 26,
+                          "height": 26,
+                          "fill": "#C0392B",
+                          "cornerRadius": 13,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "xw9n7",
+                              "name": "x",
+                              "width": 15,
+                              "height": 15,
+                              "icon": "x",
+                              "library": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "v6zTRT",
+                          "name": "Label",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Jangan taruh di latar ramai atau warna yang bentrok.",
+                          "lineHeight": 1.4,
+                          "fontFamily": "$font-body",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
