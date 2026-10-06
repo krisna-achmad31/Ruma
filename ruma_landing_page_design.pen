@@ -246,7 +246,7 @@
                           "id": "uFDCo",
                           "name": "Urusan",
                           "fill": "$muted",
-                          "content": "Urusan",
+                          "content": "Chores",
                           "fontFamily": "$font-body",
                           "fontSize": 15,
                           "fontWeight": "600"
@@ -268,7 +268,7 @@
                           "id": "W1eJe5",
                           "name": "Uang",
                           "fill": "$muted",
-                          "content": "Uang",
+                          "content": "Money",
                           "fontFamily": "$font-body",
                           "fontSize": 15,
                           "fontWeight": "600"
@@ -290,7 +290,7 @@
                           "id": "F84gJJ",
                           "name": "Kita",
                           "fill": "$muted",
-                          "content": "Kita",
+                          "content": "Us",
                           "fontFamily": "$font-body",
                           "fontSize": 15,
                           "fontWeight": "600"
@@ -312,7 +312,7 @@
                           "id": "w0x3c",
                           "name": "Harga",
                           "fill": "$muted",
-                          "content": "Harga",
+                          "content": "Pricing",
                           "fontFamily": "$font-body",
                           "fontSize": 15,
                           "fontWeight": "600"
@@ -334,7 +334,7 @@
                           "id": "P00ts",
                           "name": "Tanya jawab",
                           "fill": "$muted",
-                          "content": "Tanya jawab",
+                          "content": "FAQ",
                           "fontFamily": "$font-body",
                           "fontSize": 15,
                           "fontWeight": "600"
@@ -372,7 +372,7 @@
                       "id": "g8XeNb",
                       "name": "L",
                       "fill": "#FFFFFF",
-                      "content": "Unduh gratis",
+                      "content": "Get it free",
                       "fontFamily": "$font-body",
                       "fontSize": 15,
                       "fontWeight": "700"
@@ -461,7 +461,7 @@
                           "id": "R1qLB",
                           "name": "t",
                           "fill": "$ink",
-                          "content": "Dibuat untuk pasangan yang baru serumah",
+                          "content": "Made for couples who just moved in together",
                           "fontFamily": "$font-body",
                           "fontSize": 14,
                           "fontWeight": "600"
@@ -475,7 +475,7 @@
                       "fill": "$ink",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Berat sama dipikul, ringan sama dijinjing.",
+                      "content": "Share the load, not just the bills.",
                       "lineHeight": 1,
                       "fontFamily": "$font-display",
                       "fontSize": 76,
@@ -489,7 +489,7 @@
                       "fill": "$muted",
                       "textGrowth": "fixed-width",
                       "width": 520,
-                      "content": "Urusan rumah, uang, dan waktu berdua dalam satu aplikasi. Biar nggak ada yang mikirin semuanya sendirian.",
+                      "content": "Chores, money, and time together in one app. So nobody has to keep track of everything alone.",
                       "lineHeight": 1.5,
                       "fontFamily": "$font-body",
                       "fontSize": 20,
@@ -549,7 +549,7 @@
                                   "id": "mr2Zs",
                                   "name": "s",
                                   "fill": "#FFFFFFB3",
-                                  "content": "Unduh di",
+                                  "content": "Get it on",
                                   "fontFamily": "$font-body",
                                   "fontSize": 11,
                                   "fontWeight": "600"
@@ -620,7 +620,7 @@
                               "id": "YZAQD",
                               "name": "l",
                               "fill": "$ink",
-                              "content": "Aku dapat kode undangan",
+                              "content": "I have an invite code",
                               "fontFamily": "$font-body",
                               "fontSize": 16,
                               "fontWeight": "700"
@@ -634,7 +634,7 @@
                       "id": "G5qZq",
                       "name": "Note",
                       "fill": "$faint",
-                      "content": "Gratis untuk mulai. Satu akun Plus otomatis berlaku untuk berdua.",
+                      "content": "Free to start. One Plus plan automatically covers both of you.",
                       "fontFamily": "$font-body",
                       "fontSize": 14,
                       "fontWeight": "normal"
@@ -779,7 +779,7 @@
                               "id": "idFMN",
                               "name": "k",
                               "fill": "$rose",
-                              "content": "Kita",
+                              "content": "Us",
                               "fontFamily": "$font-body",
                               "fontSize": 11,
                               "fontWeight": "700"
@@ -789,7 +789,7 @@
                               "id": "WZbk2",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Dinda lagi capek",
+                              "content": "Dinda is tired",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
                               "fontWeight": "700"
@@ -799,7 +799,7 @@
                               "id": "Vz5yg",
                               "name": "d",
                               "fill": "$muted",
-                              "content": "butuh malam yang tenang",
+                              "content": "needs a quiet night",
                               "fontFamily": "$font-body",
                               "fontSize": 12,
                               "fontWeight": "normal"
@@ -879,7 +879,7 @@
                               "id": "LwCLc",
                               "name": "k",
                               "fill": "$amber",
-                              "content": "Urusan",
+                              "content": "Chores",
                               "fontFamily": "$font-body",
                               "fontSize": 11,
                               "fontWeight": "700"
@@ -889,7 +889,7 @@
                               "id": "JwIJg",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Makasih udah bayar listrik",
+                              "content": "Thanks for paying the power bill",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
                               "fontWeight": "700"
@@ -899,7 +899,7 @@
                               "id": "Ig3AT",
                               "name": "d",
                               "fill": "$muted",
-                              "content": "dari Dinda, barusan",
+                              "content": "from Dinda, just now",
                               "fontFamily": "$font-body",
                               "fontSize": 12,
                               "fontWeight": "normal"
@@ -979,7 +979,7 @@
                               "id": "adzaU",
                               "name": "k",
                               "fill": "$jade",
-                              "content": "Uang",
+                              "content": "Money",
                               "fontFamily": "$font-body",
                               "fontSize": 11,
                               "fontWeight": "700"
@@ -989,7 +989,7 @@
                               "id": "WKYqX",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Rp182.000",
+                              "content": "Rp182,000",
                               "fontFamily": "$font-body",
                               "fontSize": 15,
                               "fontWeight": "700"
@@ -999,7 +999,7 @@
                               "id": "D4avZ",
                               "name": "d",
                               "fill": "$muted",
-                              "content": "aman dipakai hari ini",
+                              "content": "safe to spend today",
                               "fontFamily": "$font-body",
                               "fontSize": 12,
                               "fontWeight": "normal"
@@ -1041,7 +1041,7 @@
                   "fill": "$ink",
                   "textGrowth": "fixed-width",
                   "width": 720,
-                  "content": "Satu rumah, tiga hal yang perlu diurus bareng.",
+                  "content": "One home, three things to handle together.",
                   "lineHeight": 1.04,
                   "fontFamily": "$font-display",
                   "fontSize": 56,
@@ -1055,7 +1055,7 @@
                   "fill": "$muted",
                   "textGrowth": "fixed-width",
                   "width": 380,
-                  "content": "Bukan aplikasi produktivitas, bukan aplikasi keuangan. Tempat kalian berdua ngatur hidup bareng tanpa saling hitung.",
+                  "content": "Not a productivity app, not a finance app. A place for the two of you to run life together without keeping score.",
                   "lineHeight": 1.55,
                   "fontFamily": "$font-body",
                   "fontSize": 17,
@@ -1151,7 +1151,7 @@
                           "id": "UnAUK",
                           "name": "k",
                           "fill": "#9A5418",
-                          "content": "Urusan",
+                          "content": "Chores",
                           "fontFamily": "$font-body",
                           "fontSize": 14,
                           "fontWeight": "700"
@@ -1165,7 +1165,7 @@
                       "fill": "$ink",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Yang ingat dan yang kerjakan, dua-duanya dihargai.",
+                      "content": "The one who remembers and the one who does it, both get credit.",
                       "lineHeight": 1.06,
                       "fontFamily": "$font-display",
                       "fontSize": 44,
@@ -1179,7 +1179,7 @@
                       "fill": "$muted",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Mikirin juga kerja. Catat urusan rumah, tentukan siapa yang ingat dan siapa yang kerjakan, lalu kirim makasih waktu selesai.",
+                      "content": "Remembering is work too. Log household chores, note who remembered and who did it, then send a thank you when it is done.",
                       "lineHeight": 1.55,
                       "fontFamily": "$font-body",
                       "fontSize": 18,
@@ -1237,7 +1237,7 @@
                               "id": "tuaPn",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Kirim makasih, bukan skor",
+                              "content": "Send thanks, not scores",
                               "fontFamily": "$font-body",
                               "fontSize": 17,
                               "fontWeight": "600"
@@ -1282,7 +1282,7 @@
                               "id": "wl4In",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Pengingat untuk berdua",
+                              "content": "Reminders for both of you",
                               "fontFamily": "$font-body",
                               "fontSize": 17,
                               "fontWeight": "600"
@@ -1327,7 +1327,7 @@
                               "id": "K96nE",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Jadwal servis dan perawatan rumah",
+                              "content": "Home service and maintenance schedule",
                               "fontFamily": "$font-body",
                               "fontSize": 17,
                               "fontWeight": "600"
@@ -1588,7 +1588,7 @@
                           "id": "lLXBH",
                           "name": "k",
                           "fill": "#FFFFFF",
-                          "content": "Uang",
+                          "content": "Money",
                           "fontFamily": "$font-body",
                           "fontSize": 14,
                           "fontWeight": "700"
@@ -1602,7 +1602,7 @@
                       "fill": "#FFFFFF",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Uang rumah digabung, dibagi ke amplop.",
+                      "content": "Pool the household money, split it into envelopes.",
                       "lineHeight": 1.06,
                       "fontFamily": "$font-display",
                       "fontSize": 44,
@@ -1616,7 +1616,7 @@
                       "fill": "#FFFFFFC7",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Gaji kalian masuk ke uang rumah yang sama. Ruma menghitung berapa yang aman dipakai hari ini sampai gajian berikutnya.",
+                      "content": "Both paychecks go into the same household money. Ruma works out how much is safe to spend today until the next payday.",
                       "lineHeight": 1.55,
                       "fontFamily": "$font-body",
                       "fontSize": 18,
@@ -1674,7 +1674,7 @@
                               "id": "GUO8a",
                               "name": "t",
                               "fill": "#FFFFFF",
-                              "content": "Amplop untuk tiap kebutuhan",
+                              "content": "An envelope for every need",
                               "fontFamily": "$font-body",
                               "fontSize": 17,
                               "fontWeight": "600"
@@ -1719,7 +1719,7 @@
                               "id": "qGXfU",
                               "name": "t",
                               "fill": "#FFFFFF",
-                              "content": "Cicilan dan paylater di satu daftar",
+                              "content": "Installments and paylater in one list",
                               "fontFamily": "$font-body",
                               "fontSize": 17,
                               "fontWeight": "600"
@@ -1764,7 +1764,7 @@
                               "id": "Hvulk",
                               "name": "t",
                               "fill": "#FFFFFF",
-                              "content": "Rekap bulanan dan target tabungan",
+                              "content": "Monthly recap and savings goals",
                               "fontFamily": "$font-body",
                               "fontSize": 17,
                               "fontWeight": "600"
@@ -1891,7 +1891,7 @@
                           "id": "MePHB",
                           "name": "k",
                           "fill": "$rose",
-                          "content": "Kita",
+                          "content": "Us",
                           "fontFamily": "$font-body",
                           "fontSize": 14,
                           "fontWeight": "700"
@@ -1905,7 +1905,7 @@
                       "fill": "$ink",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Bukan cuma koordinasi. Tetap ngobrol sebagai berdua.",
+                      "content": "More than coordination. Still talking as a couple.",
                       "lineHeight": 1.06,
                       "fontFamily": "$font-display",
                       "fontSize": 44,
@@ -1919,7 +1919,7 @@
                       "fill": "$muted",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Check-in perasaan setiap hari, kartu obrolan akhir bulan, dan jurnal kecil tentang perjalanan kalian.",
+                      "content": "A daily feelings check-in, end-of-month conversation cards, and a small journal of your journey.",
                       "lineHeight": 1.55,
                       "fontFamily": "$font-body",
                       "fontSize": 18,
@@ -1977,7 +1977,7 @@
                               "id": "o4Per",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Check-in harian, cukup 30 detik",
+                              "content": "Daily check-in, just 30 seconds",
                               "fontFamily": "$font-body",
                               "fontSize": 17,
                               "fontWeight": "600"
@@ -2022,7 +2022,7 @@
                               "id": "SJB87",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Ngobrol akhir bulan yang terarah",
+                              "content": "Guided end-of-month talks",
                               "fontFamily": "$font-body",
                               "fontSize": 17,
                               "fontWeight": "600"
@@ -2067,7 +2067,7 @@
                               "id": "mv2xl",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Jurnal cerita dan makasih",
+                              "content": "A journal of stories and thanks",
                               "fontFamily": "$font-body",
                               "fontSize": 17,
                               "fontWeight": "600"
@@ -2210,7 +2210,7 @@
                   "fill": "$ink",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Di Ruma nggak ada papan skor.",
+                  "content": "There is no scoreboard in Ruma.",
                   "lineHeight": 1.04,
                   "fontFamily": "$font-display",
                   "fontSize": 56,
@@ -2224,7 +2224,7 @@
                   "fill": "$muted",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "Rumah tangga bukan kompetisi. Kami sengaja nggak bikin persentase kamu lawan dia, label punyaku dan punyamu, atau peringkat siapa paling rajin. Yang ada cuma saling bantu dan terima kasih.",
+                  "content": "A home is not a competition. We deliberately left out you versus them percentages, mine and yours labels, and rankings of who does the most. There is only helping each other and saying thanks.",
                   "lineHeight": 1.6,
                   "fontFamily": "$font-body",
                   "fontSize": 18,
@@ -2286,7 +2286,7 @@
                           "id": "FkmEj",
                           "name": "Old",
                           "fill": "$faint",
-                          "content": "Kamu 70%, dia 30%",
+                          "content": "You 70%, them 30%",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
                           "fontWeight": "500"
@@ -2300,7 +2300,7 @@
                           "y": 11,
                           "name": "Garis coret",
                           "fill": "$faint",
-                          "width": 167,
+                          "width": 162,
                           "height": 2
                         }
                       ]
@@ -2352,7 +2352,7 @@
                           "id": "Z4Yr8",
                           "name": "t",
                           "fill": "$ink",
-                          "content": "Makasih udah bayar listrik",
+                          "content": "Thanks for paying the power bill",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
                           "fontWeight": "700"
@@ -2407,7 +2407,7 @@
                           "id": "ac7mh",
                           "name": "Old",
                           "fill": "$faint",
-                          "content": "Dompetku, dompetmu",
+                          "content": "My wallet, your wallet",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
                           "fontWeight": "500"
@@ -2421,7 +2421,7 @@
                           "y": 11,
                           "name": "Garis coret",
                           "fill": "$faint",
-                          "width": 191,
+                          "width": 200,
                           "height": 2
                         }
                       ]
@@ -2473,7 +2473,7 @@
                           "id": "AhCGl",
                           "name": "t",
                           "fill": "$ink",
-                          "content": "Uang rumah, dibagi per amplop",
+                          "content": "Household money, split into envelopes",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
                           "fontWeight": "700"
@@ -2528,7 +2528,7 @@
                           "id": "b8MWt",
                           "name": "Old",
                           "fill": "$faint",
-                          "content": "Siapa yang paling sering",
+                          "content": "Who does it most",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
                           "fontWeight": "500"
@@ -2542,7 +2542,7 @@
                           "y": 11,
                           "name": "Garis coret",
                           "fill": "$faint",
-                          "width": 205,
+                          "width": 148,
                           "height": 2
                         }
                       ]
@@ -2594,7 +2594,7 @@
                           "id": "ZtVtH",
                           "name": "t",
                           "fill": "$ink",
-                          "content": "Siapa yang bisa bantu hari ini",
+                          "content": "Who can help today",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
                           "fontWeight": "700"
@@ -2649,7 +2649,7 @@
                           "id": "MGKv9",
                           "name": "Old",
                           "fill": "$faint",
-                          "content": "Utang budi dicatat",
+                          "content": "Favors on a tally",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
                           "fontWeight": "500"
@@ -2663,7 +2663,7 @@
                           "y": 11,
                           "name": "Garis coret",
                           "fill": "$faint",
-                          "width": 159,
+                          "width": 150,
                           "height": 2
                         }
                       ]
@@ -2715,7 +2715,7 @@
                           "id": "H4SFh",
                           "name": "t",
                           "fill": "$ink",
-                          "content": "Cerita kecil disimpan di jurnal",
+                          "content": "Small stories saved in a journal",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
                           "fontWeight": "700"
@@ -2757,7 +2757,7 @@
                   "fill": "$ink",
                   "textGrowth": "fixed-width",
                   "width": 760,
-                  "content": "Ruma ikut berubah waktu hidup kalian berubah.",
+                  "content": "Ruma changes when your life does.",
                   "lineHeight": 1.04,
                   "fontFamily": "$font-display",
                   "fontSize": 56,
@@ -2771,7 +2771,7 @@
                   "fill": "$muted",
                   "textGrowth": "fixed-width",
                   "width": 600,
-                  "content": "Pilih fase yang sedang kalian jalani. Daftar urusan, amplop, dan pengingatnya disiapkan sesuai fase itu.",
+                  "content": "Pick the stage you are in. Chores, envelopes, and reminders are set up to match it.",
                   "lineHeight": 1.55,
                   "fontFamily": "$font-body",
                   "fontSize": 18,
@@ -2853,7 +2853,7 @@
                           "id": "C8Jcb",
                           "name": "m",
                           "fill": "#6E58B5",
-                          "content": "Hitung mundur 214 hari",
+                          "content": "214 days to go",
                           "fontFamily": "$font-body",
                           "fontSize": 13,
                           "fontWeight": "700"
@@ -2865,7 +2865,7 @@
                       "id": "rLDiO",
                       "name": "Title",
                       "fill": "$ink",
-                      "content": "Siap nikah",
+                      "content": "Getting married",
                       "fontFamily": "$font-display",
                       "fontSize": 32,
                       "fontWeight": "700",
@@ -2878,7 +2878,7 @@
                       "fill": "$muted",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Rencana biaya, vendor, dan hitung mundur hari H tanpa bikin pusing berdua.",
+                      "content": "Budget, vendors, and a countdown to the big day without the headache.",
                       "lineHeight": 1.5,
                       "fontFamily": "$font-body",
                       "fontSize": 16,
@@ -2953,7 +2953,7 @@
                           "id": "Q2AP8R",
                           "name": "m",
                           "fill": "#3A72A8",
-                          "content": "Minggu ke-24",
+                          "content": "Week 24",
                           "fontFamily": "$font-body",
                           "fontSize": 13,
                           "fontWeight": "700"
@@ -2965,7 +2965,7 @@
                       "id": "WQC3y",
                       "name": "Title",
                       "fill": "$ink",
-                      "content": "Menyambut bayi",
+                      "content": "Expecting a baby",
                       "fontFamily": "$font-display",
                       "fontSize": 32,
                       "fontWeight": "700",
@@ -2978,7 +2978,7 @@
                       "fill": "$muted",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Perlengkapan, jadwal kontrol, dan tabungan persalinan dalam satu daftar.",
+                      "content": "Baby gear, checkups, and birth savings in one list.",
                       "lineHeight": 1.5,
                       "fontFamily": "$font-body",
                       "fontSize": 16,
@@ -3053,7 +3053,7 @@
                           "id": "jJfui",
                           "name": "m",
                           "fill": "#9A7414",
-                          "content": "162 hari lagi",
+                          "content": "162 days to go",
                           "fontFamily": "$font-body",
                           "fontSize": 13,
                           "fontWeight": "700"
@@ -3065,7 +3065,7 @@
                       "id": "O10sZ",
                       "name": "Title",
                       "fill": "$ink",
-                      "content": "Lebaran & THR",
+                      "content": "Eid & holiday bonus",
                       "fontFamily": "$font-display",
                       "fontSize": 32,
                       "fontWeight": "700",
@@ -3078,7 +3078,7 @@
                       "fill": "$muted",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Bagi THR ke amplop mudik, angpau, dan baju baru sebelum habis duluan.",
+                      "content": "Split the holiday bonus into envelopes for the trip home, gift money, and new clothes before it runs out.",
                       "lineHeight": 1.5,
                       "fontFamily": "$font-body",
                       "fontSize": 16,
@@ -3142,7 +3142,7 @@
                   "id": "RsH7z",
                   "name": "Title",
                   "fill": "$ink",
-                  "content": "Satu langganan, dipakai berdua.",
+                  "content": "One subscription, shared by two.",
                   "fontFamily": "$font-display",
                   "fontSize": 56,
                   "fontWeight": "700",
@@ -3153,7 +3153,7 @@
                   "id": "OwjQ0",
                   "name": "Body",
                   "fill": "$muted",
-                  "content": "Mulai gratis. Kalau salah satu dari kalian langganan Plus, pasangannya otomatis ikut dapat.",
+                  "content": "Start free. If one of you subscribes to Plus, your partner gets it too.",
                   "fontFamily": "$font-body",
                   "fontSize": 18,
                   "fontWeight": "normal"
@@ -3208,7 +3208,7 @@
                           "id": "BXTd4",
                           "name": "Name",
                           "fill": "$muted",
-                          "content": "Gratis",
+                          "content": "Free",
                           "fontFamily": "$font-body",
                           "fontSize": 18,
                           "fontWeight": "700"
@@ -3238,7 +3238,7 @@
                           "id": "jZ43c",
                           "name": "d",
                           "fill": "$muted",
-                          "content": "Untuk mulai ngatur rumah bareng.",
+                          "content": "To start running your home together.",
                           "fontFamily": "$font-body",
                           "fontSize": 15,
                           "fontWeight": "normal"
@@ -3297,7 +3297,7 @@
                               "id": "RZBD8",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Urusan bersama, tanpa batas",
+                              "content": "Unlimited shared chores",
                               "fontFamily": "$font-body",
                               "fontSize": 16,
                               "fontWeight": "500"
@@ -3340,7 +3340,7 @@
                               "id": "R2Sar",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Uang rumah dan amplop",
+                              "content": "Household money and envelopes",
                               "fontFamily": "$font-body",
                               "fontSize": 16,
                               "fontWeight": "500"
@@ -3383,7 +3383,7 @@
                               "id": "kWbvV",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Check-in harian dan jurnal",
+                              "content": "Daily check-ins and journal",
                               "fontFamily": "$font-body",
                               "fontSize": 16,
                               "fontWeight": "500"
@@ -3426,7 +3426,7 @@
                               "id": "ABXDd",
                               "name": "t",
                               "fill": "$ink",
-                              "content": "Undang pasangan pakai kode",
+                              "content": "Invite your partner with a code",
                               "fontFamily": "$font-body",
                               "fontSize": 16,
                               "fontWeight": "500"
@@ -3453,7 +3453,7 @@
                           "id": "DfaU4",
                           "name": "l",
                           "fill": "$ink",
-                          "content": "Mulai gratis",
+                          "content": "Start free",
                           "fontFamily": "$font-body",
                           "fontSize": 16,
                           "fontWeight": "700"
@@ -3542,7 +3542,7 @@
                               "id": "ZL3KZ",
                               "name": "Name",
                               "fill": "#FFFFFFCC",
-                              "content": "Plus tahunan",
+                              "content": "Plus yearly",
                               "fontFamily": "$font-body",
                               "fontSize": 18,
                               "fontWeight": "700"
@@ -3563,7 +3563,7 @@
                                   "id": "G6L1r",
                                   "name": "t",
                                   "fill": "#9A7414",
-                                  "content": "Hemat 43%",
+                                  "content": "Save 43%",
                                   "fontFamily": "$font-body",
                                   "fontSize": 12,
                                   "fontWeight": "700"
@@ -3584,7 +3584,7 @@
                               "id": "SCgnf",
                               "name": "v",
                               "fill": "#FFFFFF",
-                              "content": "Rp16rb",
+                              "content": "Rp16k",
                               "fontFamily": "$font-display",
                               "fontSize": 52,
                               "fontWeight": "700",
@@ -3606,7 +3606,7 @@
                                   "id": "W5WIhB",
                                   "name": "u",
                                   "fill": "#FFFFFFB3",
-                                  "content": "/bulan, berdua",
+                                  "content": "/month, for two",
                                   "fontFamily": "$font-body",
                                   "fontSize": 16,
                                   "fontWeight": "600"
@@ -3620,7 +3620,7 @@
                           "id": "MD24w",
                           "name": "d",
                           "fill": "#FFFFFFB3",
-                          "content": "Gratis 14 hari, lalu Rp199.000 per tahun. Atau Rp29rb per bulan.",
+                          "content": "Free for 14 days, then Rp199,000 per year. Or Rp29k per month.",
                           "fontFamily": "$font-body",
                           "fontSize": 15,
                           "fontWeight": "normal"
@@ -3679,7 +3679,7 @@
                               "id": "Z0R8DY",
                               "name": "t",
                               "fill": "#FFFFFF",
-                              "content": "Semua yang ada di Gratis",
+                              "content": "Everything in Free",
                               "fontFamily": "$font-body",
                               "fontSize": 16,
                               "fontWeight": "500"
@@ -3722,7 +3722,7 @@
                               "id": "QNjLB",
                               "name": "t",
                               "fill": "#FFFFFF",
-                              "content": "Fase hidup: nikah, bayi, Lebaran",
+                              "content": "Life stages: wedding, baby, Eid",
                               "fontFamily": "$font-body",
                               "fontSize": 16,
                               "fontWeight": "500"
@@ -3765,7 +3765,7 @@
                               "id": "eH98j",
                               "name": "t",
                               "fill": "#FFFFFF",
-                              "content": "Cicilan, paylater, dan utang",
+                              "content": "Installments, paylater, and debts",
                               "fontFamily": "$font-body",
                               "fontSize": 16,
                               "fontWeight": "500"
@@ -3808,7 +3808,7 @@
                               "id": "K9PPd",
                               "name": "t",
                               "fill": "#FFFFFF",
-                              "content": "Money date mingguan dan rapor bulanan",
+                              "content": "Weekly money date and monthly report",
                               "fontFamily": "$font-body",
                               "fontSize": 16,
                               "fontWeight": "500"
@@ -3851,7 +3851,7 @@
                               "id": "m4453",
                               "name": "t",
                               "fill": "#FFFFFF",
-                              "content": "Brankas rumah dengan PIN",
+                              "content": "Home vault with PIN",
                               "fontFamily": "$font-body",
                               "fontSize": 16,
                               "fontWeight": "500"
@@ -3876,7 +3876,7 @@
                           "id": "Sn2zw",
                           "name": "l",
                           "fill": "#1F5446",
-                          "content": "Coba gratis 14 hari",
+                          "content": "Try free for 14 days",
                           "fontFamily": "$font-body",
                           "fontSize": 16,
                           "fontWeight": "700"
@@ -3892,7 +3892,7 @@
               "id": "P2btm8",
               "name": "Fine",
               "fill": "$faint",
-              "content": "Pembayaran lewat Google Play. Batalkan kapan saja, kami ingatkan 2 hari sebelum ditagih.",
+              "content": "Billed through Google Play. Cancel anytime, we remind you 2 days before you are charged.",
               "fontFamily": "$font-body",
               "fontSize": 14,
               "fontWeight": "normal"
@@ -3919,7 +3919,7 @@
               "fill": "$ink",
               "textGrowth": "fixed-width",
               "width": 400,
-              "content": "Yang sering ditanyain.",
+              "content": "Questions people ask.",
               "lineHeight": 1.04,
               "fontFamily": "$font-display",
               "fontSize": 56,
@@ -3963,7 +3963,7 @@
                           "id": "kD1kz",
                           "name": "q",
                           "fill": "$ink",
-                          "content": "Pasanganku harus bayar juga?",
+                          "content": "Does my partner have to pay too?",
                           "fontFamily": "$font-body",
                           "fontSize": 21,
                           "fontWeight": "700"
@@ -3987,7 +3987,7 @@
                       "fill": "$muted",
                       "textGrowth": "fixed-width",
                       "width": 640,
-                      "content": "Nggak. Satu langganan Plus otomatis berlaku untuk kalian berdua dalam satu rumah.",
+                      "content": "No. One Plus subscription automatically covers both of you in the same home.",
                       "lineHeight": 1.55,
                       "fontFamily": "$font-body",
                       "fontSize": 17,
@@ -4024,7 +4024,7 @@
                           "id": "VJnXG",
                           "name": "q",
                           "fill": "$ink",
-                          "content": "Harus nyambungin rekening bank?",
+                          "content": "Do I have to connect a bank account?",
                           "fontFamily": "$font-body",
                           "fontSize": 21,
                           "fontWeight": "700"
@@ -4072,7 +4072,7 @@
                           "id": "NJDfA",
                           "name": "q",
                           "fill": "$ink",
-                          "content": "Data keuangan kami aman?",
+                          "content": "Is our financial data safe?",
                           "fontFamily": "$font-body",
                           "fontSize": 21,
                           "fontWeight": "700"
@@ -4120,7 +4120,7 @@
                           "id": "t6Xxa",
                           "name": "q",
                           "fill": "$ink",
-                          "content": "Bisa dipakai di iPhone?",
+                          "content": "Does it work on iPhone?",
                           "fontFamily": "$font-body",
                           "fontSize": 21,
                           "fontWeight": "700"
@@ -4555,7 +4555,7 @@
                   "fill": "$ink",
                   "textGrowth": "fixed-width",
                   "width": 640,
-                  "content": "Mulai dari satu urusan kecil malam ini.",
+                  "content": "Start with one small chore tonight.",
                   "lineHeight": 1.02,
                   "textAlign": "center",
                   "fontFamily": "$font-display",
@@ -4568,7 +4568,7 @@
                   "id": "BDn6I",
                   "name": "Body",
                   "fill": "$muted",
-                  "content": "Unduh Ruma, lalu kirim kode undangan ke pasanganmu.",
+                  "content": "Download Ruma, then send the invite code to your partner.",
                   "fontFamily": "$font-body",
                   "fontSize": 18,
                   "fontWeight": "normal"
@@ -4620,7 +4620,7 @@
                           "id": "H8YHrP",
                           "name": "s",
                           "fill": "#FFFFFFB3",
-                          "content": "Unduh di",
+                          "content": "Get it on",
                           "fontFamily": "$font-body",
                           "fontSize": 11,
                           "fontWeight": "600"
@@ -4751,7 +4751,7 @@
                   "id": "jH7NH",
                   "name": "tag",
                   "fill": "$muted",
-                  "content": "Urusan, uang, dan kita. Satu rumah.",
+                  "content": "Chores, money, and us. One home.",
                   "fontFamily": "$font-body",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -4770,7 +4770,7 @@
                   "id": "XoR2P",
                   "name": "Kebijakan privasi",
                   "fill": "$muted",
-                  "content": "Kebijakan privasi",
+                  "content": "Privacy policy",
                   "fontFamily": "$font-body",
                   "fontSize": 14,
                   "fontWeight": "600"
@@ -4780,7 +4780,7 @@
                   "id": "HK1Lj",
                   "name": "Syarat penggunaan",
                   "fill": "$muted",
-                  "content": "Syarat penggunaan",
+                  "content": "Terms of use",
                   "fontFamily": "$font-body",
                   "fontSize": 14,
                   "fontWeight": "600"
@@ -4790,7 +4790,7 @@
                   "id": "S0yTx",
                   "name": "Kontak",
                   "fill": "$muted",
-                  "content": "Kontak",
+                  "content": "Contact",
                   "fontFamily": "$font-body",
                   "fontSize": 14,
                   "fontWeight": "600"
@@ -4800,7 +4800,7 @@
                   "id": "vK2YU",
                   "name": "English",
                   "fill": "$muted",
-                  "content": "English",
+                  "content": "Bahasa Indonesia",
                   "fontFamily": "$font-body",
                   "fontSize": 14,
                   "fontWeight": "600"
