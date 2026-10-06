@@ -299,3 +299,27 @@ section h2 { font-size: 56px; line-height: 1.04; letter-spacing: -2px; }
   .footer .brand { flex-wrap: wrap; }
   .tagline { margin-left: 0; width: 100%; }
 }
+
+/* Legal pages */
+.legal-top { max-width: 1440px; margin: 0 auto; padding: 28px var(--gutter) 0; }
+.legal-top .nav { position: static; }
+.legal { max-width: 760px; margin: 0 auto; padding: 72px 20px 120px; }
+.legal h1 { font-size: 56px; letter-spacing: -2px; }
+.legal .updated { margin-top: 16px; font-size: 15px; color: var(--muted); }
+.legal .lead { margin-top: 28px; font-size: 19px; line-height: 1.6; color: var(--ink); }
+.legal h2 { margin-top: 56px; font-size: 28px; letter-spacing: -.6px; line-height: 1.2; }
+.legal p, .legal li { font-size: 17px; line-height: 1.65; color: #3D4A46; }
+.legal p { margin-top: 14px; }
+.legal ul { margin: 14px 0 0; padding-left: 22px; }
+.legal li + li { margin-top: 8px; }
+.legal a { color: var(--jade); text-decoration: underline; text-underline-offset: 3px; }
+.legal .box { margin-top: 28px; padding: 22px 26px; border-radius: 24px; }
+.legal .box p { margin: 0; }
+.footer-links { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+.footer-links a { font-size: 14px; font-weight: 600; color: var(--muted); }
+.footer-links a:hover { color: var(--ink); }
+@media (max-width: 900px) {
+  .legal { padding-top: 48px; }
+  .legal h1 { font-size: 40px; letter-spacing: -1.2px; }
+  .legal h2 { font-size: 24px; }
+}
